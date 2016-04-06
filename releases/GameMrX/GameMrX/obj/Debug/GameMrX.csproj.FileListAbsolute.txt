@@ -1,1 +1,9 @@
 D:\PROJECT\trunk\releases\GameMrX\GameMrX\bin\Debug\GameMrX.exe.config
+D:\Mr X\trunk\releases\GameMrX\GameMrX\bin\Debug\GameMrX.exe.config
+D:\Mr X\trunk\releases\GameMrX\GameMrX\bin\Debug\GameMrX.exe
+D:\Mr X\trunk\releases\GameMrX\GameMrX\bin\Debug\GameMrX.pdb
+D:\Mr X\trunk\releases\GameMrX\GameMrX\obj\Debug\GameMrX.csprojResolveAssemblyReference.cache
+D:\Mr X\trunk\releases\GameMrX\GameMrX\obj\Debug\GameMrX.Properties.Resources.resources
+D:\Mr X\trunk\releases\GameMrX\GameMrX\obj\Debug\GameMrX.csproj.GenerateResource.Cache
+D:\Mr X\trunk\releases\GameMrX\GameMrX\obj\Debug\GameMrX.exe
+D:\Mr X\trunk\releases\GameMrX\GameMrX\obj\Debug\GameMrX.pdb
