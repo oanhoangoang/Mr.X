@@ -16,5 +16,11 @@ namespace GameMrX
         {
             InitializeComponent();
         }
+
+        private void btnTimSo_Click(object sender, EventArgs e)
+        {
+            TimSo tim = new TimSo();
+            tim.Show();
+        }
     }
 }

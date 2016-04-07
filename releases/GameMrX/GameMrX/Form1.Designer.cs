@@ -28,12 +28,34 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.btnTimSo = new System.Windows.Forms.Button();
+            this.SuspendLayout();
+            // 
+            // btnTimSo
+            // 
+            this.btnTimSo.Location = new System.Drawing.Point(21, 254);
+            this.btnTimSo.Name = "btnTimSo";
+            this.btnTimSo.Size = new System.Drawing.Size(107, 46);
+            this.btnTimSo.TabIndex = 0;
+            this.btnTimSo.Text = "btnTimSo";
+            this.btnTimSo.UseVisualStyleBackColor = true;
+            this.btnTimSo.Click += new System.EventHandler(this.btnTimSo_Click);
+            // 
+            // Form1
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(645, 429);
+            this.Controls.Add(this.btnTimSo);
+            this.Name = "Form1";
             this.Text = "Form1";
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private System.Windows.Forms.Button btnTimSo;
     }
 }
 
