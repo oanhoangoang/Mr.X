@@ -1,0 +1,5 @@
+D:\Mr X\trunk\releases\GameMrX\randomize\bin\Debug\randomize.dll
+D:\Mr X\trunk\releases\GameMrX\randomize\bin\Debug\randomize.pdb
+D:\Mr X\trunk\releases\GameMrX\randomize\obj\Debug\randomize.csprojResolveAssemblyReference.cache
+D:\Mr X\trunk\releases\GameMrX\randomize\obj\Debug\randomize.dll
+D:\Mr X\trunk\releases\GameMrX\randomize\obj\Debug\randomize.pdb
