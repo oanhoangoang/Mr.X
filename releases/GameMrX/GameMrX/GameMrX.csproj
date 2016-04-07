@@ -32,6 +32,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="gameDisplay">
+      <HintPath>bin\Debug\dll\gameDisplay.dll</HintPath>
+    </Reference>
     <Reference Include="randomize, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\Debug\dll\randomize.dll</HintPath>
