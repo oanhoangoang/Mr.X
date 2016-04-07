@@ -19,7 +19,7 @@ namespace GameMrX
 
         private void btnTimSo_Click(object sender, EventArgs e)
         {
-            TimSo tim = new TimSo();
+            TimSo tim = new TimSo(6,3,20);
             tim.Show();
         }
 
