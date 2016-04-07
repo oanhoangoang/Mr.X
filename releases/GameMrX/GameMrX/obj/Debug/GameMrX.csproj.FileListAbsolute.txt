@@ -8,3 +8,4 @@ D:\Mr X\trunk\releases\GameMrX\GameMrX\obj\Debug\GameMrX.csproj.GenerateResource
 D:\Mr X\trunk\releases\GameMrX\GameMrX\obj\Debug\GameMrX.exe
 D:\Mr X\trunk\releases\GameMrX\GameMrX\obj\Debug\GameMrX.pdb
 D:\Mr X\trunk\releases\GameMrX\GameMrX\obj\Debug\GameMrX.Form1.resources
+D:\Mr X\trunk\releases\GameMrX\GameMrX\obj\Debug\GameMrX.TimSo.resources
