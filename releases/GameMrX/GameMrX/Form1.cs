@@ -10,14 +10,14 @@ namespace GameMrX
             InitializeComponent();
         }
 
-        private void btnTimSo_Click(object sender, EventArgs e)
-        {
-            var tim = new TimSo(6, 3, 20);
-            tim.Show();
-        }
-
         private void Form1_Load(object sender, EventArgs e)
         {
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            TimSo frm=new TimSo();
+            frm.ShowDialog();
         }
     }
 }
