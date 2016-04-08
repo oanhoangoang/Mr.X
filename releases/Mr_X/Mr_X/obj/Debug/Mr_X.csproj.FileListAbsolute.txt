@@ -1,0 +1,9 @@
+D:\PROJECT\trunk\releases\Mr_X\Mr_X\bin\Debug\Mr_X.exe.config
+D:\PROJECT\trunk\releases\Mr_X\Mr_X\bin\Debug\Mr_X.exe
+D:\PROJECT\trunk\releases\Mr_X\Mr_X\bin\Debug\Mr_X.pdb
+D:\PROJECT\trunk\releases\Mr_X\Mr_X\obj\Debug\Mr_X.csprojResolveAssemblyReference.cache
+D:\PROJECT\trunk\releases\Mr_X\Mr_X\obj\Debug\Mr_X.Form1.resources
+D:\PROJECT\trunk\releases\Mr_X\Mr_X\obj\Debug\Mr_X.Properties.Resources.resources
+D:\PROJECT\trunk\releases\Mr_X\Mr_X\obj\Debug\Mr_X.csproj.GenerateResource.Cache
+D:\PROJECT\trunk\releases\Mr_X\Mr_X\obj\Debug\Mr_X.exe
+D:\PROJECT\trunk\releases\Mr_X\Mr_X\obj\Debug\Mr_X.pdb
