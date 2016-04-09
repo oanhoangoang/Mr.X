@@ -33,6 +33,10 @@
             this.btnMediate = new System.Windows.Forms.Button();
             this.pnlGameDisplayYellow = new System.Windows.Forms.Panel();
             this.pnlGameDisplayGreen = new System.Windows.Forms.Panel();
+            this.txtScoreToPass = new System.Windows.Forms.TextBox();
+            this.txtYoung_Score = new System.Windows.Forms.TextBox();
+            this.lblScoreToPass = new System.Windows.Forms.Label();
+            this.lblYoungScore = new System.Windows.Forms.Label();
             this.txtFindNum = new System.Windows.Forms.TextBox();
             this.lblFindNum = new System.Windows.Forms.Label();
             this.lblIntro = new System.Windows.Forms.Label();
@@ -42,10 +46,7 @@
             this.btnReset = new System.Windows.Forms.Button();
             this.btnStart = new System.Windows.Forms.Button();
             this.tmrTimeToPlay = new System.Windows.Forms.Timer(this.components);
-            this.lblYoungScore = new System.Windows.Forms.Label();
-            this.lblScoreToPass = new System.Windows.Forms.Label();
-            this.txtYoung_Score = new System.Windows.Forms.TextBox();
-            this.txtScoreToPass = new System.Windows.Forms.TextBox();
+            this.btnEnd = new System.Windows.Forms.Button();
             this.pnlGameDisplayGray.SuspendLayout();
             this.pnlGameDisplayGreen.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudSecond)).BeginInit();
@@ -74,6 +75,7 @@
             this.btnMediate.Text = "btnMediate";
             this.btnMediate.UseVisualStyleBackColor = true;
             this.btnMediate.Visible = false;
+            this.btnMediate.Click += new System.EventHandler(this.btnMediate_Click);
             // 
             // pnlGameDisplayYellow
             // 
@@ -89,6 +91,7 @@
             // 
             this.pnlGameDisplayGreen.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlGameDisplayGreen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(204)))), ((int)(((byte)(113)))));
+            this.pnlGameDisplayGreen.Controls.Add(this.btnEnd);
             this.pnlGameDisplayGreen.Controls.Add(this.txtScoreToPass);
             this.pnlGameDisplayGreen.Controls.Add(this.txtYoung_Score);
             this.pnlGameDisplayGreen.Controls.Add(this.lblScoreToPass);
@@ -105,6 +108,40 @@
             this.pnlGameDisplayGreen.Name = "pnlGameDisplayGreen";
             this.pnlGameDisplayGreen.Size = new System.Drawing.Size(395, 358);
             this.pnlGameDisplayGreen.TabIndex = 2;
+            // 
+            // txtScoreToPass
+            // 
+            this.txtScoreToPass.Enabled = false;
+            this.txtScoreToPass.Location = new System.Drawing.Point(132, 120);
+            this.txtScoreToPass.Name = "txtScoreToPass";
+            this.txtScoreToPass.Size = new System.Drawing.Size(100, 26);
+            this.txtScoreToPass.TabIndex = 11;
+            // 
+            // txtYoung_Score
+            // 
+            this.txtYoung_Score.Enabled = false;
+            this.txtYoung_Score.Location = new System.Drawing.Point(132, 88);
+            this.txtYoung_Score.Name = "txtYoung_Score";
+            this.txtYoung_Score.Size = new System.Drawing.Size(100, 26);
+            this.txtYoung_Score.TabIndex = 10;
+            // 
+            // lblScoreToPass
+            // 
+            this.lblScoreToPass.AutoSize = true;
+            this.lblScoreToPass.Location = new System.Drawing.Point(15, 123);
+            this.lblScoreToPass.Name = "lblScoreToPass";
+            this.lblScoreToPass.Size = new System.Drawing.Size(111, 20);
+            this.lblScoreToPass.TabIndex = 9;
+            this.lblScoreToPass.Text = "Score to pass:";
+            // 
+            // lblYoungScore
+            // 
+            this.lblYoungScore.AutoSize = true;
+            this.lblYoungScore.Location = new System.Drawing.Point(17, 88);
+            this.lblYoungScore.Name = "lblYoungScore";
+            this.lblYoungScore.Size = new System.Drawing.Size(111, 20);
+            this.lblYoungScore.TabIndex = 8;
+            this.lblYoungScore.Text = "Young_Score:";
             // 
             // txtFindNum
             // 
@@ -160,20 +197,20 @@
             // btnReset
             // 
             this.btnReset.Enabled = false;
-            this.btnReset.Location = new System.Drawing.Point(209, 217);
+            this.btnReset.Location = new System.Drawing.Point(134, 230);
             this.btnReset.Name = "btnReset";
-            this.btnReset.Size = new System.Drawing.Size(161, 94);
+            this.btnReset.Size = new System.Drawing.Size(100, 100);
             this.btnReset.TabIndex = 1;
-            this.btnReset.Text = "Reset_Game";
+            this.btnReset.Text = "Reset";
             this.btnReset.UseVisualStyleBackColor = true;
             // 
             // btnStart
             // 
-            this.btnStart.Location = new System.Drawing.Point(25, 217);
+            this.btnStart.Location = new System.Drawing.Point(19, 230);
             this.btnStart.Name = "btnStart";
-            this.btnStart.Size = new System.Drawing.Size(161, 94);
+            this.btnStart.Size = new System.Drawing.Size(100, 100);
             this.btnStart.TabIndex = 0;
-            this.btnStart.Text = "Start_Game";
+            this.btnStart.Text = "Start";
             this.btnStart.UseVisualStyleBackColor = true;
             this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
             // 
@@ -182,39 +219,15 @@
             this.tmrTimeToPlay.Interval = 1000;
             this.tmrTimeToPlay.Tick += new System.EventHandler(this.tmrTimeToPlay_Tick);
             // 
-            // lblYoungScore
+            // btnEnd
             // 
-            this.lblYoungScore.AutoSize = true;
-            this.lblYoungScore.Location = new System.Drawing.Point(17, 88);
-            this.lblYoungScore.Name = "lblYoungScore";
-            this.lblYoungScore.Size = new System.Drawing.Size(111, 20);
-            this.lblYoungScore.TabIndex = 8;
-            this.lblYoungScore.Text = "Young_Score:";
-            // 
-            // lblScoreToPass
-            // 
-            this.lblScoreToPass.AutoSize = true;
-            this.lblScoreToPass.Location = new System.Drawing.Point(15, 123);
-            this.lblScoreToPass.Name = "lblScoreToPass";
-            this.lblScoreToPass.Size = new System.Drawing.Size(111, 20);
-            this.lblScoreToPass.TabIndex = 9;
-            this.lblScoreToPass.Text = "Score to pass:";
-            // 
-            // txtYoung_Score
-            // 
-            this.txtYoung_Score.Enabled = false;
-            this.txtYoung_Score.Location = new System.Drawing.Point(132, 88);
-            this.txtYoung_Score.Name = "txtYoung_Score";
-            this.txtYoung_Score.Size = new System.Drawing.Size(100, 26);
-            this.txtYoung_Score.TabIndex = 10;
-            // 
-            // txtScoreToPass
-            // 
-            this.txtScoreToPass.Enabled = false;
-            this.txtScoreToPass.Location = new System.Drawing.Point(132, 120);
-            this.txtScoreToPass.Name = "txtScoreToPass";
-            this.txtScoreToPass.Size = new System.Drawing.Size(100, 26);
-            this.txtScoreToPass.TabIndex = 11;
+            this.btnEnd.Location = new System.Drawing.Point(251, 230);
+            this.btnEnd.Name = "btnEnd";
+            this.btnEnd.Size = new System.Drawing.Size(100, 100);
+            this.btnEnd.TabIndex = 12;
+            this.btnEnd.Text = "End";
+            this.btnEnd.UseVisualStyleBackColor = true;
+            this.btnEnd.Click += new System.EventHandler(this.btnEnd_Click);
             // 
             // FindNumDisplay
             // 
@@ -229,6 +242,7 @@
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MaximizeBox = false;
             this.Name = "FindNumDisplay";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FindNumDisplay";
             this.Load += new System.EventHandler(this.FindNumDisplay_Load);
             this.pnlGameDisplayGray.ResumeLayout(false);
@@ -259,5 +273,6 @@
         private System.Windows.Forms.Label lblYoungScore;
         private System.Windows.Forms.TextBox txtScoreToPass;
         private System.Windows.Forms.TextBox txtYoung_Score;
+        private System.Windows.Forms.Button btnEnd;
     }
 }
