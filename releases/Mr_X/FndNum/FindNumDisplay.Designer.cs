@@ -33,6 +33,7 @@
             this.btnMediate = new System.Windows.Forms.Button();
             this.pnlGameDisplayYellow = new System.Windows.Forms.Panel();
             this.pnlGameDisplayGreen = new System.Windows.Forms.Panel();
+            this.btnEnd = new System.Windows.Forms.Button();
             this.txtScoreToPass = new System.Windows.Forms.TextBox();
             this.txtYoung_Score = new System.Windows.Forms.TextBox();
             this.lblScoreToPass = new System.Windows.Forms.Label();
@@ -46,7 +47,6 @@
             this.btnReset = new System.Windows.Forms.Button();
             this.btnStart = new System.Windows.Forms.Button();
             this.tmrTimeToPlay = new System.Windows.Forms.Timer(this.components);
-            this.btnEnd = new System.Windows.Forms.Button();
             this.pnlGameDisplayGray.SuspendLayout();
             this.pnlGameDisplayGreen.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudSecond)).BeginInit();
@@ -108,6 +108,16 @@
             this.pnlGameDisplayGreen.Name = "pnlGameDisplayGreen";
             this.pnlGameDisplayGreen.Size = new System.Drawing.Size(395, 358);
             this.pnlGameDisplayGreen.TabIndex = 2;
+            // 
+            // btnEnd
+            // 
+            this.btnEnd.Location = new System.Drawing.Point(251, 230);
+            this.btnEnd.Name = "btnEnd";
+            this.btnEnd.Size = new System.Drawing.Size(100, 100);
+            this.btnEnd.TabIndex = 12;
+            this.btnEnd.Text = "End";
+            this.btnEnd.UseVisualStyleBackColor = true;
+            this.btnEnd.Click += new System.EventHandler(this.btnEnd_Click);
             // 
             // txtScoreToPass
             // 
@@ -219,16 +229,6 @@
             this.tmrTimeToPlay.Interval = 1000;
             this.tmrTimeToPlay.Tick += new System.EventHandler(this.tmrTimeToPlay_Tick);
             // 
-            // btnEnd
-            // 
-            this.btnEnd.Location = new System.Drawing.Point(251, 230);
-            this.btnEnd.Name = "btnEnd";
-            this.btnEnd.Size = new System.Drawing.Size(100, 100);
-            this.btnEnd.TabIndex = 12;
-            this.btnEnd.Text = "End";
-            this.btnEnd.UseVisualStyleBackColor = true;
-            this.btnEnd.Click += new System.EventHandler(this.btnEnd_Click);
-            // 
             // FindNumDisplay
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -244,6 +244,7 @@
             this.Name = "FindNumDisplay";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FindNumDisplay";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FindNumDisplay_FormClosed);
             this.Load += new System.EventHandler(this.FindNumDisplay_Load);
             this.pnlGameDisplayGray.ResumeLayout(false);
             this.pnlGameDisplayGreen.ResumeLayout(false);

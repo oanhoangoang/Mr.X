@@ -30,6 +30,8 @@ namespace FndNum
             sizeTable = size;
             numberToFind = num;
             timeToPlay = time;
+            SoundPlayer soundtrack = new SoundPlayer(@"sound/soundtrack.wav");
+            soundtrack.Play();
         }
 
         private int randomNumber(int limitLow, int limitHigh)
@@ -128,6 +130,13 @@ namespace FndNum
             {
                 btnMedia.Visible = false;
                 your_score++;
+                SoundPlayer soundhappy = new SoundPlayer(@"sound/happy.wav");
+                soundhappy.Play();
+            }
+            else
+            {
+                SoundPlayer soundsad = new SoundPlayer(@"sound/sad.wav");
+                soundsad.Play();
             }
             now++;
         } 
@@ -145,7 +154,14 @@ namespace FndNum
 
         private void btnEnd_Click(object sender, EventArgs e)
         {
+            tmrTimeToPlay.Stop();
             this.Close();
+        }
+
+        private void FindNumDisplay_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            SoundPlayer soundtrack = new SoundPlayer(@"sound/soundtrack.wav");
+            soundtrack.Stop();
         }
     }
 }
