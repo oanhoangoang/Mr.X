@@ -7,3 +7,6 @@ D:\PROJECT\trunk\releases\Mr_X\Mr_X\obj\Debug\Mr_X.Properties.Resources.resource
 D:\PROJECT\trunk\releases\Mr_X\Mr_X\obj\Debug\Mr_X.csproj.GenerateResource.Cache
 D:\PROJECT\trunk\releases\Mr_X\Mr_X\obj\Debug\Mr_X.exe
 D:\PROJECT\trunk\releases\Mr_X\Mr_X\obj\Debug\Mr_X.pdb
+D:\Mr.X.git\trunk\releases\Mr_X\Mr_X\bin\Debug\Mr_X.exe.config
+D:\Mr.X.git\trunk\releases\Mr_X\Mr_X\obj\Debug\Mr_X.exe
+D:\Mr.X.git\trunk\releases\Mr_X\Mr_X\obj\Debug\Mr_X.pdb
