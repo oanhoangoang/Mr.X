@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FindNumDisplay));
             this.pnlGameDisplayGray = new System.Windows.Forms.Panel();
             this.btnMediate = new System.Windows.Forms.Button();
             this.pnlGameDisplayYellow = new System.Windows.Forms.Panel();
@@ -47,10 +48,12 @@
             this.btnReset = new System.Windows.Forms.Button();
             this.btnStart = new System.Windows.Forms.Button();
             this.tmrTimeToPlay = new System.Windows.Forms.Timer(this.components);
+            this.wmpSoundTrack = new AxWMPLib.AxWindowsMediaPlayer();
             this.pnlGameDisplayGray.SuspendLayout();
             this.pnlGameDisplayGreen.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudSecond)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudMinute)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wmpSoundTrack)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlGameDisplayGray
@@ -59,6 +62,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlGameDisplayGray.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
+            this.pnlGameDisplayGray.Controls.Add(this.wmpSoundTrack);
             this.pnlGameDisplayGray.Controls.Add(this.btnMediate);
             this.pnlGameDisplayGray.Location = new System.Drawing.Point(4, 4);
             this.pnlGameDisplayGray.Name = "pnlGameDisplayGray";
@@ -229,6 +233,16 @@
             this.tmrTimeToPlay.Interval = 1000;
             this.tmrTimeToPlay.Tick += new System.EventHandler(this.tmrTimeToPlay_Tick);
             // 
+            // wmpSoundTrack
+            // 
+            this.wmpSoundTrack.Enabled = true;
+            this.wmpSoundTrack.Location = new System.Drawing.Point(151, 599);
+            this.wmpSoundTrack.Name = "wmpSoundTrack";
+            this.wmpSoundTrack.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("wmpSoundTrack.OcxState")));
+            this.wmpSoundTrack.Size = new System.Drawing.Size(75, 48);
+            this.wmpSoundTrack.TabIndex = 1;
+            this.wmpSoundTrack.Visible = false;
+            // 
             // FindNumDisplay
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -251,6 +265,7 @@
             this.pnlGameDisplayGreen.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudSecond)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudMinute)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wmpSoundTrack)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -275,5 +290,6 @@
         private System.Windows.Forms.TextBox txtScoreToPass;
         private System.Windows.Forms.TextBox txtYoung_Score;
         private System.Windows.Forms.Button btnEnd;
+        private AxWMPLib.AxWindowsMediaPlayer wmpSoundTrack;
     }
 }
