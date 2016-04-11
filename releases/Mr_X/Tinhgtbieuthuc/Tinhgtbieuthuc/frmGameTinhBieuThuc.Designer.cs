@@ -333,7 +333,10 @@ namespace Tinhgtbieuthuc
             this.btnGame3.BackgroundImage = global::Tinhgtbieuthuc.Properties.Resources.Balloon;
             this.btnGame3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnGame3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnGame3.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnGame3.FlatAppearance.BorderSize = 0;
+            this.btnGame3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.btnGame3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.btnGame3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGame3.Location = new System.Drawing.Point(542, 168);
             this.btnGame3.Name = "btnGame3";
@@ -350,7 +353,10 @@ namespace Tinhgtbieuthuc
             this.btnGame2.BackgroundImage = global::Tinhgtbieuthuc.Properties.Resources.Balloon;
             this.btnGame2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnGame2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnGame2.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnGame2.FlatAppearance.BorderSize = 0;
+            this.btnGame2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.btnGame2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.btnGame2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGame2.Location = new System.Drawing.Point(275, 168);
             this.btnGame2.Name = "btnGame2";
@@ -367,7 +373,10 @@ namespace Tinhgtbieuthuc
             this.btnGame1.BackgroundImage = global::Tinhgtbieuthuc.Properties.Resources.Balloon;
             this.btnGame1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnGame1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnGame1.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnGame1.FlatAppearance.BorderSize = 0;
+            this.btnGame1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.btnGame1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.btnGame1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGame1.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnGame1.Location = new System.Drawing.Point(8, 168);
