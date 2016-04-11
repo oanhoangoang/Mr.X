@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{12430328-AF3E-448A-8A82-19745879612D}</ProjectGuid>
+    <ProjectGuid>{90EA452B-E340-4785-8F28-59E60A7D9D5F}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>RemMe</RootNamespace>
@@ -48,11 +48,6 @@
     <Compile Include="RememberMe.Designer.cs">
       <DependentUpon>RememberMe.cs</DependentUpon>
     </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="RememberMe.resx">
-      <DependentUpon>RememberMe.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

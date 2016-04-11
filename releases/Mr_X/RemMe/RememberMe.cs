@@ -16,10 +16,5 @@ namespace RemMe
         {
             InitializeComponent();
         }
-
-        private void RememberMe_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }
