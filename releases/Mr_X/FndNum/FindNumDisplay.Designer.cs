@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FindNumDisplay));
             this.pnlGameDisplayGray = new System.Windows.Forms.Panel();
+            this.wmpSoundTrack = new AxWMPLib.AxWindowsMediaPlayer();
             this.btnMediate = new System.Windows.Forms.Button();
             this.pnlGameDisplayYellow = new System.Windows.Forms.Panel();
             this.pnlGameDisplayGreen = new System.Windows.Forms.Panel();
@@ -48,12 +49,11 @@
             this.btnReset = new System.Windows.Forms.Button();
             this.btnStart = new System.Windows.Forms.Button();
             this.tmrTimeToPlay = new System.Windows.Forms.Timer(this.components);
-            this.wmpSoundTrack = new AxWMPLib.AxWindowsMediaPlayer();
             this.pnlGameDisplayGray.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.wmpSoundTrack)).BeginInit();
             this.pnlGameDisplayGreen.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudSecond)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudMinute)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wmpSoundTrack)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlGameDisplayGray
@@ -68,6 +68,16 @@
             this.pnlGameDisplayGray.Name = "pnlGameDisplayGray";
             this.pnlGameDisplayGray.Size = new System.Drawing.Size(809, 654);
             this.pnlGameDisplayGray.TabIndex = 0;
+            // 
+            // wmpSoundTrack
+            // 
+            this.wmpSoundTrack.Enabled = true;
+            this.wmpSoundTrack.Location = new System.Drawing.Point(151, 599);
+            this.wmpSoundTrack.Name = "wmpSoundTrack";
+            this.wmpSoundTrack.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("wmpSoundTrack.OcxState")));
+            this.wmpSoundTrack.Size = new System.Drawing.Size(75, 48);
+            this.wmpSoundTrack.TabIndex = 1;
+            this.wmpSoundTrack.Visible = false;
             // 
             // btnMediate
             // 
@@ -119,14 +129,14 @@
             this.btnEnd.Name = "btnEnd";
             this.btnEnd.Size = new System.Drawing.Size(100, 100);
             this.btnEnd.TabIndex = 12;
-            this.btnEnd.Text = "End";
+            this.btnEnd.Text = "Thoát";
             this.btnEnd.UseVisualStyleBackColor = true;
             this.btnEnd.Click += new System.EventHandler(this.btnEnd_Click);
             // 
             // txtScoreToPass
             // 
             this.txtScoreToPass.Enabled = false;
-            this.txtScoreToPass.Location = new System.Drawing.Point(132, 120);
+            this.txtScoreToPass.Location = new System.Drawing.Point(157, 117);
             this.txtScoreToPass.Name = "txtScoreToPass";
             this.txtScoreToPass.Size = new System.Drawing.Size(100, 26);
             this.txtScoreToPass.TabIndex = 11;
@@ -134,7 +144,7 @@
             // txtYoung_Score
             // 
             this.txtYoung_Score.Enabled = false;
-            this.txtYoung_Score.Location = new System.Drawing.Point(132, 88);
+            this.txtYoung_Score.Location = new System.Drawing.Point(157, 88);
             this.txtYoung_Score.Name = "txtYoung_Score";
             this.txtYoung_Score.Size = new System.Drawing.Size(100, 26);
             this.txtYoung_Score.TabIndex = 10;
@@ -144,23 +154,23 @@
             this.lblScoreToPass.AutoSize = true;
             this.lblScoreToPass.Location = new System.Drawing.Point(15, 123);
             this.lblScoreToPass.Name = "lblScoreToPass";
-            this.lblScoreToPass.Size = new System.Drawing.Size(111, 20);
+            this.lblScoreToPass.Size = new System.Drawing.Size(144, 20);
             this.lblScoreToPass.TabIndex = 9;
-            this.lblScoreToPass.Text = "Score to pass:";
+            this.lblScoreToPass.Text = "Số điểm qua vòng :";
             // 
             // lblYoungScore
             // 
             this.lblYoungScore.AutoSize = true;
             this.lblYoungScore.Location = new System.Drawing.Point(17, 88);
             this.lblYoungScore.Name = "lblYoungScore";
-            this.lblYoungScore.Size = new System.Drawing.Size(111, 20);
+            this.lblYoungScore.Size = new System.Drawing.Size(115, 20);
             this.lblYoungScore.TabIndex = 8;
-            this.lblYoungScore.Text = "Young_Score:";
+            this.lblYoungScore.Text = "Điểm của bạn :";
             // 
             // txtFindNum
             // 
             this.txtFindNum.Enabled = false;
-            this.txtFindNum.Location = new System.Drawing.Point(132, 54);
+            this.txtFindNum.Location = new System.Drawing.Point(157, 54);
             this.txtFindNum.Name = "txtFindNum";
             this.txtFindNum.Size = new System.Drawing.Size(100, 26);
             this.txtFindNum.TabIndex = 7;
@@ -170,32 +180,32 @@
             this.lblFindNum.AutoSize = true;
             this.lblFindNum.Location = new System.Drawing.Point(17, 57);
             this.lblFindNum.Name = "lblFindNum";
-            this.lblFindNum.Size = new System.Drawing.Size(98, 20);
+            this.lblFindNum.Size = new System.Drawing.Size(63, 20);
             this.lblFindNum.TabIndex = 6;
-            this.lblFindNum.Text = "Find number";
+            this.lblFindNum.Text = "Tìm số :";
             // 
             // lblIntro
             // 
             this.lblIntro.AutoSize = true;
             this.lblIntro.Location = new System.Drawing.Point(17, 11);
             this.lblIntro.Name = "lblIntro";
-            this.lblIntro.Size = new System.Drawing.Size(232, 20);
+            this.lblIntro.Size = new System.Drawing.Size(191, 20);
             this.lblIntro.TabIndex = 5;
-            this.lblIntro.Text = "Game: Find number in the table";
+            this.lblIntro.Text = "Trò chơi: Tìm số trên bảng";
             // 
             // lblTime
             // 
             this.lblTime.AutoSize = true;
             this.lblTime.Location = new System.Drawing.Point(15, 156);
             this.lblTime.Name = "lblTime";
-            this.lblTime.Size = new System.Drawing.Size(47, 20);
+            this.lblTime.Size = new System.Drawing.Size(81, 20);
             this.lblTime.TabIndex = 4;
-            this.lblTime.Text = "Time:";
+            this.lblTime.Text = "Thời gian :";
             // 
             // nudSecond
             // 
             this.nudSecond.Enabled = false;
-            this.nudSecond.Location = new System.Drawing.Point(189, 152);
+            this.nudSecond.Location = new System.Drawing.Point(214, 152);
             this.nudSecond.Name = "nudSecond";
             this.nudSecond.Size = new System.Drawing.Size(43, 26);
             this.nudSecond.TabIndex = 3;
@@ -203,7 +213,7 @@
             // nudMinute
             // 
             this.nudMinute.Enabled = false;
-            this.nudMinute.Location = new System.Drawing.Point(132, 152);
+            this.nudMinute.Location = new System.Drawing.Point(157, 152);
             this.nudMinute.Name = "nudMinute";
             this.nudMinute.Size = new System.Drawing.Size(41, 26);
             this.nudMinute.TabIndex = 2;
@@ -224,7 +234,7 @@
             this.btnStart.Name = "btnStart";
             this.btnStart.Size = new System.Drawing.Size(100, 100);
             this.btnStart.TabIndex = 0;
-            this.btnStart.Text = "Start";
+            this.btnStart.Text = "Bắt đầu";
             this.btnStart.UseVisualStyleBackColor = true;
             this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
             // 
@@ -232,16 +242,6 @@
             // 
             this.tmrTimeToPlay.Interval = 1000;
             this.tmrTimeToPlay.Tick += new System.EventHandler(this.tmrTimeToPlay_Tick);
-            // 
-            // wmpSoundTrack
-            // 
-            this.wmpSoundTrack.Enabled = true;
-            this.wmpSoundTrack.Location = new System.Drawing.Point(151, 599);
-            this.wmpSoundTrack.Name = "wmpSoundTrack";
-            this.wmpSoundTrack.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("wmpSoundTrack.OcxState")));
-            this.wmpSoundTrack.Size = new System.Drawing.Size(75, 48);
-            this.wmpSoundTrack.TabIndex = 1;
-            this.wmpSoundTrack.Visible = false;
             // 
             // FindNumDisplay
             // 
@@ -261,11 +261,11 @@
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FindNumDisplay_FormClosed);
             this.Load += new System.EventHandler(this.FindNumDisplay_Load);
             this.pnlGameDisplayGray.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.wmpSoundTrack)).EndInit();
             this.pnlGameDisplayGreen.ResumeLayout(false);
             this.pnlGameDisplayGreen.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudSecond)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudMinute)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wmpSoundTrack)).EndInit();
             this.ResumeLayout(false);
 
         }
