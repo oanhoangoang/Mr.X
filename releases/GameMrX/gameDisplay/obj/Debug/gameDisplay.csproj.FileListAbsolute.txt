@@ -1,9 +1,0 @@
-D:\Mr X\trunk\releases\GameMrX\gameDisplay\bin\Debug\gameDisplay.dll
-D:\Mr X\trunk\releases\GameMrX\gameDisplay\bin\Debug\gameDisplay.pdb
-D:\Mr X\trunk\releases\GameMrX\gameDisplay\obj\Debug\gameDisplay.csprojResolveAssemblyReference.cache
-D:\Mr X\trunk\releases\GameMrX\gameDisplay\obj\Debug\gameDisplay.gameDisplayGray.resources
-D:\Mr X\trunk\releases\GameMrX\gameDisplay\obj\Debug\gameDisplay.gameDisplayGreen.resources
-D:\Mr X\trunk\releases\GameMrX\gameDisplay\obj\Debug\gameDisplay.gameDisplaySunFlower.resources
-D:\Mr X\trunk\releases\GameMrX\gameDisplay\obj\Debug\gameDisplay.csproj.GenerateResource.Cache
-D:\Mr X\trunk\releases\GameMrX\gameDisplay\obj\Debug\gameDisplay.dll
-D:\Mr X\trunk\releases\GameMrX\gameDisplay\obj\Debug\gameDisplay.pdb
