@@ -1,0 +1,5 @@
+D:\Mr.X.git\trunk\releases\Mr_X\RemMe\bin\Debug\RemMe.dll
+D:\Mr.X.git\trunk\releases\Mr_X\RemMe\bin\Debug\RemMe.pdb
+D:\Mr.X.git\trunk\releases\Mr_X\RemMe\obj\Debug\RemMe.csprojResolveAssemblyReference.cache
+D:\Mr.X.git\trunk\releases\Mr_X\RemMe\obj\Debug\RemMe.dll
+D:\Mr.X.git\trunk\releases\Mr_X\RemMe\obj\Debug\RemMe.pdb
