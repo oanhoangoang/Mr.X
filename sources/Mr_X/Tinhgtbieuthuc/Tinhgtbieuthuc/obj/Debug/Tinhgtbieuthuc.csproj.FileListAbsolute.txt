@@ -1,0 +1,13 @@
+E:\CAM XOA\C#\Tinhgtbieuthuc\Tinhgtbieuthuc\bin\Debug\Tinhgtbieuthuc.dll
+E:\CAM XOA\C#\Tinhgtbieuthuc\Tinhgtbieuthuc\bin\Debug\Tinhgtbieuthuc.pdb
+E:\CAM XOA\C#\Tinhgtbieuthuc\Tinhgtbieuthuc\obj\Debug\Tinhgtbieuthuc.csprojResolveAssemblyReference.cache
+E:\CAM XOA\C#\Tinhgtbieuthuc\Tinhgtbieuthuc\obj\Debug\Tinhgtbieuthuc.dll
+E:\CAM XOA\C#\Tinhgtbieuthuc\Tinhgtbieuthuc\obj\Debug\Tinhgtbieuthuc.pdb
+E:\CAM XOA\C#\Tinhgtbieuthuc\Tinhgtbieuthuc\obj\Debug\Tinhgtbieuthuc.csproj.GenerateResource.Cache
+E:\CAM XOA\C#\Tinhgtbieuthuc\Tinhgtbieuthuc\obj\Debug\Tinhgtbieuthuc.frmGameTinhBieuThuc.resources
+E:\CAM XOA\C#\Tinhgtbieuthuc\Tinhgtbieuthuc\obj\Debug\Tinhgtbieuthuc.Properties.Resources.resources
+E:\CAM XOA\C#\Tinhgtbieuthuc\Tinhgtbieuthuc\obj\Debug\Interop.WMPLib.dll
+E:\CAM XOA\C#\Tinhgtbieuthuc\Tinhgtbieuthuc\obj\Debug\Tinhgtbieuthuc.csproj.ResolveComReference.cache
+E:\CAM XOA\C#\Tinhgtbieuthuc\Tinhgtbieuthuc\bin\Debug\Interop.WMPLib.dll
+E:\CAM XOA\C#\Tinhgtbieuthuc\Tinhgtbieuthuc\bin\Debug\AxInterop.WMPLib.dll
+E:\CAM XOA\C#\Tinhgtbieuthuc\Tinhgtbieuthuc\obj\Debug\AxInterop.WMPLib.dll
