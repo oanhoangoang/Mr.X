@@ -31,8 +31,8 @@
             this.pnlGameDisplayGray = new System.Windows.Forms.Panel();
             this.pnlGameDisplayYellow = new System.Windows.Forms.Panel();
             this.pnlGameDisplayGreen = new System.Windows.Forms.Panel();
-            this.btnStart = new System.Windows.Forms.Button();
             this.btnEnd = new System.Windows.Forms.Button();
+            this.btnStart = new System.Windows.Forms.Button();
             this.pnlGameDisplayGreen.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -71,16 +71,6 @@
             this.pnlGameDisplayGreen.Size = new System.Drawing.Size(395, 358);
             this.pnlGameDisplayGreen.TabIndex = 1;
             // 
-            // btnStart
-            // 
-            this.btnStart.ForeColor = System.Drawing.Color.Black;
-            this.btnStart.Location = new System.Drawing.Point(56, 220);
-            this.btnStart.Name = "btnStart";
-            this.btnStart.Size = new System.Drawing.Size(100, 100);
-            this.btnStart.TabIndex = 0;
-            this.btnStart.Text = "Bắt đầu";
-            this.btnStart.UseVisualStyleBackColor = true;
-            // 
             // btnEnd
             // 
             this.btnEnd.ForeColor = System.Drawing.Color.Black;
@@ -90,6 +80,16 @@
             this.btnEnd.TabIndex = 1;
             this.btnEnd.Text = "Kết thúc";
             this.btnEnd.UseVisualStyleBackColor = true;
+            // 
+            // btnStart
+            // 
+            this.btnStart.ForeColor = System.Drawing.Color.Black;
+            this.btnStart.Location = new System.Drawing.Point(56, 220);
+            this.btnStart.Name = "btnStart";
+            this.btnStart.Size = new System.Drawing.Size(100, 100);
+            this.btnStart.TabIndex = 0;
+            this.btnStart.Text = "Bắt đầu";
+            this.btnStart.UseVisualStyleBackColor = true;
             // 
             // RememberMe
             // 
@@ -107,6 +107,7 @@
             this.Name = "RememberMe";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RememberMe";
+            this.Load += new System.EventHandler(this.RememberMe_Load);
             this.pnlGameDisplayGreen.ResumeLayout(false);
             this.ResumeLayout(false);
 
