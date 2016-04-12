@@ -14,16 +14,17 @@ namespace FndNum
     public partial class FindNumDisplay : Form
     {
         private readonly Button[][] randomBtn = new Button[50][];
-        private readonly int[] randomArray = new int[1000 + 10];
+        private readonly int[] randomArray = new int[1000 + 10];  // mang hien thi ngau nhien cac so can tim
         private int[] originalArray = new int[1000 + 10];
-        private readonly int sizeTable;
+        private readonly int sizeTable; // kich thuoc bang hien thi
         private int now;
         private int locationRandom;
         private int minute, second;
-        private int numberToFind;
-        private int your_score;
-        private int timeToPlay;
+        private int numberToFind; // so luong so can tim
+        private int your_score; // diem so cua nguoi choi
+        private int timeToPlay;  // thoi gian choi
 
+        // lay cac gia tri: kich thuoc cua bang, so luong so can tim  ,thoi gian choi
         public FindNumDisplay(int size, int num, int time)
         {
             InitializeComponent();
@@ -33,12 +34,14 @@ namespace FndNum
             wmpSoundTrack.URL = @"sound/FndNum/soundtrack.mp3";
         }
 
+        // ham lay ngau nhien 1 so
         private int randomNumber(int limitLow, int limitHigh)
         {
             Random rd = new Random();
             return rd.Next(limitLow, limitHigh + 1);
         }
 
+        // tao mang button: ten, kich thuoc vi tri, gia tri hien thi
         private void createButtonArray()
         {
             for (var i = 1; i <= sizeTable * sizeTable; i++) originalArray[i] = i;
@@ -67,6 +70,8 @@ namespace FndNum
                 }
             now = 1;
         }
+
+        // tao ngau nhien mang cac so xuat hien
         private void createRandomArray()
         {
             for (var i = 1; i <= sizeTable * sizeTable; i++) originalArray[i] = i;
@@ -90,6 +95,7 @@ namespace FndNum
             second = timeToPlay % 60;         
         }
 
+        // bat dau tro choi
         private void btnStart_Click(object sender, EventArgs e)
         { 
             createButtonArray();
@@ -99,6 +105,7 @@ namespace FndNum
             tmrTimeToPlay.Enabled = true;
         }
 
+        // dem nguoc thoi gian nguoi choi chon
         private void tmrTimeToPlay_Tick(object sender, EventArgs e)
         {
             txtFindNum.Text = randomArray[now].ToString();
@@ -122,6 +129,7 @@ namespace FndNum
             }
         }
 
+        // xu li khi nguoi choi chon vao button
         private void btnMediate_Click(object sender, EventArgs e)
         {
             Button btnMedia = (Button)sender;
@@ -138,8 +146,8 @@ namespace FndNum
                 soundsad.Play();
             }
             now++;
-        } 
-
+        }
+        //dua ra cau tra loi cho nguoi choi
         private void answer(){
             if (your_score >= numberToFind)
             {
@@ -151,12 +159,14 @@ namespace FndNum
             }
         }
 
+        //tat game
         private void btnEnd_Click(object sender, EventArgs e)
         {
             tmrTimeToPlay.Stop();
             this.Close();
         }
 
+        // tat nhac khi dong chuong trinh
         private void FindNumDisplay_FormClosed(object sender, FormClosedEventArgs e)
         {
             wmpSoundTrack.close();

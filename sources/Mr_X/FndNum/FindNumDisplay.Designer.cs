@@ -138,6 +138,7 @@
             this.txtScoreToPass.Enabled = false;
             this.txtScoreToPass.Location = new System.Drawing.Point(157, 117);
             this.txtScoreToPass.Name = "txtScoreToPass";
+            this.txtScoreToPass.ReadOnly = true;
             this.txtScoreToPass.Size = new System.Drawing.Size(100, 26);
             this.txtScoreToPass.TabIndex = 11;
             // 
@@ -146,6 +147,7 @@
             this.txtYoung_Score.Enabled = false;
             this.txtYoung_Score.Location = new System.Drawing.Point(157, 88);
             this.txtYoung_Score.Name = "txtYoung_Score";
+            this.txtYoung_Score.ReadOnly = true;
             this.txtYoung_Score.Size = new System.Drawing.Size(100, 26);
             this.txtYoung_Score.TabIndex = 10;
             // 
@@ -172,6 +174,7 @@
             this.txtFindNum.Enabled = false;
             this.txtFindNum.Location = new System.Drawing.Point(157, 54);
             this.txtFindNum.Name = "txtFindNum";
+            this.txtFindNum.ReadOnly = true;
             this.txtFindNum.Size = new System.Drawing.Size(100, 26);
             this.txtFindNum.TabIndex = 7;
             // 
