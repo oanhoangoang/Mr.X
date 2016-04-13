@@ -1,0 +1,7 @@
+c:\users\toet\documents\visual studio 2013\Projects\FstCal\FstCal\bin\Debug\FstCal.dll
+c:\users\toet\documents\visual studio 2013\Projects\FstCal\FstCal\bin\Debug\FstCal.pdb
+c:\users\toet\documents\visual studio 2013\Projects\FstCal\FstCal\obj\Debug\FstCal.FstCalDisp.resources
+c:\users\toet\documents\visual studio 2013\Projects\FstCal\FstCal\obj\Debug\FstCal.csproj.GenerateResource.Cache
+c:\users\toet\documents\visual studio 2013\Projects\FstCal\FstCal\obj\Debug\FstCal.dll
+c:\users\toet\documents\visual studio 2013\Projects\FstCal\FstCal\obj\Debug\FstCal.pdb
+C:\Users\Toet\Documents\Visual Studio 2013\Projects\FstCal\FstCal\obj\Debug\FstCal.Properties.Resources.resources
