@@ -13,30 +13,59 @@ namespace RemMe
 {
     public partial class RememberMe : Form
     {
+        // kích thước bảng trò chơi
         private int sizeTable;
-        private int numberOfAnswer; // so luong dap an cua tro choi
-        private int numberOfChoice; // so luong luot choi cua nguoi choi
+
+        // số lượng ô người chơi phải chọn
+        private int numberOfAnswer;
+
+        // số lượng lượt chọn của người chơi
+        private int numberOfChoice; 
+
+        // số phút chơi
         private int minute = 0;
+
+        // số giây chơi
         private int second = 5;
-        private int selectedColor; // vi tri cua mau duoc chon trong mang ArrayColor
-        private readonly Button[][] randomBtn = new Button[30][]; 
-        private string[] arrayColor = new string[10]; // mang cung cap hex code cho cac mau
-        private int[] number = new int[100]; // number[i]=so luong o co mau i trong bang
+
+        // mảng cung cấp hex code của các màu
+        private string[] arrayColor = new string[10];
+
+        //vị trí của màu được chọn trong mảng ArrayColor, có giá trị từ 1 tới 3
+        private int selectedColor; 
+
+        // tạo mảng button hiển thị các màu
+        private readonly Button[][] randomBtn = new Button[30][];
+
+        // number[i] là số lượng ô có màu thứ i trong bảng trò chơi 
+        private int[] number = new int[10];
+
+        // tên của các button
+        private int value;
+
+        // original[i]=màu ban đầu của button có tên là i
+        private int[] original = new int[1000 + 10];
+
+        // môi button sẽ random một location trong mảng ArrayColor, có giá trị từ 1 tới 3
         private int location;  
-        private int value;   
+
+        // check[i]=true nếu button tên i có location=selectedColor, ngược lại là false
         private bool[] checkColor = new bool[100 + 10];
-        private int YoungScore=0; // diem so cua nguoi choi
-        private int[] original = new int[1000 + 10]; // original[i]=mau ban dau cua button co ten=i
-        private int timeToPlay; // thoi gian choi
+
+        // điểm số của người chơi
+        private int yourScore=0;
+
+        // thời gian chơi
+        private int timeToPlay; 
         
-        // ham lay ngau nhien 1 so
+        // lấy ngẫu nhiên một số trong khoảng từ limitLow tới limitHigh
         private int randomNumber(int limitLow, int limitHigh)
         {
             Random rd = new Random();
             return rd.Next(limitLow, limitHigh + 1);
         }
 
-        // lay cac gia tri: kich thuoc cua bang, so dap an cua game, so luot duoc lua chon va thoi gian choi
+        // lấy các giá trị: kích thước bảng, số lượng ô người chơi phải chọn, số lượng lượt người chơi được chọn và thời gian chơi
         public RememberMe(int size, int numAns,int numChoice, int time)
         {
             InitializeComponent();
@@ -47,6 +76,7 @@ namespace RemMe
             wmpSoundTrack.URL = @"sound/RemMe/SoundTrack.mp3";
         }
 
+        // random giá trị của selectedColor, khởi tạo mảng number[]
         private void RememberMe_Load(object sender, EventArgs e)
         {
 
@@ -76,7 +106,7 @@ namespace RemMe
             for (int i = 1; i <= sizeTable * sizeTable; i++) checkColor[i] = false;
         }
 
-        // tao mang button: ten, kich thuoc, vi tri, mau sac ban dau
+        // tạo mảng button: tên, kích thước, vị trí, màu sắc ban đầu, FlatStyle, xử lí khi nhấn vào
         private void createButtonArray()
         {
             for (var i = 1; i <= sizeTable; i++) randomBtn[i] = new Button[30];
@@ -106,19 +136,19 @@ namespace RemMe
                 }
         }
 
-        // bat dau tro choi
+        // bắt đầu trò chơi: tạo mảng randomBtn
         private void btnStart_Click(object sender, EventArgs e)
         {
             createButtonArray();
             tmrTimeToWatch.Enabled = true;
             btnStart.Enabled = false;
-            txtSelectedColor.BackColor = ColorTranslator.FromHtml(arrayColor[selectedColor]);
+            btnMediate.BackColor = ColorTranslator.FromHtml(arrayColor[selectedColor]);
         }
 
-        // dem nguoc thoi gian nguoi choi co the xem mau ban dau cua cac button
+        // đếm ngược thời gian người chơi có thể xem màu ban đầu của các button
         private void tmrTimeToWatch_Tick(object sender, EventArgs e)
         {
-            txtYoung_Score.Text = YoungScore.ToString();
+            txtYourScore.Text = yourScore.ToString();
             txtScoreToPass.Text = numberOfAnswer.ToString();
             txtOpportunity.Text = numberOfChoice.ToString();
             nudMinute.Value = minute;
@@ -139,7 +169,7 @@ namespace RemMe
             }
         }
 
-        // khoi tao sau khi het thoi gian xem
+        // khởi tạo sau khi hết thời gian xem
         private void afterWatch()
         {
             for (int i = 1; i <= sizeTable; i++)
@@ -153,10 +183,10 @@ namespace RemMe
             tmrTimeToPlay.Enabled = true;
         }
 
-        // dem nguoc thoi gian nguoi choi co the chon dap an
+        // đếm ngược thời gian người chơi có thể chọn đáp án
         private void tmrTimeToPlay_Tick(object sender, EventArgs e)
         {
-            txtYoung_Score.Text = YoungScore.ToString();
+            txtYourScore.Text = yourScore.ToString();
             txtScoreToPass.Text = numberOfAnswer.ToString();
             txtOpportunity.Text = numberOfChoice.ToString();
             nudMinute.Value = minute;
@@ -176,7 +206,8 @@ namespace RemMe
                 answer();
             }
         }
-        // xu li khi nguoi choi chon vao button
+
+        // xử lí khi người chơi chọn vào button
         private void btnMediate_Click(object sender, EventArgs e)
         {
             numberOfChoice--;
@@ -185,7 +216,7 @@ namespace RemMe
             btnMedia.BackColor = ColorTranslator.FromHtml(arrayColor[original[value]]);
             if (checkColor[value])
             {
-                YoungScore++;
+                yourScore++;
                 SoundPlayer sp = new SoundPlayer(@"sound/RemMe/happy.wav");
                 sp.Play();
                 btnMedia.Visible = false;
@@ -197,7 +228,7 @@ namespace RemMe
             }
         }
 
-        //dua ra cau tra loi cho nguoi choi, va hien lai mang ban dau
+        //đưa ra câu trả lời cho người chơi, và hiện lại mảng ban đầu
         private void answer()
         {
             for (int i = 1; i <= sizeTable; i++)
@@ -208,7 +239,7 @@ namespace RemMe
                     randomBtn[i][j].BackColor = ColorTranslator.FromHtml(arrayColor[original[value]]);
                 }
 
-            if (YoungScore>= numberOfAnswer)
+            if (yourScore>= numberOfAnswer)
             {
                 MessageBox.Show("Chúc mừng bạn đã vượt qua trò chơi này", "Thông báo");
             }
@@ -217,17 +248,17 @@ namespace RemMe
                 MessageBox.Show("Rất tiếc bạn đã không vượt qua trò chơi này", "Thông báo");
             }
         }
-        
-        //tat game
-        private void btnEnd_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
 
-        // tat nhac khi dong chuong trinh
+        // tắt nhạc khi đóng chương trình
         private void RememberMe_FormClosed(object sender, FormClosedEventArgs e)
         {
             wmpSoundTrack.close();
+        }
+
+        // tắt chương trình
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
