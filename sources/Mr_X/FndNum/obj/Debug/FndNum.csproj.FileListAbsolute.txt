@@ -10,3 +10,15 @@ D:\Mr.X.git\trunk\releases\Mr_X\FndNum\bin\Debug\AxInterop.WMPLib.dll
 D:\Mr.X.git\trunk\releases\Mr_X\FndNum\obj\Debug\Interop.WMPLib.dll
 D:\Mr.X.git\trunk\releases\Mr_X\FndNum\obj\Debug\AxInterop.WMPLib.dll
 D:\Mr.X.git\trunk\releases\Mr_X\FndNum\obj\Debug\FndNum.csproj.ResolveComReference.cache
+D:\Mr.X.git\trunk\sources\Mr_X\FndNum\bin\Debug\FndNum.dll
+D:\Mr.X.git\trunk\sources\Mr_X\FndNum\bin\Debug\FndNum.pdb
+D:\Mr.X.git\trunk\sources\Mr_X\FndNum\bin\Debug\Interop.WMPLib.dll
+D:\Mr.X.git\trunk\sources\Mr_X\FndNum\bin\Debug\AxInterop.WMPLib.dll
+D:\Mr.X.git\trunk\sources\Mr_X\FndNum\obj\Debug\FndNum.csprojResolveAssemblyReference.cache
+D:\Mr.X.git\trunk\sources\Mr_X\FndNum\obj\Debug\Interop.WMPLib.dll
+D:\Mr.X.git\trunk\sources\Mr_X\FndNum\obj\Debug\AxInterop.WMPLib.dll
+D:\Mr.X.git\trunk\sources\Mr_X\FndNum\obj\Debug\FndNum.csproj.ResolveComReference.cache
+D:\Mr.X.git\trunk\sources\Mr_X\FndNum\obj\Debug\FndNum.FindNumDisplay.resources
+D:\Mr.X.git\trunk\sources\Mr_X\FndNum\obj\Debug\FndNum.csproj.GenerateResource.Cache
+D:\Mr.X.git\trunk\sources\Mr_X\FndNum\obj\Debug\FndNum.dll
+D:\Mr.X.git\trunk\sources\Mr_X\FndNum\obj\Debug\FndNum.pdb

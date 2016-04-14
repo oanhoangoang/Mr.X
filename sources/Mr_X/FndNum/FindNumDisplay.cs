@@ -13,18 +13,40 @@ namespace FndNum
 {
     public partial class FindNumDisplay : Form
     {
+        // tạo mảng button hiển thị các số
         private readonly Button[][] randomBtn = new Button[50][];
-        private readonly int[] randomArray = new int[1000 + 10];  // mang hien thi ngau nhien cac so can tim
-        private int[] originalArray = new int[1000 + 10];
-        private readonly int sizeTable; // kich thuoc bang hien thi
-        private int now;
-        private int locationRandom;
-        private int minute, second;
-        private int numberToFind; // so luong so can tim
-        private int your_score; // diem so cua nguoi choi
-        private int timeToPlay;  // thoi gian choi
 
-        // lay cac gia tri: kich thuoc cua bang, so luong so can tim  ,thoi gian choi
+        // mảng lưu các số cần tìm
+        private readonly int[] randomArray = new int[1000 + 10];
+
+        // biến chạy để hiển thị các phần tử của mảng randomArray
+        private int now;
+
+        // mảng ban đầu, originalArray[i]=i, cung cấp giá trị cho mảng randomArray
+        private int[] originalArray = new int[1000 + 10];
+
+        // kích thước bảng
+        private readonly int sizeTable; 
+
+        // lấy ngẫu nhiên một giá trị của mảng originalArray
+        private int locationRandom;
+
+        // số phút chơi
+        private int minute;
+
+        // số giây chơi
+        private int second;
+
+        // số lượng số cần tìm
+        private int numberToFind; 
+
+        // điểm số của người chơi
+        private int yourScore; 
+
+        // thời gian chơi
+        private int timeToPlay;  
+
+        // lấy các giá trị: kích thước bảng, số lượng số cần tìm, thời gian chơi
         public FindNumDisplay(int size, int num, int time)
         {
             InitializeComponent();
@@ -34,14 +56,14 @@ namespace FndNum
             wmpSoundTrack.URL = @"sound/FndNum/soundtrack.mp3";
         }
 
-        // ham lay ngau nhien 1 so
+        // lấy ngẫu nhiên 1 số từ limitLow tới limitHigh
         private int randomNumber(int limitLow, int limitHigh)
         {
             Random rd = new Random();
             return rd.Next(limitLow, limitHigh + 1);
         }
 
-        // tao mang button: ten, kich thuoc vi tri, gia tri hien thi
+        // tạo mảng button: kích thước, vị trí, giá trị hiển thị, màu nền, màu chữ, xử lí khi nhấn vào
         private void createButtonArray()
         {
             for (var i = 1; i <= sizeTable * sizeTable; i++) originalArray[i] = i;
@@ -71,7 +93,7 @@ namespace FndNum
             now = 1;
         }
 
-        // tao ngau nhien mang cac so xuat hien
+        // tạo ngẫu nhiên mảng các số cần tìm 
         private void createRandomArray()
         {
             for (var i = 1; i <= sizeTable * sizeTable; i++) originalArray[i] = i;
@@ -83,33 +105,32 @@ namespace FndNum
             }
         }
 
-
+        //khởi tạo dữ liệu ban đầu
         private void FindNumDisplay_Load(object sender, EventArgs e)
         {
-            your_score = 0;
+            yourScore = 0;
             now = 1;
             txtFindNum.Text = "";
             txtScoreToPass.Text = "";
-            txtYoung_Score.Text = "";
+            txtYourScore.Text = "";
             minute = timeToPlay / 60;
             second = timeToPlay % 60;         
         }
 
-        // bat dau tro choi
+        // bắt đầu trò chơi
         private void btnStart_Click(object sender, EventArgs e)
         { 
             createButtonArray();
             createRandomArray();
             btnStart.Enabled = false;
-            btnReset.Enabled = true;
             tmrTimeToPlay.Enabled = true;
         }
 
-        // dem nguoc thoi gian nguoi choi chon
+        // đếm ngược thời gian chơi
         private void tmrTimeToPlay_Tick(object sender, EventArgs e)
         {
             txtFindNum.Text = randomArray[now].ToString();
-            txtYoung_Score.Text = your_score.ToString();
+            txtYourScore.Text = yourScore.ToString();
             txtScoreToPass.Text = numberToFind.ToString();
             nudMinute.Value = minute;
             nudSecond.Value = second;
@@ -129,14 +150,14 @@ namespace FndNum
             }
         }
 
-        // xu li khi nguoi choi chon vao button
+        //xử lí khi người chơi nhấn vào button
         private void btnMediate_Click(object sender, EventArgs e)
         {
             Button btnMedia = (Button)sender;
             if (btnMedia.Text == randomArray[now].ToString())
             {
                 btnMedia.Visible = false;
-                your_score++;
+                yourScore++;
                 SoundPlayer soundhappy = new SoundPlayer(@"sound/FndNum/happy.wav");
                 soundhappy.Play();
             }
@@ -147,26 +168,30 @@ namespace FndNum
             }
             now++;
         }
-        //dua ra cau tra loi cho nguoi choi
+
+        // trả về kết quả của người chơi
         private void answer(){
-            if (your_score >= numberToFind)
+            for (int i = 1; i <= sizeTable; i++)
+                for (int j = 1; j <= sizeTable; j++) randomBtn[i][j].Enabled = false;
+
+            if (yourScore >= numberToFind)
             {
-                   MessageBox.Show("Chúc mừng bạn đã trở thành thực tập viên của công ty chúng tôi", "Thông báo");
+                MessageBox.Show("Chúc mừng bạn đã trở thành thực tập viên của công ty chúng tôi", "Thông báo");
             }
             else
             {
-                 MessageBox.Show("Rất tiếc, bạn đã không trở thành thực tập viên của công ty chúng tôi. Chúc bạn may mắn hơn ở lần sau", "Thông báo"); 
+                MessageBox.Show("Rất tiếc, bạn đã không trở thành thực tập viên của công ty chúng tôi. Chúc bạn may mắn hơn ở lần sau", "Thông báo");
             }
         }
 
-        //tat game
+        //tắt game
         private void btnEnd_Click(object sender, EventArgs e)
         {
             tmrTimeToPlay.Stop();
             this.Close();
         }
 
-        // tat nhac khi dong chuong trinh
+        // tắt nhạc khi đóng chương trình
         private void FindNumDisplay_FormClosed(object sender, FormClosedEventArgs e)
         {
             wmpSoundTrack.close();

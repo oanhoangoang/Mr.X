@@ -35,18 +35,18 @@
             this.btnMediate = new System.Windows.Forms.Button();
             this.pnlGameDisplayYellow = new System.Windows.Forms.Panel();
             this.pnlGameDisplayGreen = new System.Windows.Forms.Panel();
+            this.lblRule = new System.Windows.Forms.Label();
             this.btnEnd = new System.Windows.Forms.Button();
             this.txtScoreToPass = new System.Windows.Forms.TextBox();
-            this.txtYoung_Score = new System.Windows.Forms.TextBox();
+            this.nudSecond = new System.Windows.Forms.NumericUpDown();
+            this.nudMinute = new System.Windows.Forms.NumericUpDown();
+            this.lblTime = new System.Windows.Forms.Label();
+            this.txtYourScore = new System.Windows.Forms.TextBox();
             this.lblScoreToPass = new System.Windows.Forms.Label();
             this.lblYoungScore = new System.Windows.Forms.Label();
             this.txtFindNum = new System.Windows.Forms.TextBox();
             this.lblFindNum = new System.Windows.Forms.Label();
-            this.lblIntro = new System.Windows.Forms.Label();
-            this.lblTime = new System.Windows.Forms.Label();
-            this.nudSecond = new System.Windows.Forms.NumericUpDown();
-            this.nudMinute = new System.Windows.Forms.NumericUpDown();
-            this.btnReset = new System.Windows.Forms.Button();
+            this.lblNameGame = new System.Windows.Forms.Label();
             this.btnStart = new System.Windows.Forms.Button();
             this.tmrTimeToPlay = new System.Windows.Forms.Timer(this.components);
             this.pnlGameDisplayGray.SuspendLayout();
@@ -105,29 +105,42 @@
             // 
             this.pnlGameDisplayGreen.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlGameDisplayGreen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(204)))), ((int)(((byte)(113)))));
+            this.pnlGameDisplayGreen.Controls.Add(this.lblRule);
             this.pnlGameDisplayGreen.Controls.Add(this.btnEnd);
             this.pnlGameDisplayGreen.Controls.Add(this.txtScoreToPass);
-            this.pnlGameDisplayGreen.Controls.Add(this.txtYoung_Score);
+            this.pnlGameDisplayGreen.Controls.Add(this.nudSecond);
+            this.pnlGameDisplayGreen.Controls.Add(this.nudMinute);
+            this.pnlGameDisplayGreen.Controls.Add(this.lblTime);
+            this.pnlGameDisplayGreen.Controls.Add(this.txtYourScore);
             this.pnlGameDisplayGreen.Controls.Add(this.lblScoreToPass);
             this.pnlGameDisplayGreen.Controls.Add(this.lblYoungScore);
             this.pnlGameDisplayGreen.Controls.Add(this.txtFindNum);
             this.pnlGameDisplayGreen.Controls.Add(this.lblFindNum);
-            this.pnlGameDisplayGreen.Controls.Add(this.lblIntro);
-            this.pnlGameDisplayGreen.Controls.Add(this.lblTime);
-            this.pnlGameDisplayGreen.Controls.Add(this.nudSecond);
-            this.pnlGameDisplayGreen.Controls.Add(this.nudMinute);
-            this.pnlGameDisplayGreen.Controls.Add(this.btnReset);
+            this.pnlGameDisplayGreen.Controls.Add(this.lblNameGame);
             this.pnlGameDisplayGreen.Controls.Add(this.btnStart);
             this.pnlGameDisplayGreen.Location = new System.Drawing.Point(818, 300);
             this.pnlGameDisplayGreen.Name = "pnlGameDisplayGreen";
             this.pnlGameDisplayGreen.Size = new System.Drawing.Size(395, 358);
             this.pnlGameDisplayGreen.TabIndex = 2;
             // 
+            // lblRule
+            // 
+            this.lblRule.AutoSize = true;
+            this.lblRule.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblRule.ForeColor = System.Drawing.Color.White;
+            this.lblRule.Location = new System.Drawing.Point(15, 51);
+            this.lblRule.Name = "lblRule";
+            this.lblRule.Size = new System.Drawing.Size(179, 20);
+            this.lblRule.TabIndex = 13;
+            this.lblRule.Text = "Tìm số đã cho trên bảng";
+            // 
             // btnEnd
             // 
-            this.btnEnd.Location = new System.Drawing.Point(251, 230);
+            this.btnEnd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEnd.ForeColor = System.Drawing.Color.White;
+            this.btnEnd.Location = new System.Drawing.Point(219, 276);
             this.btnEnd.Name = "btnEnd";
-            this.btnEnd.Size = new System.Drawing.Size(100, 100);
+            this.btnEnd.Size = new System.Drawing.Size(89, 75);
             this.btnEnd.TabIndex = 12;
             this.btnEnd.Text = "Thoát";
             this.btnEnd.UseVisualStyleBackColor = true;
@@ -136,79 +149,17 @@
             // txtScoreToPass
             // 
             this.txtScoreToPass.Enabled = false;
-            this.txtScoreToPass.Location = new System.Drawing.Point(157, 117);
+            this.txtScoreToPass.Location = new System.Drawing.Point(275, 202);
             this.txtScoreToPass.Name = "txtScoreToPass";
             this.txtScoreToPass.ReadOnly = true;
-            this.txtScoreToPass.Size = new System.Drawing.Size(100, 26);
+            this.txtScoreToPass.Size = new System.Drawing.Size(45, 26);
             this.txtScoreToPass.TabIndex = 11;
-            // 
-            // txtYoung_Score
-            // 
-            this.txtYoung_Score.Enabled = false;
-            this.txtYoung_Score.Location = new System.Drawing.Point(157, 88);
-            this.txtYoung_Score.Name = "txtYoung_Score";
-            this.txtYoung_Score.ReadOnly = true;
-            this.txtYoung_Score.Size = new System.Drawing.Size(100, 26);
-            this.txtYoung_Score.TabIndex = 10;
-            // 
-            // lblScoreToPass
-            // 
-            this.lblScoreToPass.AutoSize = true;
-            this.lblScoreToPass.Location = new System.Drawing.Point(15, 123);
-            this.lblScoreToPass.Name = "lblScoreToPass";
-            this.lblScoreToPass.Size = new System.Drawing.Size(144, 20);
-            this.lblScoreToPass.TabIndex = 9;
-            this.lblScoreToPass.Text = "Số điểm qua vòng :";
-            // 
-            // lblYoungScore
-            // 
-            this.lblYoungScore.AutoSize = true;
-            this.lblYoungScore.Location = new System.Drawing.Point(17, 88);
-            this.lblYoungScore.Name = "lblYoungScore";
-            this.lblYoungScore.Size = new System.Drawing.Size(115, 20);
-            this.lblYoungScore.TabIndex = 8;
-            this.lblYoungScore.Text = "Điểm của bạn :";
-            // 
-            // txtFindNum
-            // 
-            this.txtFindNum.Enabled = false;
-            this.txtFindNum.Location = new System.Drawing.Point(157, 54);
-            this.txtFindNum.Name = "txtFindNum";
-            this.txtFindNum.ReadOnly = true;
-            this.txtFindNum.Size = new System.Drawing.Size(100, 26);
-            this.txtFindNum.TabIndex = 7;
-            // 
-            // lblFindNum
-            // 
-            this.lblFindNum.AutoSize = true;
-            this.lblFindNum.Location = new System.Drawing.Point(17, 57);
-            this.lblFindNum.Name = "lblFindNum";
-            this.lblFindNum.Size = new System.Drawing.Size(63, 20);
-            this.lblFindNum.TabIndex = 6;
-            this.lblFindNum.Text = "Tìm số :";
-            // 
-            // lblIntro
-            // 
-            this.lblIntro.AutoSize = true;
-            this.lblIntro.Location = new System.Drawing.Point(17, 11);
-            this.lblIntro.Name = "lblIntro";
-            this.lblIntro.Size = new System.Drawing.Size(191, 20);
-            this.lblIntro.TabIndex = 5;
-            this.lblIntro.Text = "Trò chơi: Tìm số trên bảng";
-            // 
-            // lblTime
-            // 
-            this.lblTime.AutoSize = true;
-            this.lblTime.Location = new System.Drawing.Point(15, 156);
-            this.lblTime.Name = "lblTime";
-            this.lblTime.Size = new System.Drawing.Size(81, 20);
-            this.lblTime.TabIndex = 4;
-            this.lblTime.Text = "Thời gian :";
+            this.txtScoreToPass.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // nudSecond
             // 
             this.nudSecond.Enabled = false;
-            this.nudSecond.Location = new System.Drawing.Point(214, 152);
+            this.nudSecond.Location = new System.Drawing.Point(234, 106);
             this.nudSecond.Name = "nudSecond";
             this.nudSecond.Size = new System.Drawing.Size(43, 26);
             this.nudSecond.TabIndex = 3;
@@ -216,26 +167,89 @@
             // nudMinute
             // 
             this.nudMinute.Enabled = false;
-            this.nudMinute.Location = new System.Drawing.Point(157, 152);
+            this.nudMinute.Location = new System.Drawing.Point(187, 106);
             this.nudMinute.Name = "nudMinute";
             this.nudMinute.Size = new System.Drawing.Size(41, 26);
             this.nudMinute.TabIndex = 2;
             // 
-            // btnReset
+            // lblTime
             // 
-            this.btnReset.Enabled = false;
-            this.btnReset.Location = new System.Drawing.Point(134, 230);
-            this.btnReset.Name = "btnReset";
-            this.btnReset.Size = new System.Drawing.Size(100, 100);
-            this.btnReset.TabIndex = 1;
-            this.btnReset.Text = "Reset";
-            this.btnReset.UseVisualStyleBackColor = true;
+            this.lblTime.AutoSize = true;
+            this.lblTime.ForeColor = System.Drawing.Color.White;
+            this.lblTime.Location = new System.Drawing.Point(100, 112);
+            this.lblTime.Name = "lblTime";
+            this.lblTime.Size = new System.Drawing.Size(81, 20);
+            this.lblTime.TabIndex = 4;
+            this.lblTime.Text = "Thời gian :";
+            // 
+            // txtYourScore
+            // 
+            this.txtYourScore.Enabled = false;
+            this.txtYourScore.Location = new System.Drawing.Point(34, 202);
+            this.txtYourScore.Name = "txtYourScore";
+            this.txtYourScore.ReadOnly = true;
+            this.txtYourScore.Size = new System.Drawing.Size(45, 26);
+            this.txtYourScore.TabIndex = 10;
+            this.txtYourScore.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // lblScoreToPass
+            // 
+            this.lblScoreToPass.AutoSize = true;
+            this.lblScoreToPass.ForeColor = System.Drawing.Color.White;
+            this.lblScoreToPass.Location = new System.Drawing.Point(244, 179);
+            this.lblScoreToPass.Name = "lblScoreToPass";
+            this.lblScoreToPass.Size = new System.Drawing.Size(115, 20);
+            this.lblScoreToPass.TabIndex = 9;
+            this.lblScoreToPass.Text = "Điểm qua vòng";
+            // 
+            // lblYoungScore
+            // 
+            this.lblYoungScore.AutoSize = true;
+            this.lblYoungScore.ForeColor = System.Drawing.Color.White;
+            this.lblYoungScore.Location = new System.Drawing.Point(30, 175);
+            this.lblYoungScore.Name = "lblYoungScore";
+            this.lblYoungScore.Size = new System.Drawing.Size(46, 20);
+            this.lblYoungScore.TabIndex = 8;
+            this.lblYoungScore.Text = "Điểm";
+            // 
+            // txtFindNum
+            // 
+            this.txtFindNum.Enabled = false;
+            this.txtFindNum.Location = new System.Drawing.Point(142, 202);
+            this.txtFindNum.Name = "txtFindNum";
+            this.txtFindNum.ReadOnly = true;
+            this.txtFindNum.Size = new System.Drawing.Size(45, 26);
+            this.txtFindNum.TabIndex = 7;
+            this.txtFindNum.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // lblFindNum
+            // 
+            this.lblFindNum.AutoSize = true;
+            this.lblFindNum.ForeColor = System.Drawing.Color.White;
+            this.lblFindNum.Location = new System.Drawing.Point(125, 179);
+            this.lblFindNum.Name = "lblFindNum";
+            this.lblFindNum.Size = new System.Drawing.Size(84, 20);
+            this.lblFindNum.TabIndex = 6;
+            this.lblFindNum.Text = "Số cần tìm";
+            // 
+            // lblNameGame
+            // 
+            this.lblNameGame.AutoSize = true;
+            this.lblNameGame.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblNameGame.ForeColor = System.Drawing.Color.White;
+            this.lblNameGame.Location = new System.Drawing.Point(15, 18);
+            this.lblNameGame.Name = "lblNameGame";
+            this.lblNameGame.Size = new System.Drawing.Size(119, 20);
+            this.lblNameGame.TabIndex = 5;
+            this.lblNameGame.Text = "Trò chơi: Tìm số";
             // 
             // btnStart
             // 
-            this.btnStart.Location = new System.Drawing.Point(19, 230);
+            this.btnStart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnStart.ForeColor = System.Drawing.Color.White;
+            this.btnStart.Location = new System.Drawing.Point(92, 276);
             this.btnStart.Name = "btnStart";
-            this.btnStart.Size = new System.Drawing.Size(100, 100);
+            this.btnStart.Size = new System.Drawing.Size(89, 75);
             this.btnStart.TabIndex = 0;
             this.btnStart.Text = "Bắt đầu";
             this.btnStart.UseVisualStyleBackColor = true;
@@ -279,20 +293,20 @@
         private System.Windows.Forms.Panel pnlGameDisplayYellow;
         private System.Windows.Forms.Panel pnlGameDisplayGreen;
         private System.Windows.Forms.Button btnMediate;
-        private System.Windows.Forms.Button btnReset;
         private System.Windows.Forms.Button btnStart;
         private System.Windows.Forms.NumericUpDown nudSecond;
         private System.Windows.Forms.NumericUpDown nudMinute;
         private System.Windows.Forms.Timer tmrTimeToPlay;
         private System.Windows.Forms.Label lblTime;
-        private System.Windows.Forms.Label lblIntro;
+        private System.Windows.Forms.Label lblNameGame;
         private System.Windows.Forms.Label lblFindNum;
         private System.Windows.Forms.TextBox txtFindNum;
         private System.Windows.Forms.Label lblScoreToPass;
         private System.Windows.Forms.Label lblYoungScore;
         private System.Windows.Forms.TextBox txtScoreToPass;
-        private System.Windows.Forms.TextBox txtYoung_Score;
+        private System.Windows.Forms.TextBox txtYourScore;
         private System.Windows.Forms.Button btnEnd;
         private AxWMPLib.AxWindowsMediaPlayer wmpSoundTrack;
+        private System.Windows.Forms.Label lblRule;
     }
 }
