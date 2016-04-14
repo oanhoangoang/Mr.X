@@ -73,7 +73,14 @@ namespace RemMe
             numberOfAnswer = numAns;
             numberOfChoice = numChoice;
             timeToPlay = time;
-            wmpSoundTrack.URL = @"sound/RemMe/SoundTrack.mp3";
+            try
+            {
+                wmpSoundTrack.URL = @"sound/RemMe/SoundTrack.mp3";
+            }
+            catch (Exception ex)
+            {
+
+            }
         }
 
         // random giá trị của selectedColor, khởi tạo mảng number[]
@@ -217,14 +224,28 @@ namespace RemMe
             if (checkColor[value])
             {
                 yourScore++;
-                SoundPlayer sp = new SoundPlayer(@"sound/RemMe/happy.wav");
-                sp.Play();
+                try
+                {
+                    SoundPlayer sp = new SoundPlayer(@"sound/RemMe/happy.wav");
+                    sp.Play();
+                }
+                catch (Exception ex)
+                {
+
+                }
                 btnMedia.Visible = false;
             }
             else
             {
-                SoundPlayer sp = new SoundPlayer(@"sound/RemMe/sad.wav");
-                sp.Play();
+                try
+                {
+                    SoundPlayer sp = new SoundPlayer(@"sound/RemMe/sad.wav");
+                    sp.Play();
+                }
+                catch (Exception ex)
+                {
+
+                }
             }
         }
 

@@ -53,7 +53,14 @@ namespace FndNum
             sizeTable = size;
             numberToFind = num;
             timeToPlay = time;
-            wmpSoundTrack.URL = @"sound/FndNum/soundtrack.mp3";
+            try
+            {
+                wmpSoundTrack.URL = @"sound/FndNum/soundtrack.mp3";
+            }
+            catch (Exception ex)
+            {
+
+            }
         }
 
         // lấy ngẫu nhiên 1 số từ limitLow tới limitHigh
@@ -158,13 +165,27 @@ namespace FndNum
             {
                 btnMedia.Visible = false;
                 yourScore++;
-                SoundPlayer soundhappy = new SoundPlayer(@"sound/FndNum/happy.wav");
-                soundhappy.Play();
+                try
+                {
+                    SoundPlayer soundhappy = new SoundPlayer(@"sound/FndNum/happy.wav");
+                    soundhappy.Play();
+                }
+                catch (Exception ex)
+                {
+
+                }
             }
             else
             {
-                SoundPlayer soundsad = new SoundPlayer(@"sound/Fndnum/sad.wav");
-                soundsad.Play();
+                try
+                {
+                    SoundPlayer soundhappy = new SoundPlayer(@"sound/FndNum/sad.wav");
+                    soundhappy.Play();
+                }
+                catch (Exception ex)
+                {
+
+                }
             }
             now++;
         }
