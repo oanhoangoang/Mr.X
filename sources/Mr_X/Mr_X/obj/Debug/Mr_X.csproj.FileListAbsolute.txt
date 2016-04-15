@@ -22,3 +22,12 @@ D:\Mr.X.git\trunk\sources\Mr_X\Mr_X\obj\Debug\Mr_X.pdb
 D:\PROJECT\trunk\sources\Mr_X\Mr_X\bin\Debug\Mr_X.exe.config
 D:\PROJECT\trunk\sources\Mr_X\Mr_X\obj\Debug\Mr_X.exe
 D:\PROJECT\trunk\sources\Mr_X\Mr_X\obj\Debug\Mr_X.pdb
+D:\Mr.X.git\trunk\sources\Mr_X\Mr_X\bin\Debug\Mr_X.exe
+D:\Mr.X.git\trunk\sources\Mr_X\Mr_X\bin\Debug\Mr_X.pdb
+D:\Mr.X.git\trunk\sources\Mr_X\Mr_X\obj\Debug\Mr_X.csprojResolveAssemblyReference.cache
+D:\Mr.X.git\trunk\sources\Mr_X\Mr_X\obj\Debug\Mr_X.Form1.resources
+D:\Mr.X.git\trunk\sources\Mr_X\Mr_X\obj\Debug\Mr_X.Gameform.resources
+D:\Mr.X.git\trunk\sources\Mr_X\Mr_X\obj\Debug\Mr_X.Mainform.resources
+D:\Mr.X.git\trunk\sources\Mr_X\Mr_X\obj\Debug\Mr_X.Mainform_2.resources
+D:\Mr.X.git\trunk\sources\Mr_X\Mr_X\obj\Debug\Mr_X.Properties.Resources.resources
+D:\Mr.X.git\trunk\sources\Mr_X\Mr_X\obj\Debug\Mr_X.csproj.GenerateResource.Cache
