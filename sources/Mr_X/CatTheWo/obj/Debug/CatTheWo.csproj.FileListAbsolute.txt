@@ -1,0 +1,12 @@
+D:\Mr.X.git\trunk\sources\Mr_X\CatTheWo\bin\Debug\CatTheWo.dll
+D:\Mr.X.git\trunk\sources\Mr_X\CatTheWo\bin\Debug\CatTheWo.pdb
+D:\Mr.X.git\trunk\sources\Mr_X\CatTheWo\obj\Debug\CatTheWo.csprojResolveAssemblyReference.cache
+D:\Mr.X.git\trunk\sources\Mr_X\CatTheWo\obj\Debug\CatTheWo.CatchTheWord.resources
+D:\Mr.X.git\trunk\sources\Mr_X\CatTheWo\obj\Debug\CatTheWo.csproj.GenerateResource.Cache
+D:\Mr.X.git\trunk\sources\Mr_X\CatTheWo\obj\Debug\CatTheWo.dll
+D:\Mr.X.git\trunk\sources\Mr_X\CatTheWo\obj\Debug\CatTheWo.pdb
+D:\Mr.X.git\trunk\sources\Mr_X\CatTheWo\bin\Debug\Interop.WMPLib.dll
+D:\Mr.X.git\trunk\sources\Mr_X\CatTheWo\bin\Debug\AxInterop.WMPLib.dll
+D:\Mr.X.git\trunk\sources\Mr_X\CatTheWo\obj\Debug\Interop.WMPLib.dll
+D:\Mr.X.git\trunk\sources\Mr_X\CatTheWo\obj\Debug\AxInterop.WMPLib.dll
+D:\Mr.X.git\trunk\sources\Mr_X\CatTheWo\obj\Debug\CatTheWo.csproj.ResolveComReference.cache
