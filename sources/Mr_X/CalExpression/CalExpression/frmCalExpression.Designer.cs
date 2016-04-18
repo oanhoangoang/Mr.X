@@ -12,7 +12,7 @@ namespace CalExpression
         WMPLib.WindowsMediaPlayer player = new WMPLib.WindowsMediaPlayer();
         public void enableSound()
         {
-            player.URL = @"sound/ChildhoodMemory.mp3";
+            player.URL = @"sound/CalExpression/ChildhoodMemory.mp3";
             player.controls.play(); 
         }
         
