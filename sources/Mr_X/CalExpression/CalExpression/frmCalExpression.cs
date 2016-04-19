@@ -220,9 +220,13 @@ namespace CalExpression
         {
             return (this.kq);
         }
+        public delegate void truyen(int value);
+        public truyen trans;
+         
         private void btnBackToMenu_Click(object sender, EventArgs e)
         {
             setAns(ok);
+            if (ok) trans.Invoke(1); else trans.Invoke(0);
             player.close();
             this.Close();
         }
@@ -230,6 +234,7 @@ namespace CalExpression
         private void frmGameTinhBieuThuc_FormClosed(object sender, FormClosedEventArgs e)
         {
             ok = false;
+            if (ok) trans.Invoke(1); else trans.Invoke(0);
             setAns(ok);
             player.close();
         }
