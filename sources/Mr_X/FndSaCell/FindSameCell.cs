@@ -73,9 +73,11 @@ namespace FndSaCell
         private int previousButton;
 
         // lấy các giá trị: chiều cao của bảng, chiều rộng của bảng, số điểm qua vòng,số lượt nhấn, thời gian chơi
-        public FindSameCell(int height, int width, int Score, int numChoice, int time)
+        public FindSameCell(int level, string position, int height, int width, int Score, int numChoice, int time, bool turnOffSound)
         {
             InitializeComponent();
+            lblLevelOfGame.Text += level.ToString();
+            lblPosition.Text += position.ToString();
             heightTable = height;
             widthTable = width;
             if (heightTable % 2 == 1 && widthTable % 2 == 1) heightTable--;
@@ -84,11 +86,14 @@ namespace FndSaCell
             numberOfChoice = numChoice;
             minute = time / 60;
             second = time % 60;
-            try
+            if (turnOffSound == false)
             {
-                wmpSoundTrack.URL = @"sound/FndSaCell/SoundTrack.mp3";
+                try
+                {
+                    wmpSoundTrack.URL = @"sound/FndSaCell/SoundTrack.mp3";
+                }
+                catch (Exception ex) { }
             }
-            catch (Exception ex) { }
         }
 
         // lấy ngẫu nhiên một số trong khoảng từ limitLow tới limitHigh
@@ -238,6 +243,9 @@ namespace FndSaCell
             }
         }
 
+        public delegate void truyen(int value);
+        public truyen trans;
+
         // trả về kết quả của người chơi
         private void answer()
         {
@@ -247,12 +255,30 @@ namespace FndSaCell
                     btnCircle[i][j].Image = Image.FromFile(@original[Int32.Parse(btnCircle[i][j].Name)]);
                     btnCircle[i][j].Click -= new EventHandler(btnMediate_Click);
                 }
+
             if (yourScore >= scoreToPass)
             {
+                trans.Invoke(1);
+                try
+                {
+                    picVictory.Visible = true;
+                    picVictory.Image = Image.FromFile(@"picture/FndSaCell/victory.jpg");
+                    picVictory.SizeMode = PictureBoxSizeMode.StretchImage;
+                }
+                catch (Exception ex) { }
+
+                try
+                {
+                    wmpSoundTrack.URL = @"sound/FndSaCell/victory.mp3";
+                }
+                catch (Exception ex) { }
+
+
                 MessageBox.Show("Chúc mừng bạn đã vượt qua thử thách này", "Thông báo");
             }
             else
             {
+                trans.Invoke(0);
                 MessageBox.Show("Rất tiếc bạn đã không vượt qua thử thách này. Chúc may mắn", "Thông báo");
             }
         }

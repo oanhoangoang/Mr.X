@@ -66,10 +66,13 @@ namespace CatTheWo
         private int cellOnNowRound;
 
         // lấy các giá trị: số điểm qua vòng,số vòng chơi, thời gian gian
-        public CatchTheWord(int score, int round, int time)
+        public CatchTheWord(int level, string position ,int score, int round, int time, bool turnOffSound)
         {
+            
             InitializeComponent();
 
+            lblLevelOfGame.Text += level.ToString();
+            lblPosition.Text += position.ToString();
             scoreToPass = score;
             numberOfRound = round;
             minute = time / 60;
@@ -92,11 +95,14 @@ namespace CatTheWo
             }
             catch (Exception ex) { }
 
-            try
+            if (turnOffSound == false)
             {
-                wmpSoundTrack.URL = @"sound/CatTheWo/soundTrack.mp3";
+                try
+                {
+                    wmpSoundTrack.URL = @"sound/CatTheWo/soundTrack.mp3";
+                }
+                catch (Exception ex) { }
             }
-            catch (Exception ex) { }
         }
 
         // lấy ngẫu nhiên một số trong khoảng từ limitLow tới limitHigh
@@ -219,6 +225,7 @@ namespace CatTheWo
                 directory = @"picture/CatTheWo/" + posQuestion.ToString() + ".jpg";
                 picGameDisplay.Image = Image.FromFile(directory);
                 picGameDisplay.SizeMode = PictureBoxSizeMode.StretchImage;
+              
             }
             catch (Exception ex) { }
 
@@ -323,8 +330,13 @@ namespace CatTheWo
         // xử lí khi người chơi nhấn vào bàn phím
         private void btnMediate_Click(object sender, EventArgs e)
         {
-            SoundPlayer sp = new SoundPlayer(@"sound/CatTheWo/click.wav");
-            sp.Play();
+
+            try
+            {
+                SoundPlayer sp = new SoundPlayer(@"sound/CatTheWo/click.wav");
+                sp.Play();
+            }
+            catch (Exception ex) { }
 
             timeDelay(200);
 
@@ -338,15 +350,23 @@ namespace CatTheWo
                         cellOnNowRound++;
                         cellOfAnswer[nowRound][i].Text=btnMedia.Text;
 
-                        SoundPlayer sphappy = new SoundPlayer(@"sound/CatTheWo/happy.wav");
-                        sphappy.Play();
+                        try
+                        {
+                            SoundPlayer sphappy = new SoundPlayer(@"sound/CatTheWo/happy.wav");
+                            sphappy.Play();
+                        }
+                        catch (Exception ex) { }
 
                         timeDelay(200);
                     }
             if (cal == 0)
             {
-                SoundPlayer spsad = new SoundPlayer(@"sound/CatTheWo/sad.wav");
-                spsad.Play();
+                try
+                {
+                    SoundPlayer spsad = new SoundPlayer(@"sound/CatTheWo/sad.wav");
+                    spsad.Play();
+                }
+                catch (Exception ex) { }
                 mistake++;
                 timeDelay(200);
             }
@@ -355,12 +375,25 @@ namespace CatTheWo
                 btnMedia.Enabled = false; 
                 if (cellOnNowRound == numberOfAlphabet)
                 {
-                    SoundPlayer spPassRound = new SoundPlayer(@"sound/CatTheWo/passRound.wav");
-                    spPassRound.Play();
-                    picTalk.Image = Image.FromFile(@"picture/CatTheWo/talk.jpg");
-                    picTalk.SizeMode = PictureBoxSizeMode.StretchImage;
+
+                    try
+                    {
+                        SoundPlayer spPassRound = new SoundPlayer(@"sound/CatTheWo/passRound.wav");
+                        spPassRound.Play();
+                    }
+                    catch (Exception ex) { }
+
+
+                    try
+                    {
+                        picTalk.Image = Image.FromFile(@"picture/CatTheWo/talk.jpg");
+                        picTalk.SizeMode = PictureBoxSizeMode.StretchImage;
+                    }
+                    catch (Exception ex) { }
+
                     lblHint.Visible = false;
                     yourScore++;
+                    txtAnswer.Text = "Đáp án : " + answerNow;
                     timeDelay(1300);
                     newquestion();
                 }
@@ -374,6 +407,9 @@ namespace CatTheWo
             }
         }
 
+        public delegate void truyen(int value);
+        public truyen trans;
+
         // trả về kết quả người chơi
         private void answer()
         {
@@ -381,13 +417,31 @@ namespace CatTheWo
             txtAnswer.Text = "Đáp án : " + answerNow;
             for (int i = 1; i <= 3; i++)
                 for (int j = 1; j <= 10; j++) keyboard[i][j].Enabled = false;
-  
+
+
             if (yourScore >= scoreToPass)
             {
+                trans.Invoke(1);
+                try
+                {
+                    picVictory.Visible = true;
+                    picVictory.Image = Image.FromFile(@"picture/CatTheWo/victory.jpg");
+                    picVictory.SizeMode = PictureBoxSizeMode.StretchImage;
+                }
+                catch (Exception ex) { }
+
+                try
+                {
+                    wmpSoundTrack.URL = @"sound/CatTheWo/victory.wav";
+                }
+                catch (Exception ex) { }
+                
                 MessageBox.Show("Chúc mừng bạn đã vượt qua thử thách này", "Thông báo");
+                
             }
             else
             {
+                trans.Invoke(0);
                 MessageBox.Show("Rất tiếc bạn đã không vượt qua thử thách này. Chúc may mắn", "Thông báo");
             }
         }

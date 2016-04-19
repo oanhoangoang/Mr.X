@@ -47,19 +47,21 @@ namespace FndNum
         private int timeToPlay;  
 
         // lấy các giá trị: kích thước bảng, số lượng số cần tìm, thời gian chơi
-        public FindNumDisplay(int size, int num, int time)
+        public FindNumDisplay(int level, string position, int size, int num, int time, bool turnOffSound)
         {
             InitializeComponent();
             sizeTable = size;
             numberToFind = num;
             timeToPlay = time;
-            try
+            lblLevelOfGame.Text += level.ToString();
+            lblPosition.Text += position.ToString();
+            if (turnOffSound == false)
             {
-                wmpSoundTrack.URL = @"sound/FndNum/soundtrack.mp3";
-            }
-            catch (Exception ex)
-            {
-
+                try
+                {
+                    wmpSoundTrack.URL = @"sound/FndNum/soundtrack.mp3";
+                }
+                catch (Exception ex){}
             }
         }
 
@@ -170,10 +172,7 @@ namespace FndNum
                     SoundPlayer soundhappy = new SoundPlayer(@"sound/FndNum/happy.wav");
                     soundhappy.Play();
                 }
-                catch (Exception ex)
-                {
-
-                }
+                catch (Exception ex) {}
             }
             else
             {
@@ -182,13 +181,13 @@ namespace FndNum
                     SoundPlayer soundhappy = new SoundPlayer(@"sound/FndNum/sad.wav");
                     soundhappy.Play();
                 }
-                catch (Exception ex)
-                {
-
-                }
+                catch (Exception ex) {}
             }
             now++;
         }
+
+        public delegate void truyen(int value);
+        public truyen trans;
 
         // trả về kết quả của người chơi
         private void answer(){
@@ -197,11 +196,28 @@ namespace FndNum
 
             if (yourScore >= numberToFind)
             {
-                MessageBox.Show("Chúc mừng bạn đã trở thành thực tập viên của công ty chúng tôi", "Thông báo");
+                trans.Invoke(1);
+                try
+                {
+                    picVictory.Visible = true;
+                    picVictory.Image = Image.FromFile(@"picture/FndNum/victory.jpg");
+                    picVictory.SizeMode = PictureBoxSizeMode.StretchImage;
+                }
+                catch (Exception ex) { }
+
+                try
+                {
+                    wmpSoundTrack.URL = @"sound/FndNum/victory.mp3";
+                }
+                catch (Exception ex) { }
+
+
+                MessageBox.Show("Chúc mừng bạn đã vượt qua thử thách này", "Thông báo");
             }
             else
             {
-                MessageBox.Show("Rất tiếc, bạn đã không trở thành thực tập viên của công ty chúng tôi. Chúc bạn may mắn hơn ở lần sau", "Thông báo");
+                trans.Invoke(0);
+                MessageBox.Show("Rất tiếc bạn đã không vượt qua thử thách này. Chúc may mắn", "Thông báo");
             }
         }
 

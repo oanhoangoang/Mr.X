@@ -41,6 +41,8 @@
             this.picMc = new System.Windows.Forms.PictureBox();
             this.picGameDisplay = new System.Windows.Forms.PictureBox();
             this.pnlGameDisplaySunFlower = new System.Windows.Forms.Panel();
+            this.lblPosition = new System.Windows.Forms.Label();
+            this.lblLevelOfGame = new System.Windows.Forms.Label();
             this.pnlGameDisplayGreen = new System.Windows.Forms.Panel();
             this.nudMinute = new System.Windows.Forms.NumericUpDown();
             this.txtRule = new System.Windows.Forms.TextBox();
@@ -56,14 +58,17 @@
             this.lblTime = new System.Windows.Forms.Label();
             this.lblGame = new System.Windows.Forms.Label();
             this.tmrTimeToPlay = new System.Windows.Forms.Timer(this.components);
+            this.picVictory = new System.Windows.Forms.PictureBox();
             this.pnlGameDisplayGray.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.wmpSoundTrack)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picTalk)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picMc)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picGameDisplay)).BeginInit();
+            this.pnlGameDisplaySunFlower.SuspendLayout();
             this.pnlGameDisplayGreen.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudMinute)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudSecond)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picVictory)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlGameDisplayGray
@@ -72,6 +77,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlGameDisplayGray.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
+            this.pnlGameDisplayGray.Controls.Add(this.picVictory);
             this.pnlGameDisplayGray.Controls.Add(this.btnMediate);
             this.pnlGameDisplayGray.Controls.Add(this.lblHint);
             this.pnlGameDisplayGray.Controls.Add(this.wmpSoundTrack);
@@ -180,10 +186,31 @@
             this.pnlGameDisplaySunFlower.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlGameDisplaySunFlower.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(196)))), ((int)(((byte)(15)))));
+            this.pnlGameDisplaySunFlower.Controls.Add(this.lblPosition);
+            this.pnlGameDisplaySunFlower.Controls.Add(this.lblLevelOfGame);
             this.pnlGameDisplaySunFlower.Location = new System.Drawing.Point(818, 4);
             this.pnlGameDisplaySunFlower.Name = "pnlGameDisplaySunFlower";
             this.pnlGameDisplaySunFlower.Size = new System.Drawing.Size(395, 292);
             this.pnlGameDisplaySunFlower.TabIndex = 1;
+            // 
+            // lblPosition
+            // 
+            this.lblPosition.AutoSize = true;
+            this.lblPosition.Location = new System.Drawing.Point(39, 202);
+            this.lblPosition.Name = "lblPosition";
+            this.lblPosition.Size = new System.Drawing.Size(78, 20);
+            this.lblPosition.TabIndex = 1;
+            this.lblPosition.Text = "Chức vụ : ";
+            // 
+            // lblLevelOfGame
+            // 
+            this.lblLevelOfGame.AutoSize = true;
+            this.lblLevelOfGame.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLevelOfGame.Location = new System.Drawing.Point(38, 159);
+            this.lblLevelOfGame.Name = "lblLevelOfGame";
+            this.lblLevelOfGame.Size = new System.Drawing.Size(82, 26);
+            this.lblLevelOfGame.TabIndex = 0;
+            this.lblLevelOfGame.Text = "Level : ";
             // 
             // pnlGameDisplayGreen
             // 
@@ -330,6 +357,15 @@
             this.tmrTimeToPlay.Interval = 1000;
             this.tmrTimeToPlay.Tick += new System.EventHandler(this.tmrTimeToPlay_Tick);
             // 
+            // picVictory
+            // 
+            this.picVictory.Location = new System.Drawing.Point(8, 67);
+            this.picVictory.Name = "picVictory";
+            this.picVictory.Size = new System.Drawing.Size(753, 571);
+            this.picVictory.TabIndex = 3;
+            this.picVictory.TabStop = false;
+            this.picVictory.Visible = false;
+            // 
             // CatchTheWord
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -342,6 +378,7 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MaximizeBox = false;
             this.Name = "CatchTheWord";
@@ -354,10 +391,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.picTalk)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picMc)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picGameDisplay)).EndInit();
+            this.pnlGameDisplaySunFlower.ResumeLayout(false);
+            this.pnlGameDisplaySunFlower.PerformLayout();
             this.pnlGameDisplayGreen.ResumeLayout(false);
             this.pnlGameDisplayGreen.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudMinute)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudSecond)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picVictory)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -390,5 +430,8 @@
         private System.Windows.Forms.NumericUpDown nudMinute;
         private System.Windows.Forms.Label lblHint;
         private System.Windows.Forms.Button btnMediate;
+        private System.Windows.Forms.Label lblLevelOfGame;
+        private System.Windows.Forms.Label lblPosition;
+        private System.Windows.Forms.PictureBox picVictory;
     }
 }

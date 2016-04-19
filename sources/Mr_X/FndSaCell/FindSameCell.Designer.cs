@@ -34,6 +34,8 @@
             this.btnMediate = new System.Windows.Forms.Button();
             this.wmpSoundTrack = new AxWMPLib.AxWindowsMediaPlayer();
             this.pnlGameDisplaySunFlower = new System.Windows.Forms.Panel();
+            this.lblPosition = new System.Windows.Forms.Label();
+            this.lblLevelOfGame = new System.Windows.Forms.Label();
             this.pnlGameDisplayBlue = new System.Windows.Forms.Panel();
             this.txtOpportunity = new System.Windows.Forms.TextBox();
             this.txtScoreToPass = new System.Windows.Forms.TextBox();
@@ -48,11 +50,14 @@
             this.btnEnd = new System.Windows.Forms.Button();
             this.btnStart = new System.Windows.Forms.Button();
             this.tmrTimeToPlay = new System.Windows.Forms.Timer(this.components);
+            this.picVictory = new System.Windows.Forms.PictureBox();
             this.pnlGameDisplayGray.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.wmpSoundTrack)).BeginInit();
+            this.pnlGameDisplaySunFlower.SuspendLayout();
             this.pnlGameDisplayBlue.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudSecond)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudMinute)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picVictory)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlGameDisplayGray
@@ -61,6 +66,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlGameDisplayGray.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
+            this.pnlGameDisplayGray.Controls.Add(this.picVictory);
             this.pnlGameDisplayGray.Controls.Add(this.btnMediate);
             this.pnlGameDisplayGray.Controls.Add(this.wmpSoundTrack);
             this.pnlGameDisplayGray.Location = new System.Drawing.Point(4, 4);
@@ -95,10 +101,33 @@
             this.pnlGameDisplaySunFlower.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlGameDisplaySunFlower.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(196)))), ((int)(((byte)(15)))));
+            this.pnlGameDisplaySunFlower.Controls.Add(this.lblPosition);
+            this.pnlGameDisplaySunFlower.Controls.Add(this.lblLevelOfGame);
             this.pnlGameDisplaySunFlower.Location = new System.Drawing.Point(818, 4);
             this.pnlGameDisplaySunFlower.Name = "pnlGameDisplaySunFlower";
             this.pnlGameDisplaySunFlower.Size = new System.Drawing.Size(395, 292);
             this.pnlGameDisplaySunFlower.TabIndex = 1;
+            // 
+            // lblPosition
+            // 
+            this.lblPosition.AutoSize = true;
+            this.lblPosition.ForeColor = System.Drawing.Color.White;
+            this.lblPosition.Location = new System.Drawing.Point(39, 202);
+            this.lblPosition.Name = "lblPosition";
+            this.lblPosition.Size = new System.Drawing.Size(78, 20);
+            this.lblPosition.TabIndex = 5;
+            this.lblPosition.Text = "Chức vụ : ";
+            // 
+            // lblLevelOfGame
+            // 
+            this.lblLevelOfGame.AutoSize = true;
+            this.lblLevelOfGame.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLevelOfGame.ForeColor = System.Drawing.Color.White;
+            this.lblLevelOfGame.Location = new System.Drawing.Point(38, 159);
+            this.lblLevelOfGame.Name = "lblLevelOfGame";
+            this.lblLevelOfGame.Size = new System.Drawing.Size(82, 26);
+            this.lblLevelOfGame.TabIndex = 4;
+            this.lblLevelOfGame.Text = "Level : ";
             // 
             // pnlGameDisplayBlue
             // 
@@ -236,6 +265,15 @@
             this.tmrTimeToPlay.Interval = 1000;
             this.tmrTimeToPlay.Tick += new System.EventHandler(this.tmrTimeToPlay_Tick);
             // 
+            // picVictory
+            // 
+            this.picVictory.Location = new System.Drawing.Point(41, 62);
+            this.picVictory.Name = "picVictory";
+            this.picVictory.Size = new System.Drawing.Size(727, 503);
+            this.picVictory.TabIndex = 3;
+            this.picVictory.TabStop = false;
+            this.picVictory.Visible = false;
+            // 
             // FindSameCell
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -247,6 +285,7 @@
             this.Controls.Add(this.pnlGameDisplayGray);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MaximizeBox = false;
             this.Name = "FindSameCell";
@@ -255,10 +294,13 @@
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FindSameCell_FormClosed);
             this.pnlGameDisplayGray.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.wmpSoundTrack)).EndInit();
+            this.pnlGameDisplaySunFlower.ResumeLayout(false);
+            this.pnlGameDisplaySunFlower.PerformLayout();
             this.pnlGameDisplayBlue.ResumeLayout(false);
             this.pnlGameDisplayBlue.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudSecond)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudMinute)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picVictory)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -283,5 +325,8 @@
         private AxWMPLib.AxWindowsMediaPlayer wmpSoundTrack;
         private System.Windows.Forms.Button btnMediate;
         private System.Windows.Forms.Timer tmrTimeToPlay;
+        private System.Windows.Forms.Label lblLevelOfGame;
+        private System.Windows.Forms.Label lblPosition;
+        private System.Windows.Forms.PictureBox picVictory;
     }
 }

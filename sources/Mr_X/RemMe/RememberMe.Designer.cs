@@ -34,10 +34,15 @@
             this.btnMediate = new System.Windows.Forms.Button();
             this.wmpSoundTrack = new AxWMPLib.AxWindowsMediaPlayer();
             this.pnlGameDisplayYellow = new System.Windows.Forms.Panel();
+            this.lblPosition = new System.Windows.Forms.Label();
+            this.lblLevelOfGame = new System.Windows.Forms.Label();
             this.lblNameGame = new System.Windows.Forms.Label();
             this.pnlGameDisplayGreen = new System.Windows.Forms.Panel();
+            this.btnClose = new System.Windows.Forms.Button();
+            this.lblRule = new System.Windows.Forms.Label();
             this.lblOpportunity = new System.Windows.Forms.Label();
             this.txtOpportunity = new System.Windows.Forms.TextBox();
+            this.btnStart = new System.Windows.Forms.Button();
             this.txtYourScore = new System.Windows.Forms.TextBox();
             this.txtScoreToPass = new System.Windows.Forms.TextBox();
             this.lblScoreToPass = new System.Windows.Forms.Label();
@@ -45,16 +50,16 @@
             this.lblTime = new System.Windows.Forms.Label();
             this.nudSecond = new System.Windows.Forms.NumericUpDown();
             this.nudMinute = new System.Windows.Forms.NumericUpDown();
-            this.btnStart = new System.Windows.Forms.Button();
             this.tmrTimeToWatch = new System.Windows.Forms.Timer(this.components);
             this.tmrTimeToPlay = new System.Windows.Forms.Timer(this.components);
-            this.lblRule = new System.Windows.Forms.Label();
-            this.btnClose = new System.Windows.Forms.Button();
+            this.picVictory = new System.Windows.Forms.PictureBox();
             this.pnlGameDisplayGray.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.wmpSoundTrack)).BeginInit();
+            this.pnlGameDisplayYellow.SuspendLayout();
             this.pnlGameDisplayGreen.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudSecond)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudMinute)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picVictory)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlGameDisplayGray
@@ -63,6 +68,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlGameDisplayGray.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
+            this.pnlGameDisplayGray.Controls.Add(this.picVictory);
             this.pnlGameDisplayGray.Controls.Add(this.btnMediate);
             this.pnlGameDisplayGray.Controls.Add(this.wmpSoundTrack);
             this.pnlGameDisplayGray.ForeColor = System.Drawing.Color.Black;
@@ -98,11 +104,34 @@
             this.pnlGameDisplayYellow.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlGameDisplayYellow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(196)))), ((int)(((byte)(15)))));
+            this.pnlGameDisplayYellow.Controls.Add(this.lblPosition);
+            this.pnlGameDisplayYellow.Controls.Add(this.lblLevelOfGame);
             this.pnlGameDisplayYellow.ForeColor = System.Drawing.Color.Black;
             this.pnlGameDisplayYellow.Location = new System.Drawing.Point(818, 4);
             this.pnlGameDisplayYellow.Name = "pnlGameDisplayYellow";
             this.pnlGameDisplayYellow.Size = new System.Drawing.Size(395, 292);
             this.pnlGameDisplayYellow.TabIndex = 0;
+            // 
+            // lblPosition
+            // 
+            this.lblPosition.AutoSize = true;
+            this.lblPosition.ForeColor = System.Drawing.Color.White;
+            this.lblPosition.Location = new System.Drawing.Point(39, 202);
+            this.lblPosition.Name = "lblPosition";
+            this.lblPosition.Size = new System.Drawing.Size(78, 20);
+            this.lblPosition.TabIndex = 6;
+            this.lblPosition.Text = "Chức vụ : ";
+            // 
+            // lblLevelOfGame
+            // 
+            this.lblLevelOfGame.AutoSize = true;
+            this.lblLevelOfGame.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLevelOfGame.ForeColor = System.Drawing.Color.White;
+            this.lblLevelOfGame.Location = new System.Drawing.Point(38, 159);
+            this.lblLevelOfGame.Name = "lblLevelOfGame";
+            this.lblLevelOfGame.Size = new System.Drawing.Size(82, 26);
+            this.lblLevelOfGame.TabIndex = 5;
+            this.lblLevelOfGame.Text = "Level : ";
             // 
             // lblNameGame
             // 
@@ -138,6 +167,29 @@
             this.pnlGameDisplayGreen.Size = new System.Drawing.Size(395, 358);
             this.pnlGameDisplayGreen.TabIndex = 1;
             // 
+            // btnClose
+            // 
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClose.ForeColor = System.Drawing.Color.White;
+            this.btnClose.Location = new System.Drawing.Point(219, 276);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(89, 75);
+            this.btnClose.TabIndex = 19;
+            this.btnClose.Text = "Thoát";
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
+            // lblRule
+            // 
+            this.lblRule.AutoSize = true;
+            this.lblRule.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblRule.ForeColor = System.Drawing.Color.White;
+            this.lblRule.Location = new System.Drawing.Point(15, 51);
+            this.lblRule.Name = "lblRule";
+            this.lblRule.Size = new System.Drawing.Size(361, 20);
+            this.lblRule.TabIndex = 18;
+            this.lblRule.Text = "Sau 5s, hãy tìm tất cả các ô trùng với màu yêu cầu";
+            // 
             // lblOpportunity
             // 
             this.lblOpportunity.AutoSize = true;
@@ -158,6 +210,18 @@
             this.txtOpportunity.Size = new System.Drawing.Size(45, 26);
             this.txtOpportunity.TabIndex = 16;
             this.txtOpportunity.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // btnStart
+            // 
+            this.btnStart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnStart.ForeColor = System.Drawing.Color.White;
+            this.btnStart.Location = new System.Drawing.Point(92, 276);
+            this.btnStart.Name = "btnStart";
+            this.btnStart.Size = new System.Drawing.Size(89, 75);
+            this.btnStart.TabIndex = 0;
+            this.btnStart.Text = "Bắt đầu";
+            this.btnStart.UseVisualStyleBackColor = true;
+            this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
             // 
             // txtYourScore
             // 
@@ -232,18 +296,6 @@
             this.nudMinute.Size = new System.Drawing.Size(41, 26);
             this.nudMinute.TabIndex = 2;
             // 
-            // btnStart
-            // 
-            this.btnStart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnStart.ForeColor = System.Drawing.Color.White;
-            this.btnStart.Location = new System.Drawing.Point(92, 276);
-            this.btnStart.Name = "btnStart";
-            this.btnStart.Size = new System.Drawing.Size(89, 75);
-            this.btnStart.TabIndex = 0;
-            this.btnStart.Text = "Bắt đầu";
-            this.btnStart.UseVisualStyleBackColor = true;
-            this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
-            // 
             // tmrTimeToWatch
             // 
             this.tmrTimeToWatch.Interval = 1000;
@@ -254,28 +306,14 @@
             this.tmrTimeToPlay.Interval = 1000;
             this.tmrTimeToPlay.Tick += new System.EventHandler(this.tmrTimeToPlay_Tick);
             // 
-            // lblRule
+            // picVictory
             // 
-            this.lblRule.AutoSize = true;
-            this.lblRule.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblRule.ForeColor = System.Drawing.Color.White;
-            this.lblRule.Location = new System.Drawing.Point(15, 51);
-            this.lblRule.Name = "lblRule";
-            this.lblRule.Size = new System.Drawing.Size(361, 20);
-            this.lblRule.TabIndex = 18;
-            this.lblRule.Text = "Sau 5s, hãy tìm tất cả các ô trùng với màu yêu cầu";
-            // 
-            // btnClose
-            // 
-            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.ForeColor = System.Drawing.Color.White;
-            this.btnClose.Location = new System.Drawing.Point(219, 276);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(89, 75);
-            this.btnClose.TabIndex = 19;
-            this.btnClose.Text = "Thoát";
-            this.btnClose.UseVisualStyleBackColor = true;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            this.picVictory.Location = new System.Drawing.Point(19, 70);
+            this.picVictory.Name = "picVictory";
+            this.picVictory.Size = new System.Drawing.Size(768, 503);
+            this.picVictory.TabIndex = 3;
+            this.picVictory.TabStop = false;
+            this.picVictory.Visible = false;
             // 
             // RememberMe
             // 
@@ -288,6 +326,7 @@
             this.Controls.Add(this.pnlGameDisplayGray);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MaximizeBox = false;
             this.Name = "RememberMe";
@@ -297,10 +336,13 @@
             this.Load += new System.EventHandler(this.RememberMe_Load);
             this.pnlGameDisplayGray.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.wmpSoundTrack)).EndInit();
+            this.pnlGameDisplayYellow.ResumeLayout(false);
+            this.pnlGameDisplayYellow.PerformLayout();
             this.pnlGameDisplayGreen.ResumeLayout(false);
             this.pnlGameDisplayGreen.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudSecond)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudMinute)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picVictory)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -327,5 +369,8 @@
         private System.Windows.Forms.Timer tmrTimeToPlay;
         private System.Windows.Forms.Label lblRule;
         private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.Label lblLevelOfGame;
+        private System.Windows.Forms.Label lblPosition;
+        private System.Windows.Forms.PictureBox picVictory;
     }
 }

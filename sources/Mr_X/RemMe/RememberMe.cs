@@ -66,21 +66,24 @@ namespace RemMe
         }
 
         // lấy các giá trị: kích thước bảng, số lượng ô người chơi phải chọn, số lượng lượt người chơi được chọn và thời gian chơi
-        public RememberMe(int size, int numAns,int numChoice, int time)
+        public RememberMe(int level, string position, int size, int numAns, int numChoice, int time, bool turnOffSound)
         {
             InitializeComponent();
+            lblLevelOfGame.Text += level.ToString();
+            lblPosition.Text += position.ToString();
             sizeTable = size;
             numberOfAnswer = numAns;
             numberOfChoice = numChoice;
             timeToPlay = time;
-            try
+            if (turnOffSound == false)
             {
-                wmpSoundTrack.URL = @"sound/RemMe/SoundTrack.mp3";
+                try
+                {
+                    wmpSoundTrack.URL = @"sound/RemMe/SoundTrack.mp3";
+                }
+                catch (Exception ex){}
             }
-            catch (Exception ex)
-            {
-
-            }
+            
         }
 
         // random giá trị của selectedColor, khởi tạo mảng number[]
@@ -229,10 +232,7 @@ namespace RemMe
                     SoundPlayer sp = new SoundPlayer(@"sound/RemMe/happy.wav");
                     sp.Play();
                 }
-                catch (Exception ex)
-                {
-
-                }
+                catch (Exception ex) { }
                 btnMedia.Visible = false;
             }
             else
@@ -242,12 +242,12 @@ namespace RemMe
                     SoundPlayer sp = new SoundPlayer(@"sound/RemMe/sad.wav");
                     sp.Play();
                 }
-                catch (Exception ex)
-                {
-
-                }
+                catch (Exception ex) { }
             }
         }
+
+        public delegate void truyen(int value);
+        public truyen trans;
 
         //đưa ra câu trả lời cho người chơi, và hiện lại mảng ban đầu
         private void answer()
@@ -260,13 +260,30 @@ namespace RemMe
                     randomBtn[i][j].BackColor = ColorTranslator.FromHtml(arrayColor[original[value]]);
                 }
 
-            if (yourScore>= numberOfAnswer)
+            if (yourScore >= numberOfAnswer)
             {
-                MessageBox.Show("Chúc mừng bạn đã vượt qua trò chơi này", "Thông báo");
+                trans.Invoke(1);
+                try
+                {
+                    picVictory.Visible = true;
+                    picVictory.Image = Image.FromFile(@"picture/RemMe/victory.jpg");
+                    picVictory.SizeMode = PictureBoxSizeMode.StretchImage;
+                }
+                catch (Exception ex) { }
+
+                try
+                {
+                    wmpSoundTrack.URL = @"sound/RemMe/victory.mp3";
+                }
+                catch (Exception ex) { }
+
+
+                MessageBox.Show("Chúc mừng bạn đã vượt qua thử thách này", "Thông báo");
             }
             else
             {
-                MessageBox.Show("Rất tiếc bạn đã không vượt qua trò chơi này", "Thông báo");
+                trans.Invoke(0);
+                MessageBox.Show("Rất tiếc bạn đã không vượt qua thử thách này. Chúc may mắn", "Thông báo");
             }
         }
 
