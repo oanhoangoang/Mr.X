@@ -10,3 +10,14 @@ D:\Mr.X.git\trunk\sources\Mr_X\FndSaCell\obj\Debug\Interop.WMPLib.dll
 D:\Mr.X.git\trunk\sources\Mr_X\FndSaCell\obj\Debug\AxInterop.WMPLib.dll
 D:\Mr.X.git\trunk\sources\Mr_X\FndSaCell\obj\Debug\FndSaCell.csproj.ResolveComReference.cache
 D:\Mr.X.git\trunk\sources\Mr_X\FndSaCell\obj\Debug\FndSaCell.csprojResolveAssemblyReference.cache
+D:\PROJECT\trunk\sources\Mr_X\FndSaCell\bin\Debug\FndSaCell.dll
+D:\PROJECT\trunk\sources\Mr_X\FndSaCell\bin\Debug\FndSaCell.pdb
+D:\PROJECT\trunk\sources\Mr_X\FndSaCell\bin\Debug\Interop.WMPLib.dll
+D:\PROJECT\trunk\sources\Mr_X\FndSaCell\bin\Debug\AxInterop.WMPLib.dll
+D:\PROJECT\trunk\sources\Mr_X\FndSaCell\obj\Debug\Interop.WMPLib.dll
+D:\PROJECT\trunk\sources\Mr_X\FndSaCell\obj\Debug\AxInterop.WMPLib.dll
+D:\PROJECT\trunk\sources\Mr_X\FndSaCell\obj\Debug\FndSaCell.csproj.ResolveComReference.cache
+D:\PROJECT\trunk\sources\Mr_X\FndSaCell\obj\Debug\FndSaCell.FindSameCell.resources
+D:\PROJECT\trunk\sources\Mr_X\FndSaCell\obj\Debug\FndSaCell.csproj.GenerateResource.Cache
+D:\PROJECT\trunk\sources\Mr_X\FndSaCell\obj\Debug\FndSaCell.dll
+D:\PROJECT\trunk\sources\Mr_X\FndSaCell\obj\Debug\FndSaCell.pdb

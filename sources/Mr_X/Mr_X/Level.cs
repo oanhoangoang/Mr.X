@@ -32,27 +32,22 @@ namespace Mr_X
             Button bt2 = (Button)sender;
             levelClick = 0;
 
-            for (int i = 3; i < bt2.Text.Length; i++) levelClick = levelClick * 10 + bt2.Text[i] - '0';
+            for (int i = 3; i < bt2.Name.Length; i++) levelClick = levelClick * 10 + bt2.Name[i] - '0';
             if (levelClick <= nowLevel)
             {
 
                 if (nowLevel == 1)
                 {
-                    FstCalDisp g = new FstCalDisp(1, "Bảo vệ", "1");
-                    g.trans = data;
-                    g.ShowDialog();
-                }
-                else if (nowLevel == 2)
-                {
+
                     frmCalExpression g = new frmCalExpression(1, "Bảo vệ", "3");
                     g.trans = data;
                     g.ShowDialog();
                     
                     
                 }
-                else if (nowLevel == 3)
+                else if (nowLevel == 2)
                 {
-                    FindNumDisplay g = new FindNumDisplay(3, "Vẫn chỉ là bảo vệ", 6, 5, 90, false);
+                    FindNumDisplay g = new FindNumDisplay(2, "Vẫn chỉ là bảo vệ", 6, 5, 60, false);
                     g.trans = data;
                     g.ShowDialog();
                 }
@@ -65,6 +60,11 @@ namespace Mr_X
             {
                 nowLevel += value;
             }
+            if (nowLevel == 2)
+            {
+                btn2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(151)))), ((int)(((byte)(191)))));
+                btn2.Enabled = true; }
+
         }
 
 

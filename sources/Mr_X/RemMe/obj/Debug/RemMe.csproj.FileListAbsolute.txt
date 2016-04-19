@@ -17,3 +17,14 @@ D:\Mr.X.git\trunk\sources\Mr_X\RemMe\obj\Debug\RemMe.csproj.GenerateResource.Cac
 D:\Mr.X.git\trunk\sources\Mr_X\RemMe\obj\Debug\RemMe.dll
 D:\Mr.X.git\trunk\sources\Mr_X\RemMe\obj\Debug\RemMe.pdb
 D:\Mr.X.git\trunk\sources\Mr_X\RemMe\obj\Debug\RemMe.csprojResolveAssemblyReference.cache
+D:\PROJECT\trunk\sources\Mr_X\RemMe\bin\Debug\RemMe.dll
+D:\PROJECT\trunk\sources\Mr_X\RemMe\bin\Debug\RemMe.pdb
+D:\PROJECT\trunk\sources\Mr_X\RemMe\bin\Debug\Interop.WMPLib.dll
+D:\PROJECT\trunk\sources\Mr_X\RemMe\bin\Debug\AxInterop.WMPLib.dll
+D:\PROJECT\trunk\sources\Mr_X\RemMe\obj\Debug\Interop.WMPLib.dll
+D:\PROJECT\trunk\sources\Mr_X\RemMe\obj\Debug\AxInterop.WMPLib.dll
+D:\PROJECT\trunk\sources\Mr_X\RemMe\obj\Debug\RemMe.csproj.ResolveComReference.cache
+D:\PROJECT\trunk\sources\Mr_X\RemMe\obj\Debug\RemMe.RememberMe.resources
+D:\PROJECT\trunk\sources\Mr_X\RemMe\obj\Debug\RemMe.csproj.GenerateResource.Cache
+D:\PROJECT\trunk\sources\Mr_X\RemMe\obj\Debug\RemMe.dll
+D:\PROJECT\trunk\sources\Mr_X\RemMe\obj\Debug\RemMe.pdb

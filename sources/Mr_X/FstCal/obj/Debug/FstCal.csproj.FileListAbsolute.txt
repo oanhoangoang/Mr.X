@@ -6,3 +6,10 @@ c:\users\toet\documents\visual studio 2013\Projects\FstCal\FstCal\obj\Debug\FstC
 c:\users\toet\documents\visual studio 2013\Projects\FstCal\FstCal\obj\Debug\FstCal.pdb
 C:\Users\Toet\Documents\Visual Studio 2013\Projects\FstCal\FstCal\obj\Debug\FstCal.Properties.Resources.resources
 C:\Users\Toet\Documents\Visual Studio 2013\Projects\FstCal\FstCal\obj\Debug\FstCal.csprojResolveAssemblyReference.cache
+D:\PROJECT\trunk\sources\Mr_X\FstCal\bin\Debug\FstCal.dll
+D:\PROJECT\trunk\sources\Mr_X\FstCal\bin\Debug\FstCal.pdb
+D:\PROJECT\trunk\sources\Mr_X\FstCal\obj\Debug\FstCal.FstCalDisp.resources
+D:\PROJECT\trunk\sources\Mr_X\FstCal\obj\Debug\FstCal.Properties.Resources.resources
+D:\PROJECT\trunk\sources\Mr_X\FstCal\obj\Debug\FstCal.csproj.GenerateResource.Cache
+D:\PROJECT\trunk\sources\Mr_X\FstCal\obj\Debug\FstCal.dll
+D:\PROJECT\trunk\sources\Mr_X\FstCal\obj\Debug\FstCal.pdb
