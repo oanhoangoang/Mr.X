@@ -14,6 +14,7 @@ namespace FstCal
     {
         int lvlGame; // level of Game
         string rank, lvl; // Player rank & level
+        int check; // check = 0 Lose; check = 1 Win
 
         // Call Form
         public FstCalDisp(int xlvlGame, string xRank, string xLvl) 
@@ -63,8 +64,14 @@ namespace FstCal
             gameAns = calAns(num1, num2);
 
             if (playerAns == gameAns)
-                notiRightAns();
-            else notiWrongAns();
+            {
+                check = 1; notiRightAns();
+            }
+            else
+            {
+                check = 0;
+                notiWrongAns();
+            }
         }
         //
         // Timer
@@ -75,6 +82,7 @@ namespace FstCal
             sec--;
             if (sec == -1) 
             {
+                check = 0;
                 timer.Stop();
                 notiTimeUp();
             }

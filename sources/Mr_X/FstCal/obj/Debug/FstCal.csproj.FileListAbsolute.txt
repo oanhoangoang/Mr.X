@@ -13,3 +13,11 @@ D:\PROJECT\trunk\sources\Mr_X\FstCal\obj\Debug\FstCal.Properties.Resources.resou
 D:\PROJECT\trunk\sources\Mr_X\FstCal\obj\Debug\FstCal.csproj.GenerateResource.Cache
 D:\PROJECT\trunk\sources\Mr_X\FstCal\obj\Debug\FstCal.dll
 D:\PROJECT\trunk\sources\Mr_X\FstCal\obj\Debug\FstCal.pdb
+E:\JS_Project\Mr.X.git\trunk\sources\Mr_X\FstCal\FstCal\obj\Debug\FstCal.FstCalDisp.resources
+E:\JS_Project\Mr.X.git\trunk\sources\Mr_X\FstCal\FstCal\obj\Debug\FstCal.Properties.Resources.resources
+E:\JS_Project\Mr.X.git\trunk\sources\Mr_X\FstCal\FstCal\obj\Debug\FstCal.csproj.GenerateResource.Cache
+E:\JS_Project\Mr.X.git\trunk\sources\Mr_X\FstCal\FstCal\obj\Debug\FstCal.dll
+E:\JS_Project\Mr.X.git\trunk\sources\Mr_X\FstCal\FstCal\bin\Debug\FstCal.dll
+E:\JS_Project\Mr.X.git\trunk\sources\Mr_X\FstCal\FstCal\bin\Debug\FstCal.pdb
+E:\JS_Project\Mr.X.git\trunk\sources\Mr_X\FstCal\FstCal\obj\Debug\FstCal.pdb
+E:\JS_Project\Mr.X.git\trunk\sources\Mr_X\FstCal\FstCal\obj\Debug\FstCal.csprojResolveAssemblyReference.cache

@@ -5,7 +5,6 @@ namespace FstCal
     partial class FstCalDisp
     {
         int num1, num2, playerAns, gameAns;
-        int check; // check = 0 Lose; check = 1 Win
         //
         // Load the calculation
         //
@@ -33,13 +32,11 @@ namespace FstCal
             if (lvlGame == 1) return num1 + num2;
             else return num1 * num2;
         }
-
         //
         // Time up
         //
         public void notiTimeUp() 
         {
-            check = 0;
             lblNum1.Visible = false;
             lblNum2.Visible = false;
             lblSign.Visible = false;
@@ -56,7 +53,6 @@ namespace FstCal
         //
         public void notiRightAns() 
         {
-            check = 1;
             lblNum1.Visible = false;
             lblNum2.Visible = false;
             lblSign.Visible = false;
@@ -73,7 +69,6 @@ namespace FstCal
         //
         public void notiWrongAns() 
         {
-            check = 0;
             lblNum1.Visible = false;
             lblNum2.Visible = false;
             lblSign.Visible = false;
@@ -128,12 +123,12 @@ namespace FstCal
             this.lblLevelData = new System.Windows.Forms.Label();
             this.lblLevel = new System.Windows.Forms.Label();
             this.pnlGameInfo = new System.Windows.Forms.Panel();
+            this.btnBackToMenu = new System.Windows.Forms.Button();
             this.btnStart = new System.Windows.Forms.Button();
             this.lblTimeUnit = new System.Windows.Forms.Label();
             this.lblTimeCount = new System.Windows.Forms.Label();
             this.lblTime = new System.Windows.Forms.Label();
             this.timer = new System.Windows.Forms.Timer(this.components);
-            this.btnBackToMenu = new System.Windows.Forms.Button();
             this.pnlGameDisp.SuspendLayout();
             this.pnlPlayerInfo.SuspendLayout();
             this.pnlGameInfo.SuspendLayout();
@@ -311,6 +306,19 @@ namespace FstCal
             this.pnlGameInfo.Size = new System.Drawing.Size(395, 358);
             this.pnlGameInfo.TabIndex = 3;
             // 
+            // btnBackToMenu
+            // 
+            this.btnBackToMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
+            this.btnBackToMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBackToMenu.ForeColor = System.Drawing.Color.Black;
+            this.btnBackToMenu.Location = new System.Drawing.Point(212, 168);
+            this.btnBackToMenu.Name = "btnBackToMenu";
+            this.btnBackToMenu.Size = new System.Drawing.Size(106, 77);
+            this.btnBackToMenu.TabIndex = 4;
+            this.btnBackToMenu.Text = "Trở về";
+            this.btnBackToMenu.UseVisualStyleBackColor = false;
+            this.btnBackToMenu.Click += new System.EventHandler(this.btnBackToMenu_Click);
+            // 
             // btnStart
             // 
             this.btnStart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
@@ -358,18 +366,6 @@ namespace FstCal
             // 
             this.timer.Interval = 500;
             this.timer.Tick += new System.EventHandler(this.timer_Tick);
-            // 
-            // btnBackToMenu
-            // 
-            this.btnBackToMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
-            this.btnBackToMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBackToMenu.ForeColor = System.Drawing.Color.Black;
-            this.btnBackToMenu.Location = new System.Drawing.Point(212, 168);
-            this.btnBackToMenu.Name = "btnBackToMenu";
-            this.btnBackToMenu.Size = new System.Drawing.Size(106, 77);
-            this.btnBackToMenu.TabIndex = 4;
-            this.btnBackToMenu.Text = "Trở về";
-            this.btnBackToMenu.UseVisualStyleBackColor = false;
             // 
             // FstCalDisp
             // 
