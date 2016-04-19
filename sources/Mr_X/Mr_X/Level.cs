@@ -39,21 +39,21 @@ namespace Mr_X
                 if (nowLevel == 1)
                 {
                     FstCalDisp g = new FstCalDisp(1, "Bảo vệ", "1");
-                    //g.trans = data;
+                    g.trans = data;
                     g.ShowDialog();
                 }
                 else if (nowLevel == 2)
                 {
                     frmCalExpression g = new frmCalExpression(1, "Bảo vệ", "3");
-                    //g.trans = data;
+                    g.trans = data;
                     g.ShowDialog();
                     
                     
                 }
                 else if (nowLevel == 3)
                 {
-                    FindNumDisplay g = new FindNumDisplay(6, 5, 60);
-                    //g.trans = data;
+                    FindNumDisplay g = new FindNumDisplay(3, "Vẫn chỉ là bảo vệ", 6, 5, 90, false);
+                    g.trans = data;
                     g.ShowDialog();
                 }
             }
