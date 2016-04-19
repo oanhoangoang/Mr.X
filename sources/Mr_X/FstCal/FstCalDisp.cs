@@ -23,8 +23,9 @@ namespace FstCal
             rank = xRank;
             lvl = xLvl;
         }
-
+        //
         // Prepare to play
+        //
         private void FstCalDisp_Load(object sender, EventArgs e) 
         {
             lblLevelData.Text = lvl;
@@ -38,8 +39,9 @@ namespace FstCal
             btnAns.Visible = false;
             lblNoti.Visible = false;
         }
-
+        //
         // Start the game
+        //
         int sec;
         private void btnStart_Click(object sender, EventArgs e) 
         {
@@ -51,8 +53,9 @@ namespace FstCal
             sec = int.Parse(lblTimeCount.Text);
             timer.Start();
         }
-
+        //
         // Player gives the answer
+        //
         private void btnAns_Click(object sender, EventArgs e)   
         {
             timer.Stop();
@@ -60,18 +63,12 @@ namespace FstCal
             gameAns = calAns(num1, num2);
 
             if (playerAns == gameAns)
-            {
-                check = 1;
                 notiRightAns();
-            }
-            else
-            {
-                notiWrongAns();
-                check = 0;
-            }
+            else notiWrongAns();
         }
-
+        //
         // Timer
+        //
         private void timer_Tick(object sender, EventArgs e) 
         {
             lblTimeCount.Text = sec.ToString();
@@ -79,9 +76,16 @@ namespace FstCal
             if (sec == -1) 
             {
                 timer.Stop();
-                check = 0; notiTimeUp();
+                notiTimeUp();
             }
         }
+        public delegate void truyen(int value);
+        public truyen trans;
 
+        private void btnBackToMenu_Click(object sender, EventArgs e)
+        {
+            if (check==1) trans.Invoke(1); else trans.Invoke(0);
+            this.Close();
+        }
     }
 }

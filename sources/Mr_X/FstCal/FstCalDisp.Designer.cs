@@ -6,7 +6,10 @@ namespace FstCal
     {
         int num1, num2, playerAns, gameAns;
         int check; // check = 0 Lose; check = 1 Win
-        public void loadGameData() // Load the calculation
+        //
+        // Load the calculation
+        //
+        public void loadGameData() 
         {
             Random rd = new Random();
 
@@ -22,17 +25,21 @@ namespace FstCal
             lblNum2.Text = num2.ToString();
             if (lvlGame == 1) lblSign.Text = "+"; else lblSign.Text = "x";
         }
-        
+        //
         // Calculate the game answer
+        //
         public int calAns(int num1, int num2) 
         {
             if (lvlGame == 1) return num1 + num2;
             else return num1 * num2;
         }
 
+        //
         // Time up
+        //
         public void notiTimeUp() 
         {
+            check = 0;
             lblNum1.Visible = false;
             lblNum2.Visible = false;
             lblSign.Visible = false;
@@ -44,10 +51,12 @@ namespace FstCal
             lblNoti.Visible = true;
             lblNoti.Text = "Cái gì lâu quá cũng không tốt. Cố gắng lần sau nhé !";
         }
-
+        //
         // Notify player answer is Right
+        //
         public void notiRightAns() 
         {
+            check = 1;
             lblNum1.Visible = false;
             lblNum2.Visible = false;
             lblSign.Visible = false;
@@ -59,9 +68,12 @@ namespace FstCal
             lblNoti.Visible = true;
             lblNoti.Text = "Ghê à nha! Party với chức vụ mới thôi :))";
         }
-
-        public void notiWrongAns() // Player answer is Wrong
+        //
+        // Player answer is Wrong
+        //
+        public void notiWrongAns() 
         {
+            check = 0;
             lblNum1.Visible = false;
             lblNum2.Visible = false;
             lblSign.Visible = false;
@@ -101,6 +113,7 @@ namespace FstCal
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FstCalDisp));
             this.pnlGameDisp = new System.Windows.Forms.Panel();
             this.lblNoti = new System.Windows.Forms.Label();
             this.btnAns = new System.Windows.Forms.Button();
@@ -120,6 +133,7 @@ namespace FstCal
             this.lblTimeCount = new System.Windows.Forms.Label();
             this.lblTime = new System.Windows.Forms.Label();
             this.timer = new System.Windows.Forms.Timer(this.components);
+            this.btnBackToMenu = new System.Windows.Forms.Button();
             this.pnlGameDisp.SuspendLayout();
             this.pnlPlayerInfo.SuspendLayout();
             this.pnlGameInfo.SuspendLayout();
@@ -285,6 +299,7 @@ namespace FstCal
             // 
             this.pnlGameInfo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlGameInfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(204)))), ((int)(((byte)(113)))));
+            this.pnlGameInfo.Controls.Add(this.btnBackToMenu);
             this.pnlGameInfo.Controls.Add(this.btnStart);
             this.pnlGameInfo.Controls.Add(this.lblTimeUnit);
             this.pnlGameInfo.Controls.Add(this.lblTimeCount);
@@ -301,9 +316,9 @@ namespace FstCal
             this.btnStart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
             this.btnStart.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnStart.ForeColor = System.Drawing.Color.Black;
-            this.btnStart.Location = new System.Drawing.Point(127, 157);
+            this.btnStart.Location = new System.Drawing.Point(81, 168);
             this.btnStart.Name = "btnStart";
-            this.btnStart.Size = new System.Drawing.Size(124, 72);
+            this.btnStart.Size = new System.Drawing.Size(106, 77);
             this.btnStart.TabIndex = 3;
             this.btnStart.Text = "Bắt đầu";
             this.btnStart.UseVisualStyleBackColor = false;
@@ -344,15 +359,29 @@ namespace FstCal
             this.timer.Interval = 500;
             this.timer.Tick += new System.EventHandler(this.timer_Tick);
             // 
+            // btnBackToMenu
+            // 
+            this.btnBackToMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
+            this.btnBackToMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBackToMenu.ForeColor = System.Drawing.Color.Black;
+            this.btnBackToMenu.Location = new System.Drawing.Point(212, 168);
+            this.btnBackToMenu.Name = "btnBackToMenu";
+            this.btnBackToMenu.Size = new System.Drawing.Size(106, 77);
+            this.btnBackToMenu.TabIndex = 4;
+            this.btnBackToMenu.Text = "Trở về";
+            this.btnBackToMenu.UseVisualStyleBackColor = false;
+            // 
             // FstCalDisp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1201, 624);
+            this.ClientSize = new System.Drawing.Size(1217, 663);
             this.Controls.Add(this.pnlGameInfo);
             this.Controls.Add(this.pnlPlayerInfo);
             this.Controls.Add(this.pnlGameDisp);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FstCalDisp";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FstCalDisp";
             this.Load += new System.EventHandler(this.FstCalDisp_Load);
             this.pnlGameDisp.ResumeLayout(false);
@@ -386,5 +415,6 @@ namespace FstCal
         private System.Windows.Forms.Button btnAns;
         private System.Windows.Forms.Timer timer;
         private System.Windows.Forms.Label lblNoti;
+        private System.Windows.Forms.Button btnBackToMenu;
     }
 }

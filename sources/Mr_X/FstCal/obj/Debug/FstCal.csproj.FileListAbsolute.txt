@@ -5,3 +5,4 @@ c:\users\toet\documents\visual studio 2013\Projects\FstCal\FstCal\obj\Debug\FstC
 c:\users\toet\documents\visual studio 2013\Projects\FstCal\FstCal\obj\Debug\FstCal.dll
 c:\users\toet\documents\visual studio 2013\Projects\FstCal\FstCal\obj\Debug\FstCal.pdb
 C:\Users\Toet\Documents\Visual Studio 2013\Projects\FstCal\FstCal\obj\Debug\FstCal.Properties.Resources.resources
+C:\Users\Toet\Documents\Visual Studio 2013\Projects\FstCal\FstCal\obj\Debug\FstCal.csprojResolveAssemblyReference.cache
