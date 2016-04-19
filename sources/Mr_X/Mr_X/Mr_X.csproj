@@ -11,6 +11,21 @@
     <AssemblyName>Mr_X</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>0.0.1.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -44,37 +59,52 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="Draft.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Draft.Designer.cs">
+      <DependentUpon>Draft.cs</DependentUpon>
     </Compile>
-    <Compile Include="Gameform.cs" />
-    <Compile Include="Gameform.Designer.cs">
-      <DependentUpon>Gameform.cs</DependentUpon>
+    <Compile Include="Main.cs">
+      <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Mainform.cs" />
-    <Compile Include="Mainform.Designer.cs">
-      <DependentUpon>Mainform.cs</DependentUpon>
+    <Compile Include="Main.Designer.cs">
+      <DependentUpon>Main.cs</DependentUpon>
     </Compile>
-    <Compile Include="Mainform_2.cs" />
-    <Compile Include="Mainform_2.Designer.cs">
-      <DependentUpon>Mainform_2.cs</DependentUpon>
+    <Compile Include="Intro.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Intro.Designer.cs">
+      <DependentUpon>Intro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Level.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Level.Designer.cs">
+      <DependentUpon>Level.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Playing.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Playing.Designer.cs">
+      <DependentUpon>Playing.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="Draft.resx">
+      <DependentUpon>Draft.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Gameform.resx">
-      <DependentUpon>Gameform.cs</DependentUpon>
+    <EmbeddedResource Include="Main.resx">
+      <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Mainform.resx">
-      <DependentUpon>Mainform.cs</DependentUpon>
+    <EmbeddedResource Include="Intro.resx">
+      <DependentUpon>Intro.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Mainform_2.resx">
-      <DependentUpon>Mainform_2.cs</DependentUpon>
+    <EmbeddedResource Include="Level.resx">
+      <DependentUpon>Level.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Playing.resx">
+      <DependentUpon>Playing.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -97,6 +127,45 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CalExpression\CalExpression\CalExpression.csproj">
+      <Project>{f045c065-bf0a-4da2-8c34-2778961ff12a}</Project>
+      <Name>CalExpression</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FndNum\FndNum.csproj">
+      <Project>{6f89f2d0-f24c-40d1-81bc-180f2217fcb5}</Project>
+      <Name>FndNum</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FndSaCell\FndSaCell.csproj">
+      <Project>{ea9739ae-4eb0-4133-8d30-cf5a04bcc6da}</Project>
+      <Name>FndSaCell</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FstCal\FstCal.csproj">
+      <Project>{409fc21f-1256-41b9-b418-82caf907810f}</Project>
+      <Name>FstCal</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RemMe\RemMe.csproj">
+      <Project>{227283ab-dac8-41be-8e33-0a040ddb1562}</Project>
+      <Name>RemMe</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
