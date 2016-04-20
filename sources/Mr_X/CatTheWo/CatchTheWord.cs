@@ -65,7 +65,7 @@ namespace CatTheWo
         // số ô mà người chơi đã mở ở vòng hiện tại
         private int cellOnNowRound;
 
-        // lấy các giá trị: số điểm qua vòng,số vòng chơi, thời gian gian
+        // lấy các giá trị:level, chức vụ, số điểm qua vòng,số vòng chơi, thời gian gian, tắt nhạc hay không
         public CatchTheWord(int level, string position ,int score, int round, int time, bool turnOffSound)
         {
             
@@ -120,6 +120,17 @@ namespace CatTheWo
                 await Task.Delay(x);
             });
             t.Wait();
+        }
+
+        // phát nhạc theo đường dẫn: link
+        private void playMusic(string link)
+        {
+            try
+            {
+                SoundPlayer sp = new SoundPlayer(@link);
+                sp.Play();
+            }
+            catch (Exception ex) { }
         }
 
         // bắt đầu chơi game: bắt đầu đếm thời gian, tạo bàn phím để nhấn và tạo câu hỏi
@@ -319,7 +330,6 @@ namespace CatTheWo
             if (x == (int)'Ư')
             if (y == (int)'Ừ' || y == (int)'Ứ' || y == (int)'Ữ' || y == (int)'Ự' || y == (int)'Ử' ) return true;
 
-
             if (x == (int)'Y')
             if (y == (int)'Ỳ' || y == (int)'Ý' || y == (int)'Ỹ' || y == (int)'Ỵ' || y == (int)'Ỷ') return true;
             
@@ -331,12 +341,7 @@ namespace CatTheWo
         private void btnMediate_Click(object sender, EventArgs e)
         {
 
-            try
-            {
-                SoundPlayer sp = new SoundPlayer(@"sound/CatTheWo/click.wav");
-                sp.Play();
-            }
-            catch (Exception ex) { }
+            playMusic("sound/CatTheWo/click.wav");
 
             timeDelay(200);
 
@@ -350,23 +355,13 @@ namespace CatTheWo
                         cellOnNowRound++;
                         cellOfAnswer[nowRound][i].Text=btnMedia.Text;
 
-                        try
-                        {
-                            SoundPlayer sphappy = new SoundPlayer(@"sound/CatTheWo/happy.wav");
-                            sphappy.Play();
-                        }
-                        catch (Exception ex) { }
+                        playMusic("sound/CatTheWo/happy.wav");
 
                         timeDelay(200);
                     }
             if (cal == 0)
             {
-                try
-                {
-                    SoundPlayer spsad = new SoundPlayer(@"sound/CatTheWo/sad.wav");
-                    spsad.Play();
-                }
-                catch (Exception ex) { }
+                playMusic("sound/CatTheWo/sad.wav");
                 mistake++;
                 timeDelay(200);
             }
@@ -375,14 +370,7 @@ namespace CatTheWo
                 btnMedia.Enabled = false; 
                 if (cellOnNowRound == numberOfAlphabet)
                 {
-
-                    try
-                    {
-                        SoundPlayer spPassRound = new SoundPlayer(@"sound/CatTheWo/passRound.wav");
-                        spPassRound.Play();
-                    }
-                    catch (Exception ex) { }
-
+                    playMusic("sound/CatTheWo/passRound.wav");
 
                     try
                     {
@@ -436,8 +424,7 @@ namespace CatTheWo
                 }
                 catch (Exception ex) { }
                 
-                MessageBox.Show("Chúc mừng bạn đã vượt qua thử thách này", "Thông báo");
-                
+                MessageBox.Show("Chúc mừng bạn đã vượt qua thử thách này", "Thông báo");    
             }
             else
             {
@@ -450,6 +437,7 @@ namespace CatTheWo
         private void CatchTheWord_FormClosed(object sender, FormClosedEventArgs e)
         {
             wmpSoundTrack.close();
+            tmrTimeToPlay.Stop();
         }
 
         //tắt game

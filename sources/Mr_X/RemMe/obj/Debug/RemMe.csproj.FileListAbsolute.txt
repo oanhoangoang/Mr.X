@@ -28,3 +28,14 @@ D:\PROJECT\trunk\sources\Mr_X\RemMe\obj\Debug\RemMe.RememberMe.resources
 D:\PROJECT\trunk\sources\Mr_X\RemMe\obj\Debug\RemMe.csproj.GenerateResource.Cache
 D:\PROJECT\trunk\sources\Mr_X\RemMe\obj\Debug\RemMe.dll
 D:\PROJECT\trunk\sources\Mr_X\RemMe\obj\Debug\RemMe.pdb
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\RemMe\bin\Debug\RemMe.dll
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\RemMe\bin\Debug\RemMe.pdb
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\RemMe\bin\Debug\Interop.WMPLib.dll
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\RemMe\bin\Debug\AxInterop.WMPLib.dll
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\RemMe\obj\Debug\Interop.WMPLib.dll
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\RemMe\obj\Debug\AxInterop.WMPLib.dll
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\RemMe\obj\Debug\RemMe.csproj.ResolveComReference.cache
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\RemMe\obj\Debug\RemMe.RememberMe.resources
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\RemMe\obj\Debug\RemMe.csproj.GenerateResource.Cache
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\RemMe\obj\Debug\RemMe.dll
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\RemMe\obj\Debug\RemMe.pdb

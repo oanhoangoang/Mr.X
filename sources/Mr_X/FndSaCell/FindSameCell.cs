@@ -72,7 +72,7 @@ namespace FndSaCell
         // lưu tên của button đã nhấn liền trước đó
         private int previousButton;
 
-        // lấy các giá trị: chiều cao của bảng, chiều rộng của bảng, số điểm qua vòng,số lượt nhấn, thời gian chơi
+        // lấy các giá trị:level, chức vụ, chiều cao của bảng, chiều rộng của bảng, số điểm qua vòng,số lượt nhấn, thời gian chơi, có tắt nhạc hay không
         public FindSameCell(int level, string position, int height, int width, int Score, int numChoice, int time, bool turnOffSound)
         {
             InitializeComponent();
@@ -90,7 +90,7 @@ namespace FndSaCell
             {
                 try
                 {
-                    wmpSoundTrack.URL = @"sound/FndSaCell/SoundTrack.mp3";
+                    wmpSoundTrack.URL = @"sound/FndSaCell/soundTrack.mp3";
                 }
                 catch (Exception ex) { }
             }
@@ -101,6 +101,17 @@ namespace FndSaCell
         {
             Random rd = new Random();
             return rd.Next(limitLow, limitHigh + 1);
+        }
+
+        // phát nhạc theo đường dẫn: link
+        private void playMusic(string link)
+        {
+            try
+            {
+                SoundPlayer sp = new SoundPlayer(@link);
+                sp.Play();
+            }
+            catch (Exception ex) { }
         }
 
         //tạo mảng button tròn
@@ -195,12 +206,7 @@ namespace FndSaCell
                 if (original[Int32.Parse(btnMedia.Name)] == original[previousButton])
                 {
                     yourScore += 2;
-                    try
-                    {
-                        SoundPlayer sp = new SoundPlayer(@"sound/FndSaCell/happy.wav");
-                        sp.Play();
-                    }
-                    catch (Exception ex) { }
+                    playMusic("sound/FndSaCell/happy.wav");
                     btnMedia.Visible = false;
                     for (int i = 1; i <= heightTable; i++)
                         for (int j = 1; j <= widthTable; j++)
@@ -212,12 +218,7 @@ namespace FndSaCell
                 }
                 else
                 {
-                    try
-                    {
-                        SoundPlayer sp = new SoundPlayer(@"sound/FndSaCell/sad.wav");
-                        sp.Play();
-                    }
-                    catch (Exception ex) { }
+                    playMusic("sound/FndSaCell/sad.wav");
                     btnMedia.Image = null;
                     for (int i = 1; i <= heightTable; i++)
                         for (int j = 1; j <= widthTable; j++)
@@ -234,12 +235,7 @@ namespace FndSaCell
             {
                 previousButton = Int32.Parse(btnMedia.Name);
                 btnMedia.Click -= new EventHandler(btnMediate_Click);
-                try
-                {
-                    SoundPlayer sp = new SoundPlayer(@"sound/FndSaCell/openButton.wav");
-                    sp.Play();
-                }
-                catch (Exception ex) { }
+                playMusic("sound/FndSaCell/openButton.wav");
             }
         }
 
@@ -285,14 +281,14 @@ namespace FndSaCell
 
         //tắt game
         private void btnEnd_Click(object sender, EventArgs e)
-        {
-            tmrTimeToPlay.Stop();
+        {  
             this.Close();
         }
 
         // tắt nhạc khi đóng chương trình
         private void FindSameCell_FormClosed(object sender, FormClosedEventArgs e)
         {
+            tmrTimeToPlay.Stop();
             wmpSoundTrack.close();
         }
     }

@@ -65,7 +65,18 @@ namespace RemMe
             return rd.Next(limitLow, limitHigh + 1);
         }
 
-        // lấy các giá trị: kích thước bảng, số lượng ô người chơi phải chọn, số lượng lượt người chơi được chọn và thời gian chơi
+        // phát nhạc theo đường dẫn: link
+        private void playMusic(string link)
+        {
+            try
+            {
+                SoundPlayer sp = new SoundPlayer(@link);
+                sp.Play();
+            }
+            catch (Exception ex) { }
+        }
+
+        // lấy các giá trị:level, chức vụ, kích thước bảng, số lượng ô người chơi phải chọn, số lượng lượt người chơi được chọn, thời gian chơi, tắt nhạc hay không
         public RememberMe(int level, string position, int size, int numAns, int numChoice, int time, bool turnOffSound)
         {
             InitializeComponent();
@@ -79,7 +90,7 @@ namespace RemMe
             {
                 try
                 {
-                    wmpSoundTrack.URL = @"sound/RemMe/SoundTrack.mp3";
+                    wmpSoundTrack.URL = @"sound/RemMe/soundTrack.mp3";
                 }
                 catch (Exception ex){}
             }
@@ -227,22 +238,13 @@ namespace RemMe
             if (checkColor[value])
             {
                 yourScore++;
-                try
-                {
-                    SoundPlayer sp = new SoundPlayer(@"sound/RemMe/happy.wav");
-                    sp.Play();
-                }
-                catch (Exception ex) { }
+
+                playMusic("sound/RemMe/happy.wav");
                 btnMedia.Visible = false;
             }
             else
             {
-                try
-                {
-                    SoundPlayer sp = new SoundPlayer(@"sound/RemMe/sad.wav");
-                    sp.Play();
-                }
-                catch (Exception ex) { }
+                playMusic("sound/RemMe/sad.wav");
             }
         }
 
@@ -296,6 +298,8 @@ namespace RemMe
         // tắt chương trình
         private void btnClose_Click(object sender, EventArgs e)
         {
+            tmrTimeToPlay.Stop();
+            tmrTimeToWatch.Stop();
             this.Close();
         }
     }

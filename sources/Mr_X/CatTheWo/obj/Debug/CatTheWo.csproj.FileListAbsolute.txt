@@ -10,3 +10,15 @@ D:\Mr.X.git\trunk\sources\Mr_X\CatTheWo\bin\Debug\AxInterop.WMPLib.dll
 D:\Mr.X.git\trunk\sources\Mr_X\CatTheWo\obj\Debug\Interop.WMPLib.dll
 D:\Mr.X.git\trunk\sources\Mr_X\CatTheWo\obj\Debug\AxInterop.WMPLib.dll
 D:\Mr.X.git\trunk\sources\Mr_X\CatTheWo\obj\Debug\CatTheWo.csproj.ResolveComReference.cache
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\CatTheWo\bin\Debug\CatTheWo.dll
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\CatTheWo\bin\Debug\CatTheWo.pdb
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\CatTheWo\bin\Debug\Interop.WMPLib.dll
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\CatTheWo\bin\Debug\AxInterop.WMPLib.dll
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\CatTheWo\obj\Debug\CatTheWo.csprojResolveAssemblyReference.cache
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\CatTheWo\obj\Debug\Interop.WMPLib.dll
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\CatTheWo\obj\Debug\AxInterop.WMPLib.dll
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\CatTheWo\obj\Debug\CatTheWo.csproj.ResolveComReference.cache
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\CatTheWo\obj\Debug\CatTheWo.CatchTheWord.resources
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\CatTheWo\obj\Debug\CatTheWo.csproj.GenerateResource.Cache
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\CatTheWo\obj\Debug\CatTheWo.dll
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\CatTheWo\obj\Debug\CatTheWo.pdb

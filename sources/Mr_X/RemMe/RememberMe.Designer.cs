@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RememberMe));
             this.pnlGameDisplayGray = new System.Windows.Forms.Panel();
+            this.picVictory = new System.Windows.Forms.PictureBox();
             this.btnMediate = new System.Windows.Forms.Button();
             this.wmpSoundTrack = new AxWMPLib.AxWindowsMediaPlayer();
             this.pnlGameDisplayYellow = new System.Windows.Forms.Panel();
@@ -52,14 +53,13 @@
             this.nudMinute = new System.Windows.Forms.NumericUpDown();
             this.tmrTimeToWatch = new System.Windows.Forms.Timer(this.components);
             this.tmrTimeToPlay = new System.Windows.Forms.Timer(this.components);
-            this.picVictory = new System.Windows.Forms.PictureBox();
             this.pnlGameDisplayGray.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picVictory)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wmpSoundTrack)).BeginInit();
             this.pnlGameDisplayYellow.SuspendLayout();
             this.pnlGameDisplayGreen.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudSecond)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudMinute)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picVictory)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlGameDisplayGray
@@ -76,6 +76,15 @@
             this.pnlGameDisplayGray.Name = "pnlGameDisplayGray";
             this.pnlGameDisplayGray.Size = new System.Drawing.Size(809, 654);
             this.pnlGameDisplayGray.TabIndex = 0;
+            // 
+            // picVictory
+            // 
+            this.picVictory.Location = new System.Drawing.Point(19, 70);
+            this.picVictory.Name = "picVictory";
+            this.picVictory.Size = new System.Drawing.Size(768, 503);
+            this.picVictory.TabIndex = 3;
+            this.picVictory.TabStop = false;
+            this.picVictory.Visible = false;
             // 
             // btnMediate
             // 
@@ -306,15 +315,6 @@
             this.tmrTimeToPlay.Interval = 1000;
             this.tmrTimeToPlay.Tick += new System.EventHandler(this.tmrTimeToPlay_Tick);
             // 
-            // picVictory
-            // 
-            this.picVictory.Location = new System.Drawing.Point(19, 70);
-            this.picVictory.Name = "picVictory";
-            this.picVictory.Size = new System.Drawing.Size(768, 503);
-            this.picVictory.TabIndex = 3;
-            this.picVictory.TabStop = false;
-            this.picVictory.Visible = false;
-            // 
             // RememberMe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -331,10 +331,11 @@
             this.MaximizeBox = false;
             this.Name = "RememberMe";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "RememberMe";
+            this.Text = "Mr.X";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.RememberMe_FormClosed);
             this.Load += new System.EventHandler(this.RememberMe_Load);
             this.pnlGameDisplayGray.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picVictory)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.wmpSoundTrack)).EndInit();
             this.pnlGameDisplayYellow.ResumeLayout(false);
             this.pnlGameDisplayYellow.PerformLayout();
@@ -342,7 +343,6 @@
             this.pnlGameDisplayGreen.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudSecond)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudMinute)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picVictory)).EndInit();
             this.ResumeLayout(false);
 
         }

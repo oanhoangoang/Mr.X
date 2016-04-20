@@ -33,3 +33,14 @@ D:\PROJECT\trunk\sources\Mr_X\FndNum\obj\Debug\FndNum.FindNumDisplay.resources
 D:\PROJECT\trunk\sources\Mr_X\FndNum\obj\Debug\FndNum.csproj.GenerateResource.Cache
 D:\PROJECT\trunk\sources\Mr_X\FndNum\obj\Debug\FndNum.dll
 D:\PROJECT\trunk\sources\Mr_X\FndNum\obj\Debug\FndNum.pdb
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\FndNum\bin\Debug\FndNum.dll
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\FndNum\bin\Debug\FndNum.pdb
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\FndNum\bin\Debug\Interop.WMPLib.dll
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\FndNum\bin\Debug\AxInterop.WMPLib.dll
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\FndNum\obj\Debug\Interop.WMPLib.dll
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\FndNum\obj\Debug\AxInterop.WMPLib.dll
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\FndNum\obj\Debug\FndNum.csproj.ResolveComReference.cache
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\FndNum\obj\Debug\FndNum.FindNumDisplay.resources
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\FndNum\obj\Debug\FndNum.csproj.GenerateResource.Cache
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\FndNum\obj\Debug\FndNum.dll
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\FndNum\obj\Debug\FndNum.pdb

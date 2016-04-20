@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CatchTheWord));
             this.pnlGameDisplayGray = new System.Windows.Forms.Panel();
+            this.picVictory = new System.Windows.Forms.PictureBox();
             this.btnMediate = new System.Windows.Forms.Button();
             this.lblHint = new System.Windows.Forms.Label();
             this.wmpSoundTrack = new AxWMPLib.AxWindowsMediaPlayer();
@@ -58,8 +59,8 @@
             this.lblTime = new System.Windows.Forms.Label();
             this.lblGame = new System.Windows.Forms.Label();
             this.tmrTimeToPlay = new System.Windows.Forms.Timer(this.components);
-            this.picVictory = new System.Windows.Forms.PictureBox();
             this.pnlGameDisplayGray.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picVictory)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wmpSoundTrack)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picTalk)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picMc)).BeginInit();
@@ -68,7 +69,6 @@
             this.pnlGameDisplayGreen.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudMinute)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudSecond)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picVictory)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlGameDisplayGray
@@ -91,6 +91,15 @@
             this.pnlGameDisplayGray.Name = "pnlGameDisplayGray";
             this.pnlGameDisplayGray.Size = new System.Drawing.Size(809, 702);
             this.pnlGameDisplayGray.TabIndex = 0;
+            // 
+            // picVictory
+            // 
+            this.picVictory.Location = new System.Drawing.Point(8, 67);
+            this.picVictory.Name = "picVictory";
+            this.picVictory.Size = new System.Drawing.Size(753, 571);
+            this.picVictory.TabIndex = 3;
+            this.picVictory.TabStop = false;
+            this.picVictory.Visible = false;
             // 
             // btnMediate
             // 
@@ -357,15 +366,6 @@
             this.tmrTimeToPlay.Interval = 1000;
             this.tmrTimeToPlay.Tick += new System.EventHandler(this.tmrTimeToPlay_Tick);
             // 
-            // picVictory
-            // 
-            this.picVictory.Location = new System.Drawing.Point(8, 67);
-            this.picVictory.Name = "picVictory";
-            this.picVictory.Size = new System.Drawing.Size(753, 571);
-            this.picVictory.TabIndex = 3;
-            this.picVictory.TabStop = false;
-            this.picVictory.Visible = false;
-            // 
             // CatchTheWord
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -383,10 +383,11 @@
             this.MaximizeBox = false;
             this.Name = "CatchTheWord";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "CatchTheWord";
+            this.Text = "Mr.X";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.CatchTheWord_FormClosed);
             this.pnlGameDisplayGray.ResumeLayout(false);
             this.pnlGameDisplayGray.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picVictory)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.wmpSoundTrack)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picTalk)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picMc)).EndInit();
@@ -397,7 +398,6 @@
             this.pnlGameDisplayGreen.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudMinute)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudSecond)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picVictory)).EndInit();
             this.ResumeLayout(false);
 
         }

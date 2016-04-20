@@ -46,7 +46,7 @@ namespace FndNum
         // thời gian chơi
         private int timeToPlay;  
 
-        // lấy các giá trị: kích thước bảng, số lượng số cần tìm, thời gian chơi
+        // lấy các giá trị: level, chức vụ, kích thước bảng, số lượng số cần tìm, thời gian chơi, tắt nhạc hay không
         public FindNumDisplay(int level, string position, int size, int num, int time, bool turnOffSound)
         {
             InitializeComponent();
@@ -59,7 +59,7 @@ namespace FndNum
             {
                 try
                 {
-                    wmpSoundTrack.URL = @"sound/FndNum/soundtrack.mp3";
+                    wmpSoundTrack.URL = @"sound/FndNum/soundTrack.mp3";
                 }
                 catch (Exception ex){}
             }
@@ -70,6 +70,17 @@ namespace FndNum
         {
             Random rd = new Random();
             return rd.Next(limitLow, limitHigh + 1);
+        }
+
+        // phát nhạc theo đường dẫn: link
+        private void playMusic(string link)
+        {
+            try
+            {
+                SoundPlayer sp = new SoundPlayer(@link);
+                sp.Play();
+            }
+            catch (Exception ex) { }
         }
 
         // tạo mảng button: kích thước, vị trí, giá trị hiển thị, màu nền, màu chữ, xử lí khi nhấn vào
@@ -167,21 +178,12 @@ namespace FndNum
             {
                 btnMedia.Visible = false;
                 yourScore++;
-                try
-                {
-                    SoundPlayer soundhappy = new SoundPlayer(@"sound/FndNum/happy.wav");
-                    soundhappy.Play();
-                }
-                catch (Exception ex) {}
+
+                playMusic("sound/FndNum/happy.wav");
             }
             else
             {
-                try
-                {
-                    SoundPlayer soundhappy = new SoundPlayer(@"sound/FndNum/sad.wav");
-                    soundhappy.Play();
-                }
-                catch (Exception ex) {}
+                playMusic("sound/FndNum/sad.wav");
             }
             now++;
         }
@@ -211,7 +213,6 @@ namespace FndNum
                 }
                 catch (Exception ex) { }
 
-
                 MessageBox.Show("Chúc mừng bạn đã vượt qua thử thách này", "Thông báo");
             }
             else
@@ -224,13 +225,13 @@ namespace FndNum
         //tắt game
         private void btnEnd_Click(object sender, EventArgs e)
         {
-            tmrTimeToPlay.Stop();
             this.Close();
         }
 
         // tắt nhạc khi đóng chương trình
         private void FindNumDisplay_FormClosed(object sender, FormClosedEventArgs e)
         {
+            tmrTimeToPlay.Stop();
             wmpSoundTrack.close();
         }
     }

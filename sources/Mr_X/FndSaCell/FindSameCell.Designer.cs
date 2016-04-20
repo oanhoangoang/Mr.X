@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FindSameCell));
             this.pnlGameDisplayGray = new System.Windows.Forms.Panel();
+            this.picVictory = new System.Windows.Forms.PictureBox();
             this.btnMediate = new System.Windows.Forms.Button();
             this.wmpSoundTrack = new AxWMPLib.AxWindowsMediaPlayer();
             this.pnlGameDisplaySunFlower = new System.Windows.Forms.Panel();
@@ -50,14 +51,13 @@
             this.btnEnd = new System.Windows.Forms.Button();
             this.btnStart = new System.Windows.Forms.Button();
             this.tmrTimeToPlay = new System.Windows.Forms.Timer(this.components);
-            this.picVictory = new System.Windows.Forms.PictureBox();
             this.pnlGameDisplayGray.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picVictory)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wmpSoundTrack)).BeginInit();
             this.pnlGameDisplaySunFlower.SuspendLayout();
             this.pnlGameDisplayBlue.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudSecond)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudMinute)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picVictory)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlGameDisplayGray
@@ -73,6 +73,15 @@
             this.pnlGameDisplayGray.Name = "pnlGameDisplayGray";
             this.pnlGameDisplayGray.Size = new System.Drawing.Size(809, 654);
             this.pnlGameDisplayGray.TabIndex = 0;
+            // 
+            // picVictory
+            // 
+            this.picVictory.Location = new System.Drawing.Point(41, 62);
+            this.picVictory.Name = "picVictory";
+            this.picVictory.Size = new System.Drawing.Size(727, 503);
+            this.picVictory.TabIndex = 3;
+            this.picVictory.TabStop = false;
+            this.picVictory.Visible = false;
             // 
             // btnMediate
             // 
@@ -265,15 +274,6 @@
             this.tmrTimeToPlay.Interval = 1000;
             this.tmrTimeToPlay.Tick += new System.EventHandler(this.tmrTimeToPlay_Tick);
             // 
-            // picVictory
-            // 
-            this.picVictory.Location = new System.Drawing.Point(41, 62);
-            this.picVictory.Name = "picVictory";
-            this.picVictory.Size = new System.Drawing.Size(727, 503);
-            this.picVictory.TabIndex = 3;
-            this.picVictory.TabStop = false;
-            this.picVictory.Visible = false;
-            // 
             // FindSameCell
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -290,9 +290,10 @@
             this.MaximizeBox = false;
             this.Name = "FindSameCell";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FindSameCell";
+            this.Text = "Mr.X";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FindSameCell_FormClosed);
             this.pnlGameDisplayGray.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picVictory)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.wmpSoundTrack)).EndInit();
             this.pnlGameDisplaySunFlower.ResumeLayout(false);
             this.pnlGameDisplaySunFlower.PerformLayout();
@@ -300,7 +301,6 @@
             this.pnlGameDisplayBlue.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudSecond)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudMinute)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picVictory)).EndInit();
             this.ResumeLayout(false);
 
         }
