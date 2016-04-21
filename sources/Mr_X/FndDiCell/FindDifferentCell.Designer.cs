@@ -31,12 +31,15 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FindDifferentCell));
             this.pnlGameDisplayGray = new System.Windows.Forms.Panel();
+            this.picVictory = new System.Windows.Forms.PictureBox();
+            this.picTalk = new System.Windows.Forms.PictureBox();
+            this.wmpSoundTrack = new AxWMPLib.AxWindowsMediaPlayer();
             this.btnMediate = new System.Windows.Forms.Button();
             this.pnlGameDisplayYellow = new System.Windows.Forms.Panel();
             this.lblPosition = new System.Windows.Forms.Label();
             this.lblLevelOfGame = new System.Windows.Forms.Label();
             this.pnlGameDisplayGreen = new System.Windows.Forms.Panel();
-            this.txtRule = new System.Windows.Forms.TextBox();
+            this.lblRule = new System.Windows.Forms.Label();
             this.btnEnd = new System.Windows.Forms.Button();
             this.txtScoreToPass = new System.Windows.Forms.TextBox();
             this.nudSecond = new System.Windows.Forms.NumericUpDown();
@@ -48,17 +51,14 @@
             this.lblNameGame = new System.Windows.Forms.Label();
             this.btnStart = new System.Windows.Forms.Button();
             this.tmrTimeToPlay = new System.Windows.Forms.Timer(this.components);
-            this.picTalk = new System.Windows.Forms.PictureBox();
-            this.wmpSoundTrack = new AxWMPLib.AxWindowsMediaPlayer();
-            this.picVictory = new System.Windows.Forms.PictureBox();
             this.pnlGameDisplayGray.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picVictory)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picTalk)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wmpSoundTrack)).BeginInit();
             this.pnlGameDisplayYellow.SuspendLayout();
             this.pnlGameDisplayGreen.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudSecond)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudMinute)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picTalk)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wmpSoundTrack)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picVictory)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlGameDisplayGray
@@ -75,6 +75,33 @@
             this.pnlGameDisplayGray.Name = "pnlGameDisplayGray";
             this.pnlGameDisplayGray.Size = new System.Drawing.Size(809, 654);
             this.pnlGameDisplayGray.TabIndex = 1;
+            // 
+            // picVictory
+            // 
+            this.picVictory.Location = new System.Drawing.Point(33, 21);
+            this.picVictory.Name = "picVictory";
+            this.picVictory.Size = new System.Drawing.Size(764, 601);
+            this.picVictory.TabIndex = 3;
+            this.picVictory.TabStop = false;
+            this.picVictory.Visible = false;
+            // 
+            // picTalk
+            // 
+            this.picTalk.Location = new System.Drawing.Point(549, 144);
+            this.picTalk.Name = "picTalk";
+            this.picTalk.Size = new System.Drawing.Size(248, 201);
+            this.picTalk.TabIndex = 2;
+            this.picTalk.TabStop = false;
+            // 
+            // wmpSoundTrack
+            // 
+            this.wmpSoundTrack.Enabled = true;
+            this.wmpSoundTrack.Location = new System.Drawing.Point(149, 628);
+            this.wmpSoundTrack.Name = "wmpSoundTrack";
+            this.wmpSoundTrack.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("wmpSoundTrack.OcxState")));
+            this.wmpSoundTrack.Size = new System.Drawing.Size(75, 23);
+            this.wmpSoundTrack.TabIndex = 1;
+            this.wmpSoundTrack.Visible = false;
             // 
             // btnMediate
             // 
@@ -125,7 +152,7 @@
             // 
             this.pnlGameDisplayGreen.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlGameDisplayGreen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(204)))), ((int)(((byte)(113)))));
-            this.pnlGameDisplayGreen.Controls.Add(this.txtRule);
+            this.pnlGameDisplayGreen.Controls.Add(this.lblRule);
             this.pnlGameDisplayGreen.Controls.Add(this.btnEnd);
             this.pnlGameDisplayGreen.Controls.Add(this.txtScoreToPass);
             this.pnlGameDisplayGreen.Controls.Add(this.nudSecond);
@@ -141,18 +168,19 @@
             this.pnlGameDisplayGreen.Size = new System.Drawing.Size(395, 358);
             this.pnlGameDisplayGreen.TabIndex = 5;
             // 
-            // txtRule
+            // lblRule
             // 
-            this.txtRule.Location = new System.Drawing.Point(17, 41);
-            this.txtRule.Multiline = true;
-            this.txtRule.Name = "txtRule";
-            this.txtRule.ReadOnly = true;
-            this.txtRule.Size = new System.Drawing.Size(370, 48);
-            this.txtRule.TabIndex = 14;
-            this.txtRule.Text = "Tìm ô khác với các ô còn lại: màu sắc, kích thước, hoặc nội dung";
+            this.lblRule.AutoSize = true;
+            this.lblRule.ForeColor = System.Drawing.Color.White;
+            this.lblRule.Location = new System.Drawing.Point(15, 47);
+            this.lblRule.Name = "lblRule";
+            this.lblRule.Size = new System.Drawing.Size(367, 20);
+            this.lblRule.TabIndex = 13;
+            this.lblRule.Text = "Tìm ô khác biệt: màu sắc, kích thước hoặc nội dung";
             // 
             // btnEnd
             // 
+            this.btnEnd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(168)))), ((int)(((byte)(211)))));
             this.btnEnd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEnd.ForeColor = System.Drawing.Color.White;
             this.btnEnd.Location = new System.Drawing.Point(219, 276);
@@ -160,7 +188,7 @@
             this.btnEnd.Size = new System.Drawing.Size(89, 75);
             this.btnEnd.TabIndex = 12;
             this.btnEnd.Text = "Thoát";
-            this.btnEnd.UseVisualStyleBackColor = true;
+            this.btnEnd.UseVisualStyleBackColor = false;
             this.btnEnd.Click += new System.EventHandler(this.btnEnd_Click);
             // 
             // txtScoreToPass
@@ -242,6 +270,7 @@
             // 
             // btnStart
             // 
+            this.btnStart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(61)))), ((int)(((byte)(136)))));
             this.btnStart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnStart.ForeColor = System.Drawing.Color.White;
             this.btnStart.Location = new System.Drawing.Point(92, 276);
@@ -249,40 +278,13 @@
             this.btnStart.Size = new System.Drawing.Size(89, 75);
             this.btnStart.TabIndex = 0;
             this.btnStart.Text = "Bắt đầu";
-            this.btnStart.UseVisualStyleBackColor = true;
+            this.btnStart.UseVisualStyleBackColor = false;
             this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
             // 
             // tmrTimeToPlay
             // 
             this.tmrTimeToPlay.Interval = 1000;
             this.tmrTimeToPlay.Tick += new System.EventHandler(this.tmrTimeToPlay_Tick);
-            // 
-            // picTalk
-            // 
-            this.picTalk.Location = new System.Drawing.Point(549, 144);
-            this.picTalk.Name = "picTalk";
-            this.picTalk.Size = new System.Drawing.Size(248, 201);
-            this.picTalk.TabIndex = 2;
-            this.picTalk.TabStop = false;
-            // 
-            // wmpSoundTrack
-            // 
-            this.wmpSoundTrack.Enabled = true;
-            this.wmpSoundTrack.Location = new System.Drawing.Point(149, 628);
-            this.wmpSoundTrack.Name = "wmpSoundTrack";
-            this.wmpSoundTrack.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("wmpSoundTrack.OcxState")));
-            this.wmpSoundTrack.Size = new System.Drawing.Size(75, 23);
-            this.wmpSoundTrack.TabIndex = 1;
-            this.wmpSoundTrack.Visible = false;
-            // 
-            // picVictory
-            // 
-            this.picVictory.Location = new System.Drawing.Point(33, 21);
-            this.picVictory.Name = "picVictory";
-            this.picVictory.Size = new System.Drawing.Size(764, 601);
-            this.picVictory.TabIndex = 3;
-            this.picVictory.TabStop = false;
-            this.picVictory.Visible = false;
             // 
             // FindDifferentCell
             // 
@@ -301,15 +303,15 @@
             this.Text = "Mr.X";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FindDifferentCell_FormClosed);
             this.pnlGameDisplayGray.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picVictory)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picTalk)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wmpSoundTrack)).EndInit();
             this.pnlGameDisplayYellow.ResumeLayout(false);
             this.pnlGameDisplayYellow.PerformLayout();
             this.pnlGameDisplayGreen.ResumeLayout(false);
             this.pnlGameDisplayGreen.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudSecond)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudMinute)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picTalk)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wmpSoundTrack)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picVictory)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -332,11 +334,11 @@
         private System.Windows.Forms.Label lblYoungScore;
         private System.Windows.Forms.Label lblNameGame;
         private System.Windows.Forms.Button btnStart;
-        private System.Windows.Forms.TextBox txtRule;
         private AxWMPLib.AxWindowsMediaPlayer wmpSoundTrack;
         private System.Windows.Forms.Timer tmrTimeToPlay;
         private System.Windows.Forms.PictureBox picTalk;
         private System.Windows.Forms.PictureBox picVictory;
+        private System.Windows.Forms.Label lblRule;
 
     }
 }

@@ -66,9 +66,10 @@ namespace FndNum
         }
 
         // lấy ngẫu nhiên 1 số từ limitLow tới limitHigh
+        Random rd = new Random();
         private int randomNumber(int limitLow, int limitHigh)
         {
-            Random rd = new Random();
+            
             return rd.Next(limitLow, limitHigh + 1);
         }
 

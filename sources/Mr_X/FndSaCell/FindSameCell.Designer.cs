@@ -65,7 +65,7 @@
             this.pnlGameDisplayGray.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnlGameDisplayGray.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
+            this.pnlGameDisplayGray.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(77)))), ((int)(((byte)(87)))));
             this.pnlGameDisplayGray.Controls.Add(this.picVictory);
             this.pnlGameDisplayGray.Controls.Add(this.btnMediate);
             this.pnlGameDisplayGray.Controls.Add(this.wmpSoundTrack);
@@ -76,9 +76,9 @@
             // 
             // picVictory
             // 
-            this.picVictory.Location = new System.Drawing.Point(41, 62);
+            this.picVictory.Location = new System.Drawing.Point(0, 0);
             this.picVictory.Name = "picVictory";
-            this.picVictory.Size = new System.Drawing.Size(727, 503);
+            this.picVictory.Size = new System.Drawing.Size(809, 654);
             this.picVictory.TabIndex = 3;
             this.picVictory.TabStop = false;
             this.picVictory.Visible = false;
@@ -109,7 +109,7 @@
             // 
             this.pnlGameDisplaySunFlower.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnlGameDisplaySunFlower.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(196)))), ((int)(((byte)(15)))));
+            this.pnlGameDisplaySunFlower.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(168)))), ((int)(((byte)(211)))));
             this.pnlGameDisplaySunFlower.Controls.Add(this.lblPosition);
             this.pnlGameDisplaySunFlower.Controls.Add(this.lblLevelOfGame);
             this.pnlGameDisplaySunFlower.Location = new System.Drawing.Point(818, 4);
@@ -154,6 +154,7 @@
             this.pnlGameDisplayBlue.Controls.Add(this.nudMinute);
             this.pnlGameDisplayBlue.Controls.Add(this.btnEnd);
             this.pnlGameDisplayBlue.Controls.Add(this.btnStart);
+            this.pnlGameDisplayBlue.ForeColor = System.Drawing.Color.White;
             this.pnlGameDisplayBlue.Location = new System.Drawing.Point(818, 300);
             this.pnlGameDisplayBlue.Name = "pnlGameDisplayBlue";
             this.pnlGameDisplayBlue.Size = new System.Drawing.Size(395, 358);
@@ -207,6 +208,7 @@
             // lblYourScore
             // 
             this.lblYourScore.AutoSize = true;
+            this.lblYourScore.ForeColor = System.Drawing.Color.White;
             this.lblYourScore.Location = new System.Drawing.Point(43, 157);
             this.lblYourScore.Name = "lblYourScore";
             this.lblYourScore.Size = new System.Drawing.Size(46, 20);
@@ -216,6 +218,7 @@
             // lblTime
             // 
             this.lblTime.AutoSize = true;
+            this.lblTime.ForeColor = System.Drawing.Color.White;
             this.lblTime.Location = new System.Drawing.Point(106, 102);
             this.lblTime.Name = "lblTime";
             this.lblTime.Size = new System.Drawing.Size(77, 20);
@@ -225,6 +228,7 @@
             // lblRule
             // 
             this.lblRule.AutoSize = true;
+            this.lblRule.ForeColor = System.Drawing.Color.White;
             this.lblRule.Location = new System.Drawing.Point(33, 19);
             this.lblRule.Name = "lblRule";
             this.lblRule.Size = new System.Drawing.Size(278, 20);
@@ -249,24 +253,26 @@
             // 
             // btnEnd
             // 
+            this.btnEnd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(40)))), ((int)(((byte)(27)))));
             this.btnEnd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEnd.Location = new System.Drawing.Point(226, 270);
             this.btnEnd.Name = "btnEnd";
             this.btnEnd.Size = new System.Drawing.Size(105, 60);
             this.btnEnd.TabIndex = 1;
             this.btnEnd.Text = "Kết thúc";
-            this.btnEnd.UseVisualStyleBackColor = true;
+            this.btnEnd.UseVisualStyleBackColor = false;
             this.btnEnd.Click += new System.EventHandler(this.btnEnd_Click);
             // 
             // btnStart
             // 
+            this.btnStart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(72)))), ((int)(((byte)(54)))));
             this.btnStart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnStart.Location = new System.Drawing.Point(59, 270);
             this.btnStart.Name = "btnStart";
             this.btnStart.Size = new System.Drawing.Size(105, 60);
             this.btnStart.TabIndex = 0;
             this.btnStart.Text = "Bắt đầu";
-            this.btnStart.UseVisualStyleBackColor = true;
+            this.btnStart.UseVisualStyleBackColor = false;
             this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
             // 
             // tmrTimeToPlay

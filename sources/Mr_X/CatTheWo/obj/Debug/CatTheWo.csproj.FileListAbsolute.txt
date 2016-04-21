@@ -22,3 +22,14 @@ C:\Users\Admin\Documents\Visual Studio 2013\Projects\CatTheWo\obj\Debug\CatTheWo
 C:\Users\Admin\Documents\Visual Studio 2013\Projects\CatTheWo\obj\Debug\CatTheWo.csproj.GenerateResource.Cache
 C:\Users\Admin\Documents\Visual Studio 2013\Projects\CatTheWo\obj\Debug\CatTheWo.dll
 C:\Users\Admin\Documents\Visual Studio 2013\Projects\CatTheWo\obj\Debug\CatTheWo.pdb
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\test\CatTheWo\bin\Debug\CatTheWo.dll
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\test\CatTheWo\bin\Debug\CatTheWo.pdb
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\test\CatTheWo\bin\Debug\Interop.WMPLib.dll
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\test\CatTheWo\bin\Debug\AxInterop.WMPLib.dll
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\test\CatTheWo\obj\Debug\Interop.WMPLib.dll
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\test\CatTheWo\obj\Debug\AxInterop.WMPLib.dll
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\test\CatTheWo\obj\Debug\CatTheWo.csproj.ResolveComReference.cache
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\test\CatTheWo\obj\Debug\CatTheWo.CatchTheWord.resources
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\test\CatTheWo\obj\Debug\CatTheWo.csproj.GenerateResource.Cache
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\test\CatTheWo\obj\Debug\CatTheWo.dll
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\test\CatTheWo\obj\Debug\CatTheWo.pdb

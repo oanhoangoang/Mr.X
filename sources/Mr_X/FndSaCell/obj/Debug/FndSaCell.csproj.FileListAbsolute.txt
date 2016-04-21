@@ -32,3 +32,14 @@ C:\Users\Admin\Documents\Visual Studio 2013\Projects\FndSaCell\obj\Debug\FndSaCe
 C:\Users\Admin\Documents\Visual Studio 2013\Projects\FndSaCell\obj\Debug\FndSaCell.csproj.GenerateResource.Cache
 C:\Users\Admin\Documents\Visual Studio 2013\Projects\FndSaCell\obj\Debug\FndSaCell.dll
 C:\Users\Admin\Documents\Visual Studio 2013\Projects\FndSaCell\obj\Debug\FndSaCell.pdb
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\test\FndSaCell\bin\Debug\FndSaCell.dll
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\test\FndSaCell\bin\Debug\FndSaCell.pdb
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\test\FndSaCell\bin\Debug\Interop.WMPLib.dll
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\test\FndSaCell\bin\Debug\AxInterop.WMPLib.dll
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\test\FndSaCell\obj\Debug\Interop.WMPLib.dll
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\test\FndSaCell\obj\Debug\AxInterop.WMPLib.dll
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\test\FndSaCell\obj\Debug\FndSaCell.csproj.ResolveComReference.cache
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\test\FndSaCell\obj\Debug\FndSaCell.FindSameCell.resources
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\test\FndSaCell\obj\Debug\FndSaCell.csproj.GenerateResource.Cache
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\test\FndSaCell\obj\Debug\FndSaCell.dll
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\test\FndSaCell\obj\Debug\FndSaCell.pdb

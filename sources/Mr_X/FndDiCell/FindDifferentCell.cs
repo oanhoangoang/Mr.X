@@ -112,9 +112,9 @@ namespace FndDiCell
         }
 
         // lấy ngẫu nhiên 1 số từ limitLow tới limitHigh
+        Random rd = new Random();
         private int randomNumber(int limitLow, int limitHigh)
         {
-             Random rd = new Random();
              return rd.Next(limitLow, limitHigh + 1);
         }
 
@@ -244,7 +244,7 @@ namespace FndDiCell
             {
                 btnMedia.Visible = false;
                 yourScore++;
-                playMusic("sound/FndNum/happy.wav");
+                playMusic("sound/FndDiCell/happy.wav");
 
                 picTalk.Image = Image.FromFile(@"picture/FndDiCell/happy.jpg");
                 picTalk.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -254,7 +254,7 @@ namespace FndDiCell
             {
                 picTalk.Image = Image.FromFile(@"picture/FndDiCell/sad.jpg");
                 picTalk.SizeMode = PictureBoxSizeMode.StretchImage;
-                playMusic("sound/FndNum/sad.wav");
+                playMusic("sound/FndDiCell/sad.wav");
             }
  
             timeDelay(1000);

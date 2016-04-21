@@ -67,7 +67,7 @@
             this.pnlGameDisplayGray.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnlGameDisplayGray.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
+            this.pnlGameDisplayGray.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(204)))), ((int)(((byte)(113)))));
             this.pnlGameDisplayGray.Controls.Add(this.picVictory);
             this.pnlGameDisplayGray.Controls.Add(this.btnMediate);
             this.pnlGameDisplayGray.Controls.Add(this.wmpSoundTrack);
@@ -79,9 +79,9 @@
             // 
             // picVictory
             // 
-            this.picVictory.Location = new System.Drawing.Point(19, 70);
+            this.picVictory.Location = new System.Drawing.Point(0, 0);
             this.picVictory.Name = "picVictory";
-            this.picVictory.Size = new System.Drawing.Size(768, 503);
+            this.picVictory.Size = new System.Drawing.Size(809, 662);
             this.picVictory.TabIndex = 3;
             this.picVictory.TabStop = false;
             this.picVictory.Visible = false;
@@ -112,7 +112,7 @@
             // 
             this.pnlGameDisplayYellow.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnlGameDisplayYellow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(196)))), ((int)(((byte)(15)))));
+            this.pnlGameDisplayYellow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(148)))), ((int)(((byte)(6)))));
             this.pnlGameDisplayYellow.Controls.Add(this.lblPosition);
             this.pnlGameDisplayYellow.Controls.Add(this.lblLevelOfGame);
             this.pnlGameDisplayYellow.ForeColor = System.Drawing.Color.Black;
@@ -156,7 +156,7 @@
             // pnlGameDisplayGreen
             // 
             this.pnlGameDisplayGreen.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnlGameDisplayGreen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(204)))), ((int)(((byte)(113)))));
+            this.pnlGameDisplayGreen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(207)))), ((int)(((byte)(224)))));
             this.pnlGameDisplayGreen.Controls.Add(this.btnClose);
             this.pnlGameDisplayGreen.Controls.Add(this.lblNameGame);
             this.pnlGameDisplayGreen.Controls.Add(this.lblRule);
@@ -178,6 +178,7 @@
             // 
             // btnClose
             // 
+            this.btnClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(149)))), ((int)(((byte)(50)))));
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.ForeColor = System.Drawing.Color.White;
             this.btnClose.Location = new System.Drawing.Point(219, 276);
@@ -185,7 +186,7 @@
             this.btnClose.Size = new System.Drawing.Size(89, 75);
             this.btnClose.TabIndex = 19;
             this.btnClose.Text = "Thoát";
-            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // lblRule
@@ -222,6 +223,7 @@
             // 
             // btnStart
             // 
+            this.btnStart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(72)))), ((int)(((byte)(54)))));
             this.btnStart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnStart.ForeColor = System.Drawing.Color.White;
             this.btnStart.Location = new System.Drawing.Point(92, 276);
@@ -229,7 +231,7 @@
             this.btnStart.Size = new System.Drawing.Size(89, 75);
             this.btnStart.TabIndex = 0;
             this.btnStart.Text = "Bắt đầu";
-            this.btnStart.UseVisualStyleBackColor = true;
+            this.btnStart.UseVisualStyleBackColor = false;
             this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
             // 
             // txtYourScore

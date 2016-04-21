@@ -59,9 +59,10 @@ namespace RemMe
         private int timeToPlay; 
         
         // lấy ngẫu nhiên một số trong khoảng từ limitLow tới limitHigh
+        Random rd = new Random();
         private int randomNumber(int limitLow, int limitHigh)
         {
-            Random rd = new Random();
+            
             return rd.Next(limitLow, limitHigh + 1);
         }
 
@@ -254,6 +255,7 @@ namespace RemMe
         //đưa ra câu trả lời cho người chơi, và hiện lại mảng ban đầu
         private void answer()
         {
+            btnMediate.Visible = false;
             for (int i = 1; i <= sizeTable; i++)
                 for (int j = 1; j <= sizeTable; j++)
                 {

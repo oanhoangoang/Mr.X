@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using System.Media;
+using System.Drawing;
 
 namespace CatTheWo
 {
@@ -106,9 +107,9 @@ namespace CatTheWo
         }
 
         // lấy ngẫu nhiên một số trong khoảng từ limitLow tới limitHigh
+        Random rd = new Random();
         private int randomNumber(int limitLow, int limitHigh)
         {
-            Random rd = new Random();
             return rd.Next(limitLow, limitHigh + 1);
         }
 
@@ -157,7 +158,8 @@ namespace CatTheWo
                     keyboard[i][j].Location = new Point( (j-1)*52+10,(i-1)*42+520);
 
                     keyboard[i][j].FlatStyle = FlatStyle.Flat;
-                    keyboard[i][j].ForeColor = ColorTranslator.FromHtml("#F2784B");
+                    keyboard[i][j].ForeColor = Color.White;
+                    keyboard[i][j].BackColor = ColorTranslator.FromHtml("#89C4F4");
                     keyboard[i][j].Click += new EventHandler(btnMediate_Click);
                     Controls.Add(keyboard[i][j]);
                     pnlGameDisplayGray.Controls.Add(keyboard[i][j]);
@@ -211,7 +213,8 @@ namespace CatTheWo
 
                     cellOfAnswer[nowRound][i].FlatStyle = FlatStyle.Flat;
                     cellOfAnswer[nowRound][i].Enabled = false;
-                    cellOfAnswer[nowRound][i].ForeColor = ColorTranslator.FromHtml("#F2784B");
+                    cellOfAnswer[nowRound][i].ForeColor = Color.White;
+                    cellOfAnswer[nowRound][i].BackColor = ColorTranslator.FromHtml("#89C4F4");
                     Controls.Add(cellOfAnswer[nowRound][i]);
                     pnlGameDisplayGray.Controls.Add(cellOfAnswer[nowRound][i]);
                 }
@@ -226,8 +229,8 @@ namespace CatTheWo
 
             cellOnNowRound = 0;
             nowRound++;
-            txtRound.Text = "Vòng " + nowRound.ToString();
-            txtAnswer.Text = "";
+            lblRound.Text = "Vòng " + nowRound.ToString();
+            lblAnswer.Text = "";
             mistake = 0;
             posQuestion = randomNumber(1, size);
             try
@@ -251,7 +254,6 @@ namespace CatTheWo
             for (int i = 0; i < answerNow.Length; i++)
                 if (answerNow[i] != ' ') numberOfAlphabet++;
             
-            lblHint.Visible = true;
             lblHint.Text = numberOfAlphabet.ToString() + " chữ cái.";
 
             createCellOfAnswer();
@@ -289,7 +291,7 @@ namespace CatTheWo
         // xử lí khi người chơi nhấn bỏ qua câu hỏi: hiện đáp án, làm chậm thời gian và tạo mới câu hỏi
         private void btnSkip_Click(object sender, EventArgs e)
         {
-            txtAnswer.Text = "Đáp án : " + answerNow;
+            lblAnswer.Text = "Đáp án : " + answerNow;
             timeDelay(1000);
             newquestion();
         }
@@ -381,7 +383,7 @@ namespace CatTheWo
 
                     lblHint.Visible = false;
                     yourScore++;
-                    txtAnswer.Text = "Đáp án : " + answerNow;
+                    lblAnswer.Text = "Đáp án : " + answerNow;
                     timeDelay(1300);
                     newquestion();
                 }
@@ -389,7 +391,7 @@ namespace CatTheWo
 
             if (mistake == 5)
             {
-                txtAnswer.Text = "Đáp án : " + answerNow;
+                lblAnswer.Text = "Đáp án : " + answerNow;
                 timeDelay(800);
                 newquestion();
             }
@@ -402,10 +404,12 @@ namespace CatTheWo
         private void answer()
         {
             btnSkip.Enabled = false;
-            txtAnswer.Text = "Đáp án : " + answerNow;
+            lblAnswer.Text = "Đáp án : " + answerNow;
             for (int i = 1; i <= 3; i++)
                 for (int j = 1; j <= 10; j++) keyboard[i][j].Enabled = false;
-
+            timeDelay(2000);
+            lblAnswer.Visible = false;
+            lblRound.Visible = false;
 
             if (yourScore >= scoreToPass)
             {
