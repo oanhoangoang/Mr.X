@@ -14,13 +14,14 @@ namespace CalExpression
     {
         int kindOfGame;
         string ChucVU, Level;
-        public frmCalExpression(int kindOfGame_,string chucVu_ , string level_)
+        bool sound;
+        public frmCalExpression(int kindOfGame_,string chucVu_ , string level_,bool sound_)
         {
             InitializeComponent();
             kindOfGame = kindOfGame_; // choose kind of Game ( easy or difficult
             ChucVU = chucVu_;
             Level = level_;
-
+            sound = sound_;
             ///////////
             btnGame1.MouseMove += new MouseEventHandler(btnGame1_MouseMove);
             btnGame1.MouseLeave += new EventHandler(btnGame1_MouseLeave);
@@ -48,13 +49,14 @@ namespace CalExpression
             lblHuongDan.Text = "Bạn click chuột quả bóng để đưa ra câu trả lời";
             lblGameTitle.Text = "Nhấn bắt đầu để chơi Game";
             lblTime.Text = "20";
-            btnBackToMenu.Enabled = false;
+            
           //  ToolTip tool = new ToolTip();
          //   tool.SetToolTip(btnGame1, "Click vào để chọn câu trả lời này");
           //  tool.IsBalloon = true;
             btnGame1.Enabled = false;
             btnGame2.Enabled = false;
             btnGame3.Enabled = false;
+            btnBackToMenu.Visible = false;
             
         }
 
@@ -95,7 +97,7 @@ namespace CalExpression
             // choose kind Of Game
             chooseValue();
             enter(); // xu ly Game
-            btnStart.Enabled = false;
+            btnStart.Visible = false;
 
             // start to count down time
             lblTime.Text = "20";
@@ -107,7 +109,7 @@ namespace CalExpression
             btnGame3.Enabled = true;
 
             // start to play music
-            enableSound();
+            if (sound) enableSound();
             
         }
         private void thongBaoWrong()
@@ -148,7 +150,7 @@ namespace CalExpression
             btnGame2.Enabled = false;
             btnGame1.Enabled = false;
             btnGame3.Enabled = false;
-            btnBackToMenu.Enabled = true;
+            btnBackToMenu.Visible = true;
         }
        
 
@@ -198,14 +200,14 @@ namespace CalExpression
             btnGame1.Enabled = false;
             btnGame2.Enabled = false;
             btnGame3.Enabled = false;
-            btnBackToMenu.Enabled = true;
+            btnBackToMenu.Visible = true;
         }
 
         private void btnGame3_Click(object sender, EventArgs e)
         {
             timer.Stop();
             if (3 != rightValue) { ok = false; thongBaoWrong(); } else thongBaoRight();
-            btnBackToMenu.Enabled = true;
+            btnBackToMenu.Visible = true;
             btnGame1.Enabled = false;
             btnGame2.Enabled = false;
             btnGame3.Enabled = false;
@@ -225,7 +227,7 @@ namespace CalExpression
          
         private void btnBackToMenu_Click(object sender, EventArgs e)
         {
-            setAns(ok);
+           // setAns(ok);
             if (ok) trans.Invoke(1); else trans.Invoke(0);
             player.close();
             this.Close();
@@ -234,10 +236,17 @@ namespace CalExpression
         private void frmGameTinhBieuThuc_FormClosed(object sender, FormClosedEventArgs e)
         {
             ok = false;
-            if (ok) trans.Invoke(1); else trans.Invoke(0);
+            if (sec >= 0)
+            { timer.Stop(); }
+           // if (ok) trans.Invoke(1); else trans.Invoke(0);
             setAns(ok);
             player.close();
         }
+
+        private void lblTime_Click(object sender, EventArgs e)
+        {
+
+        }
         
-    }
+    }   
 }

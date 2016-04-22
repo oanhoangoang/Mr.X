@@ -195,18 +195,22 @@ namespace CalExpression
             // 
             // btnBackToMenu
             // 
-            this.btnBackToMenu.Location = new System.Drawing.Point(223, 160);
+            this.btnBackToMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(108)))), ((int)(((byte)(179)))));
+            this.btnBackToMenu.ForeColor = System.Drawing.Color.White;
+            this.btnBackToMenu.Location = new System.Drawing.Point(104, 163);
             this.btnBackToMenu.Name = "btnBackToMenu";
-            this.btnBackToMenu.Size = new System.Drawing.Size(97, 69);
+            this.btnBackToMenu.Size = new System.Drawing.Size(199, 87);
             this.btnBackToMenu.TabIndex = 7;
             this.btnBackToMenu.Text = "Trở về màn hình chính";
-            this.btnBackToMenu.UseVisualStyleBackColor = true;
+            this.btnBackToMenu.UseVisualStyleBackColor = false;
             this.btnBackToMenu.Click += new System.EventHandler(this.btnBackToMenu_Click);
             // 
             // lblHuongDan
             // 
             this.lblHuongDan.AutoSize = true;
-            this.lblHuongDan.Location = new System.Drawing.Point(53, 289);
+            this.lblHuongDan.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHuongDan.ForeColor = System.Drawing.Color.Red;
+            this.lblHuongDan.Location = new System.Drawing.Point(30, 288);
             this.lblHuongDan.Name = "lblHuongDan";
             this.lblHuongDan.Size = new System.Drawing.Size(51, 20);
             this.lblHuongDan.TabIndex = 6;
@@ -214,29 +218,36 @@ namespace CalExpression
             // 
             // btnStart
             // 
-            this.btnStart.Location = new System.Drawing.Point(73, 160);
+            this.btnStart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(108)))), ((int)(((byte)(179)))));
+            this.btnStart.ForeColor = System.Drawing.Color.White;
+            this.btnStart.Location = new System.Drawing.Point(104, 163);
             this.btnStart.Name = "btnStart";
-            this.btnStart.Size = new System.Drawing.Size(88, 70);
+            this.btnStart.Size = new System.Drawing.Size(199, 87);
             this.btnStart.TabIndex = 5;
             this.btnStart.Text = "Bắt đầu";
-            this.btnStart.UseVisualStyleBackColor = true;
+            this.btnStart.UseVisualStyleBackColor = false;
             this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
             // 
             // lblTime
             // 
             this.lblTime.AutoSize = true;
-            this.lblTime.Location = new System.Drawing.Point(130, 71);
+            this.lblTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTime.ForeColor = System.Drawing.Color.White;
+            this.lblTime.Location = new System.Drawing.Point(157, 71);
             this.lblTime.Name = "lblTime";
-            this.lblTime.Size = new System.Drawing.Size(51, 20);
+            this.lblTime.Size = new System.Drawing.Size(66, 24);
             this.lblTime.TabIndex = 4;
             this.lblTime.Text = "label4";
+            this.lblTime.Click += new System.EventHandler(this.lblTime_Click);
             // 
             // lblGiay
             // 
             this.lblGiay.AutoSize = true;
-            this.lblGiay.Location = new System.Drawing.Point(187, 71);
+            this.lblGiay.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGiay.ForeColor = System.Drawing.Color.White;
+            this.lblGiay.Location = new System.Drawing.Point(219, 71);
             this.lblGiay.Name = "lblGiay";
-            this.lblGiay.Size = new System.Drawing.Size(41, 20);
+            this.lblGiay.Size = new System.Drawing.Size(51, 24);
             this.lblGiay.TabIndex = 3;
             this.lblGiay.Text = "Giây";
             this.lblGiay.Click += new System.EventHandler(this.label3_Click);
@@ -244,9 +255,11 @@ namespace CalExpression
             // lblThoiGian
             // 
             this.lblThoiGian.AutoSize = true;
+            this.lblThoiGian.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblThoiGian.ForeColor = System.Drawing.Color.White;
             this.lblThoiGian.Location = new System.Drawing.Point(53, 71);
             this.lblThoiGian.Name = "lblThoiGian";
-            this.lblThoiGian.Size = new System.Drawing.Size(81, 20);
+            this.lblThoiGian.Size = new System.Drawing.Size(110, 24);
             this.lblThoiGian.TabIndex = 2;
             this.lblThoiGian.Text = "Thời gian: ";
             // 
@@ -270,27 +283,33 @@ namespace CalExpression
             // lblChucVuInput
             // 
             this.lblChucVuInput.AutoSize = true;
-            this.lblChucVuInput.Location = new System.Drawing.Point(130, 168);
+            this.lblChucVuInput.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblChucVuInput.ForeColor = System.Drawing.Color.White;
+            this.lblChucVuInput.Location = new System.Drawing.Point(148, 168);
             this.lblChucVuInput.Name = "lblChucVuInput";
-            this.lblChucVuInput.Size = new System.Drawing.Size(51, 20);
+            this.lblChucVuInput.Size = new System.Drawing.Size(66, 24);
             this.lblChucVuInput.TabIndex = 3;
             this.lblChucVuInput.Text = "label1";
             // 
             // lblLevelInput
             // 
             this.lblLevelInput.AutoSize = true;
-            this.lblLevelInput.Location = new System.Drawing.Point(130, 113);
+            this.lblLevelInput.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLevelInput.ForeColor = System.Drawing.Color.White;
+            this.lblLevelInput.Location = new System.Drawing.Point(148, 113);
             this.lblLevelInput.Name = "lblLevelInput";
-            this.lblLevelInput.Size = new System.Drawing.Size(51, 20);
+            this.lblLevelInput.Size = new System.Drawing.Size(66, 24);
             this.lblLevelInput.TabIndex = 2;
             this.lblLevelInput.Text = "label1";
             // 
             // lblChucVu
             // 
             this.lblChucVu.AutoSize = true;
+            this.lblChucVu.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblChucVu.ForeColor = System.Drawing.Color.White;
             this.lblChucVu.Location = new System.Drawing.Point(49, 168);
             this.lblChucVu.Name = "lblChucVu";
-            this.lblChucVu.Size = new System.Drawing.Size(70, 20);
+            this.lblChucVu.Size = new System.Drawing.Size(93, 24);
             this.lblChucVu.TabIndex = 1;
             this.lblChucVu.Text = "Chức vụ:";
             this.lblChucVu.Click += new System.EventHandler(this.label1_Click_1);
@@ -298,12 +317,14 @@ namespace CalExpression
             // lblLevel
             // 
             this.lblLevel.AutoSize = true;
+            this.lblLevel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLevel.ForeColor = System.Drawing.Color.White;
             this.lblLevel.Location = new System.Drawing.Point(49, 113);
             this.lblLevel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblLevel.Name = "lblLevel";
-            this.lblLevel.Size = new System.Drawing.Size(46, 20);
+            this.lblLevel.Size = new System.Drawing.Size(66, 24);
             this.lblLevel.TabIndex = 0;
-            this.lblLevel.Text = "Level";
+            this.lblLevel.Text = "Level:";
             this.lblLevel.Click += new System.EventHandler(this.label1_Click);
             // 
             // lblGameTitle
@@ -345,6 +366,7 @@ namespace CalExpression
             this.btnGame3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
             this.btnGame3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.btnGame3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGame3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGame3.Location = new System.Drawing.Point(542, 168);
             this.btnGame3.Name = "btnGame3";
             this.btnGame3.Size = new System.Drawing.Size(252, 358);
@@ -365,6 +387,7 @@ namespace CalExpression
             this.btnGame2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
             this.btnGame2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.btnGame2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGame2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGame2.Location = new System.Drawing.Point(275, 168);
             this.btnGame2.Name = "btnGame2";
             this.btnGame2.Size = new System.Drawing.Size(252, 358);
@@ -385,6 +408,7 @@ namespace CalExpression
             this.btnGame1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
             this.btnGame1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.btnGame1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGame1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGame1.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnGame1.Location = new System.Drawing.Point(8, 168);
             this.btnGame1.Name = "btnGame1";
@@ -397,7 +421,7 @@ namespace CalExpression
             // 
             // timer
             // 
-            this.timer.Interval = 500;
+            this.timer.Interval = 800;
             this.timer.Tick += new System.EventHandler(this.timer_Tick);
             // 
             // frmCalExpression
