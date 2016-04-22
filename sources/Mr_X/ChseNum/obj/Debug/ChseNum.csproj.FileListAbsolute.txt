@@ -9,3 +9,4 @@ C:\Users\Admin\Documents\Visual Studio 2013\Projects\test\ChseNum\bin\Debug\AxIn
 C:\Users\Admin\Documents\Visual Studio 2013\Projects\test\ChseNum\obj\Debug\Interop.WMPLib.dll
 C:\Users\Admin\Documents\Visual Studio 2013\Projects\test\ChseNum\obj\Debug\AxInterop.WMPLib.dll
 C:\Users\Admin\Documents\Visual Studio 2013\Projects\test\ChseNum\obj\Debug\ChseNum.csproj.ResolveComReference.cache
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\test\ChseNum\obj\Debug\ChseNum.csprojResolveAssemblyReference.cache

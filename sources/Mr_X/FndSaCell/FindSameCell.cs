@@ -115,12 +115,19 @@ namespace FndSaCell
             catch (Exception ex) { }
         }
 
+        // xác định vị trí hiển trị cho các button
+        private int getLocation(int size, int num, bool check)
+        {
+            if (check == true) return (809 - size * num)/2;
+            else return (654 - size * num)/2;
+        }
+
         //tạo mảng button tròn
         private void createCircleButtonArray()
         {
             for (int i = 1; i <= sizeTable / 2; i++) numberOfIcon[i] = 2;
             for (var i = 1; i <= sizeTable; i++) btnCircle[i] = new circleButton[30];
-
+          
             for (int i = 1; i <= heightTable; i++)
                 for (int j = 1; j <= widthTable; j++)
                 {
@@ -128,7 +135,7 @@ namespace FndSaCell
                     btnCircle[i][j] = new circleButton();
 
                     btnCircle[i][j].Size = new Size(63, 63);
-                    btnCircle[i][j].Location = new Point(i * 70 + 20, j * 70 + 20);
+                    btnCircle[i][j].Location = new Point( (i-1)*68+getLocation(63,heightTable, true) , (j-1)*68+getLocation(63,widthTable,false) );
 
                     btnCircle[i][j].Name = value.ToString();
                     btnCircle[i][j].FlatAppearance.BorderSize = 0;

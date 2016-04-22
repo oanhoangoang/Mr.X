@@ -78,9 +78,9 @@
             // 
             // picVictory
             // 
-            this.picVictory.Location = new System.Drawing.Point(33, 21);
+            this.picVictory.Location = new System.Drawing.Point(0, 0);
             this.picVictory.Name = "picVictory";
-            this.picVictory.Size = new System.Drawing.Size(764, 601);
+            this.picVictory.Size = new System.Drawing.Size(809, 667);
             this.picVictory.TabIndex = 3;
             this.picVictory.TabStop = false;
             this.picVictory.Visible = false;

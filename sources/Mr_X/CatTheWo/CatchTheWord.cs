@@ -253,7 +253,8 @@ namespace CatTheWo
             answerNow = arrayAnswer[posQuestion];
             for (int i = 0; i < answerNow.Length; i++)
                 if (answerNow[i] != ' ') numberOfAlphabet++;
-            
+
+            lblHint.Visible = true;
             lblHint.Text = numberOfAlphabet.ToString() + " chữ cái.";
 
             createCellOfAnswer();

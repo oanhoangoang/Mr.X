@@ -33,3 +33,4 @@ C:\Users\Admin\Documents\Visual Studio 2013\Projects\test\CatTheWo\obj\Debug\Cat
 C:\Users\Admin\Documents\Visual Studio 2013\Projects\test\CatTheWo\obj\Debug\CatTheWo.csproj.GenerateResource.Cache
 C:\Users\Admin\Documents\Visual Studio 2013\Projects\test\CatTheWo\obj\Debug\CatTheWo.dll
 C:\Users\Admin\Documents\Visual Studio 2013\Projects\test\CatTheWo\obj\Debug\CatTheWo.pdb
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\test\CatTheWo\obj\Debug\CatTheWo.csprojResolveAssemblyReference.cache

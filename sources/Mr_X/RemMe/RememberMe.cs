@@ -77,6 +77,13 @@ namespace RemMe
             catch (Exception ex) { }
         }
 
+        // xác định vị trí hiển trị cho các button
+        private int getLocation(int size, int num, bool check)
+        {
+            if (check == true) return (809 - size * num) / 2;
+            else return (654 - size * num) / 2;
+        }
+
         // lấy các giá trị:level, chức vụ, kích thước bảng, số lượng ô người chơi phải chọn, số lượng lượt người chơi được chọn, thời gian chơi, tắt nhạc hay không
         public RememberMe(int level, string position, int size, int numAns, int numChoice, int time, bool turnOffSound)
         {
@@ -95,6 +102,7 @@ namespace RemMe
                 }
                 catch (Exception ex){}
             }
+            btnMediate.Location = new Point( (809-131)/2 ,8);
             
         }
 
@@ -143,7 +151,7 @@ namespace RemMe
                     randomBtn[i][j].Click += new EventHandler(btnMediate_Click);
                     Controls.Add(randomBtn[i][j]);
                     randomBtn[i][j].Enabled = false;
-                    randomBtn[i][j].Location = new Point(i * 60 + 20, j * 60 + 20);
+                    randomBtn[i][j].Location = new Point( (i-1) * 60 +getLocation(55,sizeTable,true), (j-1) * 60 + getLocation(55,sizeTable,false) );
                    
                     location = randomNumber(1, 3);
                     while (number[location] == 0 && location < 3) location++;

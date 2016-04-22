@@ -84,6 +84,13 @@ namespace FndNum
             catch (Exception ex) { }
         }
 
+        // xác định vị trí hiển trị cho các button
+        private int getLocation(int size, int num, bool check)
+        {
+            if (check == true) return (809 - size * num) / 2;
+            else return (654 - size * num) / 2;
+        }
+
         // tạo mảng button: kích thước, vị trí, giá trị hiển thị, màu nền, màu chữ, xử lí khi nhấn vào
         private void createButtonArray()
         {
@@ -101,7 +108,7 @@ namespace FndNum
                     originalArray[locationRandom] = originalArray[sizeTable * sizeTable - now + 1];
                     now++;
 
-                    randomBtn[i][j].Location = new Point(i * 60 + 20, j * 60 + 20);
+                    randomBtn[i][j].Location = new Point( (i-1)*60+getLocation(55,sizeTable,true),(j-1)*60+getLocation(55,sizeTable,false) );
                     randomBtn[i][j].BackColor = Color.Red;
                     randomBtn[i][j].FlatStyle = FlatStyle.Flat;
                     randomBtn[i][j].ForeColor = Color.White;

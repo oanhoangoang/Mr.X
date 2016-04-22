@@ -65,6 +65,13 @@ namespace ChseNum
             catch (Exception ex) { }
         }
 
+        // xác định vị trí hiển trị cho các button
+        private int getLocation(int size, int num, bool check)
+        {
+            if (check == true) return (809 - size * num) / 2;
+            else return (654 - size * num) / 2;
+        }
+
         // tạo ra các số có tổng bằng số cần tìm
         private void createOriginalArray()
         {
@@ -99,7 +106,7 @@ namespace ChseNum
                     randomBtn[i][j].Text = original[location].ToString();
                     original[location] = original[sizeTable * sizeTable - value + 1];
 
-                    randomBtn[i][j].Location = new Point(i * 60 + 70, j * 60 + 50);
+                    randomBtn[i][j].Location = new Point((i - 1) * 60 + getLocation(55, sizeTable, true), (j - 1) * 60 + getLocation(55, sizeTable, false));
                     randomBtn[i][j].BackColor = Color.FromArgb(246, 71, 71);
                     randomBtn[i][j].FlatStyle = FlatStyle.Flat;
                     randomBtn[i][j].ForeColor = Color.White;
