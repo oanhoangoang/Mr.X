@@ -8,3 +8,13 @@ E:\CAM XOA\C#\Prime\Prime\obj\Debug\Prime.dll
 E:\CAM XOA\C#\Prime\Prime\obj\Debug\Prime.pdb
 E:\CAM XOA\C#\Prime\Prime\obj\Debug\Interop.WMPLib.dll
 E:\CAM XOA\C#\Prime\Prime\obj\Debug\Prime.csproj.ResolveComReference.cache
+E:\CAM XOA\Mr.X.git\trunk\sources\Mr_X\Prime\Prime\bin\Debug\Prime.dll
+E:\CAM XOA\Mr.X.git\trunk\sources\Mr_X\Prime\Prime\bin\Debug\Prime.pdb
+E:\CAM XOA\Mr.X.git\trunk\sources\Mr_X\Prime\Prime\obj\Debug\Prime.csprojResolveAssemblyReference.cache
+E:\CAM XOA\Mr.X.git\trunk\sources\Mr_X\Prime\Prime\obj\Debug\Interop.WMPLib.dll
+E:\CAM XOA\Mr.X.git\trunk\sources\Mr_X\Prime\Prime\obj\Debug\Prime.csproj.ResolveComReference.cache
+E:\CAM XOA\Mr.X.git\trunk\sources\Mr_X\Prime\Prime\obj\Debug\Prime.FrmPrime.resources
+E:\CAM XOA\Mr.X.git\trunk\sources\Mr_X\Prime\Prime\obj\Debug\Prime.Properties.Resources.resources
+E:\CAM XOA\Mr.X.git\trunk\sources\Mr_X\Prime\Prime\obj\Debug\Prime.csproj.GenerateResource.Cache
+E:\CAM XOA\Mr.X.git\trunk\sources\Mr_X\Prime\Prime\obj\Debug\Prime.dll
+E:\CAM XOA\Mr.X.git\trunk\sources\Mr_X\Prime\Prime\obj\Debug\Prime.pdb
