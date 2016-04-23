@@ -196,6 +196,8 @@ namespace CalExpression
             // btnBackToMenu
             // 
             this.btnBackToMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(108)))), ((int)(((byte)(179)))));
+            this.btnBackToMenu.FlatAppearance.BorderSize = 0;
+            this.btnBackToMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBackToMenu.ForeColor = System.Drawing.Color.White;
             this.btnBackToMenu.Location = new System.Drawing.Point(104, 163);
             this.btnBackToMenu.Name = "btnBackToMenu";
@@ -219,6 +221,8 @@ namespace CalExpression
             // btnStart
             // 
             this.btnStart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(108)))), ((int)(((byte)(179)))));
+            this.btnStart.FlatAppearance.BorderSize = 0;
+            this.btnStart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnStart.ForeColor = System.Drawing.Color.White;
             this.btnStart.Location = new System.Drawing.Point(104, 163);
             this.btnStart.Name = "btnStart";
