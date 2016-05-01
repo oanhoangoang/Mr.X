@@ -47,7 +47,7 @@ namespace FndNum
         private int timeToPlay;  
 
         // lấy các giá trị: level, chức vụ, kích thước bảng, số lượng số cần tìm, thời gian chơi, tắt nhạc hay không
-        public FindNumDisplay(int level, string position, int size, int num, int time, bool turnOffSound)
+        public FindNumDisplay(int level, string position, int size, int num, int time, bool turnOffSound, int determine)
         {
             InitializeComponent();
             sizeTable = size;
@@ -55,6 +55,7 @@ namespace FndNum
             timeToPlay = time;
             lblLevelOfGame.Text += level.ToString();
             lblPosition.Text += position.ToString();
+            if (determine == 2) lblPosition.Visible = false;
             if (turnOffSound == false)
             {
                 try

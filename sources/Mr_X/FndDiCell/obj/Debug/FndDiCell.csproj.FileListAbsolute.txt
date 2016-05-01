@@ -9,3 +9,15 @@ C:\Users\Admin\Documents\Visual Studio 2013\Projects\test\FndDiCell\bin\Debug\Ax
 C:\Users\Admin\Documents\Visual Studio 2013\Projects\test\FndDiCell\obj\Debug\Interop.WMPLib.dll
 C:\Users\Admin\Documents\Visual Studio 2013\Projects\test\FndDiCell\obj\Debug\AxInterop.WMPLib.dll
 C:\Users\Admin\Documents\Visual Studio 2013\Projects\test\FndDiCell\obj\Debug\FndDiCell.csproj.ResolveComReference.cache
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\thu\FndDiCell\bin\Debug\FndDiCell.dll
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\thu\FndDiCell\bin\Debug\FndDiCell.pdb
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\thu\FndDiCell\bin\Debug\Interop.WMPLib.dll
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\thu\FndDiCell\bin\Debug\AxInterop.WMPLib.dll
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\thu\FndDiCell\obj\Debug\FndDiCell.csprojResolveAssemblyReference.cache
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\thu\FndDiCell\obj\Debug\Interop.WMPLib.dll
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\thu\FndDiCell\obj\Debug\AxInterop.WMPLib.dll
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\thu\FndDiCell\obj\Debug\FndDiCell.csproj.ResolveComReference.cache
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\thu\FndDiCell\obj\Debug\FndDiCell.FindDifferentCell.resources
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\thu\FndDiCell\obj\Debug\FndDiCell.csproj.GenerateResource.Cache
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\thu\FndDiCell\obj\Debug\FndDiCell.dll
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\thu\FndDiCell\obj\Debug\FndDiCell.pdb

@@ -73,11 +73,12 @@ namespace FndSaCell
         private int previousButton;
 
         // lấy các giá trị:level, chức vụ, chiều cao của bảng, chiều rộng của bảng, số điểm qua vòng,số lượt nhấn, thời gian chơi, có tắt nhạc hay không
-        public FindSameCell(int level, string position, int height, int width, int Score, int numChoice, int time, bool turnOffSound)
+        public FindSameCell(int level, string position, int height, int width, int Score, int numChoice, int time, bool turnOffSound, int determine)
         {
             InitializeComponent();
             lblLevelOfGame.Text += level.ToString();
             lblPosition.Text += position.ToString();
+            if (determine == 2) lblPosition.Visible = false;
             heightTable = height;
             widthTable = width;
             if (heightTable % 2 == 1 && widthTable % 2 == 1) heightTable--;

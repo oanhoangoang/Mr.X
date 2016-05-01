@@ -10,3 +10,15 @@ C:\Users\Admin\Documents\Visual Studio 2013\Projects\test\ChseNum\obj\Debug\Inte
 C:\Users\Admin\Documents\Visual Studio 2013\Projects\test\ChseNum\obj\Debug\AxInterop.WMPLib.dll
 C:\Users\Admin\Documents\Visual Studio 2013\Projects\test\ChseNum\obj\Debug\ChseNum.csproj.ResolveComReference.cache
 C:\Users\Admin\Documents\Visual Studio 2013\Projects\test\ChseNum\obj\Debug\ChseNum.csprojResolveAssemblyReference.cache
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\thu\ChseNum\bin\Debug\ChseNum.dll
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\thu\ChseNum\bin\Debug\ChseNum.pdb
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\thu\ChseNum\bin\Debug\Interop.WMPLib.dll
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\thu\ChseNum\bin\Debug\AxInterop.WMPLib.dll
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\thu\ChseNum\obj\Debug\ChseNum.csprojResolveAssemblyReference.cache
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\thu\ChseNum\obj\Debug\Interop.WMPLib.dll
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\thu\ChseNum\obj\Debug\AxInterop.WMPLib.dll
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\thu\ChseNum\obj\Debug\ChseNum.csproj.ResolveComReference.cache
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\thu\ChseNum\obj\Debug\ChseNum.ChooseNumber.resources
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\thu\ChseNum\obj\Debug\ChseNum.csproj.GenerateResource.Cache
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\thu\ChseNum\obj\Debug\ChseNum.dll
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\thu\ChseNum\obj\Debug\ChseNum.pdb

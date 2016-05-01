@@ -56,3 +56,15 @@ C:\Users\Admin\Documents\Visual Studio 2013\Projects\test\FndNum\obj\Debug\FndNu
 C:\Users\Admin\Documents\Visual Studio 2013\Projects\test\FndNum\obj\Debug\FndNum.csproj.GenerateResource.Cache
 C:\Users\Admin\Documents\Visual Studio 2013\Projects\test\FndNum\obj\Debug\FndNum.dll
 C:\Users\Admin\Documents\Visual Studio 2013\Projects\test\FndNum\obj\Debug\FndNum.pdb
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\thu\FndNum\bin\Debug\FndNum.dll
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\thu\FndNum\bin\Debug\FndNum.pdb
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\thu\FndNum\bin\Debug\Interop.WMPLib.dll
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\thu\FndNum\bin\Debug\AxInterop.WMPLib.dll
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\thu\FndNum\obj\Debug\FndNum.csprojResolveAssemblyReference.cache
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\thu\FndNum\obj\Debug\Interop.WMPLib.dll
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\thu\FndNum\obj\Debug\AxInterop.WMPLib.dll
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\thu\FndNum\obj\Debug\FndNum.csproj.ResolveComReference.cache
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\thu\FndNum\obj\Debug\FndNum.FindNumDisplay.resources
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\thu\FndNum\obj\Debug\FndNum.csproj.GenerateResource.Cache
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\thu\FndNum\obj\Debug\FndNum.dll
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\thu\FndNum\obj\Debug\FndNum.pdb

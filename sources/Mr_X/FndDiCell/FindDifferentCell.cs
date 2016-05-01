@@ -63,7 +63,7 @@ namespace FndDiCell
         private readonly Button[][] randomBtn = new Button[50][];
 
         // lấy các giá trị: level, chức vụ, kích thước bảng, thể loại chơi, mức độ chơi, điểm qua vòng, thời gian chơi, tắt nhạc hay không
-        public FindDifferentCell(int level, string position, int size, int type,int kind,int score, int time, bool turnOffSound)
+        public FindDifferentCell(int level, string position, int size, int type, int kind, int score, int time, bool turnOffSound, int determine)
         {
             InitializeComponent();
             sizeTable = size;
@@ -74,6 +74,7 @@ namespace FndDiCell
             second = time % 60;
             lblLevelOfGame.Text += level.ToString();
             lblPosition.Text += position.ToString();
+            if (determine == 2) lblPosition.Visible = false;
             if (turnOffSound == false)
             {
                 try

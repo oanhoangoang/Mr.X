@@ -85,11 +85,12 @@ namespace RemMe
         }
 
         // lấy các giá trị:level, chức vụ, kích thước bảng, số lượng ô người chơi phải chọn, số lượng lượt người chơi được chọn, thời gian chơi, tắt nhạc hay không
-        public RememberMe(int level, string position, int size, int numAns, int numChoice, int time, bool turnOffSound)
+        public RememberMe(int level, string position, int size, int numAns, int numChoice, int time, bool turnOffSound, int determine)
         {
             InitializeComponent();
             lblLevelOfGame.Text += level.ToString();
             lblPosition.Text += position.ToString();
+            if (determine == 2) lblPosition.Visible = false;
             sizeTable = size;
             numberOfAnswer = numAns;
             numberOfChoice = numChoice;

@@ -26,11 +26,12 @@ namespace ChseNum
         private int location;
 
         // lấy các giá trị: level, chức vụ, kích thước bảng,mức độ chơi, thời gian chơi, tắt nhạc hay không
-        public ChooseNumber(int level, string position,int size, int kind, int time, bool turnOffSound)
+        public ChooseNumber(int level, string position, int size, int kind, int time, bool turnOffSound, int determine)
         {
             InitializeComponent();
             lblLevelOfGame.Text += level.ToString();
             lblPosition.Text += position.ToString();
+            if (determine == 2) lblPosition.Visible = false;
             sizeTable = size;
             KindOfGame = kind;
             minute = time / 60;

@@ -67,13 +67,14 @@ namespace CatTheWo
         private int cellOnNowRound;
 
         // lấy các giá trị:level, chức vụ, số điểm qua vòng,số vòng chơi, thời gian gian, tắt nhạc hay không
-        public CatchTheWord(int level, string position ,int score, int round, int time, bool turnOffSound)
+        public CatchTheWord(int level, string position ,int score, int round, int time, bool turnOffSound, int determine)
         {
             
             InitializeComponent();
 
             lblLevelOfGame.Text += level.ToString();
             lblPosition.Text += position.ToString();
+            if (determine == 2) lblPosition.Visible = false;
             scoreToPass = score;
             numberOfRound = round;
             minute = time / 60;
@@ -408,7 +409,7 @@ namespace CatTheWo
             lblAnswer.Text = "Đáp án : " + answerNow;
             for (int i = 1; i <= 3; i++)
                 for (int j = 1; j <= 10; j++) keyboard[i][j].Enabled = false;
-            timeDelay(2000);
+            timeDelay(1400);
             lblAnswer.Visible = false;
             lblRound.Visible = false;
 
