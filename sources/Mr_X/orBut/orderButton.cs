@@ -111,7 +111,7 @@ namespace OrBut
 
                     randomBtn[i][j].Size = new Size(55, 55);
                     randomBtn[i][j].Location = new Point((i - 1) * 60 + getLocation(55, sizeTable, true), (j - 1) * 60 + getLocation(55, sizeTable, false));
-                    randomBtn[i][j].BackColor = Color.Red;
+                    randomBtn[i][j].BackColor = Color.FromArgb(154, 18, 179);
                     randomBtn[i][j].FlatStyle = FlatStyle.Flat;
                     randomBtn[i][j].ForeColor = Color.White;
                     randomBtn[i][j].Visible = false;
@@ -217,7 +217,7 @@ namespace OrBut
                 try
                 {
                     picFail.Visible = true;
-                    picFail.Image = Image.FromFile(@"picture/orBut/fail.jpg");
+                    picFail.Image = Image.FromFile(@"picture/orBut/fail.gif");
                     picFail.SizeMode = PictureBoxSizeMode.StretchImage;
                 }
                 catch (Exception ex) { }

@@ -110,7 +110,7 @@ namespace FndNum
                     now++;
 
                     randomBtn[i][j].Location = new Point( (i-1)*60+getLocation(55,sizeTable,true),(j-1)*60+getLocation(55,sizeTable,false) );
-                    randomBtn[i][j].BackColor = Color.Red;
+                    randomBtn[i][j].BackColor = Color.FromArgb(154, 18, 179);
                     randomBtn[i][j].FlatStyle = FlatStyle.Flat;
                     randomBtn[i][j].ForeColor = Color.White;
                     randomBtn[i][j].Click += btnMediate_Click;
