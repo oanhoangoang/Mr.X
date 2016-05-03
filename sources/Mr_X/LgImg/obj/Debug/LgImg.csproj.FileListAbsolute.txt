@@ -1,0 +1,13 @@
+c:\users\toet\documents\visual studio 2013\Projects\LgImg\LgImg\bin\Debug\LgImg.dll
+c:\users\toet\documents\visual studio 2013\Projects\LgImg\LgImg\bin\Debug\LgImg.pdb
+c:\users\toet\documents\visual studio 2013\Projects\LgImg\LgImg\obj\Debug\LgImg.csprojResolveAssemblyReference.cache
+c:\users\toet\documents\visual studio 2013\Projects\LgImg\LgImg\obj\Debug\LgImg.LgImgDisp.resources
+c:\users\toet\documents\visual studio 2013\Projects\LgImg\LgImg\obj\Debug\LgImg.csproj.GenerateResource.Cache
+c:\users\toet\documents\visual studio 2013\Projects\LgImg\LgImg\obj\Debug\LgImg.dll
+c:\users\toet\documents\visual studio 2013\Projects\LgImg\LgImg\obj\Debug\LgImg.pdb
+E:\JS_Project\Mr.X.git\trunk\sources\Mr_X\LgImg\bin\Debug\LgImg.dll
+E:\JS_Project\Mr.X.git\trunk\sources\Mr_X\LgImg\bin\Debug\LgImg.pdb
+E:\JS_Project\Mr.X.git\trunk\sources\Mr_X\LgImg\obj\Debug\LgImg.LgImgDisp.resources
+E:\JS_Project\Mr.X.git\trunk\sources\Mr_X\LgImg\obj\Debug\LgImg.csproj.GenerateResource.Cache
+E:\JS_Project\Mr.X.git\trunk\sources\Mr_X\LgImg\obj\Debug\LgImg.dll
+E:\JS_Project\Mr.X.git\trunk\sources\Mr_X\LgImg\obj\Debug\LgImg.pdb
