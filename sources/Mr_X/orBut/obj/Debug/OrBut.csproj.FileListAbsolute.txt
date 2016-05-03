@@ -1,0 +1,12 @@
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\test\OrBut\bin\Debug\OrBut.dll
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\test\OrBut\bin\Debug\OrBut.pdb
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\test\OrBut\obj\Debug\OrBut.dll
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\test\OrBut\obj\Debug\OrBut.pdb
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\test\OrBut\obj\Debug\OrBut.OrderButton.resources
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\test\OrBut\obj\Debug\OrBut.csproj.GenerateResource.Cache
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\test\OrBut\bin\Debug\Interop.WMPLib.dll
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\test\OrBut\bin\Debug\AxInterop.WMPLib.dll
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\test\OrBut\obj\Debug\Interop.WMPLib.dll
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\test\OrBut\obj\Debug\AxInterop.WMPLib.dll
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\test\OrBut\obj\Debug\OrBut.csproj.ResolveComReference.cache
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\test\OrBut\obj\Debug\orBut.csprojResolveAssemblyReference.cache
