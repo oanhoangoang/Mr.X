@@ -14,7 +14,7 @@ namespace LgImg
     {
         int lvlGame; // level of Game
         string rank, lvl; // Player rank & level
-        int check; // check = 0 Lose; check = 1 Win
+        int check = 0; // check = 0 Lose; check = 1 Win
         string strAns; // the Right Answer
         int sec; // second timer
         //
@@ -33,6 +33,8 @@ namespace LgImg
         //
         private void loadGameDisp()
         {
+            lblLvlData.Text = lvl.ToString();
+            lblRankData.Text = rank.ToString();
             lblGuide.Text = "Bấm Bắt đầu nếu bạn đã sẵn sàng :)";
             btnA.Visible = false; btnB.Visible = false; btnC.Visible = false; btnD.Visible = false; btnE.Visible = false;
             pic.Visible = false;
@@ -72,6 +74,7 @@ namespace LgImg
             lblTimeCnt.Text = "20";
             sec = int.Parse(lblTimeCnt.Text);
             timer.Start();
+            btnStart.Enabled = false;
         }
         //
         // Timer
@@ -83,7 +86,6 @@ namespace LgImg
             if (sec == -1)
             {
                 check = 0;
-                timer.Stop();
                 notiWrong();
             }
         }
@@ -92,6 +94,7 @@ namespace LgImg
         //
         private void notiRight()
         {
+            timer.Stop();
             lblGuide.Text = "Chúc mừng bạn đã vượt qua thử thách. Làm tốt lắm :)";
         }
         //
@@ -99,6 +102,7 @@ namespace LgImg
         //
         private void notiWrong()
         {
+            timer.Stop();
             lblGuide.Text = "Có vẻ lần này bạn chưa may mắn rồi. Cố gắng hơn lần sau nhé !";
         }
         //

@@ -39,7 +39,7 @@
             this.pic = new System.Windows.Forms.PictureBox();
             this.lblGuide = new System.Windows.Forms.Label();
             this.pnlPlayerInfo = new System.Windows.Forms.Panel();
-            this.lvlRankData = new System.Windows.Forms.Label();
+            this.lblRankData = new System.Windows.Forms.Label();
             this.lvlRank = new System.Windows.Forms.Label();
             this.lblLvlData = new System.Windows.Forms.Label();
             this.lblLevel = new System.Windows.Forms.Label();
@@ -155,7 +155,7 @@
             this.pnlPlayerInfo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlPlayerInfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(196)))), ((int)(((byte)(15)))));
-            this.pnlPlayerInfo.Controls.Add(this.lvlRankData);
+            this.pnlPlayerInfo.Controls.Add(this.lblRankData);
             this.pnlPlayerInfo.Controls.Add(this.lvlRank);
             this.pnlPlayerInfo.Controls.Add(this.lblLvlData);
             this.pnlPlayerInfo.Controls.Add(this.lblLevel);
@@ -166,15 +166,15 @@
             this.pnlPlayerInfo.Size = new System.Drawing.Size(395, 292);
             this.pnlPlayerInfo.TabIndex = 1;
             // 
-            // lvlRankData
+            // lblRankData
             // 
-            this.lvlRankData.AutoSize = true;
-            this.lvlRankData.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lvlRankData.Location = new System.Drawing.Point(173, 154);
-            this.lvlRankData.Name = "lvlRankData";
-            this.lvlRankData.Size = new System.Drawing.Size(42, 25);
-            this.lvlRankData.TabIndex = 3;
-            this.lvlRankData.Text = "xxx";
+            this.lblRankData.AutoSize = true;
+            this.lblRankData.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRankData.Location = new System.Drawing.Point(173, 154);
+            this.lblRankData.Name = "lblRankData";
+            this.lblRankData.Size = new System.Drawing.Size(42, 25);
+            this.lblRankData.TabIndex = 3;
+            this.lblRankData.Text = "xxx";
             // 
             // lvlRank
             // 
@@ -292,7 +292,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "LgImgDisp";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "LgImgDisp";
+            this.Text = "Mr. X";
             this.pnlGameDisp.ResumeLayout(false);
             this.pnlGameDisp.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic)).EndInit();
@@ -308,7 +308,7 @@
 
         private System.Windows.Forms.Panel pnlGameDisp;
         private System.Windows.Forms.Panel pnlPlayerInfo;
-        private System.Windows.Forms.Label lvlRankData;
+        private System.Windows.Forms.Label lblRankData;
         private System.Windows.Forms.Label lvlRank;
         private System.Windows.Forms.Label lblLvlData;
         private System.Windows.Forms.Label lblLevel;
