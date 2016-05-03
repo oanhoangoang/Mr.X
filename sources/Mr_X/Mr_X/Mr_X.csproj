@@ -12,7 +12,7 @@
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <IsWebBootstrapper>false</IsWebBootstrapper>
-    <PublishUrl>publish\</PublishUrl>
+    <PublishUrl>C:\Users\Oanh Pham\Desktop\Mr.X Beta\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>false</UpdateEnabled>
@@ -22,9 +22,12 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>0</ApplicationRevision>
+    <ProductName>Mr.X</ProductName>
+    <PublisherName>Fantastic 4</PublisherName>
+    <ApplicationRevision>2</ApplicationRevision>
     <ApplicationVersion>0.0.1.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -45,6 +48,21 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>7963FC48775EAB8AEBC80DD5EC1B599C3E3ED6A7</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>Mr_X_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Google-Best-Ninja-Icon-512x512-300x300.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -97,6 +115,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="Mr_X_TemporaryKey.pfx" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -115,6 +134,18 @@
       <Project>{f045c065-bf0a-4da2-8c34-2778961ff12a}</Project>
       <Name>CalExpression</Name>
     </ProjectReference>
+    <ProjectReference Include="..\CatTheWo\CatTheWo.csproj">
+      <Project>{f2f590b7-b2cb-4e86-961a-357e410c4a89}</Project>
+      <Name>CatTheWo</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ChseNum\ChseNum.csproj">
+      <Project>{1529a556-f1ba-40b9-b051-642d7216675a}</Project>
+      <Name>ChseNum</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FndDiCell\FndDiCell.csproj">
+      <Project>{c0fdb1bc-6a92-4dc9-b304-9d1fba2b5e44}</Project>
+      <Name>FndDiCell</Name>
+    </ProjectReference>
     <ProjectReference Include="..\FndNum\FndNum.csproj">
       <Project>{6f89f2d0-f24c-40d1-81bc-180f2217fcb5}</Project>
       <Name>FndNum</Name>
@@ -126,6 +157,22 @@
     <ProjectReference Include="..\FstCal\FstCal.csproj">
       <Project>{409fc21f-1256-41b9-b418-82caf907810f}</Project>
       <Name>FstCal</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LgImg\LgImg.csproj">
+      <Project>{8b42a1f7-e068-4c9b-95ed-9612ccd266be}</Project>
+      <Name>LgImg</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\orBut\orBut.csproj">
+      <Project>{a92e8cd4-00f9-44f3-8e18-fa26072eb110}</Project>
+      <Name>orBut</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PingPong\PingPong.csproj">
+      <Project>{7d5ad486-b285-4dff-9fbc-d4fa1f4426f0}</Project>
+      <Name>PingPong</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Prime\Prime\Prime.csproj">
+      <Project>{da5d896b-f54f-49cb-aa13-60ff33c356af}</Project>
+      <Name>Prime</Name>
     </ProjectReference>
     <ProjectReference Include="..\RemMe\RemMe.csproj">
       <Project>{227283ab-dac8-41be-8e33-0a040ddb1562}</Project>
@@ -148,6 +195,9 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Google-Best-Ninja-Icon-512x512-300x300.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
