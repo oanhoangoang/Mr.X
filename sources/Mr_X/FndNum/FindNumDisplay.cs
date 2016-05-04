@@ -60,7 +60,7 @@ namespace FndNum
             {
                 try
                 {
-                    wmpSoundTrack.URL = @"sound/FndNum/soundTrack.mp3";
+                    wmpSoundTrack.URL = @"sound/FndNum/soundtrack.mp3";
                 }
                 catch (Exception ex){}
             }

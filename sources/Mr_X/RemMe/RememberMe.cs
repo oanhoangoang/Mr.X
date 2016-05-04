@@ -99,7 +99,7 @@ namespace RemMe
             {
                 try
                 {
-                    wmpSoundTrack.URL = @"sound/RemMe/soundTrack.mp3";
+                    wmpSoundTrack.URL = @"sound/RemMe/SoundTrack.mp3";
                 }
                 catch (Exception ex){}
             }
@@ -249,12 +249,12 @@ namespace RemMe
             {
                 yourScore++;
 
-                playMusic("sound/RemMe/happy.wav");
+                playMusic("sound/RemMe/Happy.wav");
                 btnMedia.Visible = false;
             }
             else
             {
-                playMusic("sound/RemMe/sad.wav");
+                playMusic("sound/RemMe/Sad.wav");
             }
         }
 
