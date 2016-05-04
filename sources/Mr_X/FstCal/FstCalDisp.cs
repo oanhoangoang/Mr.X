@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace FstCal
 {
     public partial class FstCalDisp : Form
@@ -15,6 +16,7 @@ namespace FstCal
         int lvlGame; // level of Game
         string rank, lvl; // Player rank & level
         int check; // check = 0 Lose; check = 1 Win
+        int num1, num2, playerAns, gameAns;
 
         // Call Form
         public FstCalDisp(int xlvlGame, string xRank, string xLvl) 
@@ -35,13 +37,34 @@ namespace FstCal
 
             lblNum1.Visible = false;
             lblNum2.Visible = false;
+            lblNum3.Visible = false;
             lblSign.Visible = false;
             txtAns.Visible = false;
             btnAns.Visible = false;
             lblNoti.Visible = false;
         }
         //
-        // Start the game
+        // Load the calculation
+        //
+        public void loadGameData()
+        {
+            Random rd = new Random();
+
+            lblNum1.Visible = true;
+            lblNum2.Visible = true;
+            lblNum3.Visible = true;
+            lblSign.Visible = true;
+            txtAns.Visible = true;
+            btnAns.Visible = true;
+
+            num1 = rd.Next(10, 100);
+            lblNum1.Text = num1.ToString();
+            num2 = rd.Next(10, 100);
+            lblNum2.Text = num2.ToString();
+            if (lvlGame == 1) lblSign.Text = "+"; else lblSign.Text = "x";
+        }
+        //
+        // Click Start button
         //
         int sec;
         private void btnStart_Click(object sender, EventArgs e) 
@@ -53,6 +76,14 @@ namespace FstCal
             lblTimeCount.Text = "20";
             sec = int.Parse(lblTimeCount.Text);
             timer.Start();
+        }
+        //
+        // Calculate the game answer
+        //
+        public int calAns(int num1, int num2)
+        {
+            if (lvlGame == 1) return num1 + num2;
+            else return num1 * num2;
         }
         //
         // Player gives the answer
@@ -86,6 +117,57 @@ namespace FstCal
                 timer.Stop();
                 notiTimeUp();
             }
+        }
+        //
+        // Time up
+        //
+        public void notiTimeUp()
+        {
+            lblNum1.Visible = false;
+            lblNum2.Visible = false;
+            lblNum3.Visible = false;
+            lblSign.Visible = false;
+            txtAns.Visible = false;
+            btnAns.Visible = false;
+            lblGuide.Visible = false;
+            btnAns.Visible = false;
+            txtAns.Visible = false;
+            lblNoti.Visible = true;
+            lblNoti.Text = "Cái gì lâu quá cũng không tốt. Cố gắng lần sau nhé !";
+        }
+        //
+        // Notify player answer is Right
+        //
+        public void notiRightAns()
+        {
+            lblNum1.Visible = false;
+            lblNum2.Visible = false;
+            lblNum3.Visible = false;
+            lblSign.Visible = false;
+            txtAns.Visible = false;
+            btnAns.Visible = false;
+            lblGuide.Visible = false;
+            btnAns.Visible = false;
+            txtAns.Visible = false;
+            lblNoti.Visible = true;
+            lblNoti.Text = "Ghê à nha! Party với chức vụ mới thôi :))";
+        }
+        //
+        // Player answer is Wrong
+        //
+        public void notiWrongAns()
+        {
+            lblNum1.Visible = false;
+            lblNum2.Visible = false;
+            lblNum3.Visible = false;
+            lblSign.Visible = false;
+            txtAns.Visible = false;
+            btnAns.Visible = false;
+            lblGuide.Visible = false;
+            btnAns.Visible = false;
+            txtAns.Visible = false;
+            lblNoti.Visible = true;
+            lblNoti.Text = "Đen thôi, đỏ khác liền =)) Gặp lại bạn lần sau !";
         }
         public delegate void truyen(int value);
         public truyen trans;

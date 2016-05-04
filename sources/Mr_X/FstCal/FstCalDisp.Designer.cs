@@ -4,82 +4,6 @@ namespace FstCal
 {
     partial class FstCalDisp
     {
-        int num1, num2, playerAns, gameAns;
-        //
-        // Load the calculation
-        //
-        public void loadGameData() 
-        {
-            Random rd = new Random();
-
-            lblNum1.Visible = true;
-            lblNum2.Visible = true;
-            lblSign.Visible = true;
-            txtAns.Visible = true;
-            btnAns.Visible = true;
-
-            num1 = rd.Next(10, 100);
-            lblNum1.Text = num1.ToString();
-            num2 = rd.Next(10, 100);
-            lblNum2.Text = num2.ToString();
-            if (lvlGame == 1) lblSign.Text = "+"; else lblSign.Text = "x";
-        }
-        //
-        // Calculate the game answer
-        //
-        public int calAns(int num1, int num2) 
-        {
-            if (lvlGame == 1) return num1 + num2;
-            else return num1 * num2;
-        }
-        //
-        // Time up
-        //
-        public void notiTimeUp() 
-        {
-            lblNum1.Visible = false;
-            lblNum2.Visible = false;
-            lblSign.Visible = false;
-            txtAns.Visible = false;
-            btnAns.Visible = false;
-            lblGuide.Visible = false;
-            btnAns.Visible = false;
-            txtAns.Visible = false;
-            lblNoti.Visible = true;
-            lblNoti.Text = "Cái gì lâu quá cũng không tốt. Cố gắng lần sau nhé !";
-        }
-        //
-        // Notify player answer is Right
-        //
-        public void notiRightAns() 
-        {
-            lblNum1.Visible = false;
-            lblNum2.Visible = false;
-            lblSign.Visible = false;
-            txtAns.Visible = false;
-            btnAns.Visible = false;
-            lblGuide.Visible = false;
-            btnAns.Visible = false;
-            txtAns.Visible = false;
-            lblNoti.Visible = true;
-            lblNoti.Text = "Ghê à nha! Party với chức vụ mới thôi :))";
-        }
-        //
-        // Player answer is Wrong
-        //
-        public void notiWrongAns() 
-        {
-            lblNum1.Visible = false;
-            lblNum2.Visible = false;
-            lblSign.Visible = false;
-            txtAns.Visible = false;
-            btnAns.Visible = false;
-            lblGuide.Visible = false;
-            btnAns.Visible = false;
-            txtAns.Visible = false;
-            lblNoti.Visible = true;
-            lblNoti.Text = "Đen thôi, đỏ khác liền =)) Gặp lại bạn lần sau !";
-        }
 
         /// <summary>
         /// Required designer variable.
@@ -129,6 +53,7 @@ namespace FstCal
             this.lblTimeCount = new System.Windows.Forms.Label();
             this.lblTime = new System.Windows.Forms.Label();
             this.timer = new System.Windows.Forms.Timer(this.components);
+            this.lblNum3 = new System.Windows.Forms.Label();
             this.pnlGameDisp.SuspendLayout();
             this.pnlPlayerInfo.SuspendLayout();
             this.pnlGameInfo.SuspendLayout();
@@ -136,7 +61,8 @@ namespace FstCal
             // 
             // pnlGameDisp
             // 
-            this.pnlGameDisp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
+            this.pnlGameDisp.BackColor = System.Drawing.Color.White;
+            this.pnlGameDisp.Controls.Add(this.lblNum3);
             this.pnlGameDisp.Controls.Add(this.lblNoti);
             this.pnlGameDisp.Controls.Add(this.btnAns);
             this.pnlGameDisp.Controls.Add(this.lblGuide);
@@ -165,9 +91,10 @@ namespace FstCal
             // 
             // btnAns
             // 
+            this.btnAns.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAns.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAns.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(196)))), ((int)(((byte)(15)))));
-            this.btnAns.Location = new System.Drawing.Point(348, 481);
+            this.btnAns.Location = new System.Drawing.Point(371, 469);
             this.btnAns.Name = "btnAns";
             this.btnAns.Size = new System.Drawing.Size(148, 72);
             this.btnAns.TabIndex = 5;
@@ -189,13 +116,13 @@ namespace FstCal
             // 
             // txtAns
             // 
-            this.txtAns.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
-            this.txtAns.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtAns.BackColor = System.Drawing.Color.White;
+            this.txtAns.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtAns.Font = new System.Drawing.Font("Jokerman", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAns.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(196)))), ((int)(((byte)(15)))));
-            this.txtAns.Location = new System.Drawing.Point(315, 379);
+            this.txtAns.Location = new System.Drawing.Point(338, 387);
             this.txtAns.Name = "txtAns";
-            this.txtAns.Size = new System.Drawing.Size(181, 68);
+            this.txtAns.Size = new System.Drawing.Size(181, 61);
             this.txtAns.TabIndex = 3;
             this.txtAns.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -215,7 +142,7 @@ namespace FstCal
             this.lblNum2.AutoSize = true;
             this.lblNum2.Font = new System.Drawing.Font("Jokerman", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNum2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(196)))), ((int)(((byte)(15)))));
-            this.lblNum2.Location = new System.Drawing.Point(390, 296);
+            this.lblNum2.Location = new System.Drawing.Point(386, 296);
             this.lblNum2.Name = "lblNum2";
             this.lblNum2.Size = new System.Drawing.Size(139, 58);
             this.lblNum2.TabIndex = 1;
@@ -243,7 +170,7 @@ namespace FstCal
             this.pnlPlayerInfo.Controls.Add(this.lblRank);
             this.pnlPlayerInfo.Controls.Add(this.lblLevelData);
             this.pnlPlayerInfo.Controls.Add(this.lblLevel);
-            this.pnlPlayerInfo.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.pnlPlayerInfo.ForeColor = System.Drawing.Color.White;
             this.pnlPlayerInfo.Location = new System.Drawing.Point(818, 4);
             this.pnlPlayerInfo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pnlPlayerInfo.Name = "pnlPlayerInfo";
@@ -253,40 +180,40 @@ namespace FstCal
             // lblRankData
             // 
             this.lblRankData.AutoSize = true;
-            this.lblRankData.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRankData.Location = new System.Drawing.Point(161, 159);
+            this.lblRankData.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRankData.Location = new System.Drawing.Point(177, 159);
             this.lblRankData.Name = "lblRankData";
-            this.lblRankData.Size = new System.Drawing.Size(51, 20);
+            this.lblRankData.Size = new System.Drawing.Size(42, 25);
             this.lblRankData.TabIndex = 3;
-            this.lblRankData.Text = "label4";
+            this.lblRankData.Text = "xxx";
             // 
             // lblRank
             // 
             this.lblRank.AutoSize = true;
-            this.lblRank.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRank.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRank.Location = new System.Drawing.Point(68, 159);
             this.lblRank.Name = "lblRank";
-            this.lblRank.Size = new System.Drawing.Size(66, 20);
+            this.lblRank.Size = new System.Drawing.Size(85, 25);
             this.lblRank.TabIndex = 2;
             this.lblRank.Text = "Chức vụ";
             // 
             // lblLevelData
             // 
             this.lblLevelData.AutoSize = true;
-            this.lblLevelData.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLevelData.Location = new System.Drawing.Point(161, 109);
+            this.lblLevelData.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLevelData.Location = new System.Drawing.Point(177, 109);
             this.lblLevelData.Name = "lblLevelData";
-            this.lblLevelData.Size = new System.Drawing.Size(51, 20);
+            this.lblLevelData.Size = new System.Drawing.Size(52, 25);
             this.lblLevelData.TabIndex = 1;
-            this.lblLevelData.Text = "label2";
+            this.lblLevelData.Text = "level";
             // 
             // lblLevel
             // 
             this.lblLevel.AutoSize = true;
-            this.lblLevel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLevel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLevel.Location = new System.Drawing.Point(68, 109);
             this.lblLevel.Name = "lblLevel";
-            this.lblLevel.Size = new System.Drawing.Size(46, 20);
+            this.lblLevel.Size = new System.Drawing.Size(59, 25);
             this.lblLevel.TabIndex = 0;
             this.lblLevel.Text = "Level";
             // 
@@ -299,7 +226,7 @@ namespace FstCal
             this.pnlGameInfo.Controls.Add(this.lblTimeUnit);
             this.pnlGameInfo.Controls.Add(this.lblTimeCount);
             this.pnlGameInfo.Controls.Add(this.lblTime);
-            this.pnlGameInfo.ForeColor = System.Drawing.Color.Black;
+            this.pnlGameInfo.ForeColor = System.Drawing.Color.White;
             this.pnlGameInfo.Location = new System.Drawing.Point(818, 300);
             this.pnlGameInfo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pnlGameInfo.Name = "pnlGameInfo";
@@ -308,9 +235,10 @@ namespace FstCal
             // 
             // btnBackToMenu
             // 
-            this.btnBackToMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
+            this.btnBackToMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(204)))), ((int)(((byte)(113)))));
+            this.btnBackToMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBackToMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBackToMenu.ForeColor = System.Drawing.Color.Black;
+            this.btnBackToMenu.ForeColor = System.Drawing.Color.White;
             this.btnBackToMenu.Location = new System.Drawing.Point(212, 168);
             this.btnBackToMenu.Name = "btnBackToMenu";
             this.btnBackToMenu.Size = new System.Drawing.Size(106, 77);
@@ -321,9 +249,10 @@ namespace FstCal
             // 
             // btnStart
             // 
-            this.btnStart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
+            this.btnStart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(204)))), ((int)(((byte)(113)))));
+            this.btnStart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnStart.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStart.ForeColor = System.Drawing.Color.Black;
+            this.btnStart.ForeColor = System.Drawing.Color.White;
             this.btnStart.Location = new System.Drawing.Point(81, 168);
             this.btnStart.Name = "btnStart";
             this.btnStart.Size = new System.Drawing.Size(106, 77);
@@ -335,30 +264,30 @@ namespace FstCal
             // lblTimeUnit
             // 
             this.lblTimeUnit.AutoSize = true;
-            this.lblTimeUnit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTimeUnit.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTimeUnit.Location = new System.Drawing.Point(235, 101);
             this.lblTimeUnit.Name = "lblTimeUnit";
-            this.lblTimeUnit.Size = new System.Drawing.Size(41, 20);
+            this.lblTimeUnit.Size = new System.Drawing.Size(52, 25);
             this.lblTimeUnit.TabIndex = 2;
             this.lblTimeUnit.Text = "Giây";
             // 
             // lblTimeCount
             // 
             this.lblTimeCount.AutoSize = true;
-            this.lblTimeCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTimeCount.Location = new System.Drawing.Point(161, 101);
+            this.lblTimeCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTimeCount.Location = new System.Drawing.Point(177, 101);
             this.lblTimeCount.Name = "lblTimeCount";
-            this.lblTimeCount.Size = new System.Drawing.Size(51, 20);
+            this.lblTimeCount.Size = new System.Drawing.Size(23, 25);
             this.lblTimeCount.TabIndex = 1;
-            this.lblTimeCount.Text = "label2";
+            this.lblTimeCount.Text = "0";
             // 
             // lblTime
             // 
             this.lblTime.AutoSize = true;
-            this.lblTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTime.Location = new System.Drawing.Point(68, 101);
             this.lblTime.Name = "lblTime";
-            this.lblTime.Size = new System.Drawing.Size(85, 20);
+            this.lblTime.Size = new System.Drawing.Size(109, 25);
             this.lblTime.TabIndex = 0;
             this.lblTime.Text = "Thời gian : ";
             // 
@@ -366,6 +295,18 @@ namespace FstCal
             // 
             this.timer.Interval = 500;
             this.timer.Tick += new System.EventHandler(this.timer_Tick);
+            // 
+            // lblNum3
+            // 
+            this.lblNum3.AutoSize = true;
+            this.lblNum3.Font = new System.Drawing.Font("Jokerman", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNum3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(196)))), ((int)(((byte)(15)))));
+            this.lblNum3.Location = new System.Drawing.Point(333, 345);
+            this.lblNum3.Name = "lblNum3";
+            this.lblNum3.Size = new System.Drawing.Size(181, 29);
+            this.lblNum3.TabIndex = 7;
+            this.lblNum3.Text = "______________";
+            this.lblNum3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // FstCalDisp
             // 
@@ -378,7 +319,7 @@ namespace FstCal
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FstCalDisp";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FstCalDisp";
+            this.Text = "Mr. X";
             this.Load += new System.EventHandler(this.FstCalDisp_Load);
             this.pnlGameDisp.ResumeLayout(false);
             this.pnlGameDisp.PerformLayout();
@@ -412,5 +353,6 @@ namespace FstCal
         private System.Windows.Forms.Timer timer;
         private System.Windows.Forms.Label lblNoti;
         private System.Windows.Forms.Button btnBackToMenu;
+        private System.Windows.Forms.Label lblNum3;
     }
 }
