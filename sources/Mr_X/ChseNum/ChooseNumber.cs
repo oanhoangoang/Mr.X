@@ -25,7 +25,7 @@ namespace ChseNum
         private Button[][] randomBtn = new Button[100 + 10][];
         private int location;
 
-        // lấy các giá trị: level, chức vụ, kích thước bảng,mức độ chơi, thời gian chơi, tắt nhạc hay không
+        // lấy các giá trị: level, chức vụ, kích thước bảng,mức độ chơi, thời gian chơi, tắt nhạc hay không, hiển thị chức vụ truyền vào hay không: 1=có; 2=không
         public ChooseNumber(int level, string position, int size, int kind, int time, bool turnOffSound, int determine)
         {
             InitializeComponent();
@@ -80,15 +80,15 @@ namespace ChseNum
             else if (KindOfGame == 2) value = randomNumber(4, 6);
             else if (KindOfGame == 3) value = randomNumber(7, 9);
 
-            numberToFind = value * 100;      
+            numberToFind = value * 50;      
             original[value] = numberToFind;
 
             for (int i = 1; i < value; i++)
             {
-                original[i] = randomNumber(1, 100);
+                original[i] = randomNumber(1, 50);
                 original[value] -= original[i];
             }
-            for (int i = value + 1; i <= sizeTable * sizeTable; i++) original[i] = randomNumber(1, 100);
+            for (int i = value + 1; i <= sizeTable * sizeTable; i++) original[i] = randomNumber(1, 50);
         }
 
         // tạo ngẫu nhiên các button, các số hiển thị trên Text lấy từ mảng original[]
@@ -170,6 +170,7 @@ namespace ChseNum
             for (int i = 1; i <= sizeTable; i++)
                 for (int j = 1; j <= sizeTable; j++) randomBtn[i][j].Enabled = false;
 
+            DialogResult dig;
             if ( yourSum == numberToFind )
             {
                 trans.Invoke(1);
@@ -182,14 +183,15 @@ namespace ChseNum
                 catch (Exception ex) { }
 
                 wmpSoundTrack.URL = @"sound/ChseNum/victory.mp3";
-                MessageBox.Show("Chúc mừng bạn đã vượt qua thử thách này", "Thông báo");
+                dig = MessageBox.Show("Chúc mừng bạn đã vượt qua thử thách này", "Thông báo");
             }
             else
             {
                 trans.Invoke(0);
                 wmpSoundTrack.URL = @"sound/ChseNum/fail.mp3";
-                MessageBox.Show("Rất tiếc bạn đã không vượt qua thử thách này. Chúc may mắn", "Thông báo");
+                dig = MessageBox.Show("Rất tiếc bạn đã không vượt qua thử thách này", "Thông báo");
             }
+            if (dig == DialogResult.OK) this.Close();
         }
 
         //tắt game

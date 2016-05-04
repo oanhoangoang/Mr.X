@@ -21,3 +21,4 @@ C:\Users\Admin\Documents\Visual Studio 2013\Projects\thu\FndDiCell\obj\Debug\Fnd
 C:\Users\Admin\Documents\Visual Studio 2013\Projects\thu\FndDiCell\obj\Debug\FndDiCell.csproj.GenerateResource.Cache
 C:\Users\Admin\Documents\Visual Studio 2013\Projects\thu\FndDiCell\obj\Debug\FndDiCell.dll
 C:\Users\Admin\Documents\Visual Studio 2013\Projects\thu\FndDiCell\obj\Debug\FndDiCell.pdb
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\test\FndDiCell\obj\Debug\FndDiCell.csprojResolveAssemblyReference.cache

@@ -66,7 +66,7 @@ namespace CatTheWo
         // số ô mà người chơi đã mở ở vòng hiện tại
         private int cellOnNowRound;
 
-        // lấy các giá trị:level, chức vụ, số điểm qua vòng,số vòng chơi, thời gian gian, tắt nhạc hay không
+        // lấy các giá trị:level, chức vụ, số điểm qua vòng,số vòng chơi, thời gian chơi, tắt nhạc hay không, hiển thị chức vụ truyền vào hay không: 1=có; 2=không
         public CatchTheWord(int level, string position ,int score, int round, int time, bool turnOffSound, int determine)
         {
             
@@ -275,7 +275,7 @@ namespace CatTheWo
 
             nudMinute.Value = minute;
             nudSecond.Value = second;
-            if ( (minute > 0 || second > 0) && nowRound<=numberOfRound )
+            if ( (minute > 0 || second > 0) && nowRound<=numberOfRound && yourScore<scoreToPass )
             {
                 if (second == 0 && minute > 0)
                 {
@@ -413,6 +413,7 @@ namespace CatTheWo
             lblAnswer.Visible = false;
             lblRound.Visible = false;
 
+            DialogResult dig;
             if (yourScore >= scoreToPass)
             {
                 trans.Invoke(1);
@@ -430,13 +431,14 @@ namespace CatTheWo
                 }
                 catch (Exception ex) { }
                 
-                MessageBox.Show("Chúc mừng bạn đã vượt qua thử thách này", "Thông báo");    
+                dig = MessageBox.Show("Chúc mừng bạn đã vượt qua thử thách này", "Thông báo");
             }
             else
             {
                 trans.Invoke(0);
-                MessageBox.Show("Rất tiếc bạn đã không vượt qua thử thách này. Chúc may mắn", "Thông báo");
+                dig = MessageBox.Show("Rất tiếc bạn đã không vượt qua thử thách này", "Thông báo");
             }
+            if (dig == DialogResult.OK) this.Close();
         }
 
         // tắt nhạc khi đóng chương trình

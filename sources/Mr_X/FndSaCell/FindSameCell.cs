@@ -11,6 +11,7 @@ using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Media;
 
+
 namespace FndSaCell
 {
     public partial class FindSameCell : Form
@@ -72,7 +73,7 @@ namespace FndSaCell
         // lưu tên của button đã nhấn liền trước đó
         private int previousButton;
 
-        // lấy các giá trị:level, chức vụ, chiều cao của bảng, chiều rộng của bảng, số điểm qua vòng,số lượt nhấn, thời gian chơi, có tắt nhạc hay không
+        // lấy các giá trị:level, chức vụ, chiều cao của bảng, chiều rộng của bảng, số điểm qua vòng,số lượt nhấn, thời gian chơi, có tắt nhạc hay không, hiển thị chức vụ truyền vào hay không: 1=có; 2=không
         public FindSameCell(int level, string position, int height, int width, int Score, int numChoice, int time, bool turnOffSound, int determine)
         {
             InitializeComponent();
@@ -176,7 +177,7 @@ namespace FndSaCell
             nudMinute.Value = minute;
             nudSecond.Value = second;
 
-            if (minute > 0 || second > 0 && numberOfChoice > 0)
+            if (minute > 0 || second > 0 && numberOfChoice > 0 && yourScore<scoreToPass)
             {
                 if (second == 0 && minute > 0)
                 {
@@ -261,6 +262,7 @@ namespace FndSaCell
                     btnCircle[i][j].Click -= new EventHandler(btnMediate_Click);
                 }
 
+            DialogResult dig;
             if (yourScore >= scoreToPass)
             {
                 trans.Invoke(1);
@@ -278,14 +280,14 @@ namespace FndSaCell
                 }
                 catch (Exception ex) { }
 
-
-                MessageBox.Show("Chúc mừng bạn đã vượt qua thử thách này", "Thông báo");
+                dig = MessageBox.Show("Chúc mừng bạn đã vượt qua thử thách này", "Thông báo");
             }
             else
             {
                 trans.Invoke(0);
-                MessageBox.Show("Rất tiếc bạn đã không vượt qua thử thách này. Chúc may mắn", "Thông báo");
+                dig = MessageBox.Show("Rất tiếc bạn đã không vượt qua thử thách này", "Thông báo");
             }
+            if (dig == DialogResult.OK) this.Close();
         }
 
         //tắt game

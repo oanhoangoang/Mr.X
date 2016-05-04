@@ -62,7 +62,7 @@ namespace FndDiCell
         // mảng button để người chơi chọn
         private readonly Button[][] randomBtn = new Button[50][];
 
-        // lấy các giá trị: level, chức vụ, kích thước bảng, thể loại chơi, mức độ chơi, điểm qua vòng, thời gian chơi, tắt nhạc hay không
+        // lấy các giá trị: level, chức vụ, kích thước bảng, thể loại chơi, mức độ chơi, điểm qua vòng, thời gian chơi, tắt nhạc hay không, hiển thị chức vụ truyền vào hay không: 1=có; 2=không
         public FindDifferentCell(int level, string position, int size, int type, int kind, int score, int time, bool turnOffSound, int determine)
         {
             InitializeComponent();
@@ -270,7 +270,7 @@ namespace FndDiCell
             txtScoreToPass.Text = scoreToPass.ToString();
             nudMinute.Value = minute;
             nudSecond.Value = second;
-            if (minute > 0 || second > 0)
+            if ( (minute > 0 || second > 0) && yourScore<scoreToPass )
             {
                 if (second == 0 && minute > 0)
                 {
@@ -295,6 +295,7 @@ namespace FndDiCell
             for (int i = 1; i <= sizeTable; i++)
                 for (int j = 1; j <= sizeTable; j++) randomBtn[i][j].Enabled = false;
 
+            DialogResult dig;
             if (yourScore >= scoreToPass)
             {
                 trans.Invoke(1);
@@ -312,13 +313,14 @@ namespace FndDiCell
                 }
                 catch (Exception ex) { }
 
-                MessageBox.Show("Chúc mừng bạn đã vượt qua thử thách này", "Thông báo");
+                dig = MessageBox.Show("Chúc mừng bạn đã vượt qua thử thách này", "Thông báo");
             }
             else
             {
                 trans.Invoke(0);
-                MessageBox.Show("Rất tiếc bạn đã không vượt qua thử thách này. Chúc may mắn", "Thông báo");
+                dig = MessageBox.Show("Rất tiếc bạn đã không vượt qua thử thách này", "Thông báo");
             }
+            if (dig == DialogResult.OK) this.Close();
         }
 
         // tắt nhạc khi đóng chương trình

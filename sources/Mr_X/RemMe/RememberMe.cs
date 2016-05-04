@@ -84,7 +84,7 @@ namespace RemMe
             else return (654 - size * num) / 2;
         }
 
-        // lấy các giá trị:level, chức vụ, kích thước bảng, số lượng ô người chơi phải chọn, số lượng lượt người chơi được chọn, thời gian chơi, tắt nhạc hay không
+        // lấy các giá trị:level, chức vụ, kích thước bảng, số lượng ô người chơi phải chọn, số lượng lượt người chơi được chọn, thời gian chơi, tắt nhạc hay không, hiển thị chức vụ truyền vào hay không: 1=có; 2=không
         public RememberMe(int level, string position, int size, int numAns, int numChoice, int time, bool turnOffSound, int determine)
         {
             InitializeComponent();
@@ -224,7 +224,7 @@ namespace RemMe
             nudSecond.Value = second;
             if ((minute > 0 || second > 0) && numberOfChoice>0 )
             {
-                if (second == 0 && minute > 0)
+                if ((second == 0 && minute > 0) && numberOfChoice>0 && yourScore<numberOfAnswer)
                 {
                     second = 60;
                     minute--;
@@ -272,7 +272,7 @@ namespace RemMe
                     value = Int32.Parse(randomBtn[i][j].Name);
                     randomBtn[i][j].BackColor = ColorTranslator.FromHtml(arrayColor[original[value]]);
                 }
-
+            DialogResult dig;
             if (yourScore >= numberOfAnswer)
             {
                 trans.Invoke(1);
@@ -290,27 +290,27 @@ namespace RemMe
                 }
                 catch (Exception ex) { }
 
-
-                MessageBox.Show("Chúc mừng bạn đã vượt qua thử thách này", "Thông báo");
+                dig = MessageBox.Show("Chúc mừng bạn đã vượt qua thử thách này", "Thông báo");
             }
             else
             {
                 trans.Invoke(0);
-                MessageBox.Show("Rất tiếc bạn đã không vượt qua thử thách này. Chúc may mắn", "Thông báo");
+                dig = MessageBox.Show("Rất tiếc bạn đã không vượt qua thử thách này", "Thông báo");
             }
+            if (dig == DialogResult.OK) this.Close();
         }
 
         // tắt nhạc khi đóng chương trình
         private void RememberMe_FormClosed(object sender, FormClosedEventArgs e)
         {
+            tmrTimeToPlay.Stop();
+            tmrTimeToWatch.Stop();
             wmpSoundTrack.close();
         }
 
         // tắt chương trình
         private void btnClose_Click(object sender, EventArgs e)
         {
-            tmrTimeToPlay.Stop();
-            tmrTimeToWatch.Stop();
             this.Close();
         }
     }

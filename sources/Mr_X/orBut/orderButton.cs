@@ -37,7 +37,7 @@ namespace OrBut
         // số lượng số cần tìm
         private int numberToFind;
 
-        // lấy các giá trị: level, chức vụ, kích thước bảng, số lượng button phải ấn, thời gian chơi, tắt nhạc hay không, chế độ chơi
+        // lấy các giá trị: level, chức vụ, kích thước bảng, số lượng button phải ấn, thời gian chơi, tắt nhạc hay không, hiển thị chức vụ truyền vào hay không: 1=có; 2=không
         public orderButton(int level, string position, int size, int num, int time, bool turnOffSound, int determine)
         {
             InitializeComponent();
@@ -191,6 +191,8 @@ namespace OrBut
             for (int i = 1; i <= sizeTable; i++)
                 for (int j = 1; j <= sizeTable; j++) randomBtn[i][j].Visible = false;
 
+            DialogResult dig;
+
             if (now > numberToFind)
             {
                 trans.Invoke(1);
@@ -208,7 +210,7 @@ namespace OrBut
                 }
                 catch (Exception ex) { }
 
-                MessageBox.Show("Chúc mừng bạn đã vượt qua thử thách này", "Thông báo");
+               dig=MessageBox.Show("Chúc mừng bạn đã vượt qua thử thách này", "Thông báo");
             }
             else
             {
@@ -222,8 +224,9 @@ namespace OrBut
                 }
                 catch (Exception ex) { }
 
-                MessageBox.Show("Rất tiếc bạn đã không vượt qua thử thách này. Chúc may mắn", "Thông báo");
+                dig = MessageBox.Show("Rất tiếc bạn đã không vượt qua thử thách này", "Thông báo");
             }
+            if (dig == DialogResult.OK) this.Close();
         }
 
         // tắt nhạc khi đóng chương trình

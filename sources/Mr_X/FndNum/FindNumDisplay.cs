@@ -44,9 +44,9 @@ namespace FndNum
         private int yourScore; 
 
         // thời gian chơi
-        private int timeToPlay;  
+        private int timeToPlay;
 
-        // lấy các giá trị: level, chức vụ, kích thước bảng, số lượng số cần tìm, thời gian chơi, tắt nhạc hay không
+        // lấy các giá trị: level, chức vụ, kích thước bảng, số lượng số cần tìm, thời gian chơi, tắt nhạc hay không, hiển thị chức vụ truyền vào hay không: 1=có; 2=không
         public FindNumDisplay(int level, string position, int size, int num, int time, bool turnOffSound, int determine)
         {
             InitializeComponent();
@@ -163,7 +163,7 @@ namespace FndNum
             txtScoreToPass.Text = numberToFind.ToString();
             nudMinute.Value = minute;
             nudSecond.Value = second;
-            if ((minute > 0 || second > 0) && now <= sizeTable * sizeTable)
+            if ((minute > 0 || second > 0) && now <= sizeTable * sizeTable && yourScore<numberToFind)
             {
                 if (second == 0 && minute > 0)
                 {
@@ -205,6 +205,8 @@ namespace FndNum
             for (int i = 1; i <= sizeTable; i++)
                 for (int j = 1; j <= sizeTable; j++) randomBtn[i][j].Enabled = false;
 
+            DialogResult dig;
+
             if (yourScore >= numberToFind)
             {
                 trans.Invoke(1);
@@ -222,13 +224,14 @@ namespace FndNum
                 }
                 catch (Exception ex) { }
 
-                MessageBox.Show("Chúc mừng bạn đã vượt qua thử thách này", "Thông báo");
+                dig = MessageBox.Show("Chúc mừng bạn đã vượt qua thử thách này", "Thông báo");
             }
             else
             {
                 trans.Invoke(0);
-                MessageBox.Show("Rất tiếc bạn đã không vượt qua thử thách này. Chúc may mắn", "Thông báo");
+                dig = MessageBox.Show("Rất tiếc bạn đã không vượt qua thử thách này", "Thông báo");
             }
+            if (dig == DialogResult.OK) this.Close();
         }
 
         //tắt game
