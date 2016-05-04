@@ -222,9 +222,9 @@ namespace RemMe
             txtOpportunity.Text = numberOfChoice.ToString();
             nudMinute.Value = minute;
             nudSecond.Value = second;
-            if ((minute > 0 || second > 0) && numberOfChoice>0 )
+            if ((minute > 0 || second > 0) && numberOfChoice > 0 && yourScore < numberOfAnswer)
             {
-                if ((second == 0 && minute > 0) && numberOfChoice>0 && yourScore<numberOfAnswer)
+                if ((second == 0 && minute > 0) )
                 {
                     second = 60;
                     minute--;
