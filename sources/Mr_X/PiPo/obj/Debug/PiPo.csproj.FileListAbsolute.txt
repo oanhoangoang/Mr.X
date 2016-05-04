@@ -1,0 +1,7 @@
+D:\PROJECT\trunk\sources\Mr_X\PiPo\bin\Debug\PiPo.dll
+D:\PROJECT\trunk\sources\Mr_X\PiPo\bin\Debug\PiPo.pdb
+D:\PROJECT\trunk\sources\Mr_X\PiPo\obj\Debug\PiPo.csprojResolveAssemblyReference.cache
+D:\PROJECT\trunk\sources\Mr_X\PiPo\obj\Debug\PiPo.PingPong.resources
+D:\PROJECT\trunk\sources\Mr_X\PiPo\obj\Debug\PiPo.csproj.GenerateResource.Cache
+D:\PROJECT\trunk\sources\Mr_X\PiPo\obj\Debug\PiPo.dll
+D:\PROJECT\trunk\sources\Mr_X\PiPo\obj\Debug\PiPo.pdb
