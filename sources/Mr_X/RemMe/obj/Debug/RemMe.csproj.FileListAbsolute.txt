@@ -43,7 +43,6 @@ C:\Users\Admin\Documents\Visual Studio 2013\Projects\test\RemMe\bin\Debug\RemMe.
 C:\Users\Admin\Documents\Visual Studio 2013\Projects\test\RemMe\bin\Debug\RemMe.pdb
 C:\Users\Admin\Documents\Visual Studio 2013\Projects\test\RemMe\bin\Debug\Interop.WMPLib.dll
 C:\Users\Admin\Documents\Visual Studio 2013\Projects\test\RemMe\bin\Debug\AxInterop.WMPLib.dll
-C:\Users\Admin\Documents\Visual Studio 2013\Projects\test\RemMe\obj\Debug\RemMe.csprojResolveAssemblyReference.cache
 C:\Users\Admin\Documents\Visual Studio 2013\Projects\test\RemMe\obj\Debug\Interop.WMPLib.dll
 C:\Users\Admin\Documents\Visual Studio 2013\Projects\test\RemMe\obj\Debug\AxInterop.WMPLib.dll
 C:\Users\Admin\Documents\Visual Studio 2013\Projects\test\RemMe\obj\Debug\RemMe.csproj.ResolveComReference.cache

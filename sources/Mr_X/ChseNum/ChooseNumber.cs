@@ -9,21 +9,53 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Media;
 using System.Drawing;
+using WMPLib;
 
 namespace ChseNum
 {
     public partial class ChooseNumber : Form
     {
+        // kích thước bảng
         private int sizeTable;
+     
+        // mức độ của game
         private int KindOfGame;
+        
+        // tổng
         private int numberToFind;
+
+        // thời gian chơi
+        private int TimeOfGame;
+       
+        // thời gian chơi tính bằng phút
         private int minute;
+
+        // thời gian chơi tính bằng giây
         private int second;
+       
+        // số lượng số cần chọn, phụ thuộc vào KindOfGame
         private int value;
+
+        // là mảng lưu giá trị các số sẽ hiển thị trên button
         private int[] original=new int[100+10];
+
+        // tổng của người chơi
         private int yourSum;
+
+        // mảng button
         private Button[][] randomBtn = new Button[100 + 10][];
+        
+        // số lần đã chơi ở game này của người chơi
+        private int number;
+
+        // vị trí random
         private int location;
+
+        // phát nhạc nền
+        private WindowsMediaPlayer wmpSoundTrack;
+
+        // phát nhạc chọn đúng, chọn sai,...
+        private SoundPlayer sp;
 
         // lấy các giá trị: level, chức vụ, kích thước bảng,mức độ chơi, thời gian chơi, tắt nhạc hay không, hiển thị chức vụ truyền vào hay không: 1=có; 2=không
         public ChooseNumber(int level, string position, int size, int kind, int time, bool turnOffSound, int determine)
@@ -34,24 +66,24 @@ namespace ChseNum
             if (determine == 2) lblPosition.Visible = false;
             sizeTable = size;
             KindOfGame = kind;
-            minute = time / 60;
-            second = time % 60;
-            
+            TimeOfGame = time;
+
             if (turnOffSound == false)
             {
+                wmpSoundTrack = new WindowsMediaPlayer();
                 try
                 {
                     wmpSoundTrack.URL = @"sound/ChseNum/soundTrack.mp3";
                 }
                 catch (Exception ex) { }
             }
+            number = 0;
         }
 
         // lấy ngẫu nhiên 1 số từ limitLow tới limitHigh
         Random rd = new Random();
         private int randomNumber(int limitLow, int limitHigh)
         {
-
             return rd.Next(limitLow, limitHigh + 1);
         }
 
@@ -60,7 +92,7 @@ namespace ChseNum
         {
             try
             {
-                SoundPlayer sp = new SoundPlayer(@link);
+                sp = new SoundPlayer(@link);
                 sp.Play();
             }
             catch (Exception ex) { }
@@ -92,40 +124,62 @@ namespace ChseNum
         }
 
         // tạo ngẫu nhiên các button, các số hiển thị trên Text lấy từ mảng original[]
-        private void createButtonArray()
+        private void createButtonArray(int number)
         {
-            for(int i=1; i<=10; i++) randomBtn[i]=new Button[20];
-            for(int i=1; i<=sizeTable; i++)
-                for (int j = 1; j <= sizeTable; j++)
-                {
-                    randomBtn[i][j] = new Button();
-                    randomBtn[i][j].Size = new Size(55, 55);
+            if (number == 1)
+            {
+                for (int i = 1; i <= 10; i++) randomBtn[i] = new Button[20];
+                for (int i = 1; i <= sizeTable; i++)
+                    for (int j = 1; j <= sizeTable; j++)
+                    {
+                        randomBtn[i][j] = new Button();
+                        randomBtn[i][j].Size = new Size(55, 55);
 
-                    value = (i - 1) * sizeTable + j;
+                        value = (i - 1) * sizeTable + j;
 
-                    location = randomNumber(1, sizeTable * sizeTable - value + 1);
-                    randomBtn[i][j].Text = original[location].ToString();
-                    original[location] = original[sizeTable * sizeTable - value + 1];
+                        location = randomNumber(1, sizeTable * sizeTable - value + 1);
+                        randomBtn[i][j].Text = original[location].ToString();
+                        original[location] = original[sizeTable * sizeTable - value + 1];
 
-                    randomBtn[i][j].Location = new Point((i - 1) * 60 + getLocation(55, sizeTable, true), (j - 1) * 60 + getLocation(55, sizeTable, false));
-                    randomBtn[i][j].BackColor = Color.FromArgb(246, 71, 71);
-                    randomBtn[i][j].FlatStyle = FlatStyle.Flat;
-                    randomBtn[i][j].ForeColor = Color.White;
-                    randomBtn[i][j].Click += btnMediate_Click;
-                    Controls.Add(randomBtn[i][j]);
-                    randomBtn[i][j].Enabled = true;
+                        randomBtn[i][j].Location = new Point((i - 1) * 60 + getLocation(55, sizeTable, true), (j - 1) * 60 + getLocation(55, sizeTable, false));
+                        randomBtn[i][j].BackColor = Color.FromArgb(246, 71, 71);
+                        randomBtn[i][j].FlatStyle = FlatStyle.Flat;
+                        randomBtn[i][j].ForeColor = Color.White;
+                        randomBtn[i][j].Click += btnMediate_Click;
+                        Controls.Add(randomBtn[i][j]);
+                        randomBtn[i][j].Enabled = true;
 
-                    pnlGameDisplayGray.Controls.Add(randomBtn[i][j]);
-                }
+                        pnlGameDisplayGray.Controls.Add(randomBtn[i][j]);
+                    }
+            }
+            else
+            {
+                for (int i = 1; i <= sizeTable; i++)
+                    for (int j = 1; j <= sizeTable; j++)
+                    {
+                        value = (i - 1) * sizeTable + j;
+
+                        location = randomNumber(1, sizeTable * sizeTable - value + 1);
+                        randomBtn[i][j].Text = original[location].ToString();
+                        original[location] = original[sizeTable * sizeTable - value + 1];
+                       
+                        randomBtn[i][j].Enabled = true;
+                        randomBtn[i][j].Visible = true;
+
+                    }
+            }
         }
 
         // bắt đầu chơi game
         private void btnStart_Click(object sender, EventArgs e)
         {
+            minute = TimeOfGame / 60;
+            second = TimeOfGame % 60;
             yourSum = 0;
             createOriginalArray();
-            createButtonArray();
-            btnStart.Enabled = false;
+            number++;
+            createButtonArray(number);
+            btnStart.Text = "Chơi lại";
             tmrTimeToPlay.Enabled = true;
         }
 
@@ -171,27 +225,12 @@ namespace ChseNum
                 for (int j = 1; j <= sizeTable; j++) randomBtn[i][j].Enabled = false;
 
             DialogResult dig;
-            if ( yourSum == numberToFind )
+            if (yourSum == numberToFind)
             {
                 trans.Invoke(1);
-                try
-                {
-                    picVictory.Visible = true;
-                    picVictory.Image = Image.FromFile(@"picture/ChseNum/victory.jpg");
-                    picVictory.SizeMode = PictureBoxSizeMode.StretchImage;
-                }
-                catch (Exception ex) { }
-
-                wmpSoundTrack.URL = @"sound/ChseNum/victory.mp3";
-                dig = MessageBox.Show("Chúc mừng bạn đã vượt qua thử thách này", "Thông báo");
+                this.Close();
             }
-            else
-            {
-                trans.Invoke(0);
-                wmpSoundTrack.URL = @"sound/ChseNum/fail.mp3";
-                dig = MessageBox.Show("Rất tiếc bạn đã không vượt qua thử thách này", "Thông báo");
-            }
-            if (dig == DialogResult.OK) this.Close();
+            else trans.Invoke(0);
         }
 
         //tắt game
@@ -203,6 +242,11 @@ namespace ChseNum
         // tắt nhạc khi đóng chương trình
         private void ChooseNumber_FormClosed(object sender, FormClosedEventArgs e)
         {
+            try
+            {
+                sp.Stop();
+            }
+            catch (Exception ex) { }
             tmrTimeToPlay.Stop();
             wmpSoundTrack.close();
         }

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Media;
+using WMPLib;
 
 namespace OrBut
 {
@@ -28,6 +29,9 @@ namespace OrBut
         // lấy ngẫu nhiên một giá trị của mảng originalArray
         private int locationRandom;
 
+        // thời gian chơi game
+        private int timeOfGame;
+
         // số phút chơi
         private int minute;
 
@@ -37,19 +41,28 @@ namespace OrBut
         // số lượng số cần tìm
         private int numberToFind;
 
+        // số lần chơi game
+        private int number = 0;
+
+        // phát nhạc nền
+        private WindowsMediaPlayer wmpSoundTrack;
+
+        // phát nhạc chọn đúng, chọn sai,...
+        private SoundPlayer sp;
+
         // lấy các giá trị: level, chức vụ, kích thước bảng, số lượng button phải ấn, thời gian chơi, tắt nhạc hay không, hiển thị chức vụ truyền vào hay không: 1=có; 2=không
         public orderButton(int level, string position, int size, int num, int time, bool turnOffSound, int determine)
         {
             InitializeComponent();
             sizeTable = size;
             numberToFind = num;
-            minute = num / 60;
-            second = num % 60;
+            timeOfGame = time;
             lblLevelOfGame.Text += level.ToString();
             lblPosition.Text += position.ToString();
             if (determine == 2) lblPosition.Visible = false;
             if (turnOffSound == false)
             {
+                wmpSoundTrack=new WindowsMediaPlayer();
                 try
                 {
                     wmpSoundTrack.URL = @"sound/orBut/soundTrack.mp3";
@@ -62,7 +75,6 @@ namespace OrBut
         Random rd = new Random();
         private int randomNumber(int limitLow, int limitHigh)
         {
-
             return rd.Next(limitLow, limitHigh + 1);
         }
 
@@ -71,7 +83,7 @@ namespace OrBut
         {
             try
             {
-                SoundPlayer sp = new SoundPlayer(@link);
+                sp = new SoundPlayer(@link);
                 sp.Play();
             }
             catch (Exception ex) { }
@@ -94,32 +106,51 @@ namespace OrBut
             else return (654 - size * num) / 2;
         }
 
-        private void createButtonArray()
+        private void createButtonArray(int number)
         {
-            for (var i = 1; i <= sizeTable * sizeTable; i++) originalArray[i] = i;
-            for (var i = 1; i <= sizeTable; i++) randomBtn[i] = new Button[40];
-            now = 1;
-            for (var i = 1; i <= sizeTable; i++)
-                for (var j = 1; j <= sizeTable; j++)
-                {
-                    randomBtn[i][j] = new Button();
-       
-                    locationRandom = randomNumber(1, sizeTable * sizeTable - now + 1);
-                    randomBtn[i][j].Name = originalArray[locationRandom].ToString();
-                    originalArray[locationRandom] = originalArray[sizeTable * sizeTable - now + 1];
-                    now++;
+            if (number == 1)
+            {
+                for (var i = 1; i <= sizeTable * sizeTable; i++) originalArray[i] = i;
+                for (var i = 1; i <= sizeTable; i++) randomBtn[i] = new Button[40];
+                now = 1;
+                for (var i = 1; i <= sizeTable; i++)
+                    for (var j = 1; j <= sizeTable; j++)
+                    {
+                        randomBtn[i][j] = new Button();
 
-                    randomBtn[i][j].Size = new Size(55, 55);
-                    randomBtn[i][j].Location = new Point((i - 1) * 60 + getLocation(55, sizeTable, true), (j - 1) * 60 + getLocation(55, sizeTable, false));
-                    randomBtn[i][j].BackColor = Color.FromArgb(154, 18, 179);
-                    randomBtn[i][j].FlatStyle = FlatStyle.Flat;
-                    randomBtn[i][j].ForeColor = Color.White;
-                    randomBtn[i][j].Visible = false;
-                    randomBtn[i][j].Click += btnMediate_Click;              
-                    Controls.Add(randomBtn[i][j]);
-                    randomBtn[i][j].Enabled = true;
-                    pnlGameDisplayGray.Controls.Add(randomBtn[i][j]);
-                }
+                        locationRandom = randomNumber(1, sizeTable * sizeTable - now + 1);
+                        randomBtn[i][j].Name = originalArray[locationRandom].ToString();
+                        originalArray[locationRandom] = originalArray[sizeTable * sizeTable - now + 1];
+                        now++;
+
+                        randomBtn[i][j].Size = new Size(55, 55);
+                        randomBtn[i][j].Location = new Point((i - 1) * 60 + getLocation(55, sizeTable, true), (j - 1) * 60 + getLocation(55, sizeTable, false));
+                        randomBtn[i][j].BackColor = Color.FromArgb(154, 18, 179);
+                        randomBtn[i][j].FlatStyle = FlatStyle.Flat;
+                        randomBtn[i][j].ForeColor = Color.White;
+                        randomBtn[i][j].Visible = false;
+                        randomBtn[i][j].Click += btnMediate_Click;
+                        Controls.Add(randomBtn[i][j]);
+                        randomBtn[i][j].Enabled = true;
+                        pnlGameDisplayGray.Controls.Add(randomBtn[i][j]);
+                    }
+            }
+            else
+            {
+                for (var i = 1; i <= sizeTable * sizeTable; i++) originalArray[i] = i;
+                now = 1;
+                for (var i = 1; i <= sizeTable; i++)
+                    for (var j = 1; j <= sizeTable; j++)
+                    {
+
+                        locationRandom = randomNumber(1, sizeTable * sizeTable - now + 1);
+                        randomBtn[i][j].Name = originalArray[locationRandom].ToString();
+                        originalArray[locationRandom] = originalArray[sizeTable * sizeTable - now + 1];
+                        now++;
+                        randomBtn[i][j].Visible = false;
+                        randomBtn[i][j].Enabled = true;
+                    }
+            }
 
             for (now = 1; now <= numberToFind; now++)
             {
@@ -136,9 +167,12 @@ namespace OrBut
         // bắt đầu trò chơi
         private void btnStart_Click(object sender, EventArgs e)
         {
-            createButtonArray();
+            minute = timeOfGame / 60;
+            second = timeOfGame % 60;
+            number++;
+            createButtonArray(number);
             now = 1;
-            btnStart.Enabled = false;
+            btnStart.Text = "Chơi lại";
             tmrTimeToPlay.Enabled = true;
         }
 
@@ -191,47 +225,22 @@ namespace OrBut
             for (int i = 1; i <= sizeTable; i++)
                 for (int j = 1; j <= sizeTable; j++) randomBtn[i][j].Visible = false;
 
-            DialogResult dig;
-
             if (now > numberToFind)
             {
                 trans.Invoke(1);
-                try
-                {
-                    picVictory.Visible = true;
-                    picVictory.Image = Image.FromFile(@"picture/orBut/victory.jpg");
-                    picVictory.SizeMode = PictureBoxSizeMode.StretchImage;
-                }
-                catch (Exception ex) { }
-
-                try
-                {
-                    wmpSoundTrack.URL = @"sound/orBut/victory.mp3";
-                }
-                catch (Exception ex) { }
-
-               dig=MessageBox.Show("Chúc mừng bạn đã vượt qua thử thách này", "Thông báo");
+                this.Close();
             }
-            else
-            {
-                trans.Invoke(0);
-
-                try
-                {
-                    picFail.Visible = true;
-                    picFail.Image = Image.FromFile(@"picture/orBut/fail.gif");
-                    picFail.SizeMode = PictureBoxSizeMode.StretchImage;
-                }
-                catch (Exception ex) { }
-
-                dig = MessageBox.Show("Rất tiếc bạn đã không vượt qua thử thách này", "Thông báo");
-            }
-            if (dig == DialogResult.OK) this.Close();
+            trans.Invoke(0);                
         }
 
         // tắt nhạc khi đóng chương trình
         private void orderButton_FormClosed(object sender, FormClosedEventArgs e)
         {
+            try
+            {
+                sp.Stop();
+            }
+            catch (Exception ex) { }
             tmrTimeToPlay.Stop();
             wmpSoundTrack.close();
         }

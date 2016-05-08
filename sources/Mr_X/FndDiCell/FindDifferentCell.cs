@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Drawing;
 using System.Media;
+using WMPLib;
 
 namespace FndDiCell
 {
@@ -28,6 +29,9 @@ namespace FndDiCell
 
         // điểm người chơi
         private int yourScore;
+
+        // thời gian chơi game
+        private int timeOfGame;
 
         // thời gian chơi, tính bằng phút
         private int minute;
@@ -62,6 +66,12 @@ namespace FndDiCell
         // mảng button để người chơi chọn
         private readonly Button[][] randomBtn = new Button[50][];
 
+        // phát nhạc nền
+        private WindowsMediaPlayer wmpSoundTrack;
+
+        // phát nhạc chọn đúng, chọn sai,...
+        private SoundPlayer sp;
+
         // lấy các giá trị: level, chức vụ, kích thước bảng, thể loại chơi, mức độ chơi, điểm qua vòng, thời gian chơi, tắt nhạc hay không, hiển thị chức vụ truyền vào hay không: 1=có; 2=không
         public FindDifferentCell(int level, string position, int size, int type, int kind, int score, int time, bool turnOffSound, int determine)
         {
@@ -70,13 +80,13 @@ namespace FndDiCell
             typeOfGame = type;
             kindOfgame = kind;
             scoreToPass = score;
-            minute = time / 60;
-            second = time % 60;
+            timeOfGame = time;
             lblLevelOfGame.Text += level.ToString();
             lblPosition.Text += position.ToString();
             if (determine == 2) lblPosition.Visible = false;
             if (turnOffSound == false)
             {
+                wmpSoundTrack = new WindowsMediaPlayer();
                 try
                 {
                 wmpSoundTrack.URL = @"sound/FndDiCell/soundTrack.mp3";
@@ -112,6 +122,18 @@ namespace FndDiCell
                 }
         }
 
+        // load ảnh có đường dẫn là link vào pic
+        private void loadPicture(PictureBox pic, string link)
+        {
+            try
+            {
+                pic.Image = null;
+                pic.Image = Image.FromFile(@link);
+            }
+            catch (Exception ex) { }
+            pic.SizeMode = PictureBoxSizeMode.StretchImage;
+        }
+
         // lấy ngẫu nhiên 1 số từ limitLow tới limitHigh
         Random rd = new Random();
         private int randomNumber(int limitLow, int limitHigh)
@@ -134,7 +156,7 @@ namespace FndDiCell
         {
             try
             {
-                SoundPlayer sp = new SoundPlayer(@link);
+                sp = new SoundPlayer(@link);
                 sp.Play();
             }
             catch (Exception ex) { }
@@ -143,8 +165,7 @@ namespace FndDiCell
         // tạo lượt chơi mới
         private void newRound()
         {
-            picTalk.Image = Image.FromFile(@"picture/FndDiCell/normal.jpg");
-            picTalk.SizeMode = PictureBoxSizeMode.StretchImage;
+            loadPicture(picTalk,"picture/FndDiCell/normal.jpg");
 
             initArrayButton();
             for (int i = 1; i <= sizeTable; i++)
@@ -168,24 +189,24 @@ namespace FndDiCell
                         if (Different == 1)
                         {
                             if (kindOfgame == 1) Different = randomNumber(15, 20);
-                            else if (kindOfgame == 2) Different = randomNumber(10, 15);
-                            else Different = randomNumber(5, 7);
+                            else if (kindOfgame == 2) Different = randomNumber(13, 15);
+                            else Different = randomNumber(10, 12);
 
                             randomBtn[i][j].BackColor = Color.FromArgb(xDimension + Different, yDimension, zDimension);
                         }
                         else if (Different == 2)
                         {
                             if (kindOfgame == 1) Different = randomNumber(15, 20);
-                            else if (kindOfgame == 2) Different = randomNumber(10, 15);
-                            else Different = randomNumber(5, 7);
+                            else if (kindOfgame == 2) Different = randomNumber(13, 15);
+                            else Different = randomNumber(10, 12);
 
                             randomBtn[i][j].BackColor = Color.FromArgb(xDimension, yDimension + Different, zDimension);
                         }
                         else
                         {
                             if (kindOfgame == 1) Different = randomNumber(15, 20);
-                            else if (kindOfgame == 2) Different = randomNumber(10, 15);
-                            else Different = randomNumber(5, 7);
+                            else if (kindOfgame == 2) Different = randomNumber(13, 15);
+                            else Different = randomNumber(10, 12);
 
                             randomBtn[i][j].BackColor = Color.FromArgb(xDimension, yDimension, zDimension + Different);
                         }
@@ -195,8 +216,8 @@ namespace FndDiCell
             {
 
                 if (kindOfgame == 1) Different = randomNumber(8, 13);
-                else if (kindOfgame == 2) Different = randomNumber(4, 8);
-                else Different = randomNumber(2, 4);
+                else if (kindOfgame == 2) Different = randomNumber(6, 8);
+                else Different = randomNumber(4, 6);
 
                 for (int i = 1; i <= sizeTable; i++)
                     for (int j = 1; j <= sizeTable; j++ )
@@ -216,7 +237,7 @@ namespace FndDiCell
                 for (int i = 0; i < lenOfContent; i++)
                 if (i == Different)
                 {
-                    if (content[i] == 'A') DiffContent += (char)90;
+                    if (content[i] == 'A') DiffContent += (char) 90;
                     else DiffContent += (char)65;
                 }
                 else DiffContent += content[i];
@@ -231,7 +252,10 @@ namespace FndDiCell
         // bắt đầu chơi game
         private void btnStart_Click(object sender, EventArgs e)
         {
-            btnStart.Enabled = false;
+            minute = timeOfGame / 60;
+            second = timeOfGame % 60;
+            yourScore = 0;
+            btnStart.Text = "Chơi lại";
             tmrTimeToPlay.Enabled = true;
             newRound();
         }
@@ -246,15 +270,12 @@ namespace FndDiCell
                 btnMedia.Visible = false;
                 yourScore++;
                 playMusic("sound/FndDiCell/happy.wav");
-
-                picTalk.Image = Image.FromFile(@"picture/FndDiCell/happy.jpg");
-                picTalk.SizeMode = PictureBoxSizeMode.StretchImage;
+                loadPicture(picTalk,"picture/FndDiCell/happy.jpg");
 
             }
             else
             {
-                picTalk.Image = Image.FromFile(@"picture/FndDiCell/sad.jpg");
-                picTalk.SizeMode = PictureBoxSizeMode.StretchImage;
+                loadPicture(picTalk, "picture/FndDiCell/sad.jpg");
                 playMusic("sound/FndDiCell/sad.wav");
             }
  
@@ -295,37 +316,22 @@ namespace FndDiCell
             for (int i = 1; i <= sizeTable; i++)
                 for (int j = 1; j <= sizeTable; j++) randomBtn[i][j].Enabled = false;
 
-            DialogResult dig;
             if (yourScore >= scoreToPass)
             {
                 trans.Invoke(1);
-                try
-                {
-                    picVictory.Visible = true;
-                    picVictory.Image = Image.FromFile(@"picture/FndDiCell/victory.jpg");
-                    picVictory.SizeMode = PictureBoxSizeMode.StretchImage;
-                }
-                catch (Exception ex) { }
-
-                try
-                {
-                    wmpSoundTrack.URL = @"sound/FndDiCell/victory.mp3";
-                }
-                catch (Exception ex) { }
-
-                dig = MessageBox.Show("Chúc mừng bạn đã vượt qua thử thách này", "Thông báo");
+                this.Close();
             }
-            else
-            {
-                trans.Invoke(0);
-                dig = MessageBox.Show("Rất tiếc bạn đã không vượt qua thử thách này", "Thông báo");
-            }
-            if (dig == DialogResult.OK) this.Close();
+            else trans.Invoke(0);   
         }
 
         // tắt nhạc khi đóng chương trình
         private void FindDifferentCell_FormClosed(object sender, FormClosedEventArgs e)
         {
+            try
+            {
+                sp.Stop();
+            }
+            catch (Exception ex) { }
             tmrTimeToPlay.Stop();
             wmpSoundTrack.close();
         }

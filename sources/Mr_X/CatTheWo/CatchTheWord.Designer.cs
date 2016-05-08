@@ -34,9 +34,7 @@
             this.lblAnswer = new System.Windows.Forms.Label();
             this.lblRound = new System.Windows.Forms.Label();
             this.picVictory = new System.Windows.Forms.PictureBox();
-            this.btnMediate = new System.Windows.Forms.Button();
             this.lblHint = new System.Windows.Forms.Label();
-            this.wmpSoundTrack = new AxWMPLib.AxWindowsMediaPlayer();
             this.picTalk = new System.Windows.Forms.PictureBox();
             this.btnSkip = new System.Windows.Forms.Button();
             this.picMc = new System.Windows.Forms.PictureBox();
@@ -61,7 +59,6 @@
             this.lblLevelOfGame = new System.Windows.Forms.Label();
             this.pnlGameDisplayGray.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picVictory)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wmpSoundTrack)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picTalk)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picMc)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picGameDisplay)).BeginInit();
@@ -80,9 +77,7 @@
             this.pnlGameDisplayGray.Controls.Add(this.lblAnswer);
             this.pnlGameDisplayGray.Controls.Add(this.lblRound);
             this.pnlGameDisplayGray.Controls.Add(this.picVictory);
-            this.pnlGameDisplayGray.Controls.Add(this.btnMediate);
             this.pnlGameDisplayGray.Controls.Add(this.lblHint);
-            this.pnlGameDisplayGray.Controls.Add(this.wmpSoundTrack);
             this.pnlGameDisplayGray.Controls.Add(this.picTalk);
             this.pnlGameDisplayGray.Controls.Add(this.btnSkip);
             this.pnlGameDisplayGray.Controls.Add(this.picMc);
@@ -116,22 +111,10 @@
             // 
             this.picVictory.Location = new System.Drawing.Point(0, 0);
             this.picVictory.Name = "picVictory";
-            this.picVictory.Size = new System.Drawing.Size(809, 665);
+            this.picVictory.Size = new System.Drawing.Size(809, 664);
             this.picVictory.TabIndex = 3;
             this.picVictory.TabStop = false;
             this.picVictory.Visible = false;
-            // 
-            // btnMediate
-            // 
-            this.btnMediate.ForeColor = System.Drawing.Color.Black;
-            this.btnMediate.Location = new System.Drawing.Point(91, 616);
-            this.btnMediate.Name = "btnMediate";
-            this.btnMediate.Size = new System.Drawing.Size(106, 38);
-            this.btnMediate.TabIndex = 8;
-            this.btnMediate.Text = "btnMediate";
-            this.btnMediate.UseVisualStyleBackColor = true;
-            this.btnMediate.Visible = false;
-            this.btnMediate.Click += new System.EventHandler(this.btnMediate_Click);
             // 
             // lblHint
             // 
@@ -142,16 +125,6 @@
             this.lblHint.Name = "lblHint";
             this.lblHint.Size = new System.Drawing.Size(0, 16);
             this.lblHint.TabIndex = 7;
-            // 
-            // wmpSoundTrack
-            // 
-            this.wmpSoundTrack.Enabled = true;
-            this.wmpSoundTrack.Location = new System.Drawing.Point(3, 631);
-            this.wmpSoundTrack.Name = "wmpSoundTrack";
-            this.wmpSoundTrack.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("wmpSoundTrack.OcxState")));
-            this.wmpSoundTrack.Size = new System.Drawing.Size(75, 23);
-            this.wmpSoundTrack.TabIndex = 6;
-            this.wmpSoundTrack.Visible = false;
             // 
             // picTalk
             // 
@@ -388,7 +361,6 @@
             this.pnlGameDisplayGray.ResumeLayout(false);
             this.pnlGameDisplayGray.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picVictory)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wmpSoundTrack)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picTalk)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picMc)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picGameDisplay)).EndInit();
@@ -421,10 +393,8 @@
         private System.Windows.Forms.PictureBox picGameDisplay;
         private System.Windows.Forms.Button btnSkip;
         private System.Windows.Forms.PictureBox picTalk;
-        private AxWMPLib.AxWindowsMediaPlayer wmpSoundTrack;
         private System.Windows.Forms.NumericUpDown nudMinute;
         private System.Windows.Forms.Label lblHint;
-        private System.Windows.Forms.Button btnMediate;
         private System.Windows.Forms.PictureBox picVictory;
         private System.Windows.Forms.Label lblRule;
         private System.Windows.Forms.Label lblRound;

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Media;
+using WMPLib;
 
 namespace FndNum
 {
@@ -44,7 +45,16 @@ namespace FndNum
         private int yourScore; 
 
         // thời gian chơi
-        private int timeToPlay;
+        private int timeOfGame;
+
+        // phát nhạc nền
+        private WindowsMediaPlayer wmpSoundTrack;
+
+        // phát nhạc chọn đúng, chọn sai,...
+        private SoundPlayer sp;
+
+        // số lần chơi game của người chơi
+        private int number;
 
         // lấy các giá trị: level, chức vụ, kích thước bảng, số lượng số cần tìm, thời gian chơi, tắt nhạc hay không, hiển thị chức vụ truyền vào hay không: 1=có; 2=không
         public FindNumDisplay(int level, string position, int size, int num, int time, bool turnOffSound, int determine)
@@ -52,12 +62,13 @@ namespace FndNum
             InitializeComponent();
             sizeTable = size;
             numberToFind = num;
-            timeToPlay = time;
+            timeOfGame = time;
             lblLevelOfGame.Text += level.ToString();
             lblPosition.Text += position.ToString();
             if (determine == 2) lblPosition.Visible = false;
             if (turnOffSound == false)
             {
+                wmpSoundTrack = new WindowsMediaPlayer();
                 try
                 {
                     wmpSoundTrack.URL = @"sound/FndNum/soundtrack.mp3";
@@ -70,7 +81,6 @@ namespace FndNum
         Random rd = new Random();
         private int randomNumber(int limitLow, int limitHigh)
         {
-            
             return rd.Next(limitLow, limitHigh + 1);
         }
 
@@ -79,7 +89,7 @@ namespace FndNum
         {
             try
             {
-                SoundPlayer sp = new SoundPlayer(@link);
+                sp = new SoundPlayer(@link);
                 sp.Play();
             }
             catch (Exception ex) { }
@@ -93,32 +103,50 @@ namespace FndNum
         }
 
         // tạo mảng button: kích thước, vị trí, giá trị hiển thị, màu nền, màu chữ, xử lí khi nhấn vào
-        private void createButtonArray()
+        private void createButtonArray(int number)
         {
-            for (var i = 1; i <= sizeTable * sizeTable; i++) originalArray[i] = i;
-            for (var i = 1; i <= sizeTable; i++) randomBtn[i] = new Button[40];
-            now = 1;
-            for (var i = 1; i <= sizeTable; i++)
-                for (var j = 1; j <= sizeTable; j++)
-                {
-                    randomBtn[i][j] = new Button();
-                    randomBtn[i][j].Size = new Size(55, 55);
+            if (number == 1)
+            {
+                for (var i = 1; i <= sizeTable * sizeTable; i++) originalArray[i] = i;
+                for (var i = 1; i <= sizeTable; i++) randomBtn[i] = new Button[40];
+                now = 1;
+                for (var i = 1; i <= sizeTable; i++)
+                    for (var j = 1; j <= sizeTable; j++)
+                    {
+                        randomBtn[i][j] = new Button();
+                        randomBtn[i][j].Size = new Size(55, 55);
 
-                    locationRandom = randomNumber(1, sizeTable * sizeTable - now+1);
-                    randomBtn[i][j].Text = originalArray[locationRandom].ToString();
-                    originalArray[locationRandom] = originalArray[sizeTable * sizeTable - now + 1];
-                    now++;
+                        locationRandom = randomNumber(1, sizeTable * sizeTable - now + 1);
+                        randomBtn[i][j].Text = originalArray[locationRandom].ToString();
+                        originalArray[locationRandom] = originalArray[sizeTable * sizeTable - now + 1];
+                        now++;
 
-                    randomBtn[i][j].Location = new Point( (i-1)*60+getLocation(55,sizeTable,true),(j-1)*60+getLocation(55,sizeTable,false) );
-                    randomBtn[i][j].BackColor = Color.FromArgb(154, 18, 179);
-                    randomBtn[i][j].FlatStyle = FlatStyle.Flat;
-                    randomBtn[i][j].ForeColor = Color.White;
-                    randomBtn[i][j].Click += btnMediate_Click;
-                    Controls.Add(randomBtn[i][j]);
-                    randomBtn[i][j].Enabled = true;
+                        randomBtn[i][j].Location = new Point((i - 2) * 70 + getLocation(55, sizeTable, true), (j - 1) * 65 + getLocation(55, sizeTable, false));
+                        randomBtn[i][j].BackColor = Color.FromArgb(154, 18, 179);
+                        randomBtn[i][j].FlatStyle = FlatStyle.Flat;
+                        randomBtn[i][j].ForeColor = Color.White;
+                        randomBtn[i][j].Click += btnMediate_Click;
+                        Controls.Add(randomBtn[i][j]);
+                        randomBtn[i][j].Enabled = true;
 
-                    pnlGameDisplayGray.Controls.Add(randomBtn[i][j]);
-                }
+                        pnlGameDisplayGray.Controls.Add(randomBtn[i][j]);
+                    }
+            }
+            else
+            {
+                for (var i = 1; i <= sizeTable * sizeTable; i++) originalArray[i] = i;
+                now = 1;
+                for (var i = 1; i <= sizeTable; i++)
+                    for (var j = 1; j <= sizeTable; j++)
+                    {
+                        locationRandom = randomNumber(1, sizeTable * sizeTable - now + 1);
+                        randomBtn[i][j].Text = originalArray[locationRandom].ToString();
+                        originalArray[locationRandom] = originalArray[sizeTable * sizeTable - now + 1];
+                        now++;
+                        randomBtn[i][j].Enabled = true;
+                        randomBtn[i][j].Visible = true;
+                    }
+            }
             now = 1;
         }
 
@@ -137,21 +165,23 @@ namespace FndNum
         //khởi tạo dữ liệu ban đầu
         private void FindNumDisplay_Load(object sender, EventArgs e)
         {
-            yourScore = 0;
-            now = 1;
-            txtFindNum.Text = "";
-            txtScoreToPass.Text = "";
-            txtYourScore.Text = "";
-            minute = timeToPlay / 60;
-            second = timeToPlay % 60;         
+            number = 0;
         }
 
         // bắt đầu trò chơi
         private void btnStart_Click(object sender, EventArgs e)
-        { 
-            createButtonArray();
+        {
+            number++;
+            createButtonArray(number);
             createRandomArray();
-            btnStart.Enabled = false;
+            yourScore = 0;
+            minute = timeOfGame / 60;
+            second = timeOfGame % 60;
+            txtFindNum.Text = "";
+            txtScoreToPass.Text = "";
+            txtYourScore.Text = "";
+            now = 1;
+            btnStart.Text = "Chơi lại";
             tmrTimeToPlay.Enabled = true;
         }
 
@@ -203,35 +233,14 @@ namespace FndNum
         // trả về kết quả của người chơi
         private void answer(){
             for (int i = 1; i <= sizeTable; i++)
-                for (int j = 1; j <= sizeTable; j++) randomBtn[i][j].Enabled = false;
-
-            DialogResult dig;
+                for (int j = 1; j <= sizeTable; j++) randomBtn[i][j].Enabled= false;
 
             if (yourScore >= numberToFind)
             {
                 trans.Invoke(1);
-                try
-                {
-                    picVictory.Visible = true;
-                    picVictory.Image = Image.FromFile(@"picture/FndNum/victory.jpg");
-                    picVictory.SizeMode = PictureBoxSizeMode.StretchImage;
-                }
-                catch (Exception ex) { }
-
-                try
-                {
-                    wmpSoundTrack.URL = @"sound/FndNum/victory.mp3";
-                }
-                catch (Exception ex) { }
-
-                dig = MessageBox.Show("Chúc mừng bạn đã vượt qua thử thách này", "Thông báo");
+                this.Close();
             }
-            else
-            {
-                trans.Invoke(0);
-                dig = MessageBox.Show("Rất tiếc bạn đã không vượt qua thử thách này", "Thông báo");
-            }
-            if (dig == DialogResult.OK) this.Close();
+            else trans.Invoke(0);
         }
 
         //tắt game
@@ -243,6 +252,11 @@ namespace FndNum
         // tắt nhạc khi đóng chương trình
         private void FindNumDisplay_FormClosed(object sender, FormClosedEventArgs e)
         {
+            try
+            {
+                sp.Stop();
+            }
+            catch (Exception ex) { }
             tmrTimeToPlay.Stop();
             wmpSoundTrack.close();
         }

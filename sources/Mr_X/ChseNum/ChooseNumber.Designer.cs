@@ -31,8 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ChooseNumber));
             this.pnlGameDisplayGray = new System.Windows.Forms.Panel();
-            this.wmpSoundTrack = new AxWMPLib.AxWindowsMediaPlayer();
-            this.btnMediate = new System.Windows.Forms.Button();
+            this.picVictory = new System.Windows.Forms.PictureBox();
             this.pnlGameDisplayYellow = new System.Windows.Forms.Panel();
             this.lblPosition = new System.Windows.Forms.Label();
             this.lblLevelOfGame = new System.Windows.Forms.Label();
@@ -49,14 +48,12 @@
             this.lblNameGame = new System.Windows.Forms.Label();
             this.btnStart = new System.Windows.Forms.Button();
             this.tmrTimeToPlay = new System.Windows.Forms.Timer(this.components);
-            this.picVictory = new System.Windows.Forms.PictureBox();
             this.pnlGameDisplayGray.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.wmpSoundTrack)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picVictory)).BeginInit();
             this.pnlGameDisplayYellow.SuspendLayout();
             this.pnlGameDisplayGreen.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudSecond)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudMinute)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picVictory)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlGameDisplayGray
@@ -66,34 +63,19 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlGameDisplayGray.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(171)))), ((int)(((byte)(227)))));
             this.pnlGameDisplayGray.Controls.Add(this.picVictory);
-            this.pnlGameDisplayGray.Controls.Add(this.wmpSoundTrack);
-            this.pnlGameDisplayGray.Controls.Add(this.btnMediate);
             this.pnlGameDisplayGray.Location = new System.Drawing.Point(4, 4);
             this.pnlGameDisplayGray.Name = "pnlGameDisplayGray";
             this.pnlGameDisplayGray.Size = new System.Drawing.Size(809, 654);
             this.pnlGameDisplayGray.TabIndex = 1;
             // 
-            // wmpSoundTrack
+            // picVictory
             // 
-            this.wmpSoundTrack.Enabled = true;
-            this.wmpSoundTrack.Location = new System.Drawing.Point(139, 601);
-            this.wmpSoundTrack.Name = "wmpSoundTrack";
-            this.wmpSoundTrack.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("wmpSoundTrack.OcxState")));
-            this.wmpSoundTrack.Size = new System.Drawing.Size(212, 46);
-            this.wmpSoundTrack.TabIndex = 3;
-            this.wmpSoundTrack.Visible = false;
-            // 
-            // btnMediate
-            // 
-            this.btnMediate.Enabled = false;
-            this.btnMediate.Location = new System.Drawing.Point(0, 585);
-            this.btnMediate.Name = "btnMediate";
-            this.btnMediate.Size = new System.Drawing.Size(133, 69);
-            this.btnMediate.TabIndex = 0;
-            this.btnMediate.Text = "btnMediate";
-            this.btnMediate.UseVisualStyleBackColor = true;
-            this.btnMediate.Visible = false;
-            this.btnMediate.Click += new System.EventHandler(this.btnMediate_Click);
+            this.picVictory.Location = new System.Drawing.Point(0, 0);
+            this.picVictory.Name = "picVictory";
+            this.picVictory.Size = new System.Drawing.Size(809, 654);
+            this.picVictory.TabIndex = 6;
+            this.picVictory.TabStop = false;
+            this.picVictory.Visible = false;
             // 
             // pnlGameDisplayYellow
             // 
@@ -268,15 +250,6 @@
             this.tmrTimeToPlay.Interval = 1000;
             this.tmrTimeToPlay.Tick += new System.EventHandler(this.tmrTimeToPlay_Tick);
             // 
-            // picVictory
-            // 
-            this.picVictory.Location = new System.Drawing.Point(0, 0);
-            this.picVictory.Name = "picVictory";
-            this.picVictory.Size = new System.Drawing.Size(809, 654);
-            this.picVictory.TabIndex = 6;
-            this.picVictory.TabStop = false;
-            this.picVictory.Visible = false;
-            // 
             // ChooseNumber
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -296,14 +269,13 @@
             this.Text = "Mr.X";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ChooseNumber_FormClosed);
             this.pnlGameDisplayGray.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.wmpSoundTrack)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picVictory)).EndInit();
             this.pnlGameDisplayYellow.ResumeLayout(false);
             this.pnlGameDisplayYellow.PerformLayout();
             this.pnlGameDisplayGreen.ResumeLayout(false);
             this.pnlGameDisplayGreen.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudSecond)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudMinute)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picVictory)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -311,7 +283,6 @@
         #endregion
 
         private System.Windows.Forms.Panel pnlGameDisplayGray;
-        private System.Windows.Forms.Button btnMediate;
         private System.Windows.Forms.Panel pnlGameDisplayYellow;
         private System.Windows.Forms.Label lblPosition;
         private System.Windows.Forms.Label lblLevelOfGame;
@@ -326,7 +297,6 @@
         private System.Windows.Forms.Label lblNameGame;
         private System.Windows.Forms.Button btnStart;
         private System.Windows.Forms.Timer tmrTimeToPlay;
-        private AxWMPLib.AxWindowsMediaPlayer wmpSoundTrack;
         private System.Windows.Forms.TextBox txtYourSum;
         private System.Windows.Forms.Label lblYourSum;
         private System.Windows.Forms.PictureBox picVictory;

@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Media;
-
+using WMPLib;
 
 namespace FndSaCell
 {
@@ -30,6 +30,9 @@ namespace FndSaCell
 
         // tạo mảng button hiển thị các con vật
         private circleButton[][] btnCircle = new circleButton[100][];
+
+        // thời gian chơi
+        private int timeOfGame;
 
         //số phút chơi
         private int minute;
@@ -52,6 +55,9 @@ namespace FndSaCell
         // số lượng lượt chọn
         private int numberOfChoice;
 
+        // số lượt chọn
+        private int numChoice;
+
         // điểm người chơi
         private int yourScore;
 
@@ -73,8 +79,20 @@ namespace FndSaCell
         // lưu tên của button đã nhấn liền trước đó
         private int previousButton;
 
+        // check[i][j]=true->có thể ấn vào button[i][j], ngược lại không
+        private bool[] check=new bool[1000];
+
+        // số lần chơi game
+        private int number = 0;
+
+        // phát nhạc nền
+        private WindowsMediaPlayer wmpSoundTrack;
+
+        // phát nhạc chọn đúng, chọn sai,...
+        private SoundPlayer sp;
+
         // lấy các giá trị:level, chức vụ, chiều cao của bảng, chiều rộng của bảng, số điểm qua vòng,số lượt nhấn, thời gian chơi, có tắt nhạc hay không, hiển thị chức vụ truyền vào hay không: 1=có; 2=không
-        public FindSameCell(int level, string position, int height, int width, int Score, int numChoice, int time, bool turnOffSound, int determine)
+        public FindSameCell(int level, string position, int height, int width, int Score, int numCho, int time, bool turnOffSound, int determine)
         {
             InitializeComponent();
             lblLevelOfGame.Text += level.ToString();
@@ -85,11 +103,11 @@ namespace FndSaCell
             if (heightTable % 2 == 1 && widthTable % 2 == 1) heightTable--;
             sizeTable = height * width;
             scoreToPass = Score;
-            numberOfChoice = numChoice;
-            minute = time / 60;
-            second = time % 60;
+            numChoice = numCho;
+            timeOfGame = time;
             if (turnOffSound == false)
             {
+                wmpSoundTrack = new WindowsMediaPlayer();
                 try
                 {
                     wmpSoundTrack.URL = @"sound/FndSaCell/soundTrack.mp3";
@@ -102,7 +120,6 @@ namespace FndSaCell
         Random rd = new Random();
         private int randomNumber(int limitLow, int limitHigh)
         {
-            
             return rd.Next(limitLow, limitHigh + 1);
         }
 
@@ -111,8 +128,18 @@ namespace FndSaCell
         {
             try
             {
-                SoundPlayer sp = new SoundPlayer(@link);
+                sp = new SoundPlayer(@link);
                 sp.Play();
+            }
+            catch (Exception ex) { }
+        }
+
+        // load ảnh theo đường dẫn là link vào btn
+        private void loadPicture(circleButton btn, string link)
+        {
+            try
+            {
+                btn.Image = Image.FromFile(@link);
             }
             catch (Exception ex) { }
         }
@@ -125,47 +152,75 @@ namespace FndSaCell
         }
 
         //tạo mảng button tròn
-        private void createCircleButtonArray()
+        private void createCircleButtonArray(int number)
         {
-            for (int i = 1; i <= sizeTable / 2; i++) numberOfIcon[i] = 2;
-            for (var i = 1; i <= sizeTable; i++) btnCircle[i] = new circleButton[30];
-          
-            for (int i = 1; i <= heightTable; i++)
-                for (int j = 1; j <= widthTable; j++)
-                {
-                    value = (i - 1) * widthTable + j;
-                    btnCircle[i][j] = new circleButton();
+            if (number == 1)
+            {
+                for (int i = 1; i <= sizeTable / 2; i++) numberOfIcon[i] = 2;
+                for (var i = 1; i <= sizeTable; i++) btnCircle[i] = new circleButton[30];
 
-                    btnCircle[i][j].Size = new Size(63, 63);
-                    btnCircle[i][j].Location = new Point( (i-1)*68+getLocation(63,heightTable, true) , (j-1)*68+getLocation(63,widthTable,false) );
+                for (int i = 1; i <= heightTable; i++)
+                    for (int j = 1; j <= widthTable; j++)
+                    {
+                        value = (i - 1) * widthTable + j;
+                        btnCircle[i][j] = new circleButton();
 
-                    btnCircle[i][j].Name = value.ToString();
-                    btnCircle[i][j].FlatAppearance.BorderSize = 0;
-                    btnCircle[i][j].FlatStyle = FlatStyle.Flat;
-                    btnCircle[i][j].BackColor = ColorTranslator.FromHtml("#87D37C");
+                        btnCircle[i][j].Size = new Size(63, 63);
+                        btnCircle[i][j].Location = new Point((i - 1) * 68 + getLocation(63, heightTable, true), (j - 1) * 68 + getLocation(63, widthTable, false));
 
-                    btnCircle[i][j].Click += new EventHandler(btnMediate_Click);
-                    Controls.Add(btnCircle[i][j]);
-                    pnlGameDisplayGray.Controls.Add(btnCircle[i][j]);
+                        btnCircle[i][j].Name = value.ToString();
+                        btnCircle[i][j].FlatAppearance.BorderSize = 0;
+                        btnCircle[i][j].FlatStyle = FlatStyle.Flat;
+                        btnCircle[i][j].BackColor = ColorTranslator.FromHtml("#87D37C");
 
-                    location = randomNumber(1, sizeTable / 2 );
-                    while (numberOfIcon[location] == 0 && location < sizeTable/2) location++;
-                    while (numberOfIcon[location] == 0 && location > 1) location--;
-                    numberOfIcon[location]--;
+                        btnCircle[i][j].Click += new EventHandler(btnMediate_Click);
+                        Controls.Add(btnCircle[i][j]);
+                        pnlGameDisplayGray.Controls.Add(btnCircle[i][j]);
 
-                    original[value] = "picture/FndSaCell/" + location.ToString() + ".png";
-                }
+                        location = randomNumber(1, sizeTable / 2);
+                        while (numberOfIcon[location] == 0 && location < sizeTable / 2) location++;
+                        while (numberOfIcon[location] == 0 && location > 1) location--;
+                        numberOfIcon[location]--;
+
+                        original[value] = "picture/FndSaCell/" + location.ToString() + ".png";
+                    }
+            }
+            else
+            {
+                for (int i = 1; i <= sizeTable / 2; i++) numberOfIcon[i] = 2;
+
+                for (int i = 1; i <= heightTable; i++)
+                    for (int j = 1; j <= widthTable; j++)
+                    {
+                        btnCircle[i][j].Image = null;
+                        btnCircle[i][j].Visible = true;
+                        value = (i - 1) * widthTable + j;
+                        btnCircle[i][j].Name = value.ToString();
+                        
+                        location = randomNumber(1, sizeTable / 2);
+                        while (numberOfIcon[location] == 0 && location < sizeTable / 2) location++;
+                        while (numberOfIcon[location] == 0 && location > 1) location--;
+                        numberOfIcon[location]--;
+
+                        original[value] = "picture/FndSaCell/" + location.ToString() + ".png";
+                    }
+            }
         }
 
         // bắt đầu trò chơi
         private void btnStart_Click(object sender, EventArgs e)
         {
-            createCircleButtonArray();
+            number++;
+            minute = timeOfGame / 60;
+            second = timeOfGame % 60;
+            createCircleButtonArray(number);
             yourScore = 0;
             previousButton = 0;
             numberOfClick = 0;
+            numberOfChoice = numChoice;
             tmrTimeToPlay.Enabled = true;
-            btnStart.Enabled = false;
+            btnStart.Text = "Chơi lại";
+            for (int i = 1; i <= 100; i++) check[i] = true;
         }
 
         // đếm ngược thời gian chơi
@@ -199,11 +254,11 @@ namespace FndSaCell
             numberOfClick++;
             numberOfChoice--;
             circleButton btnMedia = (circleButton)sender;
-            try
-            {
-                btnMedia.Image = Image.FromFile(@original[Int32.Parse(btnMedia.Name)]);
-            }
-            catch (Exception ex) { }
+
+            if (check[Int32.Parse(btnMedia.Name)] == true) check[Int32.Parse(btnMedia.Name)] = false;
+            else return;
+
+            loadPicture(btnMedia,original[Int32.Parse(btnMedia.Name)]);
 
             var t = Task.Run(async delegate
             {
@@ -230,21 +285,20 @@ namespace FndSaCell
                 {
                     playMusic("sound/FndSaCell/sad.wav");
                     btnMedia.Image = null;
+                    check[Int32.Parse(btnMedia.Name)] = true;
                     for (int i = 1; i <= heightTable; i++)
                         for (int j = 1; j <= widthTable; j++)
                             if (Int32.Parse(btnCircle[i][j].Name) == previousButton)
                             {
                                 btnCircle[i][j].Image = null;
-                                btnCircle[i][j].Click += new EventHandler(btnMediate_Click);
+                                check[ Int32.Parse(btnCircle[i][j].Name) ]=true;
                                 break;
                             }
-
                 }
             }
             else
             {
                 previousButton = Int32.Parse(btnMedia.Name);
-                btnMedia.Click -= new EventHandler(btnMediate_Click);
                 playMusic("sound/FndSaCell/openButton.wav");
             }
         }
@@ -258,36 +312,16 @@ namespace FndSaCell
             for (int i = 1; i <= heightTable; i++)
                 for (int j = 1; j <= widthTable; j++)
                 {
-                    btnCircle[i][j].Image = Image.FromFile(@original[Int32.Parse(btnCircle[i][j].Name)]);
-                    btnCircle[i][j].Click -= new EventHandler(btnMediate_Click);
+                    loadPicture(btnCircle[i][j],original[Int32.Parse(btnCircle[i][j].Name)]);
+                    check[ Int16.Parse(btnCircle[i][j].Name) ] = false;
                 }
 
-            DialogResult dig;
             if (yourScore >= scoreToPass)
             {
                 trans.Invoke(1);
-                try
-                {
-                    picVictory.Visible = true;
-                    picVictory.Image = Image.FromFile(@"picture/FndSaCell/victory.jpg");
-                    picVictory.SizeMode = PictureBoxSizeMode.StretchImage;
-                }
-                catch (Exception ex) { }
-
-                try
-                {
-                    wmpSoundTrack.URL = @"sound/FndSaCell/victory.mp3";
-                }
-                catch (Exception ex) { }
-
-                dig = MessageBox.Show("Chúc mừng bạn đã vượt qua thử thách này", "Thông báo");
+                this.Close();
             }
-            else
-            {
-                trans.Invoke(0);
-                dig = MessageBox.Show("Rất tiếc bạn đã không vượt qua thử thách này", "Thông báo");
-            }
-            if (dig == DialogResult.OK) this.Close();
+            else trans.Invoke(0);
         }
 
         //tắt game
@@ -299,6 +333,11 @@ namespace FndSaCell
         // tắt nhạc khi đóng chương trình
         private void FindSameCell_FormClosed(object sender, FormClosedEventArgs e)
         {
+            try
+            {
+                sp.Stop();
+            }
+            catch (Exception ex) { }
             tmrTimeToPlay.Stop();
             wmpSoundTrack.close();
         }

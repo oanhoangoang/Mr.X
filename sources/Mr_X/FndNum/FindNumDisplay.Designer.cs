@@ -31,9 +31,9 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FindNumDisplay));
             this.pnlGameDisplayGray = new System.Windows.Forms.Panel();
+            this.txtFindNum = new System.Windows.Forms.TextBox();
+            this.lblFindNum = new System.Windows.Forms.Label();
             this.picVictory = new System.Windows.Forms.PictureBox();
-            this.wmpSoundTrack = new AxWMPLib.AxWindowsMediaPlayer();
-            this.btnMediate = new System.Windows.Forms.Button();
             this.pnlGameDisplayYellow = new System.Windows.Forms.Panel();
             this.lblPosition = new System.Windows.Forms.Label();
             this.lblLevelOfGame = new System.Windows.Forms.Label();
@@ -47,14 +47,11 @@
             this.txtYourScore = new System.Windows.Forms.TextBox();
             this.lblScoreToPass = new System.Windows.Forms.Label();
             this.lblYoungScore = new System.Windows.Forms.Label();
-            this.txtFindNum = new System.Windows.Forms.TextBox();
-            this.lblFindNum = new System.Windows.Forms.Label();
             this.lblNameGame = new System.Windows.Forms.Label();
             this.btnStart = new System.Windows.Forms.Button();
             this.tmrTimeToPlay = new System.Windows.Forms.Timer(this.components);
             this.pnlGameDisplayGray.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picVictory)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wmpSoundTrack)).BeginInit();
             this.pnlGameDisplayYellow.SuspendLayout();
             this.pnlGameDisplayGreen.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudSecond)).BeginInit();
@@ -67,13 +64,33 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlGameDisplayGray.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(211)))), ((int)(((byte)(124)))));
+            this.pnlGameDisplayGray.Controls.Add(this.txtFindNum);
+            this.pnlGameDisplayGray.Controls.Add(this.lblFindNum);
             this.pnlGameDisplayGray.Controls.Add(this.picVictory);
-            this.pnlGameDisplayGray.Controls.Add(this.wmpSoundTrack);
-            this.pnlGameDisplayGray.Controls.Add(this.btnMediate);
             this.pnlGameDisplayGray.Location = new System.Drawing.Point(4, 4);
             this.pnlGameDisplayGray.Name = "pnlGameDisplayGray";
             this.pnlGameDisplayGray.Size = new System.Drawing.Size(809, 654);
             this.pnlGameDisplayGray.TabIndex = 0;
+            // 
+            // txtFindNum
+            // 
+            this.txtFindNum.Enabled = false;
+            this.txtFindNum.Location = new System.Drawing.Point(349, 28);
+            this.txtFindNum.Name = "txtFindNum";
+            this.txtFindNum.ReadOnly = true;
+            this.txtFindNum.Size = new System.Drawing.Size(45, 26);
+            this.txtFindNum.TabIndex = 14;
+            this.txtFindNum.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // lblFindNum
+            // 
+            this.lblFindNum.AutoSize = true;
+            this.lblFindNum.ForeColor = System.Drawing.Color.White;
+            this.lblFindNum.Location = new System.Drawing.Point(335, 5);
+            this.lblFindNum.Name = "lblFindNum";
+            this.lblFindNum.Size = new System.Drawing.Size(84, 20);
+            this.lblFindNum.TabIndex = 14;
+            this.lblFindNum.Text = "Số cần tìm";
             // 
             // picVictory
             // 
@@ -83,28 +100,6 @@
             this.picVictory.TabIndex = 2;
             this.picVictory.TabStop = false;
             this.picVictory.Visible = false;
-            // 
-            // wmpSoundTrack
-            // 
-            this.wmpSoundTrack.Enabled = true;
-            this.wmpSoundTrack.Location = new System.Drawing.Point(151, 599);
-            this.wmpSoundTrack.Name = "wmpSoundTrack";
-            this.wmpSoundTrack.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("wmpSoundTrack.OcxState")));
-            this.wmpSoundTrack.Size = new System.Drawing.Size(75, 48);
-            this.wmpSoundTrack.TabIndex = 1;
-            this.wmpSoundTrack.Visible = false;
-            // 
-            // btnMediate
-            // 
-            this.btnMediate.Enabled = false;
-            this.btnMediate.Location = new System.Drawing.Point(0, 585);
-            this.btnMediate.Name = "btnMediate";
-            this.btnMediate.Size = new System.Drawing.Size(133, 69);
-            this.btnMediate.TabIndex = 0;
-            this.btnMediate.Text = "btnMediate";
-            this.btnMediate.UseVisualStyleBackColor = true;
-            this.btnMediate.Visible = false;
-            this.btnMediate.Click += new System.EventHandler(this.btnMediate_Click);
             // 
             // pnlGameDisplayYellow
             // 
@@ -152,8 +147,6 @@
             this.pnlGameDisplayGreen.Controls.Add(this.txtYourScore);
             this.pnlGameDisplayGreen.Controls.Add(this.lblScoreToPass);
             this.pnlGameDisplayGreen.Controls.Add(this.lblYoungScore);
-            this.pnlGameDisplayGreen.Controls.Add(this.txtFindNum);
-            this.pnlGameDisplayGreen.Controls.Add(this.lblFindNum);
             this.pnlGameDisplayGreen.Controls.Add(this.lblNameGame);
             this.pnlGameDisplayGreen.Controls.Add(this.btnStart);
             this.pnlGameDisplayGreen.Location = new System.Drawing.Point(818, 300);
@@ -188,7 +181,7 @@
             // txtScoreToPass
             // 
             this.txtScoreToPass.Enabled = false;
-            this.txtScoreToPass.Location = new System.Drawing.Point(275, 202);
+            this.txtScoreToPass.Location = new System.Drawing.Point(232, 202);
             this.txtScoreToPass.Name = "txtScoreToPass";
             this.txtScoreToPass.ReadOnly = true;
             this.txtScoreToPass.Size = new System.Drawing.Size(45, 26);
@@ -224,7 +217,7 @@
             // txtYourScore
             // 
             this.txtYourScore.Enabled = false;
-            this.txtYourScore.Location = new System.Drawing.Point(34, 202);
+            this.txtYourScore.Location = new System.Drawing.Point(104, 202);
             this.txtYourScore.Name = "txtYourScore";
             this.txtYourScore.ReadOnly = true;
             this.txtYourScore.Size = new System.Drawing.Size(45, 26);
@@ -235,7 +228,7 @@
             // 
             this.lblScoreToPass.AutoSize = true;
             this.lblScoreToPass.ForeColor = System.Drawing.Color.White;
-            this.lblScoreToPass.Location = new System.Drawing.Point(244, 179);
+            this.lblScoreToPass.Location = new System.Drawing.Point(205, 179);
             this.lblScoreToPass.Name = "lblScoreToPass";
             this.lblScoreToPass.Size = new System.Drawing.Size(115, 20);
             this.lblScoreToPass.TabIndex = 9;
@@ -245,31 +238,11 @@
             // 
             this.lblYoungScore.AutoSize = true;
             this.lblYoungScore.ForeColor = System.Drawing.Color.White;
-            this.lblYoungScore.Location = new System.Drawing.Point(30, 175);
+            this.lblYoungScore.Location = new System.Drawing.Point(103, 175);
             this.lblYoungScore.Name = "lblYoungScore";
             this.lblYoungScore.Size = new System.Drawing.Size(46, 20);
             this.lblYoungScore.TabIndex = 8;
             this.lblYoungScore.Text = "Điểm";
-            // 
-            // txtFindNum
-            // 
-            this.txtFindNum.Enabled = false;
-            this.txtFindNum.Location = new System.Drawing.Point(142, 202);
-            this.txtFindNum.Name = "txtFindNum";
-            this.txtFindNum.ReadOnly = true;
-            this.txtFindNum.Size = new System.Drawing.Size(45, 26);
-            this.txtFindNum.TabIndex = 7;
-            this.txtFindNum.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // lblFindNum
-            // 
-            this.lblFindNum.AutoSize = true;
-            this.lblFindNum.ForeColor = System.Drawing.Color.White;
-            this.lblFindNum.Location = new System.Drawing.Point(125, 179);
-            this.lblFindNum.Name = "lblFindNum";
-            this.lblFindNum.Size = new System.Drawing.Size(84, 20);
-            this.lblFindNum.TabIndex = 6;
-            this.lblFindNum.Text = "Số cần tìm";
             // 
             // lblNameGame
             // 
@@ -319,8 +292,8 @@
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FindNumDisplay_FormClosed);
             this.Load += new System.EventHandler(this.FindNumDisplay_Load);
             this.pnlGameDisplayGray.ResumeLayout(false);
+            this.pnlGameDisplayGray.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picVictory)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wmpSoundTrack)).EndInit();
             this.pnlGameDisplayYellow.ResumeLayout(false);
             this.pnlGameDisplayYellow.PerformLayout();
             this.pnlGameDisplayGreen.ResumeLayout(false);
@@ -336,24 +309,22 @@
         private System.Windows.Forms.Panel pnlGameDisplayGray;
         private System.Windows.Forms.Panel pnlGameDisplayYellow;
         private System.Windows.Forms.Panel pnlGameDisplayGreen;
-        private System.Windows.Forms.Button btnMediate;
         private System.Windows.Forms.Button btnStart;
         private System.Windows.Forms.NumericUpDown nudSecond;
         private System.Windows.Forms.NumericUpDown nudMinute;
         private System.Windows.Forms.Timer tmrTimeToPlay;
         private System.Windows.Forms.Label lblTime;
         private System.Windows.Forms.Label lblNameGame;
-        private System.Windows.Forms.Label lblFindNum;
-        private System.Windows.Forms.TextBox txtFindNum;
         private System.Windows.Forms.Label lblScoreToPass;
         private System.Windows.Forms.Label lblYoungScore;
         private System.Windows.Forms.TextBox txtScoreToPass;
         private System.Windows.Forms.TextBox txtYourScore;
         private System.Windows.Forms.Button btnEnd;
-        private AxWMPLib.AxWindowsMediaPlayer wmpSoundTrack;
         private System.Windows.Forms.Label lblRule;
         private System.Windows.Forms.Label lblLevelOfGame;
         private System.Windows.Forms.Label lblPosition;
         private System.Windows.Forms.PictureBox picVictory;
+        private System.Windows.Forms.TextBox txtFindNum;
+        private System.Windows.Forms.Label lblFindNum;
     }
 }

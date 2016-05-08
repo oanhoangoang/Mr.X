@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Media;
+using WMPLib;
 
 namespace RemMe
 {
@@ -20,13 +21,22 @@ namespace RemMe
         private int numberOfAnswer;
 
         // số lượng lượt chọn của người chơi
-        private int numberOfChoice; 
+        private int numberOfChoice;
+
+        // thời gian chơi
+        private int TimeOfGame;
 
         // số phút chơi
-        private int minute = 0;
+        private int minute;
 
         // số giây chơi
-        private int second = 5;
+        private int second;
+
+        // số lần chơi game
+        private int numb = 0;
+
+        // số lần chọn
+        private int numCho;
 
         // mảng cung cấp hex code của các màu
         private string[] arrayColor = new string[10];
@@ -53,16 +63,18 @@ namespace RemMe
         private bool[] checkColor = new bool[100 + 10];
 
         // điểm số của người chơi
-        private int yourScore=0;
+        private int yourScore;
 
-        // thời gian chơi
-        private int timeToPlay; 
+        // phát nhạc nền
+        private WindowsMediaPlayer wmpSoundTrack;
+
+        // phát nhạc chọn đúng, chọn sai,...
+        private SoundPlayer sp;
         
         // lấy ngẫu nhiên một số trong khoảng từ limitLow tới limitHigh
         Random rd = new Random();
         private int randomNumber(int limitLow, int limitHigh)
         {
-            
             return rd.Next(limitLow, limitHigh + 1);
         }
 
@@ -71,7 +83,7 @@ namespace RemMe
         {
             try
             {
-                SoundPlayer sp = new SoundPlayer(@link);
+                sp = new SoundPlayer(@link);
                 sp.Play();
             }
             catch (Exception ex) { }
@@ -93,10 +105,11 @@ namespace RemMe
             if (determine == 2) lblPosition.Visible = false;
             sizeTable = size;
             numberOfAnswer = numAns;
-            numberOfChoice = numChoice;
-            timeToPlay = time;
+            numCho = numChoice;
+            TimeOfGame = time;
             if (turnOffSound == false)
             {
+                wmpSoundTrack = new WindowsMediaPlayer();
                 try
                 {
                     wmpSoundTrack.URL = @"sound/RemMe/SoundTrack.mp3";
@@ -104,13 +117,69 @@ namespace RemMe
                 catch (Exception ex){}
             }
             btnMediate.Location = new Point( (809-131)/2 ,8);
-            
         }
 
         // random giá trị của selectedColor, khởi tạo mảng number[]
         private void RememberMe_Load(object sender, EventArgs e)
-        {
+        {          
+        }
 
+        // tạo mảng button: tên, kích thước, vị trí, màu sắc ban đầu, FlatStyle, xử lí khi nhấn vào
+        private void createButtonArray(int numb)
+        {
+            if (numb == 1)
+            {
+                for (var i = 1; i <= sizeTable; i++) randomBtn[i] = new Button[30];
+                for (var i = 1; i <= sizeTable; i++)
+                    for (var j = 1; j <= sizeTable; j++)
+                    {
+                        value = (i - 1) * sizeTable + j;
+                        randomBtn[i][j] = new Button();
+                        randomBtn[i][j].Name = value.ToString();
+                        randomBtn[i][j].Size = new Size(55, 55);
+                        randomBtn[i][j].FlatStyle = FlatStyle.Flat;
+                        randomBtn[i][j].Click += new EventHandler(btnMediate_Click);
+                        Controls.Add(randomBtn[i][j]);
+                        randomBtn[i][j].Enabled = false;
+                        randomBtn[i][j].Location = new Point((i - 1) * 60 + getLocation(55, sizeTable, true), (j - 1) * 60 + getLocation(55, sizeTable, false));
+
+                        location = randomNumber(1, 3);
+                        while (number[location] == 0 && location < 3) location++;
+                        while (number[location] == 0 && location > 1) location--;
+                        number[location]--;
+                        if (location == selectedColor) checkColor[value] = true;
+                        original[value] = location;
+
+                        randomBtn[i][j].BackColor = ColorTranslator.FromHtml(arrayColor[location]);
+
+                        pnlGameDisplayGray.Controls.Add(randomBtn[i][j]);
+                    }
+            }
+            else
+            {
+                for (var i = 1; i <= sizeTable; i++)
+                    for (var j = 1; j <= sizeTable; j++)
+                    {
+                        value = (i - 1) * sizeTable + j;
+
+                        randomBtn[i][j].Enabled = false;
+                        randomBtn[i][j].Visible = true;
+
+                        location = randomNumber(1, 3);
+                        while (number[location] == 0 && location < 3) location++;
+                        while (number[location] == 0 && location > 1) location--;
+                        number[location]--;
+                        if (location == selectedColor) checkColor[value] = true;
+                        original[value] = location;
+
+                        randomBtn[i][j].BackColor = ColorTranslator.FromHtml(arrayColor[location]);
+
+                    }
+            }
+        }
+        // khởi tạo
+        private void init()
+        {
             arrayColor[1] = "#33CCFF";
             arrayColor[2] = "#355C96";
             arrayColor[3] = "#9370db";
@@ -137,42 +206,20 @@ namespace RemMe
             for (int i = 1; i <= sizeTable * sizeTable; i++) checkColor[i] = false;
         }
 
-        // tạo mảng button: tên, kích thước, vị trí, màu sắc ban đầu, FlatStyle, xử lí khi nhấn vào
-        private void createButtonArray()
-        {
-            for (var i = 1; i <= sizeTable; i++) randomBtn[i] = new Button[30];
-            for (var i = 1; i <= sizeTable; i++)
-                for (var j = 1; j <= sizeTable; j++)
-                {
-                    value=(i-1)*sizeTable+j;
-                    randomBtn[i][j] = new Button();
-                    randomBtn[i][j].Name = value.ToString();
-                    randomBtn[i][j].Size = new Size(55, 55);
-                    randomBtn[i][j].FlatStyle = FlatStyle.Flat;
-                    randomBtn[i][j].Click += new EventHandler(btnMediate_Click);
-                    Controls.Add(randomBtn[i][j]);
-                    randomBtn[i][j].Enabled = false;
-                    randomBtn[i][j].Location = new Point( (i-1) * 60 +getLocation(55,sizeTable,true), (j-1) * 60 + getLocation(55,sizeTable,false) );
-                   
-                    location = randomNumber(1, 3);
-                    while (number[location] == 0 && location < 3) location++;
-                    while (number[location] == 0 && location >1 ) location--;
-                    number[location]--;
-                    if (location == selectedColor) checkColor[value] = true;
-                    original[value] = location;
-
-                    randomBtn[i][j].BackColor = ColorTranslator.FromHtml(arrayColor[location]);
-                 
-                    pnlGameDisplayGray.Controls.Add(randomBtn[i][j]);
-                }
-        }
-
         // bắt đầu trò chơi: tạo mảng randomBtn
         private void btnStart_Click(object sender, EventArgs e)
         {
-            createButtonArray();
+            init();
+            btnStart.Text = "Chơi lại";
+            numb++;
+            createButtonArray(numb);
+
+            numberOfChoice = numCho;
+            yourScore = 0;
+            
+            minute = 0;
+            second = 5;
             tmrTimeToWatch.Enabled = true;
-            btnStart.Enabled = false;
             btnMediate.BackColor = ColorTranslator.FromHtml(arrayColor[selectedColor]);
         }
 
@@ -209,9 +256,9 @@ namespace RemMe
                     randomBtn[i][j].Enabled = true;
                     randomBtn[i][j].BackColor = ColorTranslator.FromHtml(arrayColor[4]);
                 }
-            minute = timeToPlay / 60;
-            second = timeToPlay % 60;
             tmrTimeToPlay.Enabled = true;
+            minute = TimeOfGame / 60;
+            second = TimeOfGame % 60;
         }
 
         // đếm ngược thời gian người chơi có thể chọn đáp án
@@ -248,14 +295,10 @@ namespace RemMe
             if (checkColor[value])
             {
                 yourScore++;
-
                 playMusic("sound/RemMe/Happy.wav");
                 btnMedia.Visible = false;
             }
-            else
-            {
-                playMusic("sound/RemMe/Sad.wav");
-            }
+            else playMusic("sound/RemMe/Sad.wav");
         }
 
         public delegate void truyen(int value);
@@ -263,8 +306,7 @@ namespace RemMe
 
         //đưa ra câu trả lời cho người chơi, và hiện lại mảng ban đầu
         private void answer()
-        {
-            btnMediate.Visible = false;
+        {  
             for (int i = 1; i <= sizeTable; i++)
                 for (int j = 1; j <= sizeTable; j++)
                 {
@@ -272,37 +314,23 @@ namespace RemMe
                     value = Int32.Parse(randomBtn[i][j].Name);
                     randomBtn[i][j].BackColor = ColorTranslator.FromHtml(arrayColor[original[value]]);
                 }
-            DialogResult dig;
+            
             if (yourScore >= numberOfAnswer)
             {
                 trans.Invoke(1);
-                try
-                {
-                    picVictory.Visible = true;
-                    picVictory.Image = Image.FromFile(@"picture/RemMe/victory.jpg");
-                    picVictory.SizeMode = PictureBoxSizeMode.StretchImage;
-                }
-                catch (Exception ex) { }
-
-                try
-                {
-                    wmpSoundTrack.URL = @"sound/RemMe/victory.mp3";
-                }
-                catch (Exception ex) { }
-
-                dig = MessageBox.Show("Chúc mừng bạn đã vượt qua thử thách này", "Thông báo");
+                this.Close();
             }
-            else
-            {
-                trans.Invoke(0);
-                dig = MessageBox.Show("Rất tiếc bạn đã không vượt qua thử thách này", "Thông báo");
-            }
-            if (dig == DialogResult.OK) this.Close();
+            else trans.Invoke(0);      
         }
 
         // tắt nhạc khi đóng chương trình
         private void RememberMe_FormClosed(object sender, FormClosedEventArgs e)
         {
+            try
+            {
+                sp.Stop();
+            }
+            catch (Exception ex) { }
             tmrTimeToPlay.Stop();
             tmrTimeToWatch.Stop();
             wmpSoundTrack.close();
