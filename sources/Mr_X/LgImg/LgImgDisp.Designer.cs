@@ -37,7 +37,6 @@
             this.btnB = new System.Windows.Forms.Button();
             this.btnA = new System.Windows.Forms.Button();
             this.pic = new System.Windows.Forms.PictureBox();
-            this.lblGuide = new System.Windows.Forms.Label();
             this.pnlPlayerInfo = new System.Windows.Forms.Panel();
             this.lblRankData = new System.Windows.Forms.Label();
             this.lvlRank = new System.Windows.Forms.Label();
@@ -50,6 +49,7 @@
             this.lblTimeCnt = new System.Windows.Forms.Label();
             this.lblTime = new System.Windows.Forms.Label();
             this.timer = new System.Windows.Forms.Timer(this.components);
+            this.txtNoti = new System.Windows.Forms.TextBox();
             this.pnlGameDisp.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic)).BeginInit();
             this.pnlPlayerInfo.SuspendLayout();
@@ -59,13 +59,13 @@
             // pnlGameDisp
             // 
             this.pnlGameDisp.BackColor = System.Drawing.Color.White;
+            this.pnlGameDisp.Controls.Add(this.txtNoti);
             this.pnlGameDisp.Controls.Add(this.btnE);
             this.pnlGameDisp.Controls.Add(this.btnD);
             this.pnlGameDisp.Controls.Add(this.btnC);
             this.pnlGameDisp.Controls.Add(this.btnB);
             this.pnlGameDisp.Controls.Add(this.btnA);
             this.pnlGameDisp.Controls.Add(this.pic);
-            this.pnlGameDisp.Controls.Add(this.lblGuide);
             this.pnlGameDisp.Location = new System.Drawing.Point(4, 4);
             this.pnlGameDisp.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pnlGameDisp.Name = "pnlGameDisp";
@@ -76,6 +76,7 @@
             // 
             this.btnE.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnE.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnE.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(108)))), ((int)(((byte)(179)))));
             this.btnE.Location = new System.Drawing.Point(610, 494);
             this.btnE.Name = "btnE";
             this.btnE.Size = new System.Drawing.Size(99, 47);
@@ -88,6 +89,7 @@
             // 
             this.btnD.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnD.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnD.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(108)))), ((int)(((byte)(179)))));
             this.btnD.Location = new System.Drawing.Point(493, 494);
             this.btnD.Name = "btnD";
             this.btnD.Size = new System.Drawing.Size(99, 47);
@@ -100,6 +102,7 @@
             // 
             this.btnC.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnC.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(108)))), ((int)(((byte)(179)))));
             this.btnC.Location = new System.Drawing.Point(372, 494);
             this.btnC.Name = "btnC";
             this.btnC.Size = new System.Drawing.Size(99, 47);
@@ -112,6 +115,7 @@
             // 
             this.btnB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnB.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(108)))), ((int)(((byte)(179)))));
             this.btnB.Location = new System.Drawing.Point(245, 494);
             this.btnB.Name = "btnB";
             this.btnB.Size = new System.Drawing.Size(99, 47);
@@ -124,6 +128,7 @@
             // 
             this.btnA.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnA.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnA.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(108)))), ((int)(((byte)(179)))));
             this.btnA.Location = new System.Drawing.Point(120, 494);
             this.btnA.Name = "btnA";
             this.btnA.Size = new System.Drawing.Size(99, 47);
@@ -139,16 +144,6 @@
             this.pic.Size = new System.Drawing.Size(451, 293);
             this.pic.TabIndex = 1;
             this.pic.TabStop = false;
-            // 
-            // lblGuide
-            // 
-            this.lblGuide.AutoSize = true;
-            this.lblGuide.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGuide.Location = new System.Drawing.Point(155, 109);
-            this.lblGuide.Name = "lblGuide";
-            this.lblGuide.Size = new System.Drawing.Size(64, 25);
-            this.lblGuide.TabIndex = 0;
-            this.lblGuide.Text = "Guide";
             // 
             // pnlPlayerInfo
             // 
@@ -262,9 +257,9 @@
             this.lblTimeCnt.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTimeCnt.Location = new System.Drawing.Point(173, 85);
             this.lblTimeCnt.Name = "lblTimeCnt";
-            this.lblTimeCnt.Size = new System.Drawing.Size(43, 25);
+            this.lblTimeCnt.Size = new System.Drawing.Size(23, 25);
             this.lblTimeCnt.TabIndex = 4;
-            this.lblTimeCnt.Text = "sec";
+            this.lblTimeCnt.Text = "0";
             // 
             // lblTime
             // 
@@ -278,8 +273,19 @@
             // 
             // timer
             // 
-            this.timer.Interval = 500;
+            this.timer.Interval = 1000;
             this.timer.Tick += new System.EventHandler(this.timer_Tick);
+            // 
+            // txtNoti
+            // 
+            this.txtNoti.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtNoti.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNoti.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(108)))), ((int)(((byte)(179)))));
+            this.txtNoti.Location = new System.Drawing.Point(120, 93);
+            this.txtNoti.Name = "txtNoti";
+            this.txtNoti.Size = new System.Drawing.Size(565, 23);
+            this.txtNoti.TabIndex = 7;
+            this.txtNoti.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // LgImgDisp
             // 
@@ -324,7 +330,7 @@
         private System.Windows.Forms.Button btnB;
         private System.Windows.Forms.Button btnA;
         private System.Windows.Forms.PictureBox pic;
-        private System.Windows.Forms.Label lblGuide;
         private System.Windows.Forms.Timer timer;
+        private System.Windows.Forms.TextBox txtNoti;
     }
 }
