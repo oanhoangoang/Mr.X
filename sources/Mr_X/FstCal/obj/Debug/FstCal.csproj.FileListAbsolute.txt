@@ -28,4 +28,3 @@ E:\JS_Project\Mr.X.git\trunk\sources\Mr_X\FstCal\obj\Debug\FstCal.Properties.Res
 E:\JS_Project\Mr.X.git\trunk\sources\Mr_X\FstCal\obj\Debug\FstCal.csproj.GenerateResource.Cache
 E:\JS_Project\Mr.X.git\trunk\sources\Mr_X\FstCal\obj\Debug\FstCal.dll
 E:\JS_Project\Mr.X.git\trunk\sources\Mr_X\FstCal\obj\Debug\FstCal.pdb
-E:\JS_Project\Mr.X.git\trunk\sources\Mr_X\FstCal\obj\Debug\FstCal.csprojResolveAssemblyReference.cache
