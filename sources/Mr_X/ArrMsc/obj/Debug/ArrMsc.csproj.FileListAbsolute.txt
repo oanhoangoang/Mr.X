@@ -1,0 +1,14 @@
+c:\users\toet\documents\visual studio 2013\Projects\ArrMsc\ArrMsc\bin\Debug\ArrMsc.dll
+c:\users\toet\documents\visual studio 2013\Projects\ArrMsc\ArrMsc\bin\Debug\ArrMsc.pdb
+c:\users\toet\documents\visual studio 2013\Projects\ArrMsc\ArrMsc\obj\Debug\ArrMsc.csprojResolveAssemblyReference.cache
+c:\users\toet\documents\visual studio 2013\Projects\ArrMsc\ArrMsc\obj\Debug\ArrMsc.Form1.resources
+c:\users\toet\documents\visual studio 2013\Projects\ArrMsc\ArrMsc\obj\Debug\ArrMsc.csproj.GenerateResource.Cache
+c:\users\toet\documents\visual studio 2013\Projects\ArrMsc\ArrMsc\obj\Debug\ArrMsc.dll
+c:\users\toet\documents\visual studio 2013\Projects\ArrMsc\ArrMsc\obj\Debug\ArrMsc.pdb
+E:\JS_Project\Mr.X.git\trunk\sources\Mr_X\ArrMsc\bin\Debug\ArrMsc.dll
+E:\JS_Project\Mr.X.git\trunk\sources\Mr_X\ArrMsc\bin\Debug\ArrMsc.pdb
+E:\JS_Project\Mr.X.git\trunk\sources\Mr_X\ArrMsc\obj\Debug\ArrMsc.ArrMscDisp.resources
+E:\JS_Project\Mr.X.git\trunk\sources\Mr_X\ArrMsc\obj\Debug\ArrMsc.Properties.Resources.resources
+E:\JS_Project\Mr.X.git\trunk\sources\Mr_X\ArrMsc\obj\Debug\ArrMsc.csproj.GenerateResource.Cache
+E:\JS_Project\Mr.X.git\trunk\sources\Mr_X\ArrMsc\obj\Debug\ArrMsc.dll
+E:\JS_Project\Mr.X.git\trunk\sources\Mr_X\ArrMsc\obj\Debug\ArrMsc.pdb
