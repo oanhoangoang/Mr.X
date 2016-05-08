@@ -34,9 +34,8 @@ namespace FstCal
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FstCalDisp));
             this.pnlGameDisp = new System.Windows.Forms.Panel();
-            this.lblNoti = new System.Windows.Forms.Label();
+            this.lblNum3 = new System.Windows.Forms.Label();
             this.btnAns = new System.Windows.Forms.Button();
-            this.lblGuide = new System.Windows.Forms.Label();
             this.txtAns = new System.Windows.Forms.TextBox();
             this.lblSign = new System.Windows.Forms.Label();
             this.lblNum2 = new System.Windows.Forms.Label();
@@ -53,7 +52,8 @@ namespace FstCal
             this.lblTimeCount = new System.Windows.Forms.Label();
             this.lblTime = new System.Windows.Forms.Label();
             this.timer = new System.Windows.Forms.Timer(this.components);
-            this.lblNum3 = new System.Windows.Forms.Label();
+            this.txtNoti = new System.Windows.Forms.TextBox();
+            this.txtGuide = new System.Windows.Forms.TextBox();
             this.pnlGameDisp.SuspendLayout();
             this.pnlPlayerInfo.SuspendLayout();
             this.pnlGameInfo.SuspendLayout();
@@ -62,10 +62,10 @@ namespace FstCal
             // pnlGameDisp
             // 
             this.pnlGameDisp.BackColor = System.Drawing.Color.White;
+            this.pnlGameDisp.Controls.Add(this.txtGuide);
+            this.pnlGameDisp.Controls.Add(this.txtNoti);
             this.pnlGameDisp.Controls.Add(this.lblNum3);
-            this.pnlGameDisp.Controls.Add(this.lblNoti);
             this.pnlGameDisp.Controls.Add(this.btnAns);
-            this.pnlGameDisp.Controls.Add(this.lblGuide);
             this.pnlGameDisp.Controls.Add(this.txtAns);
             this.pnlGameDisp.Controls.Add(this.lblSign);
             this.pnlGameDisp.Controls.Add(this.lblNum2);
@@ -77,42 +77,30 @@ namespace FstCal
             this.pnlGameDisp.Size = new System.Drawing.Size(809, 654);
             this.pnlGameDisp.TabIndex = 1;
             // 
-            // lblNoti
+            // lblNum3
             // 
-            this.lblNoti.AutoSize = true;
-            this.lblNoti.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNoti.ForeColor = System.Drawing.Color.Red;
-            this.lblNoti.Location = new System.Drawing.Point(150, 266);
-            this.lblNoti.Name = "lblNoti";
-            this.lblNoti.Size = new System.Drawing.Size(51, 26);
-            this.lblNoti.TabIndex = 6;
-            this.lblNoti.Text = "Noti";
-            this.lblNoti.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblNum3.AutoSize = true;
+            this.lblNum3.Font = new System.Drawing.Font("Jokerman", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNum3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(196)))), ((int)(((byte)(15)))));
+            this.lblNum3.Location = new System.Drawing.Point(333, 345);
+            this.lblNum3.Name = "lblNum3";
+            this.lblNum3.Size = new System.Drawing.Size(181, 29);
+            this.lblNum3.TabIndex = 7;
+            this.lblNum3.Text = "______________";
+            this.lblNum3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // btnAns
             // 
             this.btnAns.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAns.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAns.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(196)))), ((int)(((byte)(15)))));
-            this.btnAns.Location = new System.Drawing.Point(371, 469);
+            this.btnAns.Location = new System.Drawing.Point(351, 469);
             this.btnAns.Name = "btnAns";
             this.btnAns.Size = new System.Drawing.Size(148, 72);
             this.btnAns.TabIndex = 5;
             this.btnAns.Text = "Xong !";
             this.btnAns.UseVisualStyleBackColor = true;
             this.btnAns.Click += new System.EventHandler(this.btnAns_Click);
-            // 
-            // lblGuide
-            // 
-            this.lblGuide.AutoSize = true;
-            this.lblGuide.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGuide.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(196)))), ((int)(((byte)(15)))));
-            this.lblGuide.Location = new System.Drawing.Point(209, 105);
-            this.lblGuide.Name = "lblGuide";
-            this.lblGuide.Size = new System.Drawing.Size(69, 25);
-            this.lblGuide.TabIndex = 4;
-            this.lblGuide.Text = "Guide";
-            this.lblGuide.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // txtAns
             // 
@@ -293,20 +281,30 @@ namespace FstCal
             // 
             // timer
             // 
-            this.timer.Interval = 500;
+            this.timer.Interval = 1000;
             this.timer.Tick += new System.EventHandler(this.timer_Tick);
             // 
-            // lblNum3
+            // txtNoti
             // 
-            this.lblNum3.AutoSize = true;
-            this.lblNum3.Font = new System.Drawing.Font("Jokerman", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNum3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(196)))), ((int)(((byte)(15)))));
-            this.lblNum3.Location = new System.Drawing.Point(333, 345);
-            this.lblNum3.Name = "lblNum3";
-            this.lblNum3.Size = new System.Drawing.Size(181, 29);
-            this.lblNum3.TabIndex = 7;
-            this.lblNum3.Text = "______________";
-            this.lblNum3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.txtNoti.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtNoti.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNoti.ForeColor = System.Drawing.Color.Red;
+            this.txtNoti.Location = new System.Drawing.Point(114, 263);
+            this.txtNoti.Name = "txtNoti";
+            this.txtNoti.Size = new System.Drawing.Size(583, 23);
+            this.txtNoti.TabIndex = 8;
+            this.txtNoti.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txtGuide
+            // 
+            this.txtGuide.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtGuide.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtGuide.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(196)))), ((int)(((byte)(15)))));
+            this.txtGuide.Location = new System.Drawing.Point(114, 95);
+            this.txtGuide.Name = "txtGuide";
+            this.txtGuide.Size = new System.Drawing.Size(583, 23);
+            this.txtGuide.TabIndex = 9;
+            this.txtGuide.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // FstCalDisp
             // 
@@ -348,11 +346,11 @@ namespace FstCal
         private System.Windows.Forms.Label lblTimeUnit;
         private System.Windows.Forms.Label lblTimeCount;
         private System.Windows.Forms.Label lblTime;
-        private System.Windows.Forms.Label lblGuide;
         private System.Windows.Forms.Button btnAns;
         private System.Windows.Forms.Timer timer;
-        private System.Windows.Forms.Label lblNoti;
         private System.Windows.Forms.Button btnBackToMenu;
         private System.Windows.Forms.Label lblNum3;
+        private System.Windows.Forms.TextBox txtNoti;
+        private System.Windows.Forms.TextBox txtGuide;
     }
 }

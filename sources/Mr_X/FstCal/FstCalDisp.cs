@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Media;
 
 
 namespace FstCal
@@ -15,8 +16,12 @@ namespace FstCal
     {
         int lvlGame; // level of Game
         string rank, lvl; // Player rank & level
-        int check; // check = 0 Lose; check = 1 Win
-        int num1, num2, playerAns, gameAns;
+        int check = 0; // check = 0 Lose; check = 1 Win
+        int num1, num2;
+        string playerAns, gameAns;
+        SoundPlayer soundtrack = new SoundPlayer(@"sound/FstCal/Soundtrack.wav");
+        SoundPlayer soundWin = new SoundPlayer(@"sound/FstCal/Win.wav");
+        SoundPlayer soundLose = new SoundPlayer(@"sound/FstCal/Lose.wav");
 
         // Call Form
         public FstCalDisp(int xlvlGame, string xRank, string xLvl) 
@@ -33,7 +38,6 @@ namespace FstCal
         {
             lblLevelData.Text = lvl;
             lblRankData.Text = rank;
-            lblGuide.Text = "Nếu đã sẵn sàng để thử việc, hãy chọn Bắt đâu ;)";
 
             lblNum1.Visible = false;
             lblNum2.Visible = false;
@@ -41,7 +45,8 @@ namespace FstCal
             lblSign.Visible = false;
             txtAns.Visible = false;
             btnAns.Visible = false;
-            lblNoti.Visible = false;
+            txtNoti.Visible = false;
+            txtGuide.Text = "Nếu đã sẵn sàng để thử việc, hãy chọn Bắt đầu ;)";
         }
         //
         // Load the calculation
@@ -63,20 +68,24 @@ namespace FstCal
             lblNum2.Text = num2.ToString();
             if (lvlGame == 1) lblSign.Text = "+"; else lblSign.Text = "x";
         }
+                
         //
         // Click Start button
         //
         int sec;
         private void btnStart_Click(object sender, EventArgs e) 
         {
-            lblGuide.Text = "Kết quả phép tính này là bao nhiêu ??";
+            txtGuide.Text = "Kết quả phép tính này là bao nhiêu ??";
             loadGameData();
             btnStart.Visible = false;
 
-            lblTimeCount.Text = "20";
+            if (lvlGame == 1) lblTimeCount.Text = "5"; else lblTimeCount.Text = "15";
             sec = int.Parse(lblTimeCount.Text);
+            
             timer.Start();
+            soundtrack.Play();
         }
+
         //
         // Calculate the game answer
         //
@@ -91,12 +100,14 @@ namespace FstCal
         private void btnAns_Click(object sender, EventArgs e)   
         {
             timer.Stop();
-            playerAns = int.Parse(txtAns.Text);
-            gameAns = calAns(num1, num2);
+            soundtrack.Stop();
+            playerAns = txtAns.Text;
+            gameAns = calAns(num1, num2).ToString();
 
             if (playerAns == gameAns)
             {
-                check = 1; notiRightAns();
+                check = 1; 
+                notiRightAns();
             }
             else
             {
@@ -129,11 +140,12 @@ namespace FstCal
             lblSign.Visible = false;
             txtAns.Visible = false;
             btnAns.Visible = false;
-            lblGuide.Visible = false;
+            txtGuide.Visible = false;
             btnAns.Visible = false;
             txtAns.Visible = false;
-            lblNoti.Visible = true;
-            lblNoti.Text = "Cái gì lâu quá cũng không tốt. Cố gắng lần sau nhé !";
+            txtNoti.Visible = true;
+            soundLose.Play();
+            txtNoti.Text = "Cái gì lâu quá cũng không tốt ;) Cố gắng lần sau nhé !";
         }
         //
         // Notify player answer is Right
@@ -146,11 +158,12 @@ namespace FstCal
             lblSign.Visible = false;
             txtAns.Visible = false;
             btnAns.Visible = false;
-            lblGuide.Visible = false;
+            txtGuide.Visible = false;
             btnAns.Visible = false;
             txtAns.Visible = false;
-            lblNoti.Visible = true;
-            lblNoti.Text = "Ghê à nha! Party với chức vụ mới thôi :))";
+            txtNoti.Visible = true;
+            soundWin.Play();
+            txtNoti.Text = "Dù dễ nhưng cũng chúc mừng! Party với chức vụ mới thôi :))";
         }
         //
         // Player answer is Wrong
@@ -163,18 +176,20 @@ namespace FstCal
             lblSign.Visible = false;
             txtAns.Visible = false;
             btnAns.Visible = false;
-            lblGuide.Visible = false;
+            txtGuide.Visible = false;
             btnAns.Visible = false;
             txtAns.Visible = false;
-            lblNoti.Visible = true;
-            lblNoti.Text = "Đen thôi, đỏ khác liền =)) Gặp lại bạn lần sau !";
+            txtNoti.Visible = true;
+            soundLose.Play();
+            txtNoti.Text = "Đen thôi, đỏ khác liền :v Gặp lại bạn lần sau !";
         }
         public delegate void truyen(int value);
         public truyen trans;
 
         private void btnBackToMenu_Click(object sender, EventArgs e)
         {
-            if (check==1) trans.Invoke(1); else trans.Invoke(0);
+            soundWin.Stop(); soundLose.Stop();
+            if (check == 1) trans.Invoke(1); else trans.Invoke(0);
             this.Close();
         }
     }
