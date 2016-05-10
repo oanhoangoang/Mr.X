@@ -224,12 +224,7 @@ namespace ChseNum
             for (int i = 1; i <= sizeTable; i++)
                 for (int j = 1; j <= sizeTable; j++) randomBtn[i][j].Enabled = false;
 
-            DialogResult dig;
-            if (yourSum == numberToFind)
-            {
-                trans.Invoke(1);
-                this.Close();
-            }
+            if (yourSum == numberToFind) trans.Invoke(1);      
             else trans.Invoke(0);
         }
 

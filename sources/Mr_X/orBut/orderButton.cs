@@ -106,6 +106,7 @@ namespace OrBut
             else return (654 - size * num) / 2;
         }
 
+        // tạo mảng màu cho người chơi ấn
         private void createButtonArray(int number)
         {
             if (number == 1)
@@ -142,7 +143,6 @@ namespace OrBut
                 for (var i = 1; i <= sizeTable; i++)
                     for (var j = 1; j <= sizeTable; j++)
                     {
-
                         locationRandom = randomNumber(1, sizeTable * sizeTable - now + 1);
                         randomBtn[i][j].Name = originalArray[locationRandom].ToString();
                         originalArray[locationRandom] = originalArray[sizeTable * sizeTable - now + 1];
@@ -195,7 +195,6 @@ namespace OrBut
         }
 
         // đếm ngược thời gian chơi
-
         private void tmrTimeToPlay_Tick(object sender, EventArgs e)
         {
             nudMinute.Value = minute;
@@ -225,11 +224,7 @@ namespace OrBut
             for (int i = 1; i <= sizeTable; i++)
                 for (int j = 1; j <= sizeTable; j++) randomBtn[i][j].Visible = false;
 
-            if (now > numberToFind)
-            {
-                trans.Invoke(1);
-                this.Close();
-            }
+            if (now > numberToFind) trans.Invoke(1);            
             trans.Invoke(0);                
         }
 

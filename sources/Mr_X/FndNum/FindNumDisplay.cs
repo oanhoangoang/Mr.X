@@ -235,11 +235,7 @@ namespace FndNum
             for (int i = 1; i <= sizeTable; i++)
                 for (int j = 1; j <= sizeTable; j++) randomBtn[i][j].Enabled= false;
 
-            if (yourScore >= numberToFind)
-            {
-                trans.Invoke(1);
-                this.Close();
-            }
+            if (yourScore >= numberToFind) trans.Invoke(1);           
             else trans.Invoke(0);
         }
 

@@ -33,7 +33,6 @@
             this.pnlGameDisplayGray = new System.Windows.Forms.Panel();
             this.txtFindNum = new System.Windows.Forms.TextBox();
             this.lblFindNum = new System.Windows.Forms.Label();
-            this.picVictory = new System.Windows.Forms.PictureBox();
             this.pnlGameDisplayYellow = new System.Windows.Forms.Panel();
             this.lblPosition = new System.Windows.Forms.Label();
             this.lblLevelOfGame = new System.Windows.Forms.Label();
@@ -51,7 +50,6 @@
             this.btnStart = new System.Windows.Forms.Button();
             this.tmrTimeToPlay = new System.Windows.Forms.Timer(this.components);
             this.pnlGameDisplayGray.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picVictory)).BeginInit();
             this.pnlGameDisplayYellow.SuspendLayout();
             this.pnlGameDisplayGreen.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudSecond)).BeginInit();
@@ -66,7 +64,6 @@
             this.pnlGameDisplayGray.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(211)))), ((int)(((byte)(124)))));
             this.pnlGameDisplayGray.Controls.Add(this.txtFindNum);
             this.pnlGameDisplayGray.Controls.Add(this.lblFindNum);
-            this.pnlGameDisplayGray.Controls.Add(this.picVictory);
             this.pnlGameDisplayGray.Location = new System.Drawing.Point(4, 4);
             this.pnlGameDisplayGray.Name = "pnlGameDisplayGray";
             this.pnlGameDisplayGray.Size = new System.Drawing.Size(809, 654);
@@ -91,15 +88,6 @@
             this.lblFindNum.Size = new System.Drawing.Size(84, 20);
             this.lblFindNum.TabIndex = 14;
             this.lblFindNum.Text = "Số cần tìm";
-            // 
-            // picVictory
-            // 
-            this.picVictory.Location = new System.Drawing.Point(0, 0);
-            this.picVictory.Name = "picVictory";
-            this.picVictory.Size = new System.Drawing.Size(809, 654);
-            this.picVictory.TabIndex = 2;
-            this.picVictory.TabStop = false;
-            this.picVictory.Visible = false;
             // 
             // pnlGameDisplayYellow
             // 
@@ -293,7 +281,6 @@
             this.Load += new System.EventHandler(this.FindNumDisplay_Load);
             this.pnlGameDisplayGray.ResumeLayout(false);
             this.pnlGameDisplayGray.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picVictory)).EndInit();
             this.pnlGameDisplayYellow.ResumeLayout(false);
             this.pnlGameDisplayYellow.PerformLayout();
             this.pnlGameDisplayGreen.ResumeLayout(false);
@@ -323,7 +310,6 @@
         private System.Windows.Forms.Label lblRule;
         private System.Windows.Forms.Label lblLevelOfGame;
         private System.Windows.Forms.Label lblPosition;
-        private System.Windows.Forms.PictureBox picVictory;
         private System.Windows.Forms.TextBox txtFindNum;
         private System.Windows.Forms.Label lblFindNum;
     }

@@ -28,10 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FindSameCell));
             this.pnlGameDisplayGray = new System.Windows.Forms.Panel();
-            this.picVictory = new System.Windows.Forms.PictureBox();
             this.pnlGameDisplaySunFlower = new System.Windows.Forms.Panel();
             this.lblPosition = new System.Windows.Forms.Label();
             this.lblLevelOfGame = new System.Windows.Forms.Label();
@@ -48,9 +46,7 @@
             this.nudMinute = new System.Windows.Forms.NumericUpDown();
             this.btnEnd = new System.Windows.Forms.Button();
             this.btnStart = new System.Windows.Forms.Button();
-            this.tmrTimeToPlay = new System.Windows.Forms.Timer(this.components);
-            this.pnlGameDisplayGray.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picVictory)).BeginInit();
+            this.tmrTimeToPlay = new System.Windows.Forms.Timer();
             this.pnlGameDisplaySunFlower.SuspendLayout();
             this.pnlGameDisplayBlue.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudSecond)).BeginInit();
@@ -63,20 +59,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlGameDisplayGray.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(77)))), ((int)(((byte)(87)))));
-            this.pnlGameDisplayGray.Controls.Add(this.picVictory);
             this.pnlGameDisplayGray.Location = new System.Drawing.Point(4, 4);
             this.pnlGameDisplayGray.Name = "pnlGameDisplayGray";
             this.pnlGameDisplayGray.Size = new System.Drawing.Size(809, 654);
             this.pnlGameDisplayGray.TabIndex = 0;
-            // 
-            // picVictory
-            // 
-            this.picVictory.Location = new System.Drawing.Point(0, 0);
-            this.picVictory.Name = "picVictory";
-            this.picVictory.Size = new System.Drawing.Size(809, 654);
-            this.picVictory.TabIndex = 3;
-            this.picVictory.TabStop = false;
-            this.picVictory.Visible = false;
             // 
             // pnlGameDisplaySunFlower
             // 
@@ -271,8 +257,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Mr.X";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FindSameCell_FormClosed);
-            this.pnlGameDisplayGray.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.picVictory)).EndInit();
             this.pnlGameDisplaySunFlower.ResumeLayout(false);
             this.pnlGameDisplaySunFlower.PerformLayout();
             this.pnlGameDisplayBlue.ResumeLayout(false);
@@ -303,6 +287,5 @@
         private System.Windows.Forms.Timer tmrTimeToPlay;
         private System.Windows.Forms.Label lblLevelOfGame;
         private System.Windows.Forms.Label lblPosition;
-        private System.Windows.Forms.PictureBox picVictory;
     }
 }

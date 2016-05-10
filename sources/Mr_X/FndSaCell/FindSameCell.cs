@@ -316,11 +316,7 @@ namespace FndSaCell
                     check[ Int16.Parse(btnCircle[i][j].Name) ] = false;
                 }
 
-            if (yourScore >= scoreToPass)
-            {
-                trans.Invoke(1);
-                this.Close();
-            }
+            if (yourScore >= scoreToPass) trans.Invoke(1);           
             else trans.Invoke(0);
         }
 

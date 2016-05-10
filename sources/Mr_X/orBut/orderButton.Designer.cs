@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.pnlGameDisplayGray = new System.Windows.Forms.Panel();
             this.pnlGameDisplayYellow = new System.Windows.Forms.Panel();
             this.lblPosition = new System.Windows.Forms.Label();
             this.lblLevelOfGame = new System.Windows.Forms.Label();
@@ -42,22 +41,12 @@
             this.lblNameGame = new System.Windows.Forms.Label();
             this.btnStart = new System.Windows.Forms.Button();
             this.tmrTimeToPlay = new System.Windows.Forms.Timer(this.components);
+            this.pnlGameDisplayGray = new System.Windows.Forms.Panel();
             this.pnlGameDisplayYellow.SuspendLayout();
             this.pnlGameDisplayGreen.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudSecond)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudMinute)).BeginInit();
             this.SuspendLayout();
-            // 
-            // pnlGameDisplayGray
-            // 
-            this.pnlGameDisplayGray.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnlGameDisplayGray.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(239)))), ((int)(((byte)(247)))));
-            this.pnlGameDisplayGray.Location = new System.Drawing.Point(4, 4);
-            this.pnlGameDisplayGray.Name = "pnlGameDisplayGray";
-            this.pnlGameDisplayGray.Size = new System.Drawing.Size(809, 654);
-            this.pnlGameDisplayGray.TabIndex = 1;
             // 
             // pnlGameDisplayYellow
             // 
@@ -187,6 +176,17 @@
             this.tmrTimeToPlay.Interval = 1000;
             this.tmrTimeToPlay.Tick += new System.EventHandler(this.tmrTimeToPlay_Tick);
             // 
+            // pnlGameDisplayGray
+            // 
+            this.pnlGameDisplayGray.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlGameDisplayGray.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(239)))), ((int)(((byte)(247)))));
+            this.pnlGameDisplayGray.Location = new System.Drawing.Point(4, 4);
+            this.pnlGameDisplayGray.Name = "pnlGameDisplayGray";
+            this.pnlGameDisplayGray.Size = new System.Drawing.Size(809, 654);
+            this.pnlGameDisplayGray.TabIndex = 1;
+            // 
             // orderButton
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -215,7 +215,6 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel pnlGameDisplayGray;
         private System.Windows.Forms.Panel pnlGameDisplayYellow;
         private System.Windows.Forms.Label lblPosition;
         private System.Windows.Forms.Label lblLevelOfGame;
@@ -228,5 +227,6 @@
         private System.Windows.Forms.Label lblNameGame;
         private System.Windows.Forms.Button btnStart;
         private System.Windows.Forms.Timer tmrTimeToPlay;
+        private System.Windows.Forms.Panel pnlGameDisplayGray;
     }
 }

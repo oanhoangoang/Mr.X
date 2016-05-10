@@ -188,9 +188,9 @@ namespace FndDiCell
                         Different = randomNumber(1, 3);
                         if (Different == 1)
                         {
-                            if (kindOfgame == 1) Different = randomNumber(15, 20);
-                            else if (kindOfgame == 2) Different = randomNumber(13, 15);
-                            else Different = randomNumber(10, 12);
+                            if (kindOfgame == 1) Different = randomNumber(17, 20);
+                            else if (kindOfgame == 2) Different = randomNumber(15, 17);
+                            else Different = randomNumber(13, 15);
 
                             randomBtn[i][j].BackColor = Color.FromArgb(xDimension + Different, yDimension, zDimension);
                         }
@@ -316,11 +316,7 @@ namespace FndDiCell
             for (int i = 1; i <= sizeTable; i++)
                 for (int j = 1; j <= sizeTable; j++) randomBtn[i][j].Enabled = false;
 
-            if (yourScore >= scoreToPass)
-            {
-                trans.Invoke(1);
-                this.Close();
-            }
+            if (yourScore >= scoreToPass) trans.Invoke(1);         
             else trans.Invoke(0);   
         }
 

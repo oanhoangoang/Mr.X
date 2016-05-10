@@ -315,11 +315,7 @@ namespace RemMe
                     randomBtn[i][j].BackColor = ColorTranslator.FromHtml(arrayColor[original[value]]);
                 }
             
-            if (yourScore >= numberOfAnswer)
-            {
-                trans.Invoke(1);
-                this.Close();
-            }
+            if (yourScore >= numberOfAnswer) trans.Invoke(1);
             else trans.Invoke(0);      
         }
 

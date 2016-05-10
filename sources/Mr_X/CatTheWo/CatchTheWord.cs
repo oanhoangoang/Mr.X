@@ -16,7 +16,6 @@ namespace CatTheWo
 {
     public partial class CatchTheWord : Form
     {
-        
         // điểm qua vòng
         private int scoreToPass;
 
@@ -417,12 +416,7 @@ namespace CatTheWo
                 for (int j = 1; j <= 10; j++) keyboard[i][j].Visible = false;
             timeDelay(1400);
 
-            DialogResult dig;
-            if (yourScore >= scoreToPass)
-            {
-                trans.Invoke(1);
-                this.Close();
-            }
+            if (yourScore >= scoreToPass) trans.Invoke(1);
             else trans.Invoke(0);
         }
 

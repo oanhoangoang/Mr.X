@@ -1,0 +1,12 @@
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\test\follArrow\bin\Debug\follArrow.dll
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\test\follArrow\bin\Debug\follArrow.pdb
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\test\follArrow\obj\Debug\follArrow.csprojResolveAssemblyReference.cache
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\test\follArrow\obj\Debug\follArrow.followArrow.resources
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\test\follArrow\obj\Debug\follArrow.csproj.GenerateResource.Cache
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\test\follArrow\obj\Debug\follArrow.dll
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\test\follArrow\obj\Debug\follArrow.pdb
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\test\follArrow\bin\Debug\Interop.WMPLib.dll
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\test\follArrow\bin\Debug\AxInterop.WMPLib.dll
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\test\follArrow\obj\Debug\Interop.WMPLib.dll
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\test\follArrow\obj\Debug\AxInterop.WMPLib.dll
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\test\follArrow\obj\Debug\follArrow.csproj.ResolveComReference.cache
