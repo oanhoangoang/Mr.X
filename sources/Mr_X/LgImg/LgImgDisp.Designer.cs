@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LgImgDisp));
             this.pnlGameDisp = new System.Windows.Forms.Panel();
+            this.txtNoti = new System.Windows.Forms.TextBox();
             this.btnE = new System.Windows.Forms.Button();
             this.btnD = new System.Windows.Forms.Button();
             this.btnC = new System.Windows.Forms.Button();
@@ -49,7 +50,6 @@
             this.lblTimeCnt = new System.Windows.Forms.Label();
             this.lblTime = new System.Windows.Forms.Label();
             this.timer = new System.Windows.Forms.Timer(this.components);
-            this.txtNoti = new System.Windows.Forms.TextBox();
             this.pnlGameDisp.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic)).BeginInit();
             this.pnlPlayerInfo.SuspendLayout();
@@ -71,6 +71,17 @@
             this.pnlGameDisp.Name = "pnlGameDisp";
             this.pnlGameDisp.Size = new System.Drawing.Size(809, 654);
             this.pnlGameDisp.TabIndex = 0;
+            // 
+            // txtNoti
+            // 
+            this.txtNoti.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtNoti.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNoti.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(108)))), ((int)(((byte)(179)))));
+            this.txtNoti.Location = new System.Drawing.Point(120, 93);
+            this.txtNoti.Name = "txtNoti";
+            this.txtNoti.Size = new System.Drawing.Size(565, 23);
+            this.txtNoti.TabIndex = 7;
+            this.txtNoti.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // btnE
             // 
@@ -139,9 +150,10 @@
             // 
             // pic
             // 
-            this.pic.Location = new System.Drawing.Point(188, 154);
+            this.pic.Location = new System.Drawing.Point(100, 154);
             this.pic.Name = "pic";
-            this.pic.Size = new System.Drawing.Size(451, 293);
+            this.pic.Size = new System.Drawing.Size(641, 293);
+            this.pic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pic.TabIndex = 1;
             this.pic.TabStop = false;
             // 
@@ -275,17 +287,6 @@
             // 
             this.timer.Interval = 1000;
             this.timer.Tick += new System.EventHandler(this.timer_Tick);
-            // 
-            // txtNoti
-            // 
-            this.txtNoti.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtNoti.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNoti.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(108)))), ((int)(((byte)(179)))));
-            this.txtNoti.Location = new System.Drawing.Point(120, 93);
-            this.txtNoti.Name = "txtNoti";
-            this.txtNoti.Size = new System.Drawing.Size(565, 23);
-            this.txtNoti.TabIndex = 7;
-            this.txtNoti.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // LgImgDisp
             // 

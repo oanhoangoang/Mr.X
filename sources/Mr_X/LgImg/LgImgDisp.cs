@@ -19,9 +19,9 @@ namespace LgImg
         string strAns; // the Right Answer
         int sec; // second timer
 
-        SoundPlayer soundtrack = new SoundPlayer(@"sound/FstCal/Soundtrack1.wav");
-        SoundPlayer soundWin = new SoundPlayer(@"sound/FstCal/Win.wav");
-        SoundPlayer soundLose = new SoundPlayer(@"sound/FstCal/Lose.wav");
+        SoundPlayer soundtrack = new SoundPlayer(@"sound/LgImg/Soundtrack.wav");
+        SoundPlayer soundWin = new SoundPlayer(@"sound/LgImg/Win.wav");
+        SoundPlayer soundLose = new SoundPlayer(@"sound/LgImg/Lose.wav");
         //
         // Call Form
         //
@@ -57,15 +57,21 @@ namespace LgImg
             catch (Exception ex) { }
         }
 
-        private string[] linkImg = new string[2]{"picture/LgImg/1.jpg","picture/LgImg/2.jpg"};
-        private string[] ansImg = new string[2]{"D","B"};
+        private string[] linkImg = new string[26] { "picture/LgImg/1.jpg", "picture/LgImg/2.jpg", "picture/LgImg/3.jpg",
+            "picture/LgImg/4.jpg", "picture/LgImg/5.jpg", "picture/LgImg/6.jpg", "picture/LgImg/7.jpg",
+            "picture/LgImg/8.jpg", "picture/LgImg/9.jpg", "picture/LgImg/10.jpg", "picture/LgImg/11.jpg",
+            "picture/LgImg/12.jpg", "picture/LgImg/13.jpg", "picture/LgImg/14.jpg", "picture/LgImg/15.jpg",
+            "picture/LgImg/16.jpg", "picture/LgImg/17.jpg", "picture/LgImg/18.jpg", "picture/LgImg/19.jpg",
+            "picture/LgImg/20.jpg", "picture/LgImg/21.jpg", "picture/LgImg/22.jpg", "picture/LgImg/23.jpg",
+            "picture/LgImg/24.jpg", "picture/LgImg/25.jpg", "picture/LgImg/26.jpg"};
+        private string[] ansImg = new string[26]{"D","B","C","E","B","B","D","B","E","A","C","B","D","C","C","C","D","E","A","E","B","C","C","C","E","D"};
         //
         // Click button Start
         //
         private void btnStart_Click(object sender, EventArgs e)
         {
             Random rd = new Random();
-            int x = rd.Next(0, 100) % 2; // Load random Question and Answer
+            int x = rd.Next(0, 1000) % 26; // Load random Question and Answer
             strAns = ansImg[x];
             showImg(linkImg[x]);
 
