@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Level));
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.picBackgr = new System.Windows.Forms.PictureBox();
             this.btn27 = new System.Windows.Forms.Button();
             this.btn15 = new System.Windows.Forms.Button();
             this.btn18 = new System.Windows.Forms.Button();
@@ -61,25 +61,25 @@
             this.btn3 = new System.Windows.Forms.Button();
             this.btn30 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBackgr)).BeginInit();
             this.SuspendLayout();
             // 
-            // pictureBox1
+            // picBackgr
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1217, 663);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.picBackgr.BackColor = System.Drawing.Color.Transparent;
+            this.picBackgr.Image = ((System.Drawing.Image)(resources.GetObject("picBackgr.Image")));
+            this.picBackgr.Location = new System.Drawing.Point(0, 0);
+            this.picBackgr.Name = "picBackgr";
+            this.picBackgr.Size = new System.Drawing.Size(1217, 663);
+            this.picBackgr.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picBackgr.TabIndex = 0;
+            this.picBackgr.TabStop = false;
             // 
             // btn27
             // 
             this.btn27.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(110)))), ((int)(((byte)(123)))));
             this.btn27.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn27.Font = new System.Drawing.Font("Canter Outline", 14.25F);
+            this.btn27.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold);
             this.btn27.ForeColor = System.Drawing.Color.White;
             this.btn27.Location = new System.Drawing.Point(314, 122);
             this.btn27.Name = "btn27";
@@ -93,7 +93,7 @@
             // 
             this.btn15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(110)))), ((int)(((byte)(123)))));
             this.btn15.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn15.Font = new System.Drawing.Font("Canter Outline", 14.25F);
+            this.btn15.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold);
             this.btn15.ForeColor = System.Drawing.Color.White;
             this.btn15.Location = new System.Drawing.Point(314, 260);
             this.btn15.Name = "btn15";
@@ -107,7 +107,7 @@
             // 
             this.btn18.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(110)))), ((int)(((byte)(123)))));
             this.btn18.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn18.Font = new System.Drawing.Font("Canter Outline", 14.25F);
+            this.btn18.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold);
             this.btn18.ForeColor = System.Drawing.Color.White;
             this.btn18.Location = new System.Drawing.Point(435, 226);
             this.btn18.Name = "btn18";
@@ -121,7 +121,7 @@
             // 
             this.btn19.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(110)))), ((int)(((byte)(123)))));
             this.btn19.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn19.Font = new System.Drawing.Font("Canter Outline", 14.25F);
+            this.btn19.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold);
             this.btn19.ForeColor = System.Drawing.Color.White;
             this.btn19.Location = new System.Drawing.Point(356, 226);
             this.btn19.Name = "btn19";
@@ -135,7 +135,7 @@
             // 
             this.btn20.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(110)))), ((int)(((byte)(123)))));
             this.btn20.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn20.Font = new System.Drawing.Font("Canter Outline", 14.25F);
+            this.btn20.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold);
             this.btn20.ForeColor = System.Drawing.Color.White;
             this.btn20.Location = new System.Drawing.Point(277, 226);
             this.btn20.Name = "btn20";
@@ -149,7 +149,7 @@
             // 
             this.btn23.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(110)))), ((int)(((byte)(123)))));
             this.btn23.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn23.Font = new System.Drawing.Font("Canter Outline", 14.25F);
+            this.btn23.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold);
             this.btn23.ForeColor = System.Drawing.Color.White;
             this.btn23.Location = new System.Drawing.Point(472, 191);
             this.btn23.Name = "btn23";
@@ -163,7 +163,7 @@
             // 
             this.btn22.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(110)))), ((int)(((byte)(123)))));
             this.btn22.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn22.Font = new System.Drawing.Font("Canter Outline", 14.25F);
+            this.btn22.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold);
             this.btn22.ForeColor = System.Drawing.Color.White;
             this.btn22.Location = new System.Drawing.Point(393, 191);
             this.btn22.Name = "btn22";
@@ -177,7 +177,7 @@
             // 
             this.btn21.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(110)))), ((int)(((byte)(123)))));
             this.btn21.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn21.Font = new System.Drawing.Font("Canter Outline", 14.25F);
+            this.btn21.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold);
             this.btn21.ForeColor = System.Drawing.Color.White;
             this.btn21.Location = new System.Drawing.Point(314, 191);
             this.btn21.Name = "btn21";
@@ -191,7 +191,7 @@
             // 
             this.btn24.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(110)))), ((int)(((byte)(123)))));
             this.btn24.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn24.Font = new System.Drawing.Font("Canter Outline", 14.25F);
+            this.btn24.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold);
             this.btn24.ForeColor = System.Drawing.Color.White;
             this.btn24.Location = new System.Drawing.Point(435, 157);
             this.btn24.Name = "btn24";
@@ -205,7 +205,7 @@
             // 
             this.btn25.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(110)))), ((int)(((byte)(123)))));
             this.btn25.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn25.Font = new System.Drawing.Font("Canter Outline", 14.25F);
+            this.btn25.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold);
             this.btn25.ForeColor = System.Drawing.Color.White;
             this.btn25.Location = new System.Drawing.Point(356, 157);
             this.btn25.Name = "btn25";
@@ -219,7 +219,7 @@
             // 
             this.btn26.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(110)))), ((int)(((byte)(123)))));
             this.btn26.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn26.Font = new System.Drawing.Font("Canter Outline", 14.25F);
+            this.btn26.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold);
             this.btn26.ForeColor = System.Drawing.Color.White;
             this.btn26.Location = new System.Drawing.Point(277, 157);
             this.btn26.Name = "btn26";
@@ -233,7 +233,7 @@
             // 
             this.btn29.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(110)))), ((int)(((byte)(123)))));
             this.btn29.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn29.Font = new System.Drawing.Font("Canter Outline", 14.25F);
+            this.btn29.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold);
             this.btn29.ForeColor = System.Drawing.Color.White;
             this.btn29.Location = new System.Drawing.Point(472, 122);
             this.btn29.Name = "btn29";
@@ -247,7 +247,7 @@
             // 
             this.btn28.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(110)))), ((int)(((byte)(123)))));
             this.btn28.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn28.Font = new System.Drawing.Font("Canter Outline", 14.25F);
+            this.btn28.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold);
             this.btn28.ForeColor = System.Drawing.Color.White;
             this.btn28.Location = new System.Drawing.Point(393, 122);
             this.btn28.Name = "btn28";
@@ -261,7 +261,7 @@
             // 
             this.btn6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(110)))), ((int)(((byte)(123)))));
             this.btn6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn6.Font = new System.Drawing.Font("Canter Outline", 14.25F);
+            this.btn6.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold);
             this.btn6.ForeColor = System.Drawing.Color.White;
             this.btn6.Location = new System.Drawing.Point(435, 364);
             this.btn6.Name = "btn6";
@@ -275,7 +275,7 @@
             // 
             this.btn7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(110)))), ((int)(((byte)(123)))));
             this.btn7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn7.Font = new System.Drawing.Font("Canter Outline", 14.25F);
+            this.btn7.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold);
             this.btn7.ForeColor = System.Drawing.Color.White;
             this.btn7.Location = new System.Drawing.Point(356, 363);
             this.btn7.Name = "btn7";
@@ -289,7 +289,7 @@
             // 
             this.btn8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(110)))), ((int)(((byte)(123)))));
             this.btn8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn8.Font = new System.Drawing.Font("Canter Outline", 14.25F);
+            this.btn8.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold);
             this.btn8.ForeColor = System.Drawing.Color.White;
             this.btn8.Location = new System.Drawing.Point(277, 363);
             this.btn8.Name = "btn8";
@@ -303,7 +303,7 @@
             // 
             this.btn11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(110)))), ((int)(((byte)(123)))));
             this.btn11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn11.Font = new System.Drawing.Font("Canter Outline", 14.25F);
+            this.btn11.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold);
             this.btn11.ForeColor = System.Drawing.Color.White;
             this.btn11.Location = new System.Drawing.Point(472, 329);
             this.btn11.Name = "btn11";
@@ -317,7 +317,7 @@
             // 
             this.btn10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(110)))), ((int)(((byte)(123)))));
             this.btn10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn10.Font = new System.Drawing.Font("Canter Outline", 14.25F);
+            this.btn10.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn10.ForeColor = System.Drawing.Color.White;
             this.btn10.Location = new System.Drawing.Point(393, 329);
             this.btn10.Name = "btn10";
@@ -331,7 +331,7 @@
             // 
             this.btn9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(110)))), ((int)(((byte)(123)))));
             this.btn9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn9.Font = new System.Drawing.Font("Canter Outline", 14.25F);
+            this.btn9.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold);
             this.btn9.ForeColor = System.Drawing.Color.White;
             this.btn9.Location = new System.Drawing.Point(314, 329);
             this.btn9.Name = "btn9";
@@ -345,7 +345,7 @@
             // 
             this.btn12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(110)))), ((int)(((byte)(123)))));
             this.btn12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn12.Font = new System.Drawing.Font("Canter Outline", 14.25F);
+            this.btn12.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold);
             this.btn12.ForeColor = System.Drawing.Color.White;
             this.btn12.Location = new System.Drawing.Point(435, 295);
             this.btn12.Name = "btn12";
@@ -359,7 +359,7 @@
             // 
             this.btn13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(110)))), ((int)(((byte)(123)))));
             this.btn13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn13.Font = new System.Drawing.Font("Canter Outline", 14.25F);
+            this.btn13.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold);
             this.btn13.ForeColor = System.Drawing.Color.White;
             this.btn13.Location = new System.Drawing.Point(356, 295);
             this.btn13.Name = "btn13";
@@ -373,7 +373,7 @@
             // 
             this.btn14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(110)))), ((int)(((byte)(123)))));
             this.btn14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn14.Font = new System.Drawing.Font("Canter Outline", 14.25F);
+            this.btn14.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold);
             this.btn14.ForeColor = System.Drawing.Color.White;
             this.btn14.Location = new System.Drawing.Point(277, 295);
             this.btn14.Name = "btn14";
@@ -387,7 +387,7 @@
             // 
             this.btn17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(110)))), ((int)(((byte)(123)))));
             this.btn17.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn17.Font = new System.Drawing.Font("Canter Outline", 14.25F);
+            this.btn17.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold);
             this.btn17.ForeColor = System.Drawing.Color.White;
             this.btn17.Location = new System.Drawing.Point(472, 260);
             this.btn17.Name = "btn17";
@@ -401,7 +401,7 @@
             // 
             this.btn16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(110)))), ((int)(((byte)(123)))));
             this.btn16.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn16.Font = new System.Drawing.Font("Canter Outline", 14.25F);
+            this.btn16.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold);
             this.btn16.ForeColor = System.Drawing.Color.White;
             this.btn16.Location = new System.Drawing.Point(393, 260);
             this.btn16.Name = "btn16";
@@ -415,7 +415,7 @@
             // 
             this.btn1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(151)))), ((int)(((byte)(191)))));
             this.btn1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn1.Font = new System.Drawing.Font("Canter Outline", 14.25F);
+            this.btn1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn1.ForeColor = System.Drawing.Color.White;
             this.btn1.Location = new System.Drawing.Point(356, 433);
             this.btn1.Name = "btn1";
@@ -430,7 +430,7 @@
             this.btn2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(110)))), ((int)(((byte)(123)))));
             this.btn2.Enabled = false;
             this.btn2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn2.Font = new System.Drawing.Font("Canter Outline", 14.25F);
+            this.btn2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold);
             this.btn2.ForeColor = System.Drawing.Color.White;
             this.btn2.Location = new System.Drawing.Point(277, 433);
             this.btn2.Name = "btn2";
@@ -444,7 +444,7 @@
             // 
             this.btn5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(110)))), ((int)(((byte)(123)))));
             this.btn5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn5.Font = new System.Drawing.Font("Canter Outline", 14.25F);
+            this.btn5.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold);
             this.btn5.ForeColor = System.Drawing.Color.White;
             this.btn5.Location = new System.Drawing.Point(472, 398);
             this.btn5.Name = "btn5";
@@ -458,7 +458,7 @@
             // 
             this.btn4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(110)))), ((int)(((byte)(123)))));
             this.btn4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn4.Font = new System.Drawing.Font("Canter Outline", 14.25F);
+            this.btn4.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold);
             this.btn4.ForeColor = System.Drawing.Color.White;
             this.btn4.Location = new System.Drawing.Point(393, 398);
             this.btn4.Name = "btn4";
@@ -472,7 +472,7 @@
             // 
             this.btn3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(110)))), ((int)(((byte)(123)))));
             this.btn3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn3.Font = new System.Drawing.Font("Canter Outline", 14.25F);
+            this.btn3.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold);
             this.btn3.ForeColor = System.Drawing.Color.White;
             this.btn3.Location = new System.Drawing.Point(314, 398);
             this.btn3.Name = "btn3";
@@ -486,11 +486,11 @@
             // 
             this.btn30.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(148)))), ((int)(((byte)(6)))));
             this.btn30.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn30.Font = new System.Drawing.Font("Canter Bold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn30.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn30.ForeColor = System.Drawing.Color.White;
-            this.btn30.Location = new System.Drawing.Point(356, 87);
+            this.btn30.Location = new System.Drawing.Point(342, 87);
             this.btn30.Name = "btn30";
-            this.btn30.Size = new System.Drawing.Size(72, 32);
+            this.btn30.Size = new System.Drawing.Size(97, 32);
             this.btn30.TabIndex = 30;
             this.btn30.Text = "30. Boss";
             this.btn30.UseVisualStyleBackColor = false;
@@ -541,10 +541,10 @@
             this.Controls.Add(this.btn18);
             this.Controls.Add(this.btn15);
             this.Controls.Add(this.btn27);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.picBackgr);
             this.Name = "Level";
             this.Size = new System.Drawing.Size(1217, 663);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBackgr)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -552,7 +552,7 @@
 
         #endregion
 
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox picBackgr;
         private System.Windows.Forms.Button btn27;
         private System.Windows.Forms.Button btn15;
         private System.Windows.Forms.Button btn18;

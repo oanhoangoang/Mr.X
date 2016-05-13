@@ -12,20 +12,22 @@
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <IsWebBootstrapper>false</IsWebBootstrapper>
-    <PublishUrl>C:\Users\Oanh Pham\Desktop\Mr.X Beta\</PublishUrl>
+    <PublishUrl>C:\Users\Oanh Pham\Desktop\Mr.X ver Beta \</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
-    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateEnabled>true</UpdateEnabled>
     <UpdateMode>Foreground</UpdateMode>
     <UpdateInterval>7</UpdateInterval>
     <UpdateIntervalUnits>Days</UpdateIntervalUnits>
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
+    <UpdateUrl>http://localhost/Mr_X/</UpdateUrl>
     <ProductName>Mr.X</ProductName>
     <PublisherName>Fantastic 4</PublisherName>
-    <ApplicationRevision>2</ApplicationRevision>
-    <ApplicationVersion>0.0.1.%2a</ApplicationVersion>
+    <AutorunEnabled>true</AutorunEnabled>
+    <ApplicationRevision>4</ApplicationRevision>
+    <ApplicationVersion>1.0.1.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
@@ -95,6 +97,12 @@
     <Compile Include="Level.Designer.cs">
       <DependentUpon>Level.cs</DependentUpon>
     </Compile>
+    <Compile Include="OptionDisplay.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="OptionDisplay.Designer.cs">
+      <DependentUpon>OptionDisplay.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Main.resx">
@@ -106,6 +114,9 @@
     <EmbeddedResource Include="Level.resx">
       <DependentUpon>Level.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="OptionDisplay.resx">
+      <DependentUpon>OptionDisplay.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -115,6 +126,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="ClassDiagram1.cd" />
     <None Include="Mr_X_TemporaryKey.pfx" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -130,6 +142,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\ArrMsc\ArrMsc.csproj">
+      <Project>{efa4eba0-a3bc-43bc-a7d3-a4145e156d19}</Project>
+      <Name>ArrMsc</Name>
+    </ProjectReference>
     <ProjectReference Include="..\CalExpression\CalExpression\CalExpression.csproj">
       <Project>{f045c065-bf0a-4da2-8c34-2778961ff12a}</Project>
       <Name>CalExpression</Name>
@@ -154,6 +170,10 @@
       <Project>{ea9739ae-4eb0-4133-8d30-cf5a04bcc6da}</Project>
       <Name>FndSaCell</Name>
     </ProjectReference>
+    <ProjectReference Include="..\frPlayMo\frPlayMo.csproj">
+      <Project>{379334e6-eaf3-4d7b-b512-361c0d101367}</Project>
+      <Name>frPlayMo</Name>
+    </ProjectReference>
     <ProjectReference Include="..\FstCal\FstCal.csproj">
       <Project>{409fc21f-1256-41b9-b418-82caf907810f}</Project>
       <Name>FstCal</Name>
@@ -166,9 +186,9 @@
       <Project>{a92e8cd4-00f9-44f3-8e18-fa26072eb110}</Project>
       <Name>orBut</Name>
     </ProjectReference>
-    <ProjectReference Include="..\PingPong\PingPong.csproj">
-      <Project>{7d5ad486-b285-4dff-9fbc-d4fa1f4426f0}</Project>
-      <Name>PingPong</Name>
+    <ProjectReference Include="..\PiPo\PiPo.csproj">
+      <Project>{609d41ec-f7d4-4a1f-8e6d-7551fb81f10d}</Project>
+      <Name>PiPo</Name>
     </ProjectReference>
     <ProjectReference Include="..\Prime\Prime\Prime.csproj">
       <Project>{da5d896b-f54f-49cb-aa13-60ff33c356af}</Project>

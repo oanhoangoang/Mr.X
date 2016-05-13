@@ -55,13 +55,13 @@
             this.btnSkip.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnSkip.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(122)))), ((int)(((byte)(137)))));
             this.btnSkip.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnSkip.Font = new System.Drawing.Font("Caviar Dreams", 18F);
+            this.btnSkip.Font = new System.Drawing.Font("Corbel", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSkip.ForeColor = System.Drawing.Color.LightGray;
-            this.btnSkip.Location = new System.Drawing.Point(1072, 590);
+            this.btnSkip.Location = new System.Drawing.Point(568, 315);
             this.btnSkip.Name = "btnSkip";
-            this.btnSkip.Size = new System.Drawing.Size(109, 43);
+            this.btnSkip.Size = new System.Drawing.Size(115, 47);
             this.btnSkip.TabIndex = 1;
-            this.btnSkip.Text = "Skip";
+            this.btnSkip.Text = "Bỏ qua";
             this.btnSkip.UseVisualStyleBackColor = false;
             this.btnSkip.Click += new System.EventHandler(this.btnSkip_Click);
             // 
@@ -81,7 +81,7 @@
             this.lblDescription.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(49)))), ((int)(((byte)(63)))));
             this.lblDescription.Location = new System.Drawing.Point(2, 223);
             this.lblDescription.Name = "lblDescription";
-            this.lblDescription.Size = new System.Drawing.Size(580, 405);
+            this.lblDescription.Size = new System.Drawing.Size(580, 369);
             this.lblDescription.TabIndex = 0;
             this.lblDescription.Text = resources.GetString("lblDescription.Text");
             // 

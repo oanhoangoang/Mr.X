@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.ucIntro = new Mr_X.Intro();
-            this.ucLevel = new Mr_X.Level();
+            this.optionDisplay1 = new Mr_X.OptionDisplay();
             this.SuspendLayout();
             // 
             // ucIntro
@@ -40,14 +40,14 @@
             this.ucIntro.Name = "ucIntro";
             this.ucIntro.Size = new System.Drawing.Size(1217, 663);
             this.ucIntro.TabIndex = 0;
-            this.ucIntro.Load += new System.EventHandler(this.intro1_Load);
             // 
-            // ucLevel
+            // optionDisplay1
             // 
-            this.ucLevel.Location = new System.Drawing.Point(0, 0);
-            this.ucLevel.Name = "ucLevel";
-            this.ucLevel.Size = new System.Drawing.Size(1217, 663);
-            this.ucLevel.TabIndex = 1;
+            this.optionDisplay1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("optionDisplay1.BackgroundImage")));
+            this.optionDisplay1.Location = new System.Drawing.Point(0, 0);
+            this.optionDisplay1.Name = "optionDisplay1";
+            this.optionDisplay1.Size = new System.Drawing.Size(1217, 663);
+            this.optionDisplay1.TabIndex = 2;
             // 
             // Main
             // 
@@ -55,7 +55,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1217, 663);
             this.Controls.Add(this.ucIntro);
-            this.Controls.Add(this.ucLevel);
+            this.Controls.Add(this.optionDisplay1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Main";
@@ -69,6 +69,7 @@
 
         private Intro ucIntro;
         private Level ucLevel;
+        private OptionDisplay optionDisplay1;
 
 
     }

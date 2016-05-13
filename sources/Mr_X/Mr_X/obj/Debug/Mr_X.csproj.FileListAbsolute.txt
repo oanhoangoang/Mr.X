@@ -37,7 +37,6 @@ D:\PROJECT\trunk\sources\Mr_X\Mr_X\bin\Debug\FndSaCell.dll
 D:\PROJECT\trunk\sources\Mr_X\Mr_X\bin\Debug\FstCal.dll
 D:\PROJECT\trunk\sources\Mr_X\Mr_X\bin\Debug\RemMe.dll
 D:\PROJECT\trunk\sources\Mr_X\Mr_X\bin\Debug\Interop.WMPLib.dll
-D:\PROJECT\trunk\sources\Mr_X\Mr_X\bin\Debug\AxInterop.WMPLib.dll
 D:\PROJECT\trunk\sources\Mr_X\Mr_X\bin\Debug\CalExpression.pdb
 D:\PROJECT\trunk\sources\Mr_X\Mr_X\bin\Debug\FndNum.pdb
 D:\PROJECT\trunk\sources\Mr_X\Mr_X\bin\Debug\FndSaCell.pdb
@@ -56,9 +55,7 @@ D:\PROJECT\trunk\sources\Mr_X\Mr_X\bin\Debug\Mr_X.application
 D:\PROJECT\trunk\sources\Mr_X\Mr_X\obj\Debug\Mr_X.exe.manifest
 D:\PROJECT\trunk\sources\Mr_X\Mr_X\obj\Debug\Mr_X.application
 D:\PROJECT\trunk\sources\Mr_X\Mr_X\bin\Debug\CatTheWo.dll
-D:\PROJECT\trunk\sources\Mr_X\Mr_X\bin\Debug\PingPong.cs.dll
 D:\PROJECT\trunk\sources\Mr_X\Mr_X\bin\Debug\CatTheWo.pdb
-D:\PROJECT\trunk\sources\Mr_X\Mr_X\bin\Debug\PingPong.cs.pdb
 D:\PROJECT\trunk\sources\Mr_X\Mr_X\bin\Debug\ChseNum.dll
 D:\PROJECT\trunk\sources\Mr_X\Mr_X\bin\Debug\FndDiCell.dll
 D:\PROJECT\trunk\sources\Mr_X\Mr_X\bin\Debug\Prime.dll
@@ -69,3 +66,11 @@ D:\PROJECT\trunk\sources\Mr_X\Mr_X\bin\Debug\LgImg.dll
 D:\PROJECT\trunk\sources\Mr_X\Mr_X\bin\Debug\LgImg.pdb
 D:\PROJECT\trunk\sources\Mr_X\Mr_X\bin\Debug\OrBut.dll
 D:\PROJECT\trunk\sources\Mr_X\Mr_X\bin\Debug\OrBut.pdb
+D:\PROJECT\trunk\sources\Mr_X\Mr_X\bin\Debug\PiPo.dll
+D:\PROJECT\trunk\sources\Mr_X\Mr_X\bin\Debug\PiPo.pdb
+D:\PROJECT\trunk\sources\Mr_X\Mr_X\obj\Debug\Mr_X.OptionDisplay.resources
+D:\PROJECT\trunk\sources\Mr_X\Mr_X\bin\Debug\ArrMsc.dll
+D:\PROJECT\trunk\sources\Mr_X\Mr_X\bin\Debug\frPlayMo.dll
+D:\PROJECT\trunk\sources\Mr_X\Mr_X\bin\Debug\AxInterop.WMPLib.dll
+D:\PROJECT\trunk\sources\Mr_X\Mr_X\bin\Debug\ArrMsc.pdb
+D:\PROJECT\trunk\sources\Mr_X\Mr_X\bin\Debug\frPlayMo.pdb

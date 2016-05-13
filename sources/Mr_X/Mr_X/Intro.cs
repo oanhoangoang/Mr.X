@@ -25,16 +25,13 @@ namespace Mr_X
         {
 
         }
-        //private int i = 2;
+        private int picMove = 2;
         private void tmrDescription_Tick(object sender, EventArgs e)
         {
             lblDescription.Top -= 1;
-            
-            //picBackGr.Left += i;
-            //if (picBackGr.Left >=0 || picBackGr.Right <=-50)
-            //{
-            //    i = -i;
-            //}
+            if (lblDescription.Top == -360) 
+                this.Hide();        
+           
         }
 
         private void btnSkip_Click(object sender, EventArgs e)

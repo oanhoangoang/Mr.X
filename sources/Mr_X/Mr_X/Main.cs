@@ -19,15 +19,8 @@ namespace Mr_X
 
         
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        public void intro1_Load(object sender, EventArgs e)
-        {
-            
-        }
+        
+        
 
         
     }
