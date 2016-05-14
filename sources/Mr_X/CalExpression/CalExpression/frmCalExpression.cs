@@ -56,8 +56,16 @@ namespace CalExpression
             btnGame1.Enabled = false;
             btnGame2.Enabled = false;
             btnGame3.Enabled = false;
-            btnBackToMenu.Visible = false;
             
+            if (sound) enableSound();
+
+            // earse border of balloon button 
+            btnGame1.FlatStyle = FlatStyle.Flat;
+            btnGame1.FlatAppearance.BorderSize = 0;
+            btnGame2.FlatStyle = FlatStyle.Flat;
+            btnGame2.FlatAppearance.BorderSize = 0;
+            btnGame3.FlatStyle = FlatStyle.Flat;
+            btnGame3.FlatAppearance.BorderSize = 0;
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -85,42 +93,60 @@ namespace CalExpression
 
         }
         int sec;
+        int dem = 0;
         private void btnStart_Click(object sender, EventArgs e)
         {
-            // earse border of balloon button 
-            btnGame1.FlatStyle = FlatStyle.Flat;
-            btnGame1.FlatAppearance.BorderSize = 0;
-            btnGame2.FlatStyle = FlatStyle.Flat;
-            btnGame2.FlatAppearance.BorderSize = 0;
-            btnGame3.FlatStyle = FlatStyle.Flat;
-            btnGame3.FlatAppearance.BorderSize = 0;
+            dem++;
+            if (dem >= 1) btnStart.Text = "Chơi lại";
             // choose kind Of Game
             chooseValue();
             enter(); // xu ly Game
-            btnStart.Visible = false;
+            
 
             // start to count down time
             lblTime.Text = "20";
             sec = int.Parse(lblTime.Text);
             timer.Start();
             /////
+            btnGame1.Visible = true;
+            btnGame2.Visible = true;
+            btnGame3.Visible = true;
             btnGame1.Enabled = true;
             btnGame2.Enabled = true;
             btnGame3.Enabled = true;
-
-            // start to play music
-            if (sound) enableSound();
+            lblGameTitle.Visible = true;
+            lblNotiWin.Visible = false;
+            lblNotiLose.Visible = false;
+            picNotiWinLose.Visible = false;
+            ///
+            ok = false;
             
+        }
+        private void hideButton()
+        {
+            btnGame1.Visible = false;
+            btnGame2.Visible = false;
+            btnGame3.Visible = false;
+            lblGameTitle.Visible = false;
+            picNotiWinLose.Visible = true;
         }
         private void thongBaoWrong()
         {
-            MessageBox.Show("Chia buồn bạn đã thua,não bạn chưa đủ nếp nhăn", "Thông báo");
+          //  MessageBox.Show("Chia buồn bạn đã thua,não bạn chưa đủ nếp nhăn", "Thông báo");
+            lblNotiLose.Visible = true;
+            hideButton();
+            picNotiWinLose.Image = CalExpression.Properties.Resources.cry;
+            lblNotiLose.Text = "Chia buồn nhé! Không được thăng chức rồi!";
         }
         private void thongBaoRight()
         {
-            MessageBox.Show("Cũng có não ấy nhỉ, chúc mừng bạn đã qua màn", "Thông báo");
+           // MessageBox.Show("Cũng có não ấy nhỉ, chúc mừng bạn đã qua màn", "Thông báo");
+            lblNotiWin.Visible = true;
+            hideButton();
+            picNotiWinLose.Image = CalExpression.Properties.Resources.thangchuc;
+            lblNotiWin.Text = "Chúc mừng, thăng chức rồi nhé!";
         }
-        bool ok = true; // check user win or lose
+        bool ok = false; // check user win or lose
         private void timer_Tick(object sender, EventArgs e)
         {
             lblTime.Text = sec.ToString();
@@ -131,36 +157,23 @@ namespace CalExpression
                 timer.Stop();
                 btnGame1.Enabled = false;
                 btnGame2.Enabled = false;
-                btnGame3.Enabled = false;
-                btnBackToMenu.Enabled = true;
+                btnGame3.Enabled = false;             
 
                 thongBaoWrong();
             }
         }
 
-        private void toolTip1_Popup(object sender, PopupEventArgs e)
-        {
-
-        }
-       
         private void btnGame1_Click(object sender, EventArgs e)
         {
             timer.Stop();
-            if (1 != rightValue) { ok = false; thongBaoWrong(); } else thongBaoRight();  
+            if (1 != rightValue) { ok = false; thongBaoWrong(); } 
+                else { ok = true; thongBaoRight(); }  
             btnGame2.Enabled = false;
             btnGame1.Enabled = false;
             btnGame3.Enabled = false;
-            btnBackToMenu.Visible = true;
+            
         }
-       
-
-
-        
-        private void btnGame3_MouseHover(object sender, EventArgs e)
-        {
-
-        }
-
+     
         private void btnGame1_MouseMove(object sender, MouseEventArgs e)
         {
             btnGame1.BackgroundImage = ((System.Drawing.Image)(Properties.Resources.img2));
@@ -195,19 +208,21 @@ namespace CalExpression
         private void btnGame2_Click(object sender, EventArgs e)
         {
             timer.Stop();
-            if (2 != rightValue) { ok = false; thongBaoWrong(); } else thongBaoRight(); 
+            if (2 != rightValue) { ok = false; thongBaoWrong(); } 
+                else { ok = true; thongBaoRight(); }
             
             btnGame1.Enabled = false;
             btnGame2.Enabled = false;
             btnGame3.Enabled = false;
-            btnBackToMenu.Visible = true;
+            
         }
 
         private void btnGame3_Click(object sender, EventArgs e)
         {
             timer.Stop();
-            if (3 != rightValue) { ok = false; thongBaoWrong(); } else thongBaoRight();
-            btnBackToMenu.Visible = true;
+            if (3 != rightValue) { ok = false; thongBaoWrong(); }
+            else { ok = true; thongBaoRight(); }
+            
             btnGame1.Enabled = false;
             btnGame2.Enabled = false;
             btnGame3.Enabled = false;
@@ -235,15 +250,25 @@ namespace CalExpression
 
         private void frmGameTinhBieuThuc_FormClosed(object sender, FormClosedEventArgs e)
         {
-            ok = false;
+            
             if (sec >= 0)
             { timer.Stop(); }
-           // if (ok) trans.Invoke(1); else trans.Invoke(0);
+            if (ok) trans.Invoke(1); else trans.Invoke(0);
             setAns(ok);
             player.close();
         }
 
         private void lblTime_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblChucVuInput_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblNotiLose_Click(object sender, EventArgs e)
         {
 
         }

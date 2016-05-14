@@ -74,3 +74,15 @@ E:\CAM XOA\Mr.X.git\trunk\sources\Mr_X\CalExpression\CalExpression\obj\Debug\Cal
 E:\CAM XOA\Mr.X.git\trunk\sources\Mr_X\CalExpression\CalExpression\obj\Debug\CalExpression.csproj.GenerateResource.Cache
 E:\CAM XOA\Mr.X.git\trunk\sources\Mr_X\CalExpression\CalExpression\obj\Debug\CalExpression.dll
 E:\CAM XOA\Mr.X.git\trunk\sources\Mr_X\CalExpression\CalExpression\obj\Debug\CalExpression.pdb
+E:\Mr.X.git\trunk\sources\Mr_X\CalExpression\CalExpression\bin\Debug\CalExpression.dll
+E:\Mr.X.git\trunk\sources\Mr_X\CalExpression\CalExpression\bin\Debug\CalExpression.pdb
+E:\Mr.X.git\trunk\sources\Mr_X\CalExpression\CalExpression\bin\Debug\Interop.WMPLib.dll
+E:\Mr.X.git\trunk\sources\Mr_X\CalExpression\CalExpression\bin\Debug\AxInterop.WMPLib.dll
+E:\Mr.X.git\trunk\sources\Mr_X\CalExpression\CalExpression\obj\Debug\Interop.WMPLib.dll
+E:\Mr.X.git\trunk\sources\Mr_X\CalExpression\CalExpression\obj\Debug\AxInterop.WMPLib.dll
+E:\Mr.X.git\trunk\sources\Mr_X\CalExpression\CalExpression\obj\Debug\CalExpression.csproj.ResolveComReference.cache
+E:\Mr.X.git\trunk\sources\Mr_X\CalExpression\CalExpression\obj\Debug\CalExpression.frmCalExpression.resources
+E:\Mr.X.git\trunk\sources\Mr_X\CalExpression\CalExpression\obj\Debug\CalExpression.Properties.Resources.resources
+E:\Mr.X.git\trunk\sources\Mr_X\CalExpression\CalExpression\obj\Debug\CalExpression.csproj.GenerateResource.Cache
+E:\Mr.X.git\trunk\sources\Mr_X\CalExpression\CalExpression\obj\Debug\CalExpression.dll
+E:\Mr.X.git\trunk\sources\Mr_X\CalExpression\CalExpression\obj\Debug\CalExpression.pdb

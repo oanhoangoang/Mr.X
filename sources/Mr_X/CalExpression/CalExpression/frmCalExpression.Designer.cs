@@ -167,13 +167,17 @@ namespace CalExpression
             this.lblLevel = new System.Windows.Forms.Label();
             this.lblGameTitle = new System.Windows.Forms.Label();
             this.pnGameDis = new System.Windows.Forms.Panel();
+            this.timer = new System.Windows.Forms.Timer(this.components);
+            this.lblNotiLose = new System.Windows.Forms.Label();
+            this.lblNotiWin = new System.Windows.Forms.Label();
+            this.picNotiWinLose = new System.Windows.Forms.PictureBox();
             this.btnGame3 = new System.Windows.Forms.Button();
             this.btnGame2 = new System.Windows.Forms.Button();
             this.btnGame1 = new System.Windows.Forms.Button();
-            this.timer = new System.Windows.Forms.Timer(this.components);
             this.pnGameData.SuspendLayout();
             this.pnInfoUser.SuspendLayout();
             this.pnGameDis.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picNotiWinLose)).BeginInit();
             this.SuspendLayout();
             // 
             // pnGameData
@@ -199,9 +203,9 @@ namespace CalExpression
             this.btnBackToMenu.FlatAppearance.BorderSize = 0;
             this.btnBackToMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBackToMenu.ForeColor = System.Drawing.Color.White;
-            this.btnBackToMenu.Location = new System.Drawing.Point(104, 163);
+            this.btnBackToMenu.Location = new System.Drawing.Point(223, 178);
             this.btnBackToMenu.Name = "btnBackToMenu";
-            this.btnBackToMenu.Size = new System.Drawing.Size(199, 87);
+            this.btnBackToMenu.Size = new System.Drawing.Size(127, 87);
             this.btnBackToMenu.TabIndex = 7;
             this.btnBackToMenu.Text = "Trở về màn hình chính";
             this.btnBackToMenu.UseVisualStyleBackColor = false;
@@ -224,9 +228,9 @@ namespace CalExpression
             this.btnStart.FlatAppearance.BorderSize = 0;
             this.btnStart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnStart.ForeColor = System.Drawing.Color.White;
-            this.btnStart.Location = new System.Drawing.Point(104, 163);
+            this.btnStart.Location = new System.Drawing.Point(53, 178);
             this.btnStart.Name = "btnStart";
-            this.btnStart.Size = new System.Drawing.Size(199, 87);
+            this.btnStart.Size = new System.Drawing.Size(127, 87);
             this.btnStart.TabIndex = 5;
             this.btnStart.Text = "Bắt đầu";
             this.btnStart.UseVisualStyleBackColor = false;
@@ -249,7 +253,7 @@ namespace CalExpression
             this.lblGiay.AutoSize = true;
             this.lblGiay.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblGiay.ForeColor = System.Drawing.Color.White;
-            this.lblGiay.Location = new System.Drawing.Point(219, 71);
+            this.lblGiay.Location = new System.Drawing.Point(205, 71);
             this.lblGiay.Name = "lblGiay";
             this.lblGiay.Size = new System.Drawing.Size(51, 24);
             this.lblGiay.TabIndex = 3;
@@ -287,33 +291,34 @@ namespace CalExpression
             // lblChucVuInput
             // 
             this.lblChucVuInput.AutoSize = true;
-            this.lblChucVuInput.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblChucVuInput.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblChucVuInput.ForeColor = System.Drawing.Color.White;
-            this.lblChucVuInput.Location = new System.Drawing.Point(148, 168);
+            this.lblChucVuInput.Location = new System.Drawing.Point(160, 168);
             this.lblChucVuInput.Name = "lblChucVuInput";
-            this.lblChucVuInput.Size = new System.Drawing.Size(66, 24);
+            this.lblChucVuInput.Size = new System.Drawing.Size(76, 25);
             this.lblChucVuInput.TabIndex = 3;
             this.lblChucVuInput.Text = "label1";
+            this.lblChucVuInput.Click += new System.EventHandler(this.lblChucVuInput_Click);
             // 
             // lblLevelInput
             // 
             this.lblLevelInput.AutoSize = true;
-            this.lblLevelInput.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLevelInput.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLevelInput.ForeColor = System.Drawing.Color.White;
-            this.lblLevelInput.Location = new System.Drawing.Point(148, 113);
+            this.lblLevelInput.Location = new System.Drawing.Point(156, 113);
             this.lblLevelInput.Name = "lblLevelInput";
-            this.lblLevelInput.Size = new System.Drawing.Size(66, 24);
+            this.lblLevelInput.Size = new System.Drawing.Size(76, 25);
             this.lblLevelInput.TabIndex = 2;
             this.lblLevelInput.Text = "label1";
             // 
             // lblChucVu
             // 
             this.lblChucVu.AutoSize = true;
-            this.lblChucVu.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblChucVu.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblChucVu.ForeColor = System.Drawing.Color.White;
             this.lblChucVu.Location = new System.Drawing.Point(49, 168);
             this.lblChucVu.Name = "lblChucVu";
-            this.lblChucVu.Size = new System.Drawing.Size(93, 24);
+            this.lblChucVu.Size = new System.Drawing.Size(105, 25);
             this.lblChucVu.TabIndex = 1;
             this.lblChucVu.Text = "Chức vụ:";
             this.lblChucVu.Click += new System.EventHandler(this.label1_Click_1);
@@ -321,12 +326,12 @@ namespace CalExpression
             // lblLevel
             // 
             this.lblLevel.AutoSize = true;
-            this.lblLevel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLevel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLevel.ForeColor = System.Drawing.Color.White;
             this.lblLevel.Location = new System.Drawing.Point(49, 113);
             this.lblLevel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblLevel.Name = "lblLevel";
-            this.lblLevel.Size = new System.Drawing.Size(66, 24);
+            this.lblLevel.Size = new System.Drawing.Size(76, 25);
             this.lblLevel.TabIndex = 0;
             this.lblLevel.Text = "Level:";
             this.lblLevel.Click += new System.EventHandler(this.label1_Click);
@@ -348,6 +353,9 @@ namespace CalExpression
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnGameDis.BackColor = System.Drawing.Color.White;
+            this.pnGameDis.Controls.Add(this.picNotiWinLose);
+            this.pnGameDis.Controls.Add(this.lblNotiWin);
+            this.pnGameDis.Controls.Add(this.lblNotiLose);
             this.pnGameDis.Controls.Add(this.btnGame3);
             this.pnGameDis.Controls.Add(this.btnGame2);
             this.pnGameDis.Controls.Add(this.btnGame1);
@@ -358,6 +366,47 @@ namespace CalExpression
             this.pnGameDis.Size = new System.Drawing.Size(809, 654);
             this.pnGameDis.TabIndex = 0;
             this.pnGameDis.Paint += new System.Windows.Forms.PaintEventHandler(this.pnGameDis_Paint);
+            // 
+            // timer
+            // 
+            this.timer.Interval = 800;
+            this.timer.Tick += new System.EventHandler(this.timer_Tick);
+            // 
+            // lblNotiLose
+            // 
+            this.lblNotiLose.AutoSize = true;
+            this.lblNotiLose.BackColor = System.Drawing.Color.White;
+            this.lblNotiLose.Font = new System.Drawing.Font("Monotype Corsiva", 24F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNotiLose.ForeColor = System.Drawing.Color.Red;
+            this.lblNotiLose.Location = new System.Drawing.Point(123, 389);
+            this.lblNotiLose.Name = "lblNotiLose";
+            this.lblNotiLose.Size = new System.Drawing.Size(84, 39);
+            this.lblNotiLose.TabIndex = 4;
+            this.lblNotiLose.Text = "label1";
+            this.lblNotiLose.Visible = false;
+            this.lblNotiLose.Click += new System.EventHandler(this.lblNotiLose_Click);
+            // 
+            // lblNotiWin
+            // 
+            this.lblNotiWin.AutoSize = true;
+            this.lblNotiWin.Font = new System.Drawing.Font("Monotype Corsiva", 24F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNotiWin.ForeColor = System.Drawing.Color.Red;
+            this.lblNotiWin.Location = new System.Drawing.Point(199, 389);
+            this.lblNotiWin.Name = "lblNotiWin";
+            this.lblNotiWin.Size = new System.Drawing.Size(84, 39);
+            this.lblNotiWin.TabIndex = 5;
+            this.lblNotiWin.Text = "label1";
+            this.lblNotiWin.Visible = false;
+            // 
+            // picNotiWinLose
+            // 
+            this.picNotiWinLose.Location = new System.Drawing.Point(185, 42);
+            this.picNotiWinLose.Name = "picNotiWinLose";
+            this.picNotiWinLose.Size = new System.Drawing.Size(400, 300);
+            this.picNotiWinLose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picNotiWinLose.TabIndex = 6;
+            this.picNotiWinLose.TabStop = false;
+            this.picNotiWinLose.Visible = false;
             // 
             // btnGame3
             // 
@@ -423,11 +472,6 @@ namespace CalExpression
             this.btnGame1.MouseLeave += new System.EventHandler(this.btnGame1_MouseLeave);
             this.btnGame1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnGame1_MouseMove);
             // 
-            // timer
-            // 
-            this.timer.Interval = 800;
-            this.timer.Tick += new System.EventHandler(this.timer_Tick);
-            // 
             // frmCalExpression
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -452,6 +496,7 @@ namespace CalExpression
             this.pnInfoUser.PerformLayout();
             this.pnGameDis.ResumeLayout(false);
             this.pnGameDis.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picNotiWinLose)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -477,5 +522,8 @@ namespace CalExpression
         private System.Windows.Forms.Label lblLevelInput;
         private System.Windows.Forms.Label lblChucVuInput;
         private System.Windows.Forms.Button btnBackToMenu;
+        private System.Windows.Forms.Label lblNotiLose;
+        private System.Windows.Forms.Label lblNotiWin;
+        private System.Windows.Forms.PictureBox picNotiWinLose;
     }
 }
