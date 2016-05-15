@@ -101,8 +101,7 @@
             this.pnDisplayGame.Name = "pnDisplayGame";
             this.pnDisplayGame.Size = new System.Drawing.Size(809, 654);
             this.pnDisplayGame.TabIndex = 0;
-            this.pnDisplayGame.Paint += new System.Windows.Forms.PaintEventHandler(this.pnDisplayGame_Paint);
-            // 
+    
             // pictureBox1
             // 
             this.pictureBox1.Location = new System.Drawing.Point(50, 100);
@@ -123,7 +122,7 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(809, 654);
             this.panel2.TabIndex = 0;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.pnDisplayGame_Paint);
+        
             // 
             // pictureBox3
             // 
@@ -245,7 +244,7 @@
             this.pic1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pic1.TabIndex = 0;
             this.pic1.TabStop = false;
-            this.pic1.Click += new System.EventHandler(this.pictureBox2_Click);
+       
             // 
             // pic2
             // 
@@ -255,7 +254,7 @@
             this.pic2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pic2.TabIndex = 0;
             this.pic2.TabStop = false;
-            this.pic2.Click += new System.EventHandler(this.pictureBox4_Click);
+           
             // 
             // pic3
             // 
@@ -265,7 +264,7 @@
             this.pic3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pic3.TabIndex = 0;
             this.pic3.TabStop = false;
-            this.pic3.Click += new System.EventHandler(this.pictureBox6_Click);
+          
             // 
             // panel1
             // 
@@ -298,7 +297,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(809, 654);
             this.panel1.TabIndex = 0;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.pnDisplayGame_Paint);
+           
             // 
             // lblWin2
             // 
@@ -334,7 +333,7 @@
             this.picEndGame.TabIndex = 6;
             this.picEndGame.TabStop = false;
             this.picEndGame.Visible = false;
-            this.picEndGame.Click += new System.EventHandler(this.picEndGame_Click);
+           
             // 
             // lblNotiLose
             // 
@@ -347,7 +346,7 @@
             this.lblNotiLose.TabIndex = 5;
             this.lblNotiLose.Text = "Bạn chưa vượt qua thử thách rồi, chúc may mắn lần sau nhé !";
             this.lblNotiLose.Visible = false;
-            this.lblNotiLose.Click += new System.EventHandler(this.lblNotiLose_Click);
+           
             // 
             // lblNoti
             // 
@@ -383,7 +382,7 @@
             this.picMain.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picMain.TabIndex = 2;
             this.picMain.TabStop = false;
-            this.picMain.Click += new System.EventHandler(this.picMain_Click);
+            
             // 
             // lblNotiBDau
             // 
@@ -404,7 +403,7 @@
             this.pic12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pic12.TabIndex = 0;
             this.pic12.TabStop = false;
-            this.pic12.Click += new System.EventHandler(this.pictureBox6_Click);
+            
             // 
             // pic9
             // 
@@ -414,7 +413,7 @@
             this.pic9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pic9.TabIndex = 0;
             this.pic9.TabStop = false;
-            this.pic9.Click += new System.EventHandler(this.pictureBox6_Click);
+            
             // 
             // pic6
             // 
@@ -424,7 +423,7 @@
             this.pic6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pic6.TabIndex = 0;
             this.pic6.TabStop = false;
-            this.pic6.Click += new System.EventHandler(this.pictureBox6_Click);
+           
             // 
             // pic11
             // 
@@ -434,7 +433,7 @@
             this.pic11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pic11.TabIndex = 0;
             this.pic11.TabStop = false;
-            this.pic11.Click += new System.EventHandler(this.pictureBox4_Click);
+            
             // 
             // pic8
             // 
@@ -444,7 +443,7 @@
             this.pic8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pic8.TabIndex = 0;
             this.pic8.TabStop = false;
-            this.pic8.Click += new System.EventHandler(this.pictureBox4_Click);
+            
             // 
             // pic5
             // 
@@ -454,7 +453,7 @@
             this.pic5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pic5.TabIndex = 0;
             this.pic5.TabStop = false;
-            this.pic5.Click += new System.EventHandler(this.pictureBox4_Click);
+            
             // 
             // pic10
             // 
@@ -464,7 +463,7 @@
             this.pic10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pic10.TabIndex = 0;
             this.pic10.TabStop = false;
-            this.pic10.Click += new System.EventHandler(this.pictureBox2_Click);
+            
             // 
             // pic7
             // 
@@ -474,7 +473,7 @@
             this.pic7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pic7.TabIndex = 0;
             this.pic7.TabStop = false;
-            this.pic7.Click += new System.EventHandler(this.pictureBox2_Click);
+           
             // 
             // pic4
             // 
@@ -484,7 +483,7 @@
             this.pic4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pic4.TabIndex = 0;
             this.pic4.TabStop = false;
-            this.pic4.Click += new System.EventHandler(this.pictureBox2_Click);
+           
             // 
             // tmMusic
             // 
@@ -493,7 +492,7 @@
             // 
             // tmWinGame
             // 
-            this.tmWinGame.Interval = 300;
+            this.tmWinGame.Interval = 120;
             this.tmWinGame.Tick += new System.EventHandler(this.tmWinGame_Tick);
             // 
             // FrmPzGame

@@ -63,7 +63,6 @@
             this.picBackgr = new System.Windows.Forms.PictureBox();
             this.btnBack = new System.Windows.Forms.Button();
             this.ucIntro = new Mr_X.Intro();
-            this.ucOption = new Mr_X.OptionDisplay();
             ((System.ComponentModel.ISupportInitialize)(this.picBackgr)).BeginInit();
             this.SuspendLayout();
             // 
@@ -532,21 +531,12 @@
             this.ucIntro.Size = new System.Drawing.Size(1217, 663);
             this.ucIntro.TabIndex = 0;
             // 
-            // ucOption
-            // 
-            this.ucOption.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ucOption.BackgroundImage")));
-            this.ucOption.Location = new System.Drawing.Point(0, 0);
-            this.ucOption.Name = "ucOption";
-            this.ucOption.Size = new System.Drawing.Size(1217, 663);
-            this.ucOption.TabIndex = 64;
-            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1217, 663);
             this.Controls.Add(this.ucIntro);
-            this.Controls.Add(this.ucOption);
             this.Controls.Add(this.lblMicrosoft);
             this.Controls.Add(this.btn30);
             this.Controls.Add(this.btn3);
@@ -627,7 +617,6 @@
         private System.Windows.Forms.Button btn27;
         private System.Windows.Forms.PictureBox picBackgr;
         private System.Windows.Forms.Button btnBack;
-        private OptionDisplay ucOption;
 
 
     }

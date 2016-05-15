@@ -73,3 +73,4 @@ D:\PROJECT\trunk\sources\Mr_X\Mr_X\bin\Debug\ArrMsc.pdb
 D:\PROJECT\trunk\sources\Mr_X\Mr_X\bin\Debug\frPlayMo.pdb
 D:\PROJECT\trunk\sources\Mr_X\Mr_X\bin\Debug\follArrow.dll
 D:\PROJECT\trunk\sources\Mr_X\Mr_X\bin\Debug\follArrow.pdb
+D:\PROJECT\trunk\sources\Mr_X\Mr_X\obj\Debug\Mr_X.FormOption.resources

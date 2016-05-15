@@ -1,20 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Drawing;
 using System.Data;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using frPlayMo;
 using System.IO;
+using frPlayMo;
 
 namespace Mr_X
 {
-    public partial class OptionDisplay : UserControl
+    public partial class FormOption : Form
     {
-        public OptionDisplay()
+        public FormOption()
         {
             InitializeComponent();
         }
@@ -50,10 +50,8 @@ namespace Mr_X
             lblPractice.ForeColor = Color.LightGray;
         }
 
-        // Cài đặt Bật/Tắt âm thanh
-    
-        public bool sound = true;
-        public void lblSound_Click(object sender, EventArgs e)
+        private bool sound = true;
+        private void lblSound_Click(object sender, EventArgs e)
         {
             pnlFight.Visible = false;
             pnlPrac.Visible = false;
@@ -62,15 +60,32 @@ namespace Mr_X
             {
                 sound = false;
                 lblSound.Text = "Tắt";
-            
+
             }
             else
             {
                 sound = true;
                 lblSound.Text = "Bật";
-               
+
             }
+        }
+
+       
+        private void lblContinueFight_Click(object sender, EventArgs e)
+        {
+            Main m = new Main(sound, 0);
+            m.ShowDialog();
             
+        }
+
+        private void lblNewGameFight_Click(object sender, EventArgs e)
+        {
+            StreamWriter output = new StreamWriter(@"database/MrX.txt");
+            output.WriteLine("b");
+            output.Close();
+            Main m = new Main(sound, 1);
+            m.ShowDialog();
+            lblContinueFight.Visible = true;
         }
 
         private void lblContinuePrac_Click(object sender, EventArgs e)
@@ -86,24 +101,8 @@ namespace Mr_X
             output.Close();
             freePlayMode f = new freePlayMode(sound);
             f.ShowDialog();
+            lblContinuePrac.Visible = true;
             
-        }
-
-        private void lblContinueFight_Click(object sender, EventArgs e)
-        {
-           
-            
-
-            this.Hide();
-        }
-
-        public void lblNewGameFight_Click(object sender, EventArgs e)
-        {
-
-            StreamWriter output = new StreamWriter(@"database/MrX.txt");
-            output.WriteLine("b");
-            output.Close();
-            this.Hide();
         }
 
       

@@ -26,8 +26,7 @@ namespace PzGame
         {
             player.URL = @"sound/PzGame/music.mp3";
             player.controls.play();
-            
-           // TimeSpan duration = player.TotalTime;
+          
         }
 
         public delegate void truyen(int value);
@@ -47,7 +46,7 @@ namespace PzGame
         {
             x = 4;
             y = 3;
-            for (int i = 1; i <= 12; i++) Arr[i] = i; // init mang
+            for (int i = 1; i <= 12; i++) Arr[i] = i; // init mảng
         }
         private int getPosition(int x, int y)
         {
@@ -173,9 +172,8 @@ namespace PzGame
         private void FrmPzGame_Load(object sender, EventArgs e)
         {
             if (msic) { enableSound(); tmMusic.Start(); }
-            // x = 5; y = 5;
             dem = 0;
-            // show anh ra form
+            // Show ảnh ra form
             init();
             picMain.Image = PzGame.Properties.Resources.main;
             showPic();
@@ -183,46 +181,12 @@ namespace PzGame
             ok = false;
             lblLevel.Text = level.ToString();
             lblChucVu.Text = chucVu;
-           // label1.Text = player.controls.currentItem.durationString; 
-
+     
             phut = 5;
 
         }
 
-        private void pnDisplayGame_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void pictureBox3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void picMain_Click(object sender, EventArgs e)
-        {
-
-        }
+      
         private bool checkResult()
         {
             for (int i = 1; i <= 12; i++)
@@ -254,14 +218,11 @@ namespace PzGame
         private void thongBaoLose()
         {
             MessageBox.Show("Chưa đúng rồi");
-            //hidePic();
-
-            
-            
+    
         }
         private void thongBaoWin()
         {
-            //MessageBox.Show("thang");
+            
             btnStart.Enabled = false;
             hidePic();
             lblWin1.Visible = true;
@@ -269,6 +230,7 @@ namespace PzGame
             lblWin1.Text = "";
             lblWin2.Text = "";
             tmWinGame.Start();
+            
 
         }
         private void thongBaoDoneGame()
@@ -285,16 +247,14 @@ namespace PzGame
              if (phut!=5)
             {
                 ok = checkResult();
-            //    btnStart.Enabled = false;
                 thongBaoDoneGame();
-
             }
 
         }
 
         private void FrmPzGame_FormClosed(object sender, FormClosedEventArgs e)
         {
-            
+            tmWinGame.Stop();
             tmMusic.Stop();
             
             player.close();
@@ -320,23 +280,6 @@ namespace PzGame
         private void btnStart_Click(object sender, EventArgs e)
         {
             dem++;
-            //if (dem % 2 == 1)
-            //{
-            //    //MessageBox.Show("Hiệp đại ca chất vcl <3 <3 <3 !!");
-            //    ok = false;
-            //    thongBaoTrongGame();
-            //  //  btnDone.Enabled = false;
-            //    btnStart.Text = "Chơi lại";
-            //    setPzGame();
-            //    phut--;
-            //}
-            //else
-            //{
-            //    //btnDone.Enabled = true;
-            //    phut = 5;
-            //    thongBaoStart();
-            //    btnStart.Text = "Bắt đầu";
-            //}
             if (dem > 0) { btnStart.Text = "Chơi lại"; thongBaoTrongGame(); phut = 4; }
             ok = false;
             setPzGame();
@@ -349,41 +292,9 @@ namespace PzGame
             if (ok) trans.Invoke(1); else trans.Invoke(0);
             player.close();
             tmMusic.Stop();
-            
+            tmWinGame.Stop();
            
             this.Close();
-        }
-
-        //private string str = "Bạn chưa vượt qua thử thách rồi, chúc may mắn lần sau nhé !";
-        //private int xxxxx = 0;
-        //private void tmNotiLose_Tick(object sender, EventArgs e)
-        //{
-        //    if (xxxxx < str.Length)
-        //    {
-        //        lblNotiLose.Text += str[xxxxx];
-        //        xxxxx++;
-        //    }
-        //}
-
-
-        private void btnDone_KeyUp(object sender, KeyEventArgs e)
-        {
-            
-        }
-
-        private void btnStart_KeyUp(object sender, KeyEventArgs e)
-        {
-            
-        }
-
-        private void picEndGame_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblNotiLose_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void btnQuit_KeyUp(object sender, KeyEventArgs e)
@@ -431,18 +342,20 @@ namespace PzGame
         private int i2 = 0;
         private void tmWinGame_Tick(object sender, EventArgs e)
         {
-            if (i1<S1.Length)
+            if (i1 < S1.Length)
             {
                 lblWin1.Text += S1[i1];
                 i1++;
-            } else
-                if (i1<S2.Length)
+            }
+            else if (i1 < S2.Length)
             {
 
-                lblWin2.Text +=S2[i2];
+                lblWin2.Text += S2[i2];
                 i2++;
             }
-        }
+            else
+                MessageBox.Show("Mr.X, chúc mừng bạn đã trở thành tân Tổng giám đốc của Microsoft!");
+        } 
 
         private void pnInfoGame_Paint(object sender, PaintEventArgs e)
         {

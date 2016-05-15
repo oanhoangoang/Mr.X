@@ -199,14 +199,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Mr_X.exe" size="1906680">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Mr_X.exe" size="2281976">
       <assemblyIdentity name="Mr_X" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>9bc7wLn9JkPiJIUe8LiqL7qmoSeRGDQOoztLoaOgICA=</dsig:DigestValue>
+        <dsig:DigestValue>uZOhgFJ4zJg7CJC2J+4CDSFjTji2tqURbgxxcRTJAno=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
