@@ -55,7 +55,7 @@
             this.btnSkip.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnSkip.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(122)))), ((int)(((byte)(137)))));
             this.btnSkip.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnSkip.Font = new System.Drawing.Font("Corbel", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSkip.Font = new System.Drawing.Font("Corbel", 20.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSkip.ForeColor = System.Drawing.Color.LightGray;
             this.btnSkip.Location = new System.Drawing.Point(568, 315);
             this.btnSkip.Name = "btnSkip";

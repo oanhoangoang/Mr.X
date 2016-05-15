@@ -91,12 +91,6 @@
     <Compile Include="Intro.Designer.cs">
       <DependentUpon>Intro.cs</DependentUpon>
     </Compile>
-    <Compile Include="Level.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Level.Designer.cs">
-      <DependentUpon>Level.cs</DependentUpon>
-    </Compile>
     <Compile Include="OptionDisplay.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -110,9 +104,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Intro.resx">
       <DependentUpon>Intro.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Level.resx">
-      <DependentUpon>Level.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OptionDisplay.resx">
       <DependentUpon>OptionDisplay.cs</DependentUpon>
@@ -170,6 +161,10 @@
       <Project>{ea9739ae-4eb0-4133-8d30-cf5a04bcc6da}</Project>
       <Name>FndSaCell</Name>
     </ProjectReference>
+    <ProjectReference Include="..\follArrow\follArrow.csproj">
+      <Project>{ccb36af2-a50c-4ccb-93df-999bad7128af}</Project>
+      <Name>follArrow</Name>
+    </ProjectReference>
     <ProjectReference Include="..\frPlayMo\frPlayMo.csproj">
       <Project>{379334e6-eaf3-4d7b-b512-361c0d101367}</Project>
       <Name>frPlayMo</Name>
@@ -185,10 +180,6 @@
     <ProjectReference Include="..\orBut\orBut.csproj">
       <Project>{a92e8cd4-00f9-44f3-8e18-fa26072eb110}</Project>
       <Name>orBut</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\PiPo\PiPo.csproj">
-      <Project>{609d41ec-f7d4-4a1f-8e6d-7551fb81f10d}</Project>
-      <Name>PiPo</Name>
     </ProjectReference>
     <ProjectReference Include="..\Prime\Prime\Prime.csproj">
       <Project>{da5d896b-f54f-49cb-aa13-60ff33c356af}</Project>

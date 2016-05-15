@@ -18,60 +18,89 @@ namespace Mr_X
             InitializeComponent();
         }
 
-        // mở game đã đã lưu để chơi tiếp
-        private void lblContinue_Click(object sender, EventArgs e)
+        // Hiển thị các panel khi nhấp vào Chiến đấu, Luyện tập, Thông tin
+        private void lblFight_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            pnlAbout.Visible = false;
+            pnlPrac.Visible = false;
+            pnlFight.Visible = true;
+            lblFight.ForeColor = Color.FromArgb(245, 171, 53);
+            lblPractice.ForeColor = Color.LightGray;
+            lblAbout.ForeColor = Color.LightGray;
         }
 
-        // hiện panel chọn chế độ chơi ở mục Chơi mới đồng thời ẩn các panel Cài đặt, panel Thông tin
-        private void lblNewGame_Click(object sender, EventArgs e)
+        private void lblPractice_Click(object sender, EventArgs e)
         {
-            pnl_Infor.Visible = false;
-            pnlSetting.Visible = false;
-            pnlNewGame.Visible = true;
-           
+            pnlAbout.Visible = false;
+            pnlFight.Visible = false;
+            pnlPrac.Visible = true;
+            lblPractice.ForeColor = Color.FromArgb(245, 171, 53);
+            lblFight.ForeColor = Color.LightGray;
+            lblAbout.ForeColor = Color.LightGray;
         }
 
-        // hiện panel Cài đặt âm thanh
-        private void lblSetting_Click(object sender, EventArgs e)
+        private void lblAbout_Click(object sender, EventArgs e)
         {
-            pnl_Infor.Visible = false;
-            pnlNewGame.Visible = false;
-            pnlSetting.Visible = true;
+            pnlFight.Visible = false;
+            pnlPrac.Visible = false;
+            pnlAbout.Visible = true;
+            lblAbout.ForeColor = Color.FromArgb(245, 171, 53);
+            lblFight.ForeColor = Color.LightGray;
+            lblPractice.ForeColor = Color.LightGray;
         }
 
-        // hiện panel Thông tin
-        private void lbl_Infor_Click(object sender, EventArgs e)
+        // Cài đặt Bật/Tắt âm thanh
+        public delegate bool setSound();
+        
+        
+        static bool sound = true;
+        public void lblSound_Click(object sender, EventArgs e)
         {
-            pnlNewGame.Visible = false;
-            pnlSetting.Visible = false;
-            pnl_Infor.Visible = true;
-        }
-
-        // mở game khi chọn chơi theo tiến trình
-        private void lblMarathon_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-        }
-
-        // mở bảng game khi chọn Chơi tự do
-        private void lblFreePlaying_Click(object sender, EventArgs e)
-        {
+            pnlFight.Visible = false;
+            pnlPrac.Visible = false;
+            pnlAbout.Visible = false;
+            if (lblSound.Text == "Bật")
+            {
+                sound = false;
+                lblSound.Text = "Tắt";
+                
+            }
+            else
+            {
+                sound = true;
+                lblSound.Text = "Bật";
+                
+            }
             
         }
 
-        // xử lí bật, tắt âm
-        private void lblSound_Click(object sender, EventArgs e)
+        private void lblContinuePrac_Click(object sender, EventArgs e)
         {
-
+            freePlayMode f = new freePlayMode(sound);
+            f.ShowDialog();
         }
 
-        // xử lí bật, tắt nhạc
-        private void lblMusic_Click(object sender, EventArgs e)
+        private void lblNewGamePrac_Click(object sender, EventArgs e)
         {
-
+            freePlayMode f = new freePlayMode(sound);
+            f.ShowDialog();
         }
+
+        private void lblContinueFight_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+        }
+
+        private void lblNewGameFight_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+        }
+
+        
+
+
+        
+
 
     }
 }
