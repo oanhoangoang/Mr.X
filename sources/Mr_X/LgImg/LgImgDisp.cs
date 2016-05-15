@@ -15,6 +15,7 @@ namespace LgImg
     {
         int lvlGame; // level of Game
         string rank, lvl; // Player rank & level
+        bool enableSound;
         int check = 0; // check = 0 Lose; check = 1 Win
         string strAns; // the Right Answer
         int sec; // second timer
@@ -25,12 +26,13 @@ namespace LgImg
         //
         // Call Form
         //
-        public LgImgDisp(int xlvlGame, string xRank, string xLvl) 
+        public LgImgDisp(int xlvlGame, string xRank, string xLvl, bool xEnableSound) 
         {
             InitializeComponent();
             lvlGame = xlvlGame;
             rank = xRank;
             lvl = xLvl;
+            enableSound = xEnableSound;
             loadGameDisp();
         }
         //
@@ -75,7 +77,7 @@ namespace LgImg
             strAns = ansImg[x];
             showImg(linkImg[x]);
 
-            soundtrack.Play();
+            if (enableSound) soundtrack.Play();
             btnA.Visible = true;
             btnB.Visible = true;
             btnC.Visible = true;
@@ -107,8 +109,8 @@ namespace LgImg
         private void notiRight()
         {
             timer.Stop();
-            soundtrack.Stop();
-            soundWin.Play();
+            if (enableSound) soundtrack.Stop();
+            if (enableSound) soundWin.Play();
             btnA.Visible = false; btnB.Visible = false; btnC.Visible = false; btnD.Visible = false; btnE.Visible = false;
             pic.Visible = false;
             txtNoti.Text = "Chúc mừng bạn đã vượt qua thử thách. Làm tốt lắm :)";
@@ -118,9 +120,9 @@ namespace LgImg
         //
         private void notiWrong()
         {
-            timer.Stop(); 
-            soundtrack.Stop();
-            soundLose.Play();
+            timer.Stop();
+            if (enableSound) soundtrack.Stop();
+            if (enableSound) soundLose.Play();
             btnA.Visible = false; btnB.Visible = false; btnC.Visible = false; btnD.Visible = false; btnE.Visible = false;
             pic.Visible = false;
             txtNoti.Text = "Có vẻ lần này bạn chưa may mắn rồi. Cố gắng hơn lần sau nhé !";
@@ -164,8 +166,8 @@ namespace LgImg
         public truyen trans;
         private void btnBack_Click(object sender, EventArgs e)
         {
-            soundWin.Stop();
-            soundLose.Stop();
+            if (enableSound) soundWin.Stop();
+            if (enableSound) soundLose.Stop();
             if (check == 1) trans.Invoke(1); else trans.Invoke(0);
             this.Close();
         }

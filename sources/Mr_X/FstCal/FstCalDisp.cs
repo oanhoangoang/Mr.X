@@ -16,6 +16,7 @@ namespace FstCal
     {
         int lvlGame; // level of Game
         string rank, lvl; // Player rank & level
+        bool enableSound;
         int check = 0; // check = 0 Lose; check = 1 Win
         int num1, num2;
         string playerAns, gameAns;
@@ -24,12 +25,13 @@ namespace FstCal
         SoundPlayer soundLose = new SoundPlayer(@"sound/FstCal/Lose.wav");
 
         // Call Form
-        public FstCalDisp(int xlvlGame, string xRank, string xLvl) 
+        public FstCalDisp(int xlvlGame, string xRank, string xLvl, bool xEnableSound) 
         {
             InitializeComponent();
             lvlGame = xlvlGame;
             rank = xRank;
             lvl = xLvl;
+            enableSound = xEnableSound;
         }
         //
         // Prepare to play
@@ -83,7 +85,7 @@ namespace FstCal
             sec = int.Parse(lblTimeCount.Text);
             
             timer.Start();
-            soundtrack.Play();
+            if (enableSound) soundtrack.Play();
         }
 
         //
@@ -100,7 +102,7 @@ namespace FstCal
         private void btnAns_Click(object sender, EventArgs e)   
         {
             timer.Stop();
-            soundtrack.Stop();
+            if (enableSound) soundtrack.Stop();
             playerAns = txtAns.Text;
             gameAns = calAns(num1, num2).ToString();
 
@@ -144,7 +146,7 @@ namespace FstCal
             btnAns.Visible = false;
             txtAns.Visible = false;
             txtNoti.Visible = true;
-            soundLose.Play();
+            if (enableSound) soundLose.Play();
             txtNoti.Text = "Cái gì lâu quá cũng không tốt ;) Cố gắng lần sau nhé !";
         }
         //
@@ -162,7 +164,7 @@ namespace FstCal
             btnAns.Visible = false;
             txtAns.Visible = false;
             txtNoti.Visible = true;
-            soundWin.Play();
+            if (enableSound) soundWin.Play();
             txtNoti.Text = "Dù dễ nhưng cũng chúc mừng! Party với chức vụ mới thôi :))";
         }
         //
@@ -180,7 +182,7 @@ namespace FstCal
             btnAns.Visible = false;
             txtAns.Visible = false;
             txtNoti.Visible = true;
-            soundLose.Play();
+            if (enableSound) soundLose.Play();
             txtNoti.Text = "Đen thôi, đỏ khác liền :v Gặp lại bạn lần sau !";
         }
         public delegate void truyen(int value);
@@ -188,7 +190,7 @@ namespace FstCal
 
         private void btnBackToMenu_Click(object sender, EventArgs e)
         {
-            soundWin.Stop(); soundLose.Stop();
+            if (enableSound) soundWin.Stop(); if (enableSound) soundLose.Stop();
             if (check == 1) trans.Invoke(1); else trans.Invoke(0);
             this.Close();
         }

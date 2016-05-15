@@ -16,6 +16,7 @@ namespace ArrMsc
         // Infomation of Player and Game
         int lvlGame; 
         string rank, lvl;
+        bool enableSound;
 
         // Check variable: Check = 0 Lose; Check = 1 Win
         int check = 0; 
@@ -44,12 +45,13 @@ namespace ArrMsc
         //
         // Call Form
         //
-        public ArrMscDisp(int xlvlGame, string xRank, string xLvl) 
+        public ArrMscDisp(int xlvlGame, string xRank, string xLvl, bool xEnableSound) 
         {
             InitializeComponent();
             lvlGame = xlvlGame;
             rank = xRank;
             lvl = xLvl;
+            enableSound = xEnableSound;
         }
 
         //
@@ -180,14 +182,14 @@ namespace ArrMsc
         private void notiRight()
         {
             tmr.Stop(); check = 1;
-            soundWin.Play();
+            if (enableSound) soundWin.Play();
             txtNoti.Text = "Thật tuyệt vời, bạn quá là xuất sắc :))";
         }
 
         private void notiWrong()
         {
             tmr.Stop(); check = 0;
-            soundLose.Play();
+            if (enableSound) soundLose.Play();
             txtNoti.Text = "Thua mất rồi, lần sau cố gắng lên nhé :<";
         }
 
@@ -236,6 +238,7 @@ namespace ArrMsc
         public truyen trans;
         private void btnBack_Click(object sender, EventArgs e)
         {
+            if (enableSound) soundWin.Stop(); if (enableSound) soundLose.Stop();
             if (check == 1) trans.Invoke(1); else trans.Invoke(0);
             this.Close();
         }
