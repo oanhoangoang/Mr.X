@@ -92,7 +92,7 @@ namespace FndSaCell
         private SoundPlayer sp;
 
         // lấy các giá trị:level, chức vụ, chiều cao của bảng, chiều rộng của bảng, số điểm qua vòng,số lượt nhấn, thời gian chơi, có tắt nhạc hay không, hiển thị chức vụ truyền vào hay không: 1=có; 2=không
-        public FindSameCell(int level, string position, int height, int width, int Score, int numCho, int time, bool turnOffSound, int determine)
+        public FindSameCell(int level, string position, int height, int width, int Score, int numCho, int time, bool turnOnSound, int determine)
         {
             InitializeComponent();
             lblLevelOfGame.Text += level.ToString();
@@ -105,7 +105,7 @@ namespace FndSaCell
             scoreToPass = Score;
             numChoice = numCho;
             timeOfGame = time;
-            if (turnOffSound == false)
+            if (turnOnSound)
             {
                 wmpSoundTrack = new WindowsMediaPlayer();
                 try
@@ -210,6 +210,8 @@ namespace FndSaCell
         // bắt đầu trò chơi
         private void btnStart_Click(object sender, EventArgs e)
         {
+            pnlGameDisplayGray.Visible = true;
+            lblNotice.Visible = false;
             number++;
             minute = timeOfGame / 60;
             second = timeOfGame % 60;
@@ -318,7 +320,16 @@ namespace FndSaCell
                     check[ Int16.Parse(btnCircle[i][j].Name) ] = false;
                 }
 
-            if (yourScore >= scoreToPass) answerToTeturn = 1;
+            pnlGameDisplayGray.Visible = false;
+            lblNotice.Visible = true;
+            if (yourScore >= scoreToPass){
+                answerToTeturn = 1;
+                lblNotice.Text = "Chúc mừng bạn đã vượt qua thử thách này";
+            }
+            else
+            {
+                lblNotice.Text = "Rất tiếc bạn đã không vượt qua thử thách này";
+            }
         }
 
         //tắt game

@@ -58,7 +58,7 @@ namespace ChseNum
         private SoundPlayer sp;
 
         // lấy các giá trị: level, chức vụ, kích thước bảng,mức độ chơi, thời gian chơi, tắt nhạc hay không, hiển thị chức vụ truyền vào hay không: 1=có; 2=không
-        public ChooseNumber(int level, string position, int size, int kind, int time, bool turnOffSound, int determine)
+        public ChooseNumber(int level, string position, int size, int kind, int time, bool turnOnSound, int determine)
         {
             InitializeComponent();
             lblLevelOfGame.Text += level.ToString();
@@ -68,7 +68,7 @@ namespace ChseNum
             KindOfGame = kind;
             TimeOfGame = time;
 
-            if (turnOffSound == false)
+            if (turnOnSound)
             {
                 wmpSoundTrack = new WindowsMediaPlayer();
                 try
@@ -173,6 +173,8 @@ namespace ChseNum
         // bắt đầu chơi game
         private void btnStart_Click(object sender, EventArgs e)
         {
+            pnlGameDisplayGray.Visible = true;
+            lblNotice.Visible = false;
             minute = TimeOfGame / 60;
             second = TimeOfGame % 60;
             yourSum = 0;
@@ -226,7 +228,18 @@ namespace ChseNum
             for (int i = 1; i <= sizeTable; i++)
                 for (int j = 1; j <= sizeTable; j++) randomBtn[i][j].Enabled = false;
 
-            if (yourSum == numberToFind) answerToTeturn = 1;
+            pnlGameDisplayGray.Visible = false;
+            lblNotice.Visible = true;
+
+            if (yourSum == numberToFind)
+            {
+                answerToTeturn = 1;
+                lblNotice.Text = "Chúc mừng bạn đã vượt qua thử thách này";
+            }
+            else
+            {
+                lblNotice.Text = "Rất tiếc bạn đã không vượt qua thử thách này";
+            }
         }
 
         //tắt game

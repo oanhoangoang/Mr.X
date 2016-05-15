@@ -97,7 +97,7 @@ namespace RemMe
         }
 
         // lấy các giá trị:level, chức vụ, kích thước bảng, số lượng ô người chơi phải chọn, số lượng lượt người chơi được chọn, thời gian chơi, tắt nhạc hay không, hiển thị chức vụ truyền vào hay không: 1=có; 2=không
-        public RememberMe(int level, string position, int size, int numAns, int numChoice, int time, bool turnOffSound, int determine)
+        public RememberMe(int level, string position, int size, int numAns, int numChoice, int time, bool turnOnSound, int determine)
         {
             InitializeComponent();
             lblLevelOfGame.Text += level.ToString();
@@ -107,7 +107,7 @@ namespace RemMe
             numberOfAnswer = numAns;
             numCho = numChoice;
             TimeOfGame = time;
-            if (turnOffSound == false)
+            if (turnOnSound)
             {
                 wmpSoundTrack = new WindowsMediaPlayer();
                 try
@@ -209,6 +209,8 @@ namespace RemMe
         // bắt đầu trò chơi: tạo mảng randomBtn
         private void btnStart_Click(object sender, EventArgs e)
         {
+            pnlGameDisplayGray.Visible = true;
+            lblNotice.Visible = false;
             init();
             btnStart.Text = "Chơi lại";
             numb++;
@@ -317,7 +319,16 @@ namespace RemMe
                     randomBtn[i][j].BackColor = ColorTranslator.FromHtml(arrayColor[original[value]]);
                 }
 
-            if (yourScore >= numberOfAnswer) answerToTeturn = 1;
+            pnlGameDisplayGray.Visible = false;
+            lblNotice.Visible = true;
+            if (yourScore >= numberOfAnswer){
+                answerToTeturn = 1;
+                lblNotice.Text = "Chúc mừng bạn đã vượt qua thử thách này";
+            }
+            else
+            {
+                lblNotice.Text = "Rất tiếc bạn đã không vượt qua thử thách này";
+            }
         }
 
         // tắt nhạc khi đóng chương trình

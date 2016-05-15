@@ -73,7 +73,7 @@ namespace FndDiCell
         private SoundPlayer sp;
 
         // lấy các giá trị: level, chức vụ, kích thước bảng, thể loại chơi, mức độ chơi, điểm qua vòng, thời gian chơi, tắt nhạc hay không, hiển thị chức vụ truyền vào hay không: 1=có; 2=không
-        public FindDifferentCell(int level, string position, int size, int type, int kind, int score, int time, bool turnOffSound, int determine)
+        public FindDifferentCell(int level, string position, int size, int type, int kind, int score, int time, bool turnOnSound, int determine)
         {
             InitializeComponent();
             sizeTable = size;
@@ -84,7 +84,7 @@ namespace FndDiCell
             lblLevelOfGame.Text += level.ToString();
             lblPosition.Text += position.ToString();
             if (determine == 2) lblPosition.Visible = false;
-            if (turnOffSound == false)
+            if (turnOnSound)
             {
                 wmpSoundTrack = new WindowsMediaPlayer();
                 try
@@ -252,6 +252,8 @@ namespace FndDiCell
         // bắt đầu chơi game
         private void btnStart_Click(object sender, EventArgs e)
         {
+            pnlGameDisplayGray.Visible = true;
+            lblNotice.Visible = false;
             minute = timeOfGame / 60;
             second = timeOfGame % 60;
             yourScore = 0;
@@ -317,7 +319,16 @@ namespace FndDiCell
             for (int i = 1; i <= sizeTable; i++)
                 for (int j = 1; j <= sizeTable; j++) randomBtn[i][j].Enabled = false;
 
-            if (yourScore >= scoreToPass) answerToTeturn = 1;
+            pnlGameDisplayGray.Visible = false;
+            lblNotice.Visible = true;
+            if (yourScore >= scoreToPass){
+                answerToTeturn = 1;
+                lblNotice.Text = "Chúc mừng bạn đã vượt qua thử thách này";
+            }
+            else
+            {
+                lblNotice.Text = "Rất tiếc bạn đã không vượt qua thử thách này";
+            }
         }
 
         // tắt nhạc khi đóng chương trình

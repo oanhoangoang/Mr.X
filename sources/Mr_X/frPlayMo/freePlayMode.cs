@@ -42,11 +42,11 @@ namespace frPlayMo
         }
 
         // hiển bảng game để người chơi chọn
-        public freePlayMode(bool turnOffSound)
+        public freePlayMode(bool turnOnSound)
         {
             InitializeComponent();
-            turnOnOrOff = turnOffSound;
-            if (turnOffSound == false)
+            turnOnOrOff = turnOnSound;
+            if (turnOnSound)
             {
                 try
                 {

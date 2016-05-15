@@ -57,7 +57,7 @@ namespace FndNum
         private int number;
 
         // lấy các giá trị: level, chức vụ, kích thước bảng, số lượng số cần tìm, thời gian chơi, tắt nhạc hay không, hiển thị chức vụ truyền vào hay không: 1=có; 2=không
-        public FindNumDisplay(int level, string position, int size, int num, int time, bool turnOffSound, int determine)
+        public FindNumDisplay(int level, string position, int size, int num, int time, bool turnOnSound, int determine)
         {
             InitializeComponent();
             sizeTable = size;
@@ -66,7 +66,7 @@ namespace FndNum
             lblLevelOfGame.Text += level.ToString();
             lblPosition.Text += position.ToString();
             if (determine == 2) lblPosition.Visible = false;
-            if (turnOffSound == false)
+            if (turnOnSound)
             {
                 wmpSoundTrack = new WindowsMediaPlayer();
                 try
@@ -171,6 +171,8 @@ namespace FndNum
         // bắt đầu trò chơi
         private void btnStart_Click(object sender, EventArgs e)
         {
+            pnlGameDisplayGray.Visible = true;
+            lblNotice.Visible = false;
             number++;
             createButtonArray(number);
             createRandomArray();
@@ -237,7 +239,16 @@ namespace FndNum
             for (int i = 1; i <= sizeTable; i++)
                 for (int j = 1; j <= sizeTable; j++) randomBtn[i][j].Enabled= false;
 
-            if (yourScore >= numberToFind) answerToTeturn = 1;
+            pnlGameDisplayGray.Visible = false;
+            lblNotice.Visible = true;
+            if (yourScore >= numberToFind){
+                answerToTeturn = 1;
+                lblNotice.Text = "Chúc mừng bạn đã vượt qua thử thách này";
+            }
+            else
+            {
+                lblNotice.Text = "Rất tiếc bạn đã không vượt qua thử thách này";
+            }
         }
 
         //tắt game

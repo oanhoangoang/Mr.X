@@ -51,7 +51,7 @@ namespace OrBut
         private SoundPlayer sp;
 
         // lấy các giá trị: level, chức vụ, kích thước bảng, số lượng button phải ấn, thời gian chơi, tắt nhạc hay không, hiển thị chức vụ truyền vào hay không: 1=có; 2=không
-        public orderButton(int level, string position, int size, int num, int time, bool turnOffSound, int determine)
+        public orderButton(int level, string position, int size, int num, int time, bool turnOnSound, int determine)
         {
             InitializeComponent();
             sizeTable = size;
@@ -60,7 +60,7 @@ namespace OrBut
             lblLevelOfGame.Text += level.ToString();
             lblPosition.Text += position.ToString();
             if (determine == 2) lblPosition.Visible = false;
-            if (turnOffSound == false)
+            if (turnOnSound)
             {
                 wmpSoundTrack=new WindowsMediaPlayer();
                 try
@@ -167,6 +167,8 @@ namespace OrBut
         // bắt đầu trò chơi
         private void btnStart_Click(object sender, EventArgs e)
         {
+            pnlGameDisplayGray.Visible = true;
+            lblNotice.Visible = false;
             minute = timeOfGame / 60;
             second = timeOfGame % 60;
             number++;
@@ -225,8 +227,17 @@ namespace OrBut
         {
             for (int i = 1; i <= sizeTable; i++)
                 for (int j = 1; j <= sizeTable; j++) randomBtn[i][j].Visible = false;
-            
-            if (now > numberToFind) answerToTeturn = 1;
+
+            pnlGameDisplayGray.Visible = false;
+            lblNotice.Visible = true;
+            if (now > numberToFind){
+                answerToTeturn = 1;
+                lblNotice.Text = "Chúc mừng bạn đã vượt qua thử thách này";
+            }
+            else
+            {
+                lblNotice.Text = "Rất tiếc bạn đã không vượt qua thử thách này";
+            }
         }
 
         // tắt nhạc khi đóng chương trình

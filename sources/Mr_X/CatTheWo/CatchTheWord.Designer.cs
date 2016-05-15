@@ -33,7 +33,6 @@
             this.pnlGameDisplayGray = new System.Windows.Forms.Panel();
             this.lblAnswer = new System.Windows.Forms.Label();
             this.lblRound = new System.Windows.Forms.Label();
-            this.picVictory = new System.Windows.Forms.PictureBox();
             this.lblHint = new System.Windows.Forms.Label();
             this.picTalk = new System.Windows.Forms.PictureBox();
             this.btnSkip = new System.Windows.Forms.Button();
@@ -57,8 +56,8 @@
             this.lblPosition = new System.Windows.Forms.Label();
             this.pnlGameDisplaySunFlower = new System.Windows.Forms.Panel();
             this.lblLevelOfGame = new System.Windows.Forms.Label();
+            this.lblNotice = new System.Windows.Forms.Label();
             this.pnlGameDisplayGray.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picVictory)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picTalk)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picMc)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picGameDisplay)).BeginInit();
@@ -76,13 +75,12 @@
             this.pnlGameDisplayGray.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(100)))), ((int)(((byte)(75)))));
             this.pnlGameDisplayGray.Controls.Add(this.lblAnswer);
             this.pnlGameDisplayGray.Controls.Add(this.lblRound);
-            this.pnlGameDisplayGray.Controls.Add(this.picVictory);
             this.pnlGameDisplayGray.Controls.Add(this.lblHint);
             this.pnlGameDisplayGray.Controls.Add(this.picTalk);
             this.pnlGameDisplayGray.Controls.Add(this.btnSkip);
             this.pnlGameDisplayGray.Controls.Add(this.picMc);
             this.pnlGameDisplayGray.Controls.Add(this.picGameDisplay);
-            this.pnlGameDisplayGray.Location = new System.Drawing.Point(4, 4);
+            this.pnlGameDisplayGray.Location = new System.Drawing.Point(0, 0);
             this.pnlGameDisplayGray.Name = "pnlGameDisplayGray";
             this.pnlGameDisplayGray.Size = new System.Drawing.Size(809, 702);
             this.pnlGameDisplayGray.TabIndex = 0;
@@ -106,15 +104,6 @@
             this.lblRound.TabIndex = 9;
             this.lblRound.Text = "Vòng 1";
             this.lblRound.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // picVictory
-            // 
-            this.picVictory.Location = new System.Drawing.Point(0, 0);
-            this.picVictory.Name = "picVictory";
-            this.picVictory.Size = new System.Drawing.Size(809, 664);
-            this.picVictory.TabIndex = 3;
-            this.picVictory.TabStop = false;
-            this.picVictory.Visible = false;
             // 
             // lblHint
             // 
@@ -339,12 +328,22 @@
             this.lblLevelOfGame.TabIndex = 0;
             this.lblLevelOfGame.Text = "Level : ";
             // 
+            // lblNotice
+            // 
+            this.lblNotice.AutoSize = true;
+            this.lblNotice.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(72)))), ((int)(((byte)(54)))));
+            this.lblNotice.Location = new System.Drawing.Point(186, 181);
+            this.lblNotice.Name = "lblNotice";
+            this.lblNotice.Size = new System.Drawing.Size(0, 20);
+            this.lblNotice.TabIndex = 3;
+            // 
             // CatchTheWord
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1217, 663);
+            this.Controls.Add(this.lblNotice);
             this.Controls.Add(this.pnlGameDisplayGreen);
             this.Controls.Add(this.pnlGameDisplaySunFlower);
             this.Controls.Add(this.pnlGameDisplayGray);
@@ -360,7 +359,6 @@
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.CatchTheWord_FormClosed);
             this.pnlGameDisplayGray.ResumeLayout(false);
             this.pnlGameDisplayGray.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picVictory)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picTalk)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picMc)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picGameDisplay)).EndInit();
@@ -371,6 +369,7 @@
             this.pnlGameDisplaySunFlower.ResumeLayout(false);
             this.pnlGameDisplaySunFlower.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -395,7 +394,6 @@
         private System.Windows.Forms.PictureBox picTalk;
         private System.Windows.Forms.NumericUpDown nudMinute;
         private System.Windows.Forms.Label lblHint;
-        private System.Windows.Forms.PictureBox picVictory;
         private System.Windows.Forms.Label lblRule;
         private System.Windows.Forms.Label lblRound;
         private System.Windows.Forms.Label lblAnswer;
@@ -403,5 +401,6 @@
         private System.Windows.Forms.Label lblPosition;
         private System.Windows.Forms.Panel pnlGameDisplaySunFlower;
         private System.Windows.Forms.Label lblLevelOfGame;
+        private System.Windows.Forms.Label lblNotice;
     }
 }

@@ -102,11 +102,11 @@ namespace frPlayMo
         }
 
         // lấy các giá trị: số thứ tự của game, tên game, bật hay tắt nhạc
-        public freePlayModeEachGame(int id, string name, bool turnOffSound)
+        public freePlayModeEachGame(int id, string name, bool turnOnSound)
         {
             InitializeComponent();
-            turnOnOrOff = turnOffSound;
-            if (turnOnOrOff == false)
+            turnOnOrOff = turnOnSound;
+            if (turnOnSound)
             {
                 try
                 {
@@ -352,6 +352,7 @@ namespace frPlayMo
         {
             StreamReader inp = new StreamReader(@"database/frPlayMo/level.txt");
             for (int i = 1; i <= numberOfGame; i++) level[i] = inp.ReadLine();
+            inp.Close();
             nowLevel = chuyenhoa(level[idGame]);
 
             createButton();
@@ -361,7 +362,7 @@ namespace frPlayMo
         /* ghi vòng hiện tại của người chơi ra file txt*/
         public void data(int value)
         {
-            if (turnOnOrOff == false)
+            if (turnOnOrOff)
             {
                 try
                 {

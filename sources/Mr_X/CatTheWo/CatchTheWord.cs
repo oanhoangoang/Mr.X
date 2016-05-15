@@ -89,7 +89,7 @@ namespace CatTheWo
         }
 
         // lấy các giá trị:level, chức vụ, số điểm qua vòng,số vòng chơi, thời gian chơi, tắt nhạc hay không, hiển thị chức vụ truyền vào hay không: 1=có; 2=không
-        public CatchTheWord(int level, string position ,int score, int round, int time, bool turnOffSound, int determine)
+        public CatchTheWord(int level, string position ,int score, int round, int time, bool turnOnSound, int determine)
         {
             InitializeComponent();
             
@@ -107,7 +107,7 @@ namespace CatTheWo
             loadPicture(picMc,"picture/CatTheWo/mc.jpg");
             loadPicture(picGameDisplay,"picture/CatTheWo/gameDisplay.jpg");
 
-            if (turnOffSound == false)
+            if (turnOnSound)
             {
                 wmpSoundTrack = new WindowsMediaPlayer();
                 try
@@ -151,6 +151,8 @@ namespace CatTheWo
         // bắt đầu chơi game: bắt đầu đếm thời gian, tạo bàn phím để nhấn và tạo câu hỏi
         private void btnStart_Click(object sender, EventArgs e)
         {
+            pnlGameDisplayGray.Visible = true;
+            lblNotice.Visible = false;
             btnStart.Text = "Chơi lại";
             tmrTimeToPlay.Enabled = true;
             yourScore = 0;
@@ -417,8 +419,18 @@ namespace CatTheWo
             for (int i = 1; i <= 3; i++)
                 for (int j = 1; j <= 10; j++) keyboard[i][j].Visible = false;
             timeDelay(1400);
+            pnlGameDisplayGray.Visible = false;
+            lblNotice.Visible = true;
 
-            if (yourScore >= scoreToPass) answerToTeturn = 1;
+            if (yourScore >= scoreToPass)
+            {
+                answerToTeturn = 1;
+                lblNotice.Text = "Chúc mừng bạn đã vượt qua thử thách này";
+            }
+            else
+            {
+                lblNotice.Text = "Rất tiếc bạn đã không vượt qua thử thách này";
+            }
         }
 
         // tắt nhạc khi đóng chương trình

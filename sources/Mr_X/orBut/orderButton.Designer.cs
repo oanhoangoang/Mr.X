@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.pnlGameDisplayYellow = new System.Windows.Forms.Panel();
             this.lblPosition = new System.Windows.Forms.Label();
             this.lblLevelOfGame = new System.Windows.Forms.Label();
@@ -40,8 +39,9 @@
             this.lblTime = new System.Windows.Forms.Label();
             this.lblNameGame = new System.Windows.Forms.Label();
             this.btnStart = new System.Windows.Forms.Button();
-            this.tmrTimeToPlay = new System.Windows.Forms.Timer(this.components);
+            this.tmrTimeToPlay = new System.Windows.Forms.Timer();
             this.pnlGameDisplayGray = new System.Windows.Forms.Panel();
+            this.lblNotice = new System.Windows.Forms.Label();
             this.pnlGameDisplayYellow.SuspendLayout();
             this.pnlGameDisplayGreen.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudSecond)).BeginInit();
@@ -182,16 +182,26 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlGameDisplayGray.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(239)))), ((int)(((byte)(247)))));
-            this.pnlGameDisplayGray.Location = new System.Drawing.Point(4, 4);
+            this.pnlGameDisplayGray.Location = new System.Drawing.Point(0, 0);
             this.pnlGameDisplayGray.Name = "pnlGameDisplayGray";
             this.pnlGameDisplayGray.Size = new System.Drawing.Size(809, 654);
             this.pnlGameDisplayGray.TabIndex = 1;
+            // 
+            // lblNotice
+            // 
+            this.lblNotice.AutoSize = true;
+            this.lblNotice.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(72)))), ((int)(((byte)(54)))));
+            this.lblNotice.Location = new System.Drawing.Point(186, 181);
+            this.lblNotice.Name = "lblNotice";
+            this.lblNotice.Size = new System.Drawing.Size(0, 20);
+            this.lblNotice.TabIndex = 7;
             // 
             // orderButton
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1217, 663);
+            this.Controls.Add(this.lblNotice);
             this.Controls.Add(this.pnlGameDisplayGreen);
             this.Controls.Add(this.pnlGameDisplayYellow);
             this.Controls.Add(this.pnlGameDisplayGray);
@@ -210,6 +220,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudSecond)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudMinute)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -228,5 +239,6 @@
         private System.Windows.Forms.Button btnStart;
         private System.Windows.Forms.Timer tmrTimeToPlay;
         private System.Windows.Forms.Panel pnlGameDisplayGray;
+        private System.Windows.Forms.Label lblNotice;
     }
 }

@@ -111,7 +111,7 @@ namespace follArrow
         }
 
         // lấy các giá trị: level, chức vụ, điểm qua vòng, thời gian chơi, bật hay tắt nhạc, có hiển thị chức vụ hay không
-        public followArrow(int level, string position, int score, int time, bool turnOffSound, int determine)
+        public followArrow(int level, string position, int score, int time, bool turnOnSound, int determine)
         {
             InitializeComponent();
 
@@ -122,7 +122,7 @@ namespace follArrow
 
             timeOfGame = time;
 
-            if (turnOffSound == false)
+            if (turnOnSound)
             {
                 wmpSoundTrack = new WindowsMediaPlayer();
                 try
@@ -255,6 +255,8 @@ namespace follArrow
         // bắt đầu chơi game
         private void btnStart_Click(object sender, EventArgs e)
         {
+            pnlGameDisplayGray.Visible = true;
+            lblNotice.Visible = false;
             btnStart.Text = "Chơi lại";
             yourScore = 0;
             tmrTimeToPlay.Enabled = true;
@@ -291,13 +293,23 @@ namespace follArrow
         public delegate void truyen(int value);
         public truyen trans;
 
+        int answerToTeturn = 0;
         // trả về kết quả
         private void answer()
         {
             loadPictureToPic(picDance, "picture/follArrow/center.gif");
             picTalk.Visible = false;
-            if (yourScore >= scoreToPass)trans.Invoke(1);        
-            else trans.Invoke(0);
+
+            pnlGameDisplayGray.Visible = false;
+            lblNotice.Visible = true;
+            if (yourScore >= scoreToPass){
+                answerToTeturn = 1;
+                lblNotice.Text = "Chúc mừng bạn đã vượt qua thử thách này";
+            }
+            else
+            {
+                lblNotice.Text = "Rất tiếc bạn đã không vượt qua thử thách này";
+            }
         }
 
         // tắt nhạc khi đóng form
@@ -314,12 +326,18 @@ namespace follArrow
                 wmpSoundTrack.close();
             }
             catch (Exception ex) { }
+            trans.Invoke(answerToTeturn);
         }
 
         // thoát game
         private void btnEnd_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void followArrow_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RememberMe));
             this.pnlGameDisplayGray = new System.Windows.Forms.Panel();
             this.btnMediate = new System.Windows.Forms.Button();
@@ -49,8 +48,9 @@
             this.lblTime = new System.Windows.Forms.Label();
             this.nudSecond = new System.Windows.Forms.NumericUpDown();
             this.nudMinute = new System.Windows.Forms.NumericUpDown();
-            this.tmrTimeToWatch = new System.Windows.Forms.Timer(this.components);
-            this.tmrTimeToPlay = new System.Windows.Forms.Timer(this.components);
+            this.tmrTimeToWatch = new System.Windows.Forms.Timer();
+            this.tmrTimeToPlay = new System.Windows.Forms.Timer();
+            this.lblNotice = new System.Windows.Forms.Label();
             this.pnlGameDisplayGray.SuspendLayout();
             this.pnlGameDisplayYellow.SuspendLayout();
             this.pnlGameDisplayGreen.SuspendLayout();
@@ -66,7 +66,7 @@
             this.pnlGameDisplayGray.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(204)))), ((int)(((byte)(113)))));
             this.pnlGameDisplayGray.Controls.Add(this.btnMediate);
             this.pnlGameDisplayGray.ForeColor = System.Drawing.Color.Black;
-            this.pnlGameDisplayGray.Location = new System.Drawing.Point(4, 4);
+            this.pnlGameDisplayGray.Location = new System.Drawing.Point(0, 0);
             this.pnlGameDisplayGray.Name = "pnlGameDisplayGray";
             this.pnlGameDisplayGray.Size = new System.Drawing.Size(809, 654);
             this.pnlGameDisplayGray.TabIndex = 0;
@@ -292,12 +292,22 @@
             this.tmrTimeToPlay.Interval = 1000;
             this.tmrTimeToPlay.Tick += new System.EventHandler(this.tmrTimeToPlay_Tick);
             // 
+            // lblNotice
+            // 
+            this.lblNotice.AutoSize = true;
+            this.lblNotice.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(72)))), ((int)(((byte)(54)))));
+            this.lblNotice.Location = new System.Drawing.Point(186, 181);
+            this.lblNotice.Name = "lblNotice";
+            this.lblNotice.Size = new System.Drawing.Size(0, 20);
+            this.lblNotice.TabIndex = 7;
+            // 
             // RememberMe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1217, 663);
+            this.Controls.Add(this.lblNotice);
             this.Controls.Add(this.pnlGameDisplayGreen);
             this.Controls.Add(this.pnlGameDisplayYellow);
             this.Controls.Add(this.pnlGameDisplayGray);
@@ -319,6 +329,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudSecond)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudMinute)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -345,5 +356,6 @@
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Label lblLevelOfGame;
         private System.Windows.Forms.Label lblPosition;
+        private System.Windows.Forms.Label lblNotice;
     }
 }
