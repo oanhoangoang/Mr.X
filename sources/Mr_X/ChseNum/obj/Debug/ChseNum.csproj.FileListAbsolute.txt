@@ -21,3 +21,4 @@ C:\Users\Admin\Documents\Visual Studio 2013\Projects\thu\ChseNum\obj\Debug\ChseN
 C:\Users\Admin\Documents\Visual Studio 2013\Projects\thu\ChseNum\obj\Debug\ChseNum.csproj.GenerateResource.Cache
 C:\Users\Admin\Documents\Visual Studio 2013\Projects\thu\ChseNum\obj\Debug\ChseNum.dll
 C:\Users\Admin\Documents\Visual Studio 2013\Projects\thu\ChseNum\obj\Debug\ChseNum.pdb
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\test\ChseNum\obj\Debug\ChseNum.csprojResolveAssemblyReference.cache

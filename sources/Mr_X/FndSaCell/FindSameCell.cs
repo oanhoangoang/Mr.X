@@ -306,6 +306,8 @@ namespace FndSaCell
         public delegate void truyen(int value);
         public truyen trans;
 
+        int answerToTeturn = 0;
+
         // trả về kết quả của người chơi
         private void answer()
         {
@@ -316,8 +318,7 @@ namespace FndSaCell
                     check[ Int16.Parse(btnCircle[i][j].Name) ] = false;
                 }
 
-            if (yourScore >= scoreToPass) trans.Invoke(1);           
-            else trans.Invoke(0);
+            if (yourScore >= scoreToPass) answerToTeturn = 1;
         }
 
         //tắt game
@@ -335,7 +336,12 @@ namespace FndSaCell
             }
             catch (Exception ex) { }
             tmrTimeToPlay.Stop();
-            wmpSoundTrack.close();
+            try
+            {
+                wmpSoundTrack.close();
+            }
+            catch (Exception ex) { }
+            trans.Invoke(answerToTeturn);
         }
     }
 }

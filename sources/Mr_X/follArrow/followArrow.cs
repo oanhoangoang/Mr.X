@@ -309,7 +309,11 @@ namespace follArrow
             }
             catch (Exception ex) { }
             tmrTimeToPlay.Stop();
-            wmpSoundTrack.close();
+            try
+            {
+                wmpSoundTrack.close();
+            }
+            catch (Exception ex) { }
         }
 
         // thoát game

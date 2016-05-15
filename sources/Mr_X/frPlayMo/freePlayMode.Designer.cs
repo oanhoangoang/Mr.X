@@ -45,6 +45,8 @@
             this.picRemMe = new System.Windows.Forms.PictureBox();
             this.lblRemMe = new System.Windows.Forms.Label();
             this.wmpSoundTrack = new AxWMPLib.AxWindowsMediaPlayer();
+            this.picFollArrow = new System.Windows.Forms.PictureBox();
+            this.lblFollArrow = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picBackGround)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picCatTheWo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picChseNum)).BeginInit();
@@ -54,6 +56,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.picOrBut)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picRemMe)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wmpSoundTrack)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picFollArrow)).BeginInit();
             this.SuspendLayout();
             // 
             // picBackGround
@@ -208,11 +211,32 @@
             this.wmpSoundTrack.TabIndex = 18;
             this.wmpSoundTrack.Visible = false;
             // 
+            // picFollArrow
+            // 
+            this.picFollArrow.Location = new System.Drawing.Point(1008, 203);
+            this.picFollArrow.Name = "picFollArrow";
+            this.picFollArrow.Size = new System.Drawing.Size(127, 86);
+            this.picFollArrow.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picFollArrow.TabIndex = 19;
+            this.picFollArrow.TabStop = false;
+            this.picFollArrow.Click += new System.EventHandler(this.pic_Click);
+            // 
+            // lblFollArrow
+            // 
+            this.lblFollArrow.AutoSize = true;
+            this.lblFollArrow.Location = new System.Drawing.Point(990, 292);
+            this.lblFollArrow.Name = "lblFollArrow";
+            this.lblFollArrow.Size = new System.Drawing.Size(160, 20);
+            this.lblFollArrow.TabIndex = 20;
+            this.lblFollArrow.Text = "Nhảy cùng doraemon";
+            // 
             // freePlayMode
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1217, 663);
+            this.Controls.Add(this.lblFollArrow);
+            this.Controls.Add(this.picFollArrow);
             this.Controls.Add(this.wmpSoundTrack);
             this.Controls.Add(this.picRemMe);
             this.Controls.Add(this.lblRemMe);
@@ -248,6 +272,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.picOrBut)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picRemMe)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.wmpSoundTrack)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picFollArrow)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -271,5 +296,7 @@
         private System.Windows.Forms.PictureBox picRemMe;
         private System.Windows.Forms.Label lblRemMe;
         private AxWMPLib.AxWindowsMediaPlayer wmpSoundTrack;
+        private System.Windows.Forms.PictureBox picFollArrow;
+        private System.Windows.Forms.Label lblFollArrow;
     }
 }

@@ -218,14 +218,15 @@ namespace ChseNum
         public delegate void truyen(int value);
         public truyen trans;
 
+        int answerToTeturn = 0;
+
         // trả về kết quả
         private void answer()
         {
             for (int i = 1; i <= sizeTable; i++)
                 for (int j = 1; j <= sizeTable; j++) randomBtn[i][j].Enabled = false;
 
-            if (yourSum == numberToFind) trans.Invoke(1);      
-            else trans.Invoke(0);
+            if (yourSum == numberToFind) answerToTeturn = 1;
         }
 
         //tắt game
@@ -243,7 +244,12 @@ namespace ChseNum
             }
             catch (Exception ex) { }
             tmrTimeToPlay.Stop();
-            wmpSoundTrack.close();
+            try
+            {
+                wmpSoundTrack.close();
+            }
+            catch (Exception ex) { }
+            trans.Invoke(answerToTeturn);
         }
     }
 }

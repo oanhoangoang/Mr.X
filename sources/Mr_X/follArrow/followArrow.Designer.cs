@@ -31,10 +31,13 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(followArrow));
             this.pnlGameDisplayGray = new System.Windows.Forms.Panel();
+            this.picTalk = new System.Windows.Forms.PictureBox();
+            this.picDance = new System.Windows.Forms.PictureBox();
             this.pnlGameDisplayYellow = new System.Windows.Forms.Panel();
             this.lblPosition = new System.Windows.Forms.Label();
             this.lblLevelOfGame = new System.Windows.Forms.Label();
             this.pnlGameDisplayGreen = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.lblRule = new System.Windows.Forms.Label();
             this.btnEnd = new System.Windows.Forms.Button();
             this.txtScoreToPass = new System.Windows.Forms.TextBox();
@@ -47,16 +50,13 @@
             this.lblNameGame = new System.Windows.Forms.Label();
             this.btnStart = new System.Windows.Forms.Button();
             this.tmrTimeToPlay = new System.Windows.Forms.Timer(this.components);
-            this.picDance = new System.Windows.Forms.PictureBox();
-            this.picTalk = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.pnlGameDisplayGray.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picTalk)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picDance)).BeginInit();
             this.pnlGameDisplayYellow.SuspendLayout();
             this.pnlGameDisplayGreen.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudSecond)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudMinute)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picDance)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picTalk)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlGameDisplayGray
@@ -71,6 +71,22 @@
             this.pnlGameDisplayGray.Name = "pnlGameDisplayGray";
             this.pnlGameDisplayGray.Size = new System.Drawing.Size(809, 654);
             this.pnlGameDisplayGray.TabIndex = 1;
+            // 
+            // picTalk
+            // 
+            this.picTalk.Location = new System.Drawing.Point(86, 347);
+            this.picTalk.Name = "picTalk";
+            this.picTalk.Size = new System.Drawing.Size(144, 128);
+            this.picTalk.TabIndex = 1;
+            this.picTalk.TabStop = false;
+            // 
+            // picDance
+            // 
+            this.picDance.Location = new System.Drawing.Point(198, 104);
+            this.picDance.Name = "picDance";
+            this.picDance.Size = new System.Drawing.Size(395, 230);
+            this.picDance.TabIndex = 0;
+            this.picDance.TabStop = false;
             // 
             // pnlGameDisplayYellow
             // 
@@ -125,6 +141,17 @@
             this.pnlGameDisplayGreen.Name = "pnlGameDisplayGreen";
             this.pnlGameDisplayGreen.Size = new System.Drawing.Size(395, 358);
             this.pnlGameDisplayGreen.TabIndex = 5;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(15, 71);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(344, 20);
+            this.label1.TabIndex = 14;
+            this.label1.Text = "Nhấn mũi tên NGƯỢC chiều với mũi tên màu đỏ";
             // 
             // lblRule
             // 
@@ -224,9 +251,9 @@
             this.lblNameGame.ForeColor = System.Drawing.Color.White;
             this.lblNameGame.Location = new System.Drawing.Point(15, 9);
             this.lblNameGame.Name = "lblNameGame";
-            this.lblNameGame.Size = new System.Drawing.Size(167, 20);
+            this.lblNameGame.Size = new System.Drawing.Size(227, 20);
             this.lblNameGame.TabIndex = 5;
-            this.lblNameGame.Text = "Trò chơi: Nhấn mũi tên";
+            this.lblNameGame.Text = "Trò chơi: Nhảy cùng Doraemon";
             // 
             // btnStart
             // 
@@ -246,33 +273,6 @@
             // 
             this.tmrTimeToPlay.Interval = 1000;
             this.tmrTimeToPlay.Tick += new System.EventHandler(this.tmrTimeToPlay_Tick);
-            // 
-            // picDance
-            // 
-            this.picDance.Location = new System.Drawing.Point(198, 104);
-            this.picDance.Name = "picDance";
-            this.picDance.Size = new System.Drawing.Size(395, 230);
-            this.picDance.TabIndex = 0;
-            this.picDance.TabStop = false;
-            // 
-            // picTalk
-            // 
-            this.picTalk.Location = new System.Drawing.Point(86, 347);
-            this.picTalk.Name = "picTalk";
-            this.picTalk.Size = new System.Drawing.Size(144, 128);
-            this.picTalk.TabIndex = 1;
-            this.picTalk.TabStop = false;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(15, 71);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(344, 20);
-            this.label1.TabIndex = 14;
-            this.label1.Text = "Nhấn mũi tên NGƯỢC chiều với mũi tên màu đỏ";
             // 
             // followArrow
             // 
@@ -294,14 +294,14 @@
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.followArrow_FormClosed);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.followArrow_KeyUp);
             this.pnlGameDisplayGray.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picTalk)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picDance)).EndInit();
             this.pnlGameDisplayYellow.ResumeLayout(false);
             this.pnlGameDisplayYellow.PerformLayout();
             this.pnlGameDisplayGreen.ResumeLayout(false);
             this.pnlGameDisplayGreen.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudSecond)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudMinute)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picDance)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picTalk)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -218,14 +218,15 @@ namespace OrBut
         public delegate void truyen(int value);
         public truyen trans;
 
+        int answerToTeturn = 0;
+
         // trả về kết quả của người chơi
         private void answer()
         {
             for (int i = 1; i <= sizeTable; i++)
                 for (int j = 1; j <= sizeTable; j++) randomBtn[i][j].Visible = false;
-
-            if (now > numberToFind) trans.Invoke(1);            
-            trans.Invoke(0);                
+            
+            if (now > numberToFind) answerToTeturn = 1;
         }
 
         // tắt nhạc khi đóng chương trình
@@ -237,7 +238,12 @@ namespace OrBut
             }
             catch (Exception ex) { }
             tmrTimeToPlay.Stop();
-            wmpSoundTrack.close();
+            try
+            {
+                wmpSoundTrack.close();
+            }
+            catch (Exception ex) { }
+            trans.Invoke(answerToTeturn);
         }
 
         //tắt game

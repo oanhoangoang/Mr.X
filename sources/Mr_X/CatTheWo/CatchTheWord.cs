@@ -44,7 +44,7 @@ namespace CatTheWo
         private int mistake;
 
         // số dòng trong datase, số lượng ảnh có thể sử dụng
-        private int size = 400;
+        private int size = 100;
 
         // vị trí câu hỏi, nằm trong khoảng từ 1->size
         private int posQuestion;
@@ -406,6 +406,8 @@ namespace CatTheWo
         public delegate void truyen(int value);
         public truyen trans;
 
+        int answerToTeturn = 0;
+
         // trả về kết quả người chơi
         private void answer()
         {
@@ -416,8 +418,7 @@ namespace CatTheWo
                 for (int j = 1; j <= 10; j++) keyboard[i][j].Visible = false;
             timeDelay(1400);
 
-            if (yourScore >= scoreToPass) trans.Invoke(1);
-            else trans.Invoke(0);
+            if (yourScore >= scoreToPass) answerToTeturn = 1;
         }
 
         // tắt nhạc khi đóng chương trình
@@ -428,8 +429,15 @@ namespace CatTheWo
                 sp.Stop();
             }
             catch (Exception ex) { }
-            wmpSoundTrack.close();
+
+            try
+            {
+                wmpSoundTrack.close();
+            }
+            catch (Exception ex) { }
+
             tmrTimeToPlay.Stop();
+            trans.Invoke(answerToTeturn);
         }
 
         //tắt game

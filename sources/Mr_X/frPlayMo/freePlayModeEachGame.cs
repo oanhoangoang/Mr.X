@@ -16,12 +16,13 @@ using FndNum;
 using FndSaCell;
 using OrBut;
 using RemMe;
+using follArrow;
 
 namespace frPlayMo
 {
     public partial class freePlayModeEachGame : Form
     {
-        // thứ thự của game người chơi chọn, đánh số từ 1 tới 7
+        // thứ thự của game người chơi chọn, đánh số từ 1 tới 8
         private int idGame;
 
         // số thứ tự của ảnh nền hiển thị, giá trị được random từ 1 tới 4
@@ -37,7 +38,7 @@ namespace frPlayMo
         private int levelClick;
 
         // số lượng game
-        private int numberOfGame = 7;
+        private int numberOfGame = 8;
 
         // bật hay tắt nhạc
         private bool turnOnOrOff;
@@ -47,6 +48,9 @@ namespace frPlayMo
         
         // hiển thị các vòng của một trò chơi
         private Button[][] btn = new Button[10][];
+
+        // phát nhạc thắng, thua
+        private SoundPlayer sp;
 
         // làm mất nền của label
         private void transBackground(PictureBox picBackGround, Label lbl)
@@ -84,6 +88,17 @@ namespace frPlayMo
         private int randomNumber(int limitLow, int limitHigh)
         {
             return rd.Next(limitLow, limitHigh + 1);
+        }
+
+        // phát nhạc theo đường dẫn: link
+        private void playMusic(string link)
+        {
+            try
+            {
+                sp = new SoundPlayer(@link);
+                sp.Play();
+            }
+            catch (Exception ex) { }
         }
 
         // lấy các giá trị: số thứ tự của game, tên game, bật hay tắt nhạc
@@ -182,6 +197,7 @@ namespace frPlayMo
             if (idGame == 5) link += "fndSaCell.jpg";
             if (idGame == 6) link += "orBut.jpg";
             if (idGame == 7) link += "remMe.jpg";
+            if (idGame == 8) link += "follArrow.jpg";
             loadPicture(picGame, link);
         }
 
@@ -270,6 +286,17 @@ namespace frPlayMo
             frmRemMe.ShowDialog();
         }
 
+        // gọi ra game follArrow
+        private void callFollArrow(int level, bool turnOffSound)
+        {
+            int[] scoreFollArrow = { 0, 4,  5,  6,  7,  8,  9,  7,  9,  11, 13, 14, 15, 10, 14, 16, 18, 19, 20, 13, 15, 17, 19, 21, 23, 20, 22, 24, 26, 28, 30 };
+            int[] timeFollArrow =  { 0, 10, 10, 10, 10, 10, 10, 15, 15, 15, 15, 15, 15, 20, 20, 20, 20, 20, 20, 25, 25, 25, 25, 25, 25, 30, 30, 30, 30, 30, 30 };
+      
+            followArrow frmFollArrow=new followArrow(level,"",scoreFollArrow[level],timeFollArrow[level],turnOffSound,2);
+            frmFollArrow.trans=data;
+            frmFollArrow.ShowDialog();
+        }
+
         // xử lí khi người chơi ấn vào các vòng của game
         private void click(object sender, EventArgs e)
         {
@@ -312,6 +339,11 @@ namespace frPlayMo
                     wmpSoundTrack.close();
                     callRemMe(levelClick, turnOnOrOff);
                 }
+                if (idGame == 8)
+                {
+                    wmpSoundTrack.close();
+                    callFollArrow(levelClick, turnOnOrOff);
+                }
             }
         }
 
@@ -342,7 +374,9 @@ namespace frPlayMo
                 if (nowLevel == 30)
                     {
                         loadPictureButton(btn[5][6], "picture/frPlayMo/freePlayModeEachGame/victory.jpg");
-                      
+
+                        playMusic("sound/frPlayMo/freePlayModeEachGame/victory.wav");
+
                         picMedal.Visible = true;
                         loadPicture(picMedal, "picture/frPlayMo/freePlayModeEachGame/medal.jpg");
                         
@@ -374,7 +408,17 @@ namespace frPlayMo
         {
             picFirework.Visible = false;
             picMedal.Visible = false;
-            wmpSoundTrack.close();
+            try
+            {
+                wmpSoundTrack.close();
+            }
+            catch (Exception ex) { }
+
+            try
+            {
+                sp.Stop();
+            }
+            catch (Exception ex) { }
         }
     }
 }

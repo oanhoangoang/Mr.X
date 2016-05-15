@@ -93,6 +93,10 @@
       <Project>{ea9739ae-4eb0-4133-8d30-cf5a04bcc6da}</Project>
       <Name>FndSaCell</Name>
     </ProjectReference>
+    <ProjectReference Include="..\follArrow\follArrow.csproj">
+      <Project>{ccb36af2-a50c-4ccb-93df-999bad7128af}</Project>
+      <Name>follArrow</Name>
+    </ProjectReference>
     <ProjectReference Include="..\orBut\orBut.csproj">
       <Project>{a92e8cd4-00f9-44f3-8e18-fa26072eb110}</Project>
       <Name>orBut</Name>

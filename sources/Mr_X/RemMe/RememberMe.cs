@@ -304,6 +304,8 @@ namespace RemMe
         public delegate void truyen(int value);
         public truyen trans;
 
+        int answerToTeturn = 0;
+
         //đưa ra câu trả lời cho người chơi, và hiện lại mảng ban đầu
         private void answer()
         {  
@@ -314,9 +316,8 @@ namespace RemMe
                     value = Int32.Parse(randomBtn[i][j].Name);
                     randomBtn[i][j].BackColor = ColorTranslator.FromHtml(arrayColor[original[value]]);
                 }
-            
-            if (yourScore >= numberOfAnswer) trans.Invoke(1);
-            else trans.Invoke(0);      
+
+            if (yourScore >= numberOfAnswer) answerToTeturn = 1;
         }
 
         // tắt nhạc khi đóng chương trình
@@ -329,7 +330,12 @@ namespace RemMe
             catch (Exception ex) { }
             tmrTimeToPlay.Stop();
             tmrTimeToWatch.Stop();
-            wmpSoundTrack.close();
+            try
+            {
+                wmpSoundTrack.close();
+            }
+            catch (Exception ex) { }
+            trans.Invoke(answerToTeturn);
         }
 
         // tắt chương trình

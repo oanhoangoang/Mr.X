@@ -12,7 +12,7 @@ namespace frPlayMo
 {
     public partial class freePlayMode : Form
     {
-        // thứ thự của game người chơi chọn, đánh số từ 1 tới 7
+        // thứ thự của game người chơi chọn, đánh số từ 1 tới 8
         private int id;
 
         // tên game người chơi chọn
@@ -62,7 +62,8 @@ namespace frPlayMo
             loadPicture(picFndNum, "picture/frPlayMo/freePlayMode/fndNum.jpg");
             loadPicture(picFndSaCell, "picture/frPlayMo/freePlayMode/fndSaCell.jpg");
             loadPicture(picOrBut, "picture/frPlayMo/freePlayMode/orBut.jpg");
-            loadPicture(picRemMe, "picture/frPlayMo/freePlayMode/remMe.jpg");          
+            loadPicture(picRemMe, "picture/frPlayMo/freePlayMode/remMe.jpg");
+            loadPicture(picFollArrow, "picture/frPlayMo/freePlayMode/follArrow.jpg");
 
             transBackground(lblCatTheWo);
             transBackground(lblChseNum);
@@ -71,12 +72,17 @@ namespace frPlayMo
             transBackground(lblFndSaCell);
             transBackground(lblOrBut);
             transBackground(lblRemMe);
+            transBackground(lblFollArrow);
         }
 
         // xử lí khi người chơi ấn vào game
         private void pic_Click(object sender, EventArgs e)
         {
-            wmpSoundTrack.close();
+            try
+            {
+                wmpSoundTrack.close();
+            }
+            catch (Exception ex) { }
             PictureBox Mediate = (PictureBox)sender;
             if (Mediate.Name == "picCatTheWo") 
             { 
@@ -112,6 +118,12 @@ namespace frPlayMo
                 id = 7;
                 name = "Ghi nhớ";
             }
+            if (Mediate.Name == "picFollArrow")
+            {
+                id = 8;
+                name = "Nhảy cùng Doraemon";
+            }
+
             freePlayModeEachGame fm = new freePlayModeEachGame(id, name, turnOnOrOff);
             fm.ShowDialog();
         }
@@ -119,7 +131,11 @@ namespace frPlayMo
         // tắt nhạc
         private void freePlayMode_FormClosed(object sender, FormClosedEventArgs e)
         {
-            wmpSoundTrack.close();
+            try
+            {
+                wmpSoundTrack.close();
+            }
+            catch (Exception ex) { }
         }
     }
 }

@@ -48,3 +48,5 @@ C:\Users\Admin\Documents\Visual Studio 2013\Projects\test\frPlayMo\obj\Debug\frP
 C:\Users\Admin\Documents\Visual Studio 2013\Projects\test\frPlayMo\obj\Debug\Interop.WMPLib.dll
 C:\Users\Admin\Documents\Visual Studio 2013\Projects\test\frPlayMo\obj\Debug\AxInterop.WMPLib.dll
 C:\Users\Admin\Documents\Visual Studio 2013\Projects\test\frPlayMo\obj\Debug\frPlayMo.csproj.ResolveComReference.cache
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\test\frPlayMo\bin\Debug\follArrow.dll
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\test\frPlayMo\bin\Debug\follArrow.pdb
