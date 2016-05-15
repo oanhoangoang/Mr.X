@@ -1,0 +1,11 @@
+E:\C#\PzGame\PzGame\bin\Debug\PzGame.dll
+E:\C#\PzGame\PzGame\bin\Debug\PzGame.pdb
+E:\C#\PzGame\PzGame\obj\Debug\Interop.MediaPlayer.dll
+E:\C#\PzGame\PzGame\obj\Debug\Interop.WMPLib.dll
+E:\C#\PzGame\PzGame\obj\Debug\PzGame.csproj.ResolveComReference.cache
+E:\C#\PzGame\PzGame\obj\Debug\PzGame.FrmPzGame.resources
+E:\C#\PzGame\PzGame\obj\Debug\PzGame.Properties.Resources.resources
+E:\C#\PzGame\PzGame\obj\Debug\PzGame.csproj.GenerateResource.Cache
+E:\C#\PzGame\PzGame\obj\Debug\PzGame.dll
+E:\C#\PzGame\PzGame\obj\Debug\PzGame.pdb
+E:\C#\PzGame\PzGame\obj\Debug\PzGame.csprojResolveAssemblyReference.cache
