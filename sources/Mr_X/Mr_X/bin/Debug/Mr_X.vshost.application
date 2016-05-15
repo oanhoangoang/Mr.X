@@ -8,20 +8,20 @@
         <beforeApplicationStartup />
       </update>
     </subscription>
-    <deploymentProvider codebase="http://desktop-lr176sl/Mr_X/Mr_X.application" />
+    <deploymentProvider codebase="http://admin-pc/Mr_X/Mr_X.application" />
   </deployment>
   <compatibleFrameworks xmlns="urn:schemas-microsoft-com:clickonce.v2">
     <framework targetVersion="4.5" profile="Full" supportedRuntime="4.0.30319" />
   </compatibleFrameworks>
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="Mr_X.exe.manifest" size="14142">
+    <dependentAssembly dependencyType="install" codebase="Mr_X.exe.manifest" size="14128">
       <assemblyIdentity name="Mr_X.exe" version="1.0.1.4" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>B7aNHn57uOI4lnfbRoCIqD2u1n0ljvyLiTbfFJvRxqw=</dsig:DigestValue>
+        <dsig:DigestValue>IpcfyzPs+g9XuzDW3Fm2htMqb21ssJbM1Mr+/IZqcSk=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

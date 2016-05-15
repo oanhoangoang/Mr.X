@@ -11,3 +11,15 @@ E:\JS_Project\Mr.X.git\trunk\sources\Mr_X\LgImg\obj\Debug\LgImg.LgImgDisp.resour
 E:\JS_Project\Mr.X.git\trunk\sources\Mr_X\LgImg\obj\Debug\LgImg.csproj.GenerateResource.Cache
 E:\JS_Project\Mr.X.git\trunk\sources\Mr_X\LgImg\obj\Debug\LgImg.dll
 E:\JS_Project\Mr.X.git\trunk\sources\Mr_X\LgImg\obj\Debug\LgImg.pdb
+D:\PROJECT\trunk\sources\Mr_X\LgImg\bin\Debug\LgImg.dll
+D:\PROJECT\trunk\sources\Mr_X\LgImg\bin\Debug\LgImg.pdb
+D:\PROJECT\trunk\sources\Mr_X\LgImg\obj\Debug\LgImg.LgImgDisp.resources
+D:\PROJECT\trunk\sources\Mr_X\LgImg\obj\Debug\LgImg.csproj.GenerateResource.Cache
+D:\PROJECT\trunk\sources\Mr_X\LgImg\obj\Debug\LgImg.dll
+D:\PROJECT\trunk\sources\Mr_X\LgImg\obj\Debug\LgImg.pdb
+C:\Users\Admin\Desktop\Mr_X\Mr_X\LgImg\bin\Debug\LgImg.dll
+C:\Users\Admin\Desktop\Mr_X\Mr_X\LgImg\bin\Debug\LgImg.pdb
+C:\Users\Admin\Desktop\Mr_X\Mr_X\LgImg\obj\Debug\LgImg.LgImgDisp.resources
+C:\Users\Admin\Desktop\Mr_X\Mr_X\LgImg\obj\Debug\LgImg.csproj.GenerateResource.Cache
+C:\Users\Admin\Desktop\Mr_X\Mr_X\LgImg\obj\Debug\LgImg.dll
+C:\Users\Admin\Desktop\Mr_X\Mr_X\LgImg\obj\Debug\LgImg.pdb

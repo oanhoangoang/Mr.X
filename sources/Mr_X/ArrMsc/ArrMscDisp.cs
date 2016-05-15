@@ -30,7 +30,7 @@ namespace ArrMsc
         private string[] linkNote = new string[7] { "sound/ArrMsc/1.wav", "sound/ArrMsc/2.wav", "sound/ArrMsc/3.wav", "sound/ArrMsc/4.wav", "sound/ArrMsc/5.wav", "sound/ArrMsc/6.wav", "sound/ArrMsc/7.wav" };
         private string[] note = new string[7] {"Do","Re","Mi","Fa","Sol","La","Si"};
 
-        //SoundPlayer soundtrack = new SoundPlayer(@"sound/ArrMsc/Soundtrack1.wav");
+       
         SoundPlayer soundWin = new SoundPlayer(@"sound/ArrMsc/Win.wav");
         SoundPlayer soundLose = new SoundPlayer(@"sound/ArrMsc/Lose.wav");
  
@@ -238,14 +238,16 @@ namespace ArrMsc
         public truyen trans;
         private void btnBack_Click(object sender, EventArgs e)
         {
-            if (enableSound) soundWin.Stop(); if (enableSound) soundLose.Stop(); if (enableSound) soundtrack.Stop();
+            tmrPlaySound.Stop();
+            if (enableSound) soundWin.Stop(); if (enableSound) soundLose.Stop(); 
             if (check == 1) trans.Invoke(1); else trans.Invoke(0);
             this.Close();
         }
 
         private void ArrMscDisp_FormClosed(object sender, FormClosedEventArgs e)
         {
-            if (enableSound) soundWin.Stop(); if (enableSound) soundLose.Stop(); if (enableSound) soundtrack.Stop();
+            tmrPlaySound.Stop();
+            if (enableSound) soundWin.Stop(); if (enableSound) soundLose.Stop(); 
             if (check == 1) trans.Invoke(1); else trans.Invoke(0);
             this.Close();
         }

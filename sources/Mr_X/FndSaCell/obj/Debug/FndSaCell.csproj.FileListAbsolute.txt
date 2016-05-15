@@ -55,3 +55,15 @@ C:\Users\Admin\Documents\Visual Studio 2013\Projects\thu\FndSaCell\obj\Debug\Fnd
 C:\Users\Admin\Documents\Visual Studio 2013\Projects\thu\FndSaCell\obj\Debug\FndSaCell.csproj.GenerateResource.Cache
 C:\Users\Admin\Documents\Visual Studio 2013\Projects\thu\FndSaCell\obj\Debug\FndSaCell.dll
 C:\Users\Admin\Documents\Visual Studio 2013\Projects\thu\FndSaCell\obj\Debug\FndSaCell.pdb
+C:\Users\Admin\Downloads\Mr_X\Mr_X\FndSaCell\bin\Debug\FndSaCell.dll
+C:\Users\Admin\Downloads\Mr_X\Mr_X\FndSaCell\bin\Debug\FndSaCell.pdb
+C:\Users\Admin\Downloads\Mr_X\Mr_X\FndSaCell\bin\Debug\Interop.WMPLib.dll
+C:\Users\Admin\Downloads\Mr_X\Mr_X\FndSaCell\bin\Debug\AxInterop.WMPLib.dll
+C:\Users\Admin\Downloads\Mr_X\Mr_X\FndSaCell\obj\Debug\FndSaCell.csprojResolveAssemblyReference.cache
+C:\Users\Admin\Downloads\Mr_X\Mr_X\FndSaCell\obj\Debug\Interop.WMPLib.dll
+C:\Users\Admin\Downloads\Mr_X\Mr_X\FndSaCell\obj\Debug\AxInterop.WMPLib.dll
+C:\Users\Admin\Downloads\Mr_X\Mr_X\FndSaCell\obj\Debug\FndSaCell.csproj.ResolveComReference.cache
+C:\Users\Admin\Downloads\Mr_X\Mr_X\FndSaCell\obj\Debug\FndSaCell.FindSameCell.resources
+C:\Users\Admin\Downloads\Mr_X\Mr_X\FndSaCell\obj\Debug\FndSaCell.csproj.GenerateResource.Cache
+C:\Users\Admin\Downloads\Mr_X\Mr_X\FndSaCell\obj\Debug\FndSaCell.dll
+C:\Users\Admin\Downloads\Mr_X\Mr_X\FndSaCell\obj\Debug\FndSaCell.pdb

@@ -29,3 +29,11 @@ E:\JS_Project\Mr.X.git\trunk\sources\Mr_X\FstCal\obj\Debug\FstCal.csproj.Generat
 E:\JS_Project\Mr.X.git\trunk\sources\Mr_X\FstCal\obj\Debug\FstCal.dll
 E:\JS_Project\Mr.X.git\trunk\sources\Mr_X\FstCal\obj\Debug\FstCal.pdb
 E:\JS_Project\Mr.X.git\trunk\sources\Mr_X\FstCal\obj\Debug\FstCal.csprojResolveAssemblyReference.cache
+C:\Users\Admin\Desktop\Mr_X\Mr_X\FstCal\bin\Debug\FstCal.dll
+C:\Users\Admin\Desktop\Mr_X\Mr_X\FstCal\bin\Debug\FstCal.pdb
+C:\Users\Admin\Desktop\Mr_X\Mr_X\FstCal\obj\Debug\FstCal.csprojResolveAssemblyReference.cache
+C:\Users\Admin\Desktop\Mr_X\Mr_X\FstCal\obj\Debug\FstCal.FstCalDisp.resources
+C:\Users\Admin\Desktop\Mr_X\Mr_X\FstCal\obj\Debug\FstCal.Properties.Resources.resources
+C:\Users\Admin\Desktop\Mr_X\Mr_X\FstCal\obj\Debug\FstCal.csproj.GenerateResource.Cache
+C:\Users\Admin\Desktop\Mr_X\Mr_X\FstCal\obj\Debug\FstCal.dll
+C:\Users\Admin\Desktop\Mr_X\Mr_X\FstCal\obj\Debug\FstCal.pdb

@@ -29,7 +29,7 @@ namespace Mr_X
     public partial class Main : Form
     {
         bool sound;
-        public Main(bool sound, int determine)
+        public Main(bool so, int determine)
         {
             InitializeComponent();
             StreamReader inp = new StreamReader(@"database\MrX.txt");
@@ -40,6 +40,7 @@ namespace Mr_X
                 ucIntro.Visible = true;
             else
                 ucIntro.Visible = false;
+            sound = so;
         }
 
 
@@ -161,7 +162,7 @@ namespace Mr_X
                 }
                 else if (levelClick == 18)
                 {
-                    FindDifferentCell g = new FindDifferentCell(18, "Trưởng phòng tạp vụ", 6, 2, 3, 12, 90, sound, 1);
+                    FindDifferentCell g = new FindDifferentCell(18, "Trưởng phòng tạp vụ", 5, 2, 3, 12, 90, sound, 1);
                     g.trans = data;
                     g.ShowDialog();
                 }
@@ -227,7 +228,7 @@ namespace Mr_X
                 }
                 else if (levelClick == 29)
                 {
-                    FindDifferentCell g = new FindDifferentCell(18, "Phó giám đốc", 6, 3, 3, 20, 90, sound, 1);
+                    FindDifferentCell g = new FindDifferentCell(18, "Phó giám đốc", 5, 3, 3, 20, 90, sound, 1);
                     g.trans = data;
                     g.ShowDialog();
                 }

@@ -167,13 +167,13 @@ namespace CalExpression
             this.lblLevel = new System.Windows.Forms.Label();
             this.lblGameTitle = new System.Windows.Forms.Label();
             this.pnGameDis = new System.Windows.Forms.Panel();
-            this.timer = new System.Windows.Forms.Timer(this.components);
-            this.lblNotiLose = new System.Windows.Forms.Label();
-            this.lblNotiWin = new System.Windows.Forms.Label();
             this.picNotiWinLose = new System.Windows.Forms.PictureBox();
+            this.lblNotiWin = new System.Windows.Forms.Label();
+            this.lblNotiLose = new System.Windows.Forms.Label();
             this.btnGame3 = new System.Windows.Forms.Button();
             this.btnGame2 = new System.Windows.Forms.Button();
             this.btnGame1 = new System.Windows.Forms.Button();
+            this.timer = new System.Windows.Forms.Timer(this.components);
             this.pnGameData.SuspendLayout();
             this.pnInfoUser.SuspendLayout();
             this.pnGameDis.SuspendLayout();
@@ -367,37 +367,6 @@ namespace CalExpression
             this.pnGameDis.TabIndex = 0;
             this.pnGameDis.Paint += new System.Windows.Forms.PaintEventHandler(this.pnGameDis_Paint);
             // 
-            // timer
-            // 
-            this.timer.Interval = 800;
-            this.timer.Tick += new System.EventHandler(this.timer_Tick);
-            // 
-            // lblNotiLose
-            // 
-            this.lblNotiLose.AutoSize = true;
-            this.lblNotiLose.BackColor = System.Drawing.Color.White;
-            this.lblNotiLose.Font = new System.Drawing.Font("Monotype Corsiva", 24F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNotiLose.ForeColor = System.Drawing.Color.Red;
-            this.lblNotiLose.Location = new System.Drawing.Point(123, 389);
-            this.lblNotiLose.Name = "lblNotiLose";
-            this.lblNotiLose.Size = new System.Drawing.Size(84, 39);
-            this.lblNotiLose.TabIndex = 4;
-            this.lblNotiLose.Text = "label1";
-            this.lblNotiLose.Visible = false;
-            this.lblNotiLose.Click += new System.EventHandler(this.lblNotiLose_Click);
-            // 
-            // lblNotiWin
-            // 
-            this.lblNotiWin.AutoSize = true;
-            this.lblNotiWin.Font = new System.Drawing.Font("Monotype Corsiva", 24F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNotiWin.ForeColor = System.Drawing.Color.Red;
-            this.lblNotiWin.Location = new System.Drawing.Point(199, 389);
-            this.lblNotiWin.Name = "lblNotiWin";
-            this.lblNotiWin.Size = new System.Drawing.Size(84, 39);
-            this.lblNotiWin.TabIndex = 5;
-            this.lblNotiWin.Text = "label1";
-            this.lblNotiWin.Visible = false;
-            // 
             // picNotiWinLose
             // 
             this.picNotiWinLose.Location = new System.Drawing.Point(185, 42);
@@ -407,6 +376,32 @@ namespace CalExpression
             this.picNotiWinLose.TabIndex = 6;
             this.picNotiWinLose.TabStop = false;
             this.picNotiWinLose.Visible = false;
+            // 
+            // lblNotiWin
+            // 
+            this.lblNotiWin.AutoSize = true;
+            this.lblNotiWin.Font = new System.Drawing.Font("Corbel", 20.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNotiWin.ForeColor = System.Drawing.Color.Red;
+            this.lblNotiWin.Location = new System.Drawing.Point(199, 389);
+            this.lblNotiWin.Name = "lblNotiWin";
+            this.lblNotiWin.Size = new System.Drawing.Size(78, 33);
+            this.lblNotiWin.TabIndex = 5;
+            this.lblNotiWin.Text = "label1";
+            this.lblNotiWin.Visible = false;
+            // 
+            // lblNotiLose
+            // 
+            this.lblNotiLose.AutoSize = true;
+            this.lblNotiLose.BackColor = System.Drawing.Color.White;
+            this.lblNotiLose.Font = new System.Drawing.Font("Corbel", 20.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNotiLose.ForeColor = System.Drawing.Color.Red;
+            this.lblNotiLose.Location = new System.Drawing.Point(123, 389);
+            this.lblNotiLose.Name = "lblNotiLose";
+            this.lblNotiLose.Size = new System.Drawing.Size(78, 33);
+            this.lblNotiLose.TabIndex = 4;
+            this.lblNotiLose.Text = "label1";
+            this.lblNotiLose.Visible = false;
+            this.lblNotiLose.Click += new System.EventHandler(this.lblNotiLose_Click);
             // 
             // btnGame3
             // 
@@ -471,6 +466,11 @@ namespace CalExpression
             this.btnGame1.Click += new System.EventHandler(this.btnGame1_Click);
             this.btnGame1.MouseLeave += new System.EventHandler(this.btnGame1_MouseLeave);
             this.btnGame1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnGame1_MouseMove);
+            // 
+            // timer
+            // 
+            this.timer.Interval = 800;
+            this.timer.Tick += new System.EventHandler(this.timer_Tick);
             // 
             // frmCalExpression
             // 

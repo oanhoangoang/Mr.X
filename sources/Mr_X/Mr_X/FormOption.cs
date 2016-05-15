@@ -22,7 +22,7 @@ namespace Mr_X
         // Hiển thị các panel khi nhấp vào Chiến đấu, Luyện tập, Thông tin
         private void lblFight_Click(object sender, EventArgs e)
         {
-            pnlAbout.Visible = false;
+            lblDescription.Visible = false;
             pnlPrac.Visible = false;
             pnlFight.Visible = true;
             lblFight.ForeColor = Color.FromArgb(245, 171, 53);
@@ -32,7 +32,7 @@ namespace Mr_X
 
         private void lblPractice_Click(object sender, EventArgs e)
         {
-            pnlAbout.Visible = false;
+            lblDescription.Visible = false;
             pnlFight.Visible = false;
             pnlPrac.Visible = true;
             lblPractice.ForeColor = Color.FromArgb(245, 171, 53);
@@ -44,7 +44,7 @@ namespace Mr_X
         {
             pnlFight.Visible = false;
             pnlPrac.Visible = false;
-            pnlAbout.Visible = true;
+            lblDescription.Visible = true;
             lblAbout.ForeColor = Color.FromArgb(245, 171, 53);
             lblFight.ForeColor = Color.LightGray;
             lblPractice.ForeColor = Color.LightGray;
@@ -55,7 +55,7 @@ namespace Mr_X
         {
             pnlFight.Visible = false;
             pnlPrac.Visible = false;
-            pnlAbout.Visible = false;
+            lblDescription.Visible = false;
             if (lblSound.Text == "Bật")
             {
                 sound = false;
@@ -85,7 +85,6 @@ namespace Mr_X
             output.Close();
             Main m = new Main(sound, 1);
             m.ShowDialog();
-            lblContinueFight.Visible = true;
         }
 
         private void lblContinuePrac_Click(object sender, EventArgs e)
@@ -101,7 +100,6 @@ namespace Mr_X
             output.Close();
             freePlayMode f = new freePlayMode(sound);
             f.ShowDialog();
-            lblContinuePrac.Visible = true;
             
         }
 

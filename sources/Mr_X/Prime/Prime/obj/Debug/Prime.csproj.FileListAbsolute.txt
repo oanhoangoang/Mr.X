@@ -18,3 +18,23 @@ E:\CAM XOA\Mr.X.git\trunk\sources\Mr_X\Prime\Prime\obj\Debug\Prime.Properties.Re
 E:\CAM XOA\Mr.X.git\trunk\sources\Mr_X\Prime\Prime\obj\Debug\Prime.csproj.GenerateResource.Cache
 E:\CAM XOA\Mr.X.git\trunk\sources\Mr_X\Prime\Prime\obj\Debug\Prime.dll
 E:\CAM XOA\Mr.X.git\trunk\sources\Mr_X\Prime\Prime\obj\Debug\Prime.pdb
+D:\PROJECT\trunk\sources\Mr_X\Prime\Prime\bin\Debug\Prime.dll
+D:\PROJECT\trunk\sources\Mr_X\Prime\Prime\bin\Debug\Prime.pdb
+D:\PROJECT\trunk\sources\Mr_X\Prime\Prime\obj\Debug\Prime.csprojResolveAssemblyReference.cache
+D:\PROJECT\trunk\sources\Mr_X\Prime\Prime\obj\Debug\Interop.WMPLib.dll
+D:\PROJECT\trunk\sources\Mr_X\Prime\Prime\obj\Debug\Prime.csproj.ResolveComReference.cache
+D:\PROJECT\trunk\sources\Mr_X\Prime\Prime\obj\Debug\Prime.FrmPrime.resources
+D:\PROJECT\trunk\sources\Mr_X\Prime\Prime\obj\Debug\Prime.Properties.Resources.resources
+D:\PROJECT\trunk\sources\Mr_X\Prime\Prime\obj\Debug\Prime.csproj.GenerateResource.Cache
+D:\PROJECT\trunk\sources\Mr_X\Prime\Prime\obj\Debug\Prime.dll
+D:\PROJECT\trunk\sources\Mr_X\Prime\Prime\obj\Debug\Prime.pdb
+C:\Users\Admin\Downloads\Mr_X\Mr_X\Prime\Prime\bin\Debug\Prime.dll
+C:\Users\Admin\Downloads\Mr_X\Mr_X\Prime\Prime\bin\Debug\Prime.pdb
+C:\Users\Admin\Downloads\Mr_X\Mr_X\Prime\Prime\obj\Debug\Prime.csprojResolveAssemblyReference.cache
+C:\Users\Admin\Downloads\Mr_X\Mr_X\Prime\Prime\obj\Debug\Interop.WMPLib.dll
+C:\Users\Admin\Downloads\Mr_X\Mr_X\Prime\Prime\obj\Debug\Prime.csproj.ResolveComReference.cache
+C:\Users\Admin\Downloads\Mr_X\Mr_X\Prime\Prime\obj\Debug\Prime.FrmPrime.resources
+C:\Users\Admin\Downloads\Mr_X\Mr_X\Prime\Prime\obj\Debug\Prime.Properties.Resources.resources
+C:\Users\Admin\Downloads\Mr_X\Mr_X\Prime\Prime\obj\Debug\Prime.csproj.GenerateResource.Cache
+C:\Users\Admin\Downloads\Mr_X\Mr_X\Prime\Prime\obj\Debug\Prime.dll
+C:\Users\Admin\Downloads\Mr_X\Mr_X\Prime\Prime\obj\Debug\Prime.pdb

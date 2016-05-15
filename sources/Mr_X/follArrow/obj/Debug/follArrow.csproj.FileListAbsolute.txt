@@ -10,3 +10,15 @@ C:\Users\Admin\Documents\Visual Studio 2013\Projects\test\follArrow\bin\Debug\Ax
 C:\Users\Admin\Documents\Visual Studio 2013\Projects\test\follArrow\obj\Debug\Interop.WMPLib.dll
 C:\Users\Admin\Documents\Visual Studio 2013\Projects\test\follArrow\obj\Debug\AxInterop.WMPLib.dll
 C:\Users\Admin\Documents\Visual Studio 2013\Projects\test\follArrow\obj\Debug\follArrow.csproj.ResolveComReference.cache
+C:\Users\Admin\Downloads\Mr_X\Mr_X\follArrow\bin\Debug\follArrow.dll
+C:\Users\Admin\Downloads\Mr_X\Mr_X\follArrow\bin\Debug\follArrow.pdb
+C:\Users\Admin\Downloads\Mr_X\Mr_X\follArrow\bin\Debug\Interop.WMPLib.dll
+C:\Users\Admin\Downloads\Mr_X\Mr_X\follArrow\bin\Debug\AxInterop.WMPLib.dll
+C:\Users\Admin\Downloads\Mr_X\Mr_X\follArrow\obj\Debug\follArrow.csprojResolveAssemblyReference.cache
+C:\Users\Admin\Downloads\Mr_X\Mr_X\follArrow\obj\Debug\Interop.WMPLib.dll
+C:\Users\Admin\Downloads\Mr_X\Mr_X\follArrow\obj\Debug\AxInterop.WMPLib.dll
+C:\Users\Admin\Downloads\Mr_X\Mr_X\follArrow\obj\Debug\follArrow.csproj.ResolveComReference.cache
+C:\Users\Admin\Downloads\Mr_X\Mr_X\follArrow\obj\Debug\follArrow.followArrow.resources
+C:\Users\Admin\Downloads\Mr_X\Mr_X\follArrow\obj\Debug\follArrow.csproj.GenerateResource.Cache
+C:\Users\Admin\Downloads\Mr_X\Mr_X\follArrow\obj\Debug\follArrow.dll
+C:\Users\Admin\Downloads\Mr_X\Mr_X\follArrow\obj\Debug\follArrow.pdb

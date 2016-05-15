@@ -166,6 +166,7 @@ namespace LgImg
         public truyen trans;
         private void btnBack_Click(object sender, EventArgs e)
         {
+            timer.Stop();
             if (enableSound) soundWin.Stop(); if (enableSound) soundLose.Stop(); if (enableSound) soundtrack.Stop();
             if (check == 1) trans.Invoke(1); else trans.Invoke(0);
             this.Close();
@@ -173,6 +174,7 @@ namespace LgImg
 
         private void LgImgDisp_FormClosed(object sender, FormClosedEventArgs e)
         {
+            timer.Stop();
             if (enableSound) soundWin.Stop(); if (enableSound) soundLose.Stop(); if (enableSound) soundtrack.Stop();
             if (check == 1) trans.Invoke(1); else trans.Invoke(0);
             this.Close();

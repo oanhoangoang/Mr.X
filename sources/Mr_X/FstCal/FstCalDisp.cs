@@ -192,6 +192,7 @@ namespace FstCal
         {
             if (enableSound) soundWin.Stop(); if (enableSound) soundLose.Stop(); if (enableSound) soundtrack.Stop();
             if (check == 1) trans.Invoke(1); else trans.Invoke(0);
+            timer.Stop();
             this.Close();
         }
 
@@ -199,6 +200,7 @@ namespace FstCal
         {
             if (enableSound) soundWin.Stop(); if (enableSound) soundLose.Stop(); if (enableSound) soundtrack.Stop();
             if (check == 1) trans.Invoke(1); else trans.Invoke(0);
+            timer.Stop();
             this.Close();
         }
     }

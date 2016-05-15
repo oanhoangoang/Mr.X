@@ -50,3 +50,33 @@ C:\Users\Admin\Documents\Visual Studio 2013\Projects\test\frPlayMo\obj\Debug\AxI
 C:\Users\Admin\Documents\Visual Studio 2013\Projects\test\frPlayMo\obj\Debug\frPlayMo.csproj.ResolveComReference.cache
 C:\Users\Admin\Documents\Visual Studio 2013\Projects\test\frPlayMo\bin\Debug\follArrow.dll
 C:\Users\Admin\Documents\Visual Studio 2013\Projects\test\frPlayMo\bin\Debug\follArrow.pdb
+C:\Users\Admin\Downloads\Mr_X\Mr_X\frPlayMo\bin\Debug\frPlayMo.dll
+C:\Users\Admin\Downloads\Mr_X\Mr_X\frPlayMo\bin\Debug\frPlayMo.pdb
+C:\Users\Admin\Downloads\Mr_X\Mr_X\frPlayMo\bin\Debug\CatTheWo.dll
+C:\Users\Admin\Downloads\Mr_X\Mr_X\frPlayMo\bin\Debug\ChseNum.dll
+C:\Users\Admin\Downloads\Mr_X\Mr_X\frPlayMo\bin\Debug\FndDiCell.dll
+C:\Users\Admin\Downloads\Mr_X\Mr_X\frPlayMo\bin\Debug\FndNum.dll
+C:\Users\Admin\Downloads\Mr_X\Mr_X\frPlayMo\bin\Debug\FndSaCell.dll
+C:\Users\Admin\Downloads\Mr_X\Mr_X\frPlayMo\bin\Debug\follArrow.dll
+C:\Users\Admin\Downloads\Mr_X\Mr_X\frPlayMo\bin\Debug\OrBut.dll
+C:\Users\Admin\Downloads\Mr_X\Mr_X\frPlayMo\bin\Debug\RemMe.dll
+C:\Users\Admin\Downloads\Mr_X\Mr_X\frPlayMo\bin\Debug\Interop.WMPLib.dll
+C:\Users\Admin\Downloads\Mr_X\Mr_X\frPlayMo\bin\Debug\CatTheWo.pdb
+C:\Users\Admin\Downloads\Mr_X\Mr_X\frPlayMo\bin\Debug\ChseNum.pdb
+C:\Users\Admin\Downloads\Mr_X\Mr_X\frPlayMo\bin\Debug\FndDiCell.pdb
+C:\Users\Admin\Downloads\Mr_X\Mr_X\frPlayMo\bin\Debug\FndNum.pdb
+C:\Users\Admin\Downloads\Mr_X\Mr_X\frPlayMo\bin\Debug\FndSaCell.pdb
+C:\Users\Admin\Downloads\Mr_X\Mr_X\frPlayMo\bin\Debug\follArrow.pdb
+C:\Users\Admin\Downloads\Mr_X\Mr_X\frPlayMo\bin\Debug\OrBut.pdb
+C:\Users\Admin\Downloads\Mr_X\Mr_X\frPlayMo\bin\Debug\RemMe.pdb
+C:\Users\Admin\Downloads\Mr_X\Mr_X\frPlayMo\bin\Debug\AxInterop.WMPLib.dll
+C:\Users\Admin\Downloads\Mr_X\Mr_X\frPlayMo\obj\Debug\frPlayMo.csprojResolveAssemblyReference.cache
+C:\Users\Admin\Downloads\Mr_X\Mr_X\frPlayMo\obj\Debug\Interop.WMPLib.dll
+C:\Users\Admin\Downloads\Mr_X\Mr_X\frPlayMo\obj\Debug\AxInterop.WMPLib.dll
+C:\Users\Admin\Downloads\Mr_X\Mr_X\frPlayMo\obj\Debug\frPlayMo.csproj.ResolveComReference.cache
+C:\Users\Admin\Downloads\Mr_X\Mr_X\frPlayMo\obj\Debug\frPlayMo.freePlayMode.resources
+C:\Users\Admin\Downloads\Mr_X\Mr_X\frPlayMo\obj\Debug\frPlayMo.freePlayModeEachGame.resources
+C:\Users\Admin\Downloads\Mr_X\Mr_X\frPlayMo\obj\Debug\frPlayMo.Properties.Resources.resources
+C:\Users\Admin\Downloads\Mr_X\Mr_X\frPlayMo\obj\Debug\frPlayMo.csproj.GenerateResource.Cache
+C:\Users\Admin\Downloads\Mr_X\Mr_X\frPlayMo\obj\Debug\frPlayMo.dll
+C:\Users\Admin\Downloads\Mr_X\Mr_X\frPlayMo\obj\Debug\frPlayMo.pdb
