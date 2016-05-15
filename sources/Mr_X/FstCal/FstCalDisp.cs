@@ -190,7 +190,14 @@ namespace FstCal
 
         private void btnBackToMenu_Click(object sender, EventArgs e)
         {
-            if (enableSound) soundWin.Stop(); if (enableSound) soundLose.Stop();
+            if (enableSound) soundWin.Stop(); if (enableSound) soundLose.Stop(); if (enableSound) soundtrack.Stop();
+            if (check == 1) trans.Invoke(1); else trans.Invoke(0);
+            this.Close();
+        }
+
+        private void FstCalDisp_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            if (enableSound) soundWin.Stop(); if (enableSound) soundLose.Stop(); if (enableSound) soundtrack.Stop();
             if (check == 1) trans.Invoke(1); else trans.Invoke(0);
             this.Close();
         }

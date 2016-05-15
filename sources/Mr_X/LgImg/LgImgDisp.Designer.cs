@@ -300,6 +300,7 @@
             this.Name = "LgImgDisp";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Mr. X";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.LgImgDisp_FormClosed);
             this.pnlGameDisp.ResumeLayout(false);
             this.pnlGameDisp.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic)).EndInit();

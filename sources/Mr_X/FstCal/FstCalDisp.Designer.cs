@@ -34,6 +34,8 @@ namespace FstCal
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FstCalDisp));
             this.pnlGameDisp = new System.Windows.Forms.Panel();
+            this.txtGuide = new System.Windows.Forms.TextBox();
+            this.txtNoti = new System.Windows.Forms.TextBox();
             this.lblNum3 = new System.Windows.Forms.Label();
             this.btnAns = new System.Windows.Forms.Button();
             this.txtAns = new System.Windows.Forms.TextBox();
@@ -52,8 +54,6 @@ namespace FstCal
             this.lblTimeCount = new System.Windows.Forms.Label();
             this.lblTime = new System.Windows.Forms.Label();
             this.timer = new System.Windows.Forms.Timer(this.components);
-            this.txtNoti = new System.Windows.Forms.TextBox();
-            this.txtGuide = new System.Windows.Forms.TextBox();
             this.pnlGameDisp.SuspendLayout();
             this.pnlPlayerInfo.SuspendLayout();
             this.pnlGameInfo.SuspendLayout();
@@ -76,6 +76,28 @@ namespace FstCal
             this.pnlGameDisp.Name = "pnlGameDisp";
             this.pnlGameDisp.Size = new System.Drawing.Size(809, 654);
             this.pnlGameDisp.TabIndex = 1;
+            // 
+            // txtGuide
+            // 
+            this.txtGuide.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtGuide.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtGuide.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(196)))), ((int)(((byte)(15)))));
+            this.txtGuide.Location = new System.Drawing.Point(114, 95);
+            this.txtGuide.Name = "txtGuide";
+            this.txtGuide.Size = new System.Drawing.Size(583, 23);
+            this.txtGuide.TabIndex = 9;
+            this.txtGuide.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txtNoti
+            // 
+            this.txtNoti.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtNoti.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNoti.ForeColor = System.Drawing.Color.Red;
+            this.txtNoti.Location = new System.Drawing.Point(114, 263);
+            this.txtNoti.Name = "txtNoti";
+            this.txtNoti.Size = new System.Drawing.Size(583, 23);
+            this.txtNoti.TabIndex = 8;
+            this.txtNoti.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // lblNum3
             // 
@@ -284,28 +306,6 @@ namespace FstCal
             this.timer.Interval = 1000;
             this.timer.Tick += new System.EventHandler(this.timer_Tick);
             // 
-            // txtNoti
-            // 
-            this.txtNoti.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtNoti.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNoti.ForeColor = System.Drawing.Color.Red;
-            this.txtNoti.Location = new System.Drawing.Point(114, 263);
-            this.txtNoti.Name = "txtNoti";
-            this.txtNoti.Size = new System.Drawing.Size(583, 23);
-            this.txtNoti.TabIndex = 8;
-            this.txtNoti.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // txtGuide
-            // 
-            this.txtGuide.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtGuide.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtGuide.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(196)))), ((int)(((byte)(15)))));
-            this.txtGuide.Location = new System.Drawing.Point(114, 95);
-            this.txtGuide.Name = "txtGuide";
-            this.txtGuide.Size = new System.Drawing.Size(583, 23);
-            this.txtGuide.TabIndex = 9;
-            this.txtGuide.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
             // FstCalDisp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -318,6 +318,7 @@ namespace FstCal
             this.Name = "FstCalDisp";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Mr. X";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FstCalDisp_FormClosed);
             this.Load += new System.EventHandler(this.FstCalDisp_Load);
             this.pnlGameDisp.ResumeLayout(false);
             this.pnlGameDisp.PerformLayout();

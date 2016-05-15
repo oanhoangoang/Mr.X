@@ -290,6 +290,7 @@
             this.Name = "ArrMscDisp";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Mr. X";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ArrMscDisp_FormClosed);
             this.Load += new System.EventHandler(this.ArrMscDisp_Load);
             this.pnlGameDisp.ResumeLayout(false);
             this.pnlGameDisp.PerformLayout();
